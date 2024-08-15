@@ -1,2 +1,6 @@
+# Directories
 helix  => ~/.config/helix
 zellij => ~/.config/zellij
+
+# Files
+cargo/config.toml => ~/.cargo/config.toml
