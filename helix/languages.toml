@@ -1,0 +1,6 @@
+[[language]]
+name = "rust"
+indent = { tab-width = 2, unit = " " }
+language-servers = [
+  { name = "rust-analyzer", except-features = ["inlay-hints"] }
+]
