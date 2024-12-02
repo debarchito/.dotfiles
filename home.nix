@@ -11,7 +11,7 @@
     eza
     fd
     fzf
-    hx
+    helix
     just
     mold
     mkcert
