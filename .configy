@@ -1,8 +1,0 @@
-# Directories
-helix  => ~/.config/helix
-zellij => ~/.config/zellij
-
-# Files
-cargo/config.toml    => ~/.cargo/config.toml
-wezterm/.wezterm.lua => ~/.wezterm.lua
-julia/startup.jl     => ~/.julia/config/startup.jl
