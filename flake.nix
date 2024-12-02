@@ -17,7 +17,7 @@
         debarchito = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
-            /home/debarchito/.dotfiles/home.nix
+            ./home.nix
           ];
         };
       };
