@@ -4,7 +4,6 @@
   programs.fish = {
     enable = true;
     plugins = [
-      { name = "z"; src = pkgs.fishPlugins.z.src; }
       { name = "pisces"; src = pkgs.fishPlugins.pisces.src; }
       { name = "fzf.fish"; src = pkgs.fishPlugins.fzf-fish.src; }
       { name = "foreign-env"; src = pkgs.fishPlugins.foreign-env.src; }
@@ -21,13 +20,15 @@
         --color=selected-bg:#45475a \
         --multi"
 
+      zoxide init fish | source
       starship init fish | source
     '';
     shellAbbrs = {
+      cd = "z";
+      t = "true && clear";
       ls = "eza --long --color=always $argv";
       ll = "eza --long --color=always $argv";
       la = "eza --long --color=always $argv";
-      t = "true && clear";
     };
   };
 }

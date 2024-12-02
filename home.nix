@@ -14,12 +14,13 @@
     just
     mold
     mkcert
+    nixd
+    nixpkgs-fmt
     ripgrep
     ripgrep-all
     starship
     zellij
-    nixd
-    nixpkgs-fmt
+    zoxide
   ];
   home.sessionVariables = {
     EDITOR = "hx";
