@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 {
   xdg.configFile."zellij/config.kdl".source = ./zellij/config.kdl;
   xdg.configFile."zellij/themes/catppuccin.kdl".source = ./zellij/themes/catppuccin.kdl;
