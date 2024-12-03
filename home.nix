@@ -15,7 +15,7 @@
     mold
     mkcert
     nil
-    nixpkgs-fmt
+    nixfmt-rfc-style
     ripgrep
     ripgrep-all
   ];

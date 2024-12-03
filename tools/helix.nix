@@ -14,11 +14,17 @@
         lsp.display-messages = true;
         cursor-shape.insert = "bar";
         statusline = {
-          left = [ "mode" "spinner" ];
+          left = [
+            "mode"
+            "spinner"
+          ];
           center = [ "file-base-name" ];
         };
       };
-      keys.normal.esc = [ "collapse_selection" "keep_primary_selection" ];
+      keys.normal.esc = [
+        "collapse_selection"
+        "keep_primary_selection"
+      ];
     };
   };
 }

@@ -4,11 +4,26 @@
   programs.fish = {
     enable = true;
     plugins = [
-      { name = "pisces"; src = pkgs.fishPlugins.pisces.src; }
-      { name = "fzf.fish"; src = pkgs.fishPlugins.fzf-fish.src; }
-      { name = "foreign-env"; src = pkgs.fishPlugins.foreign-env.src; }
-      { name = "transient-fish"; src = pkgs.fishPlugins.transient-fish.src; }
-      { name = "colored-man-pages"; src = pkgs.fishPlugins.colored-man-pages; }
+      {
+        name = "pisces";
+        src = pkgs.fishPlugins.pisces.src;
+      }
+      {
+        name = "fzf.fish";
+        src = pkgs.fishPlugins.fzf-fish.src;
+      }
+      {
+        name = "foreign-env";
+        src = pkgs.fishPlugins.foreign-env.src;
+      }
+      {
+        name = "transient-fish";
+        src = pkgs.fishPlugins.transient-fish.src;
+      }
+      {
+        name = "colored-man-pages";
+        src = pkgs.fishPlugins.colored-man-pages;
+      }
     ];
     interactiveShellInit = ''
       set fish_greeting
