@@ -14,7 +14,7 @@
     just
     mold
     mkcert
-    nixd
+    nil
     nixpkgs-fmt
     ripgrep
     ripgrep-all
