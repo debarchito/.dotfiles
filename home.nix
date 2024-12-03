@@ -18,18 +18,17 @@
     nixpkgs-fmt
     ripgrep
     ripgrep-all
-    starship
-    zellij
-    zoxide
   ];
   home.sessionVariables = {
     EDITOR = "hx";
   };
   programs.home-manager.enable = true;
   imports = [
+    ./tools/cargo.nix
     ./tools/fish.nix
     ./tools/helix.nix
-    ./tools/cargo.nix
+    ./tools/starship.nix
+    ./tools/zoxide.nix
     ./tools/zellij.nix
     ./apps/wezterm.nix
   ];

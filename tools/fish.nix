@@ -24,9 +24,6 @@
         --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
         --color=selected-bg:#45475a \
         --multi"
-
-      zoxide init fish | source
-      starship init fish | source
     '';
     shellAbbrs = {
       cd = "z";
