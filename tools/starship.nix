@@ -14,6 +14,7 @@
         "$git_status"
         "$cmd_duration"
         "$line_break"
+        "$nix_shell"
         "$python"
         "$character"
       ];
@@ -29,14 +30,14 @@
         style = "bright-black";
       };
       git_status = {
-        format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
+        format = "[ [($conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
         style = "cyan";
-        conflicted = " ";
-        untracked = " ";
-        modified = " ";
-        staged = " ";
-        renamed = " ";
-        deleted = " ";
+        conflicted = "⚔️";
+        untracked = "✚";
+        modified = "✎";
+        staged = "●";
+        renamed = "➜";
+        deleted = "✖";
         stashed = "≡";
       };
       git_state = {
@@ -45,11 +46,15 @@
       };
       cmd_duration = {
         format = "[$duration]($style) ";
-        style = "green";
+        style = "bold blue";
+      };
+      nix_shell = {
+        format = "@ [$name]($style) ";
+        style = "bold blue";
       };
       python = {
-        format = "[$virtualenv]($style) ";
-        style = "bright-black";
+        format = "@ [$virtualenv]($style) ";
+        style = "bold blue";
       };
     };
   };
