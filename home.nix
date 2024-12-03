@@ -26,6 +26,7 @@
   programs.home-manager.enable = true;
   imports = [
     ./tools/cargo.nix
+    ./tools/direnv.nix
     ./tools/fish.nix
     ./tools/helix.nix
     ./tools/starship.nix
