@@ -31,9 +31,7 @@
         };
       };
       systemConfigs.default = system-manager.lib.makeSystemConfig {
-        modules = [
-          ./modules
-        ];
+        modules = [ ./modules ];
       };
     };
 }
