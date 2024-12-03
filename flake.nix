@@ -11,9 +11,10 @@
     { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import nixpkgs { inherit system; };
     in
     {
+      formatter.${system} = pkgs.nixfmt-rfc-style;
       homeConfigurations = {
         debarchito = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;

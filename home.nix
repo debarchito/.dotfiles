@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   targets.genericLinux.enable = true;
@@ -11,13 +11,14 @@
     eza
     fd
     fzf
+    helix
     just
     mold
     mkcert
     nil
-    nixfmt-rfc-style
     ripgrep
     ripgrep-all
+    zellij
   ];
   home.sessionVariables = {
     EDITOR = "hx";

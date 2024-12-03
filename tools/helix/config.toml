@@ -1,0 +1,27 @@
+theme = "catppuccin_mocha"
+
+[editor]
+auto-format = true
+bufferline = "multiple"
+idle-timeout = 200
+line-number = "relative"
+scroll-lines = 1
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+display-messages = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+center = ["file-base-name"]
+left = ["mode", "spinner"]
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
