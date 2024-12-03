@@ -39,7 +39,28 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "system-manager": "system-manager"
+      }
+    },
+    "system-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1733132181,
+        "narHash": "sha256-HY/TX6fUnkypQ0k24M0ET9VzyPeHp0I3VAfSf8u37uc=",
+        "owner": "numtide",
+        "repo": "system-manager",
+        "rev": "64627568a52fd5f4d24ecb504cb33a51ffec086d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "system-manager",
+        "type": "github"
       }
     }
   },
