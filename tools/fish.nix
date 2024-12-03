@@ -28,9 +28,9 @@
     shellAbbrs = {
       cd = "z";
       t = "true && clear";
-      ls = "eza --long --color=always $argv";
-      ll = "eza --long --color=always $argv";
-      la = "eza --long --color=always $argv";
+      ls = "eza --long --color=always";
+      ll = "eza --long --color=always";
+      la = "eza --long --color=always";
     };
   };
 }
