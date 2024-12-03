@@ -30,7 +30,7 @@
         style = "bright-black";
       };
       git_status = {
-        format = "[[($conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed$up_arrow)]($style)";
+        format = "[[($conflicted$untracked$modified$staged$renamed$deleted$stashed$ahead$behind$diverged)](218) ($ahead_behind$stashed$up_arrow)]($style)";
         style = "cyan";
         conflicted = " ⚠️";
         untracked = " ?";
