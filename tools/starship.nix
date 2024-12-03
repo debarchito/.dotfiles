@@ -30,15 +30,18 @@
         style = "bright-black";
       };
       git_status = {
-        format = "[[($conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)";
+        format = "[[($conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed$up_arrow)]($style)";
         style = "cyan";
-        conflicted = " ⚔️";
-        untracked = " ✚";
+        conflicted = " ⚠️";
+        untracked = " ?";
         modified = " ✎";
         staged = " ●";
-        renamed = " ➜";
+        renamed = " »";
         deleted = " ✖";
         stashed = " ≡";
+        ahead = " ⇡";
+        behind = " ⇣";
+        diverged = " ⇕";
       };
       git_state = {
         format = "\([$state( $progress_current/$progress_total)]($style)\) ";
