@@ -1,6 +1,6 @@
 # .dotfiles
 
-A repository that contains the `(.)dotfiles` for my `Pop!_OS` setup.
+The `(.)dotfiles` for my `Pop!_OS` setup.
 
 # Usage
 
