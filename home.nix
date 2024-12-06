@@ -25,13 +25,13 @@
   };
   programs.home-manager.enable = true;
   imports = [
-    ./tools/cargo.nix
-    ./tools/direnv.nix
-    ./tools/fish.nix
-    ./tools/helix.nix
-    ./tools/starship.nix
-    ./tools/zoxide.nix
-    ./tools/zellij.nix
-    ./apps/wezterm.nix
+    ./home/tools/cargo.nix
+    ./home/tools/direnv.nix
+    ./home/tools/fish.nix
+    ./home/tools/helix.nix
+    ./home/tools/starship.nix
+    ./home/tools/zoxide.nix
+    ./home/tools/zellij.nix
+    ./home/apps/wezterm.nix
   ];
 }

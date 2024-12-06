@@ -37,7 +37,7 @@
           };
         };
         systemConfigs.default = inputs.system-manager.lib.makeSystemConfig {
-          modules = [ ./modules ];
+          modules = [ ./system.nix ];
         };
       };
       perSystem =
