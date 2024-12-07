@@ -22,7 +22,11 @@
       }
       {
         name = "colored-man-pages";
-        src = pkgs.fishPlugins.colored-man-pages;
+        src = pkgs.fishPlugins.colored-man-pages.src;
+      }
+      {
+        name = "forgit";
+        src = pkgs.fishPlugins.forgit.src;
       }
     ];
     interactiveShellInit = ''
