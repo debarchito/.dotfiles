@@ -17,11 +17,6 @@ fi
 sudo nala update
 sudo nala install librewolf brave-browser wezterm
 
-# flatpak
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-flatpak remote-add --if-not-exists --user launcher.moe https://gol.launcher.moe/gol.launcher.moe.flatpakrepo
-
 # nix (Determinate Systems)
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 if [ $? -eq 0 ]; then
@@ -39,3 +34,17 @@ else
   echo "[?] Error installing nix. Try running the commands manually."
   exit 1
 fi
+
+# flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+flatpak remote-add --if-not-exists --user launcher.moe https://gol.launcher.moe/gol.launcher.moe.flatpakrepo
+flatpak install flathub --user com.github.tchx84.Flatseal \
+  io.github.flattool.Warehouse \
+  it.mijorus.gearlever \
+  com.usebottles.bottles \
+  md.obsidian.Obsidian \
+  com.obsproject.Studio \
+  org.localsend.LocalSend_app \
+  org.gimp.GIMP \
+  com.github.finefindus.eyedropper
