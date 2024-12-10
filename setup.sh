@@ -48,3 +48,6 @@ flatpak install flathub --user com.github.tchx84.Flatseal \
   org.localsend.LocalSend_app \
   org.gimp.GIMP \
   com.github.finefindus.eyedropper
+flatpak install launcher.moe --user moe.launcher.an-anime-game-launcher \
+  moe.launcher.the-honkers-railway-launcher \
+  moe.launcher.honkers-launcher \

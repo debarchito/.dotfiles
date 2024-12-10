@@ -32,6 +32,17 @@
     ./home/tools/starship.nix
     ./home/tools/zoxide.nix
     ./home/tools/zellij.nix
+    ./home/apps/librewolf.nix
     ./home/apps/wezterm.nix
   ];
+  services.flatpak.enable = true;
+  services.flatpak.remotes = [
+    { name = "flathub"; location = "https://flathub.org/repo/flathub.flatpakrepo"; }
+    { name = "flathub-beta"; location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo"; }
+  ];
+  services.flatpak.packages = [
+    { appId = "im.bernard.Memorado"; origin = "flathub"; }
+  ];
+  services.flatpak.update.auto.enable = true;
+  services.flatpak.update.auto.onCalendar = "daily";
 }
