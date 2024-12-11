@@ -11,8 +11,10 @@
     eza
     fd
     fzf
+    flatpak
     helix
     just
+    mpv
     mold
     mkcert
     nil
@@ -28,6 +30,7 @@
     ./home/tools/cargo.nix
     ./home/tools/direnv.nix
     ./home/tools/fish.nix
+    ./home/tools/flatpak.nix
     ./home/tools/helix.nix
     ./home/tools/starship.nix
     ./home/tools/zoxide.nix
@@ -35,14 +38,4 @@
     ./home/apps/librewolf.nix
     ./home/apps/wezterm.nix
   ];
-  services.flatpak.enable = true;
-  services.flatpak.remotes = [
-    { name = "flathub"; location = "https://flathub.org/repo/flathub.flatpakrepo"; }
-    { name = "flathub-beta"; location = "https://flathub.org/beta-repo/flathub-beta.flatpakrepo"; }
-  ];
-  services.flatpak.packages = [
-    { appId = "im.bernard.Memorado"; origin = "flathub"; }
-  ];
-  services.flatpak.update.auto.enable = true;
-  services.flatpak.update.auto.onCalendar = "daily";
 }
