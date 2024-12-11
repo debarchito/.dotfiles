@@ -22,10 +22,10 @@
 }
 
 /* Page back and forward buttons */
-#back-button,
+/* #back-button,
 #forward-button {
   display: none !important
-}
+} */
 
 /* Extensions button */
 /* #unified-extensions-button {
@@ -38,7 +38,8 @@
 }
 
 /* All tabs (v-like) button */
-#alltabs-button {
+#alltabs-button,
+#firefox-view-button {
   display: none !important
 }
 
