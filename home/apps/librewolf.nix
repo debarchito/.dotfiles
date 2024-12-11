@@ -49,13 +49,4 @@
       userChrome = builtins.readFile ./librewolf/userChrome.css;
     };
   };
-  home.file.".librewolf/debarchito/chrome/includes/cascade-tabs.css".text = builtins.readFile ./librewolf/includes/cascade-tabs.css;
-  home.file.".librewolf/debarchito/chrome/includes/cascade-config.css".text = builtins.readFile ./librewolf/includes/cascade-config.css;
-  home.file.".librewolf/debarchito/chrome/includes/cascade-layout.css".text = builtins.readFile ./librewolf/includes/cascade-layout.css;
-  home.file.".librewolf/debarchito/chrome/includes/cascade-colours.css".text = builtins.readFile ./librewolf/includes/cascade-colours.css;
-  home.file.".librewolf/debarchito/chrome/includes/cascade-nav-bar.css".text = builtins.readFile ./librewolf/includes/cascade-nav-bar.css;
-  home.file.".librewolf/debarchito/chrome/includes/cascade-responsive.css".text = builtins.readFile ./librewolf/includes/cascade-responsive.css;
-  home.file.".librewolf/debarchito/chrome/includes/cascade-config-mouse.css".text = builtins.readFile ./librewolf/includes/cascade-config-mouse.css;
-  home.file.".librewolf/debarchito/chrome/includes/cascade-floating-panel.css".text = builtins.readFile ./librewolf/includes/cascade-floating-panel.css;
-  home.file.".librewolf/debarchito/chrome/includes/cascade-responsive-windows-fix.css".text = builtins.readFile ./librewolf/includes/cascade-responsive-windows-fix.css;
 }
