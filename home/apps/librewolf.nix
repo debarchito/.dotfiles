@@ -1,5 +1,9 @@
 { pkgs, ... }:
 
+# NOTE: Enable permissions for extensions manually; this is how I prefer it.
+# NOTE: The configurations here are supposed to be treated as "bare-minimum" base that I can build upon.
+# NOTE: I do not want or need to use the exact same browser configs every time.
+
 {
   programs.librewolf = {
     enable = true;
@@ -38,15 +42,37 @@
         };
         "Bing".metaData.hidden = true;
       };
+      search.default = "SearXNG";
       search.force = true;
       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        ublock-origin
+        bitwarden
+        clearurls
         darkreader
+        decentraleyes
+        foxytab
+        firefox-color
+        fastforwardteam
+        foxyproxy-standard
+        firefox-translations
+        privacy-badger
+        read-aloud
+        return-youtube-dislikes
+        sponsorblock
+        stylus
+        tabliss
+        ublock-origin
+        user-agent-string-switcher
+        violentmonkey
+        web-archives
       ];
       settings = {
+        "places.history.enabled" = false;
+        "layout.css.has-selector.enabled" = true;
+        "svg.context-properties.content.enabled" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
       };
       userChrome = builtins.readFile ./librewolf/userChrome.css;
+      userContent = builtins.readFile ./librewolf/userContent.css;
     };
   };
 }
