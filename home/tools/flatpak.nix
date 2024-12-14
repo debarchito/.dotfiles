@@ -8,16 +8,26 @@
     ];
     packages = [
       # Apps
+      { appId = "org.gimp.GIMP"; origin = "flathub"; }
+      { appId = "org.kde.krita"; origin = "flathub"; }
+      { appId = "org.kde.kdenlive"; origin = "flathub"; }
+      { appId = "org.kde.gwenview"; origin = "flathub"; }
       { appId = "net.nokyan.Resources"; origin = "flathub"; }
       { appId = "it.mijorus.gearlever"; origin = "flathub"; }
+      { appId = "md.obsidian.Obsidian"; origin = "flathub"; }
+      { appId = "org.inkscape.Inkscape"; origin = "flathub"; }
+      { appId = "com.obsproject.Studio"; origin = "flathub"; }
+      { appId = "com.usebottles.bottles"; origin = "flathub"; }
       { appId = "com.github.tchx84.Flatseal"; origin = "flathub"; }
       { appId = "org.qbittorrent.qBittorrent"; origin = "flathub"; }
       { appId = "org.localsend.localsend_app"; origin = "flathub"; }
       { appId = "io.github.flattool.Warehouse"; origin = "flathub"; }
+      { appId = "org.onlyoffice.desktopeditors"; origin = "flathub"; }
       { appId = "com.github.johnfactotum.Foliate"; origin = "flathub"; }
       { appId = "com.github.finefindus.eyedropper"; origin = "flathub"; }
       { appId = "io.github.kukuruzka165.materialgram"; origin = "flathub"; }
-      # Games
+      # Gaming
+      { appId = "com.valvesoftware.Steam"; origin = "flathub"; }
       { appId = "moe.launcher.sleepy-launcher"; origin = "launcher.moe"; }
       { appId = "moe.launcher.honkers-launcher"; origin = "launcher.moe"; }
       { appId = "moe.launcher.an-anime-game-launcher"; origin = "launcher.moe"; }
