@@ -7,8 +7,8 @@ The `(.)dotfiles` for my `Pop!_OS` setup.
 ```sh
 git clone https://github.com/debarchito/.dotfiles.git $HOME
 cd .dotfiles
-home-manager switch --flake .
-# Now work how you want from here...
+chmod +x setup.sh
+./setup.sh
 ```
 
 # Additional Links
