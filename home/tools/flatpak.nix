@@ -24,6 +24,7 @@
       { appId = "io.github.flattool.Warehouse"; origin = "flathub"; }
       { appId = "org.onlyoffice.desktopeditors"; origin = "flathub"; }
       { appId = "com.github.johnfactotum.Foliate"; origin = "flathub"; }
+      { appId = "com.github.unrud.VideoDownloader"; origin = "flathub"; }
       { appId = "com.github.finefindus.eyedropper"; origin = "flathub"; }
       { appId = "io.github.kukuruzka165.materialgram"; origin = "flathub"; }
       # Gaming
