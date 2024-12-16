@@ -8,9 +8,6 @@
     ];
     packages = [
       # Apps
-      { appId = "org.gimp.GIMP"; origin = "flathub"; }
-      { appId = "org.kde.krita"; origin = "flathub"; }
-      { appId = "org.kde.kdenlive"; origin = "flathub"; }
       { appId = "org.kde.gwenview"; origin = "flathub"; }
       { appId = "net.nokyan.Resources"; origin = "flathub"; }
       { appId = "it.mijorus.gearlever"; origin = "flathub"; }

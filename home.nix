@@ -6,14 +6,16 @@
   home.homeDirectory = "/home/debarchito";
   home.stateVersion = "25.05";
   home.packages = with pkgs; [
-    btop
+    # Programs
     bat
+    btop
     eza
     fd
     fzf
     flatpak
     helix
     just
+    krita
     mpv
     mold
     mkcert
@@ -21,10 +23,11 @@
     ripgrep
     ripgrep-all
     zellij
+    # Libs
+    nixgl.auto.nixGLDefault
+    # Fonts
+    nerd-fonts.jetbrains-mono
   ];
-  home.sessionVariables = {
-    EDITOR = "hx";
-  };
   programs.home-manager.enable = true;
   imports = [
     ./home/tools/cargo.nix
