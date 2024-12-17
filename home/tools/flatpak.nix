@@ -30,6 +30,9 @@
       { appId = "moe.launcher.honkers-launcher"; origin = "launcher.moe"; }
       { appId = "moe.launcher.an-anime-game-launcher"; origin = "launcher.moe"; }
       { appId = "moe.launcher.the-honkers-railway-launcher"; origin = "launcher.moe"; }
+      # Others
+      { appId = "org.freedesktop.Platform.VulkanLayer.vkBasalt"; origin = "flathub"; }
+      { appId = "org.freedesktop.Platform.VulkanLayer.gamescope"; origin = "flathub"; }
     ];
     update.auto.enable = true;
     update.auto.onCalendar = "daily";
