@@ -10,6 +10,7 @@
     bat
     btop
     eza
+    devenv
     fd
     fzf
     flatpak
