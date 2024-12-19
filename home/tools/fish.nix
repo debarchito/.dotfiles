@@ -46,6 +46,7 @@
     '';
     shellAbbrs = {
       cd = "z";
+      tree = "erd";
       t = "true && clear";
       ls = "eza --long --color=always";
       ll = "eza --long --color=always";

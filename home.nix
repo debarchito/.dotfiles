@@ -10,6 +10,7 @@
     bat
     btop
     eza
+    erdtree
     devenv
     fd
     fzf
