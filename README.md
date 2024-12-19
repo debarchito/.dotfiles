@@ -11,6 +11,13 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
+Additionally, the _proprietary_ fonts can be installed using the following command:
+
+```sh
+chmod +x setup-fonts.sh
+./setup-fonts.sh
+```
+
 # Additional Links
 
 - **LibreWolf (addons outside the base configuration)**
