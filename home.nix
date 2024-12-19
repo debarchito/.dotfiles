@@ -28,6 +28,7 @@
     # Libs
     nixgl.auto.nixGLDefault
     # Fonts
+    julia-mono
     nerd-fonts.jetbrains-mono
   ];
   programs.home-manager.enable = true;
