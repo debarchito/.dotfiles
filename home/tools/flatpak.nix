@@ -31,8 +31,8 @@
       { appId = "moe.launcher.an-anime-game-launcher"; origin = "launcher.moe"; }
       { appId = "moe.launcher.the-honkers-railway-launcher"; origin = "launcher.moe"; }
       # Others
-      { appId = "org.freedesktop.Platform.VulkanLayer.vkBasalt"; origin = "flathub"; }
-      { appId = "org.freedesktop.Platform.VulkanLayer.gamescope"; origin = "flathub"; }
+      { appId = "runtime/org.freedesktop.Platform.VulkanLayer.vkBasalt/x86_64/24.08"; origin = "flathub"; }
+      { appId = "runtime/org.freedesktop.Platform.VulkanLayer.gamescope/x86_64/24.08"; origin = "flathub"; }
     ];
     update.auto.enable = true;
     update.auto.onCalendar = "daily";
