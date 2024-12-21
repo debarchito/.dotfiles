@@ -5,18 +5,19 @@ The `(.)dotfiles` for my `Pop!_OS` setup.
 # Usage
 
 ```sh
-git clone https://github.com/debarchito/.dotfiles.git $HOME
+git clone https://github.com/debarchito/.dotfiles.git ~
 cd .dotfiles
-chmod +x setup.sh
+chmod +x setup*.sh
 ./setup.sh
 ```
 
-Additionally, the _proprietary_ fonts can be installed using the following command:
+Optionally, the _proprietary_ fonts can be installed using the following command:
 
 ```sh
-chmod +x setup-fonts.sh
 ./setup-fonts.sh
 ```
+
+I kept this step separate because I don't need these fonts all the time.
 
 # Additional Links
 
