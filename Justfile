@@ -10,3 +10,9 @@ home-switch:
 alias ss := system-switch
 system-switch:
     sudo (which nix) run 'github:numtide/system-manager' -- switch --flake .
+
+syncthing-up:
+    docker compose -f compose/syncthing-docker-compose.yml up -d
+
+syncthing-down:
+    docker compose -f compose/syncthing-docker-compose.yml down
