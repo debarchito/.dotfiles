@@ -25,6 +25,8 @@
     ripgrep
     ripgrep-all
     zellij
+    # Language tools I need globally
+    jdk23
     # Libs
     nixgl.auto.nixGLDefault
     # Fonts
