@@ -20,6 +20,7 @@
     helix
     just
     krita
+    legcord
     mpv
     mold
     mkcert
