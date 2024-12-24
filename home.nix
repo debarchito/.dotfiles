@@ -1,7 +1,14 @@
-{ pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   targets.genericLinux.enable = true;
+  # NixGL wrapper configuration
+  nixGL.packages = inputs.nixgl.packages;
+  nixGL.defaultWrapper = "nvidia";
+  nixGL.installScripts = [ "nvidia" ];
+  # Let home-manager manage itself
+  programs.home-manager.enable = true;
+  # Actual home configuration
   home.username = "debarchito";
   home.homeDirectory = "/home/debarchito";
   home.stateVersion = "25.05";
@@ -19,7 +26,6 @@
     gst_all_1.gstreamer
     helix
     just
-    krita
     legcord
     mpv
     mold
@@ -37,12 +43,14 @@
     gst_all_1.gst-plugins-base
     gst_all_1.gst-plugins-good
     gst_all_1.gst-plugins-ugly
-    nixgl.auto.nixGLDefault
     # Fonts
     julia-mono
     nerd-fonts.jetbrains-mono
+  ] ++ [
+    # Programs that need to be wrapped
+    (config.lib.nixGL.wrap pkgs.blender)
+    (config.lib.nixGL.wrap pkgs.krita)
   ];
-  programs.home-manager.enable = true;
   imports = [
     ./home/tools/cargo.nix
     ./home/tools/direnv.nix

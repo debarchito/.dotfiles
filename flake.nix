@@ -3,7 +3,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    nixgl.url = "github:nix-community/nixGL";
+    nixgl = {
+      url = "github:nix-community/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -24,12 +27,15 @@
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [ inputs.nur.overlays.default inputs.nixgl.overlay ];
+        config.allowUnfreePredicate = (pkgs: true);
+        overlays = [ inputs.nur.overlays.default ];
+        # Additional: inputs.nixgl.overlay
       };
     in
     {
       homeConfigurations.debarchito = inputs.home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = { inherit inputs; };
         modules = [
           inputs.nix-flatpak.homeManagerModules.nix-flatpak
           ./home.nix
