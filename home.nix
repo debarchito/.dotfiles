@@ -6,8 +6,8 @@
   xdg.configFile."nixpkgs/config.nix".source = ./home/nixpkgs/config.nix;
   # NixGL wrapper configuration
   nixGL.packages = inputs.nixgl.packages;
-  nixGL.defaultWrapper = "nvidia";
-  nixGL.installScripts = [ "nvidia" ];
+  nixGL.defaultWrapper = "nvidiaPrime";
+  nixGL.installScripts = [ "nvidiaPrime" ];
   # Let home-manager manage itself
   programs.home-manager.enable = true;
   # Actual home configuration
