@@ -2,6 +2,8 @@
 
 {
   targets.genericLinux.enable = true;
+  # Write to config
+  xdg.configFile."nixpkgs/config.nix".source = ./home/nixpkgs/config.nix;
   # NixGL wrapper configuration
   nixGL.packages = inputs.nixgl.packages;
   nixGL.defaultWrapper = "nvidia";
