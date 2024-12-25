@@ -5,7 +5,7 @@ default:
 
 alias hs := home-switch
 home-switch:
-    home-manager switch --flake . --impure --show-trace
+    nix run home-manager/master -- switch --flake . --impure --show-trace
 
 alias ss := system-switch
 system-switch:
