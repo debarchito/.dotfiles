@@ -11,6 +11,10 @@ alias ss := system-switch
 system-switch:
     sudo (which nix) run 'github:numtide/system-manager' -- switch --flake .
 
+alias fmt := format
+format:
+    nix fmt **/*.nix
+
 syncthing-up:
     docker compose -f compose/syncthing-docker-compose.yml up -d
 
