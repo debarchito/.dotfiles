@@ -42,7 +42,7 @@
           ./home.nix
         ];
       };
-      systemConfigs.default = system-manager.lib.makeSystemConfig {
+      systemConfigs.dell = system-manager.lib.makeSystemConfig {
         extraSpecialArgs = { inherit pkgs-stable; };
         modules = [ ./system.nix ];
       };
