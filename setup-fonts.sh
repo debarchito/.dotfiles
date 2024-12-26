@@ -1,6 +1,5 @@
 #!usr/bin/bash
 
-# Enable multiverse repo
 sudo add-apt-repository multiverse
 sudo apt update
 # Andale Mono, Arial Black, Arial (Bold, Italic, Bold Italic), Comic Sans MS (Bold), Courier New (Bold, Italic, Bold Italic), Georgia (Bold, Italic, Bold Italic), Impact, Times New Roman (Bold, Italic, Bold Italic), Trebuchet (Bold, Italic, Bold Italic), Verdana (Bold, Italic, Bold Italic), Webdings

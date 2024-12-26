@@ -15,9 +15,8 @@
   home.homeDirectory = "/home/debarchito";
   home.stateVersion = "25.05";
   home.packages =
-    with pkgs;
-    [
-      # Programs
+    (with pkgs; [
+      # programs
       bat
       btop
       eza
@@ -38,23 +37,25 @@
       ripgrep
       ripgrep-all
       zellij
-      # Language tools I need globally
+      # languages
       jdk23
-      # Libs
+      # libs
       gst_all_1.gst-libav
       gst_all_1.gst-vaapi
       gst_all_1.gst-plugins-bad
       gst_all_1.gst-plugins-base
       gst_all_1.gst-plugins-good
       gst_all_1.gst-plugins-ugly
-      # Fonts
+      # fonts
       julia-mono
       nerd-fonts.jetbrains-mono
-    ]
-    ++ [
-      (config.lib.nixGL.wrap pkgs.blender)
-      (config.lib.nixGL.wrap pkgs.krita)
-    ];
+      poppins
+      rubik
+    ])
+    ++ (with pkgs; [
+      (config.lib.nixGL.wrap blender)
+      (config.lib.nixGL.wrap krita)
+    ]);
   programs.home-manager.enable = true;
   imports = [
     ./home/tools/cargo.nix
