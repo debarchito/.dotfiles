@@ -1,17 +1,30 @@
-{ pkgs, lib, ... }:
+{ pkgs, pkgs-stable, lib, ... }:
 
 {
   config = {
     system-manager.allowAnyDistro = true;
     nixpkgs.hostPlatform = "x86_64-linux";
     environment = {
-      systemPackages = with pkgs; [
+      systemPackages = (with pkgs; [
         acpi
         apparmor-utils
         apparmor-parser
         docker
         nvme-cli
-      ];
+      ]) ++ (with pkgs-stable; [
+        qemu_kvm
+        virt-manager
+      ]);
+      etc = {
+        "polkit-1/rules.d/50-libvirt.rules".text = ''
+          polkit.addRule(function(action, subject) {
+            if (action.id == "org.libvirt.unix.manage" &&
+                subject.isInGroup("libvirt")) {
+              return polkit.Result.YES;
+            }
+          });
+        '';
+      };
     };
     systemd.services = {
       docker = {
@@ -52,6 +65,16 @@
           KillMode = "process";
           OOMScoreAdjust = -500;
         };
+      };
+      libvirtd = {
+        enable = true;
+        serviceConfig = {
+          Type = "simple";
+        };
+        wantedBy = [ "multi-user.target" ];
+        script = ''
+          ${pkgs-stable.libvirt}/bin/libvirtd
+        '';
       };
     };
   };

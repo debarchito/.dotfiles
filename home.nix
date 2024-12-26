@@ -1,9 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, nixgl, ... }:
 
 {
   targets.genericLinux.enable = true;
   xdg.configFile."nixpkgs/config.nix".source = ./home/nixpkgs/config.nix;
-  nixGL.packages = inputs.nixgl.packages;
+  nixGL.packages = nixgl.packages;
   nixGL.defaultWrapper = "nvidiaPrime";
   nixGL.installScripts = [ "nvidiaPrime" ];
   home.username = "debarchito";
@@ -44,7 +44,6 @@
     julia-mono
     nerd-fonts.jetbrains-mono
   ] ++ [
-    # Programs that need to be wrapped
     (config.lib.nixGL.wrap pkgs.blender)
     (config.lib.nixGL.wrap pkgs.krita)
   ];

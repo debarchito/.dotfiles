@@ -2,6 +2,7 @@
   description = "Root flake for my Pop!_OS setup";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/release-24.11";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixgl = {
       url = "github:nix-community/nixGL";
@@ -21,27 +22,28 @@
     };
   };
   outputs =
-    inputs:
+    { self, nixpkgs, nixpkgs-stable, nix-flatpak, nixgl, nur, home-manager, system-manager }:
     let
       system = "x86_64-linux";
-      pkgs = import inputs.nixpkgs {
+      pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
         config.allowUnfreePredicate = (pkgs: true);
-        overlays = [ inputs.nur.overlays.default ];
-        # Additional: inputs.nixgl.overlay
+        overlays = [ nur.overlays.default ];
       };
+      pkgs-stable = import nixpkgs-stable { inherit system; };
     in
     {
-      homeConfigurations.debarchito = inputs.home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.debarchito = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit inputs; };
+        extraSpecialArgs = { inherit nixgl; inherit pkgs-stable; };
         modules = [
-          inputs.nix-flatpak.homeManagerModules.nix-flatpak
+          nix-flatpak.homeManagerModules.nix-flatpak
           ./home.nix
         ];
       };
-      systemConfigs.default = inputs.system-manager.lib.makeSystemConfig {
+      systemConfigs.default = system-manager.lib.makeSystemConfig {
+        extraSpecialArgs = { inherit pkgs-stable; };
         modules = [ ./system.nix ];
       };
     };

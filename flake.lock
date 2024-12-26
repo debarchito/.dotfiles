@@ -108,6 +108,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1735204364,
+        "narHash": "sha256-LQPKII/4NrTImrrGDcjO/ygAkBiZQhhoNWPm0s06Z0g=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "c556b6355e5eb808cba4c22340d4d375786571cd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "release-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -136,6 +152,7 @@
         "nix-flatpak": "nix-flatpak",
         "nixgl": "nixgl",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-stable": "nixpkgs-stable",
         "nur": "nur",
         "system-manager": "system-manager"
       }
