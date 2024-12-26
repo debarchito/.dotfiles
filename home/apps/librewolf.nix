@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 # NOTE: Enable permissions for extensions manually; this is how I prefer it.
 # NOTE: The configurations here are supposed to be treated as "bare-minimum" base that I can build upon.
@@ -7,6 +7,7 @@
 {
   programs.librewolf = {
     enable = true;
+    package = config.lib.nixGL.wrap pkgs.librewolf;
     profiles.debarchito = {
       isDefault = true;
       search.engines = {
