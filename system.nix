@@ -17,12 +17,11 @@
       libvirtd = {
         enable = true;
         serviceConfig = {
-          Type = "oneshot";
-          RemainAfterExit = true;
+          Type = "simple";
         };
         wantedBy = [ "multi-user.target" ];
         script = ''
-          ${pkgs.libvirt}/bin/libvirtd --listen
+          ${pkgs.libvirt}/bin/libvirtd
         '';
       };
     };
