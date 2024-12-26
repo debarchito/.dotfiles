@@ -1,4 +1,9 @@
-{ config, pkgs, nixgl, ... }:
+{
+  config,
+  pkgs,
+  nixgl,
+  ...
+}:
 
 {
   targets.genericLinux.enable = true;
@@ -9,44 +14,47 @@
   home.username = "debarchito";
   home.homeDirectory = "/home/debarchito";
   home.stateVersion = "25.05";
-  home.packages = with pkgs; [
-    # Programs
-    bat
-    btop
-    eza
-    erdtree
-    devenv
-    fd
-    fzf
-    flatpak
-    ffmpeg
-    gst_all_1.gstreamer
-    helix
-    just
-    legcord
-    mpv
-    mold
-    mkcert
-    nil
-    ripgrep
-    ripgrep-all
-    zellij
-    # Language tools I need globally
-    jdk23
-    # Libs
-    gst_all_1.gst-libav
-    gst_all_1.gst-vaapi
-    gst_all_1.gst-plugins-bad
-    gst_all_1.gst-plugins-base
-    gst_all_1.gst-plugins-good
-    gst_all_1.gst-plugins-ugly
-    # Fonts
-    julia-mono
-    nerd-fonts.jetbrains-mono
-  ] ++ [
-    (config.lib.nixGL.wrap pkgs.blender)
-    (config.lib.nixGL.wrap pkgs.krita)
-  ];
+  home.packages =
+    with pkgs;
+    [
+      # Programs
+      bat
+      btop
+      eza
+      erdtree
+      devenv
+      fd
+      fzf
+      flatpak
+      ffmpeg
+      gst_all_1.gstreamer
+      helix
+      just
+      legcord
+      mpv
+      mold
+      mkcert
+      nil
+      ripgrep
+      ripgrep-all
+      zellij
+      # Language tools I need globally
+      jdk23
+      # Libs
+      gst_all_1.gst-libav
+      gst_all_1.gst-vaapi
+      gst_all_1.gst-plugins-bad
+      gst_all_1.gst-plugins-base
+      gst_all_1.gst-plugins-good
+      gst_all_1.gst-plugins-ugly
+      # Fonts
+      julia-mono
+      nerd-fonts.jetbrains-mono
+    ]
+    ++ [
+      (config.lib.nixGL.wrap pkgs.blender)
+      (config.lib.nixGL.wrap pkgs.krita)
+    ];
   programs.home-manager.enable = true;
   imports = [
     ./home/tools/cargo.nix

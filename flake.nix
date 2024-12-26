@@ -22,7 +22,16 @@
     };
   };
   outputs =
-    { self, nixpkgs, nixpkgs-stable, nix-flatpak, nixgl, nur, home-manager, system-manager }:
+    {
+      self,
+      nixpkgs,
+      nixpkgs-stable,
+      nix-flatpak,
+      nixgl,
+      nur,
+      home-manager,
+      system-manager,
+    }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -34,6 +43,7 @@
       pkgs-stable = import nixpkgs-stable { inherit system; };
     in
     {
+      formatter.${system} = pkgs.nixfmt-rfc-style;
       homeConfigurations.debarchito = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit nixgl; };

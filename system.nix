@@ -1,20 +1,27 @@
-{ pkgs, pkgs-stable, lib, ... }:
+{
+  pkgs,
+  pkgs-stable,
+  lib,
+  ...
+}:
 
 {
   config = {
     system-manager.allowAnyDistro = true;
     nixpkgs.hostPlatform = "x86_64-linux";
     environment = {
-      systemPackages = (with pkgs; [
-        acpi
-        apparmor-utils
-        apparmor-parser
-        docker
-        nvme-cli
-      ]) ++ (with pkgs-stable; [
-        qemu_kvm
-        virt-manager
-      ]);
+      systemPackages =
+        (with pkgs; [
+          acpi
+          apparmor-utils
+          apparmor-parser
+          docker
+          nvme-cli
+        ])
+        ++ (with pkgs-stable; [
+          qemu_kvm
+          virt-manager
+        ]);
       etc = {
         "polkit-1/rules.d/50-libvirt.rules".text = ''
           polkit.addRule(function(action, subject) {
@@ -38,13 +45,15 @@
         serviceConfig = {
           Type = "notify";
           Environment = [
-            "PATH=${lib.makeBinPath [
-              pkgs.apparmor-utils
-              pkgs.apparmor-parser
-              pkgs.coreutils
-              pkgs.docker
-              pkgs.kmod
-            ]}:/usr/bin:/sbin"
+            "PATH=${
+              lib.makeBinPath [
+                pkgs.apparmor-utils
+                pkgs.apparmor-parser
+                pkgs.coreutils
+                pkgs.docker
+                pkgs.kmod
+              ]
+            }:/usr/bin:/sbin"
           ];
           ExecStart = "${pkgs.docker}/bin/dockerd";
           ExecStartPost = [
