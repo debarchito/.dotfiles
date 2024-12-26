@@ -2,15 +2,10 @@
 
 {
   targets.genericLinux.enable = true;
-  # Write to config
   xdg.configFile."nixpkgs/config.nix".source = ./home/nixpkgs/config.nix;
-  # NixGL wrapper configuration
   nixGL.packages = inputs.nixgl.packages;
   nixGL.defaultWrapper = "nvidiaPrime";
   nixGL.installScripts = [ "nvidiaPrime" ];
-  # Let home-manager manage itself
-  programs.home-manager.enable = true;
-  # Actual home configuration
   home.username = "debarchito";
   home.homeDirectory = "/home/debarchito";
   home.stateVersion = "25.05";
@@ -53,6 +48,7 @@
     (config.lib.nixGL.wrap pkgs.blender)
     (config.lib.nixGL.wrap pkgs.krita)
   ];
+  programs.home-manager.enable = true;
   imports = [
     ./home/tools/cargo.nix
     ./home/tools/direnv.nix
