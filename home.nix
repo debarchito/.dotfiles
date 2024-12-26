@@ -35,7 +35,6 @@
     nil
     ripgrep
     ripgrep-all
-    shadow
     zellij
     # Language tools I need globally
     jdk23
@@ -60,7 +59,6 @@
     ./home/tools/fish.nix
     ./home/tools/flatpak.nix
     ./home/tools/helix.nix
-    ./home/tools/podman.nix
     ./home/tools/starship.nix
     ./home/tools/zoxide.nix
     ./home/tools/zellij.nix

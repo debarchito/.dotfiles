@@ -7,11 +7,23 @@
     environment = {
       systemPackages = with pkgs; [
         acpi
+        buildah
         nvme-cli
+        podman
         qemu
         qemu_kvm
+        shadow
+        skopeo
         virt-manager
       ];
+      etc = {
+        "subuid".text = ''
+          debarchito:100000:65536
+        '';
+        "subgid".text = ''
+          debarchito:100000:65536
+        '';
+      };
     };
     systemd.services = {
       libvirtd = {
