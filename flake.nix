@@ -36,7 +36,7 @@
     {
       homeConfigurations.debarchito = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit nixgl; inherit pkgs-stable; };
+        extraSpecialArgs = { inherit nixgl; };
         modules = [
           nix-flatpak.homeManagerModules.nix-flatpak
           ./home.nix
