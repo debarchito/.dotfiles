@@ -51,9 +51,6 @@
       (config.lib.nixGL.wrap blender)
       (config.lib.nixGL.wrap krita)
     ]);
-  home.sessionVariables = rec {
-    EDITOR = "hx";
-  };
   programs.home-manager.enable = true;
   imports = [
     ./home/tools/bat.nix
