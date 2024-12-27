@@ -49,8 +49,8 @@
       tree = "erd";
       t = "true && clear";
       ls = "eza --long --color=always";
-      ll = "eza --long --color=always";
-      la = "eza --long --color=always";
+      ll = "eza --long --color=always -l";
+      la = "eza --long --color=always -a";
     };
   };
 }
