@@ -63,6 +63,7 @@
     ./home/tools/fish.nix
     ./home/tools/flatpak.nix
     ./home/tools/helix.nix
+    ./home/tools/nushell.nix
     ./home/tools/starship.nix
     ./home/tools/zoxide.nix
     ./home/tools/zellij.nix
