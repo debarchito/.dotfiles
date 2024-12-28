@@ -19,7 +19,7 @@
         "$python"
         "$character"
       ];
-      directory.style = "#74c7ec";
+      directory.style = "#d9c4f2";
       line_break.disabled = true;
       character = {
         success_symbol = "[❯](#b4befe)";
@@ -50,15 +50,15 @@
       };
       cmd_duration = {
         format = "[$duration]($style) ";
-        style = "bold blue";
+        style = "bold #cba6f7";
       };
       nix_shell = {
         format = "@ [$name]($style) ";
-        style = "bold blue";
+        style = "bold #cba6f7";
       };
       python = {
         format = "@ [$virtualenv]($style) ";
-        style = "bold blue";
+        style = "bold #cba6f7";
       };
     };
   };
