@@ -29,9 +29,13 @@
         src = pkgs.fishPlugins.forgit.src;
       }
     ];
+    loginShellInit = ''
+      fish_config theme save "Catppuccin Mocha"
+    '';
     interactiveShellInit = ''
       set fish_greeting
     '';
+    preferAbbrs = true;
     shellAbbrs = {
       cd = "z";
       tree = "erd";
@@ -41,4 +45,5 @@
       la = "eza --long --color=always -a";
     };
   };
+  xdg.configFile."fish/themes/Catppuccin_Mocha.theme".source = ./fish/Catppuccin_Mocha.theme;
 }
