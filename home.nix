@@ -50,6 +50,7 @@
     ])
     ++ (with pkgs; [
       (config.lib.nixGL.wrap blender)
+      (config.lib.nixGL.wrap davinci-resolve)
       (config.lib.nixGL.wrap krita)
     ]);
   programs.home-manager.enable = true;
