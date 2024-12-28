@@ -23,6 +23,7 @@
       fd
       ffmpeg
       flatpak
+      git
       gst_all_1.gstreamer
       just
       legcord
@@ -30,6 +31,7 @@
       mkcert
       nil
       ripgrep
+      rainfrog
       ripgrep-all
       # languages
       jdk23
