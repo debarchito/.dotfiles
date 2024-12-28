@@ -19,7 +19,7 @@
         "$python"
         "$character"
       ];
-      directory.style = "#d9c4f2";
+      directory.style = "#cba6f7";
       line_break.disabled = true;
       character = {
         success_symbol = "[❯](#b4befe)";
