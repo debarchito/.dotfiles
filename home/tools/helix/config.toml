@@ -17,9 +17,8 @@ completion-replace = true
 cursorcolumn = false
 cursorline = false
 line-number = "relative"
-mouse = false
 true-color = true
-#
+mouse = true
 scroll-lines = 1
 idle-timeout = 200
 
@@ -38,7 +37,7 @@ tabpad = "·"  # Tabs will look like "→···" (depending on tab width)
 
 [editor.file-picker]
 hidden = false
-git-ignore = false
+git-ignore = true
 
 [editor.statusline]
 left = [
@@ -110,14 +109,14 @@ Q = ":bc!"
 # Comment this to enable arrow navigation in insert mode
 [keys.insert]
 j = { j = "normal_mode" }
-up = "no_op"
-down = "no_op"
-left = "no_op"
-right = "no_op"
-pageup = "no_op"
-pagedown = "no_op"
-home = "no_op"
-end = "no_op"
+# up = "no_op"
+# down = "no_op"
+# left = "no_op"
+# right = "no_op"
+# pageup = "no_op"
+# pagedown = "no_op"
+# home = "no_op"
+# end = "no_op"
 # VSCode-like auto-completeion (pretty much all IDEs do it on C-space)
 "C-space" = "completion"
 
