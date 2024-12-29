@@ -25,6 +25,7 @@
       flatpak
       git
       gst_all_1.gstreamer
+      jq
       just
       legcord
       mold
