@@ -22,7 +22,7 @@
       directory.style = "#cba6f7";
       line_break.disabled = true;
       character = {
-        success_symbol = "[❯](#b4befe)";
+        success_symbol = "[❯](#cab4fe)";
         error_symbol = "[❯](#f38ba8)";
         vimcmd_symbol = "[❮](#a6e3a1)";
       };
