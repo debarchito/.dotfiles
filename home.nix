@@ -31,6 +31,7 @@
       mold
       mkcert
       nil
+      nix-output-monitor
       ripgrep
       rainfrog
       ripgrep-all
