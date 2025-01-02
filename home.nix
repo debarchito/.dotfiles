@@ -17,6 +17,7 @@
   home.packages =
     (with pkgs; [
       # programs
+      charm-freeze
       eza
       erdtree
       devenv
@@ -24,6 +25,7 @@
       ffmpeg
       flatpak
       git
+      glow
       gst_all_1.gstreamer
       jq
       just
@@ -35,6 +37,8 @@
       ripgrep
       rainfrog
       ripgrep-all
+      slides
+      vhs
       # languages
       jdk23
       # libs
