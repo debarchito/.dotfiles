@@ -59,6 +59,7 @@
       (config.lib.nixGL.wrap blender)
       (config.lib.nixGL.wrap krita)
     ]);
+  fonts.fontconfig.enable = true;
   programs.home-manager.enable = true;
   imports = [
     ./home/tools/bat.nix
