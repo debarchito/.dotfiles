@@ -19,6 +19,7 @@
       # programs
       charm-freeze
       eza
+      entr
       erdtree
       devenv
       fd
