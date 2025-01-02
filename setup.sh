@@ -10,6 +10,8 @@ if [ $? -eq 0 ]; then
     echo "[?] Error installing home-manager or system-manager. Try running the commands manually."
     exit 1
   fi
+  sudo groupadd docker
+  sudo usermod -aG docker $USER
 else
   echo "[?] Error installing nix. Try running the commands manually."
   exit 1
