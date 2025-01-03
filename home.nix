@@ -54,8 +54,7 @@
       nerd-fonts.jetbrains-mono
       poppins
       rubik
-    ])
-    ++ (with pkgs; [
+      # programs that need wrapping
       (config.lib.nixGL.wrap blender)
       (config.lib.nixGL.wrap krita)
     ]);
