@@ -14,8 +14,9 @@
   home.username = "debarchito";
   home.homeDirectory = "/home/debarchito";
   home.stateVersion = "25.05";
-  home.packages =
-    (with pkgs; [
+  home.packages = (
+    with pkgs;
+    [
       # programs
       charm-freeze
       eza
@@ -57,7 +58,8 @@
       # programs that need wrapping
       (config.lib.nixGL.wrap blender)
       (config.lib.nixGL.wrap krita)
-    ]);
+    ]
+  );
   fonts.fontconfig.enable = true;
   programs.home-manager.enable = true;
   imports = [
