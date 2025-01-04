@@ -58,6 +58,7 @@
       # programs that need wrapping
       (config.lib.nixGL.wrap blender)
       (config.lib.nixGL.wrap krita)
+      (config.lib.nixGL.wrap zed-editor)
     ]
   );
   fonts.fontconfig.enable = true;
