@@ -21,6 +21,7 @@ true-color = true
 mouse = true
 scroll-lines = 1
 idle-timeout = 200
+end-of-line-diagnostics = "hint"
 
 [editor.whitespace.render]
 space = "none"
@@ -75,6 +76,10 @@ skip-levels = 0
 enable = true
 max-wrap = 10          # increase value to reduce forced mid-word wrapping
 max-indent-retain = 40
+
+[editor.inline-diagnostics]
+cursor-line = "error"
+other-lines = "error"
 
 [keys.normal]
 # esc is remapped to capslock locally
