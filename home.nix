@@ -40,7 +40,9 @@
       rainfrog
       ripgrep-all
       slides
+      taplo
       vhs
+      yaml-language-server
       # languages
       jdk23
       # libs
