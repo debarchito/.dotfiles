@@ -42,6 +42,7 @@
       slides
       taplo
       vhs
+      vscode-langservers-extracted
       yaml-language-server
       # languages
       jdk23
