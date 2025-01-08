@@ -34,7 +34,7 @@
       legcord
       mold
       mkcert
-      nil
+      nixd
       nix-output-monitor
       ripgrep
       rainfrog
