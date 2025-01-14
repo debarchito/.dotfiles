@@ -79,7 +79,7 @@ max-indent-retain = 40
 
 [editor.inline-diagnostics]
 cursor-line = "error"
-other-lines = "error"
+# other-lines = "error"
 
 [keys.normal]
 # esc is remapped to capslock locally
