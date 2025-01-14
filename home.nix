@@ -70,6 +70,7 @@
     ./home/tools/bat.nix
     ./home/tools/btop.nix
     ./home/tools/cargo.nix
+    ./home/tools/carapace.nix
     ./home/tools/direnv.nix
     ./home/tools/fzf.nix
     ./home/tools/fish.nix
