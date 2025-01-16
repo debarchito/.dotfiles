@@ -2,9 +2,10 @@
 
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 if [ $? -eq 0 ]; then
+  export NIX=/nix/var/nix/profiles/default/bin/nix
   export NIXPKGS_ALLOW_UNFREE=1
-  nix run home-manager/master -- switch --flake . --impure --show-trace && \
-  sudo $(which nix) run 'github:numtide/system-manager' -- switch --flake . && \
+  exec $NIX run home-manager/master -- switch --flake . --impure --show-trace && \
+  sudo $NIX run 'github:numtide/system-manager' -- switch --flake . && \
   sudo $(pwd)/result/bin/activate
   if [ $? -ne 0 ]; then
     echo "[?] Error installing home-manager or system-manager. Try running the commands manually."
