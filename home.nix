@@ -41,9 +41,13 @@
       ripgrep-all
       slides
       taplo
+      typst
+      typstyle
+      tinymist
       vhs
       vscode-langservers-extracted
       yaml-language-server
+      zathura
       # languages
       jdk23
       # libs
