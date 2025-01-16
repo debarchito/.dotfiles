@@ -13,6 +13,10 @@
         src = pkgs.fishPlugins.fzf-fish.src;
       }
       {
+        name = "puffer";
+        src = pkgs.fishPlugins.puffer.src;
+      }
+      {
         name = "foreign-env";
         src = pkgs.fishPlugins.foreign-env.src;
       }
