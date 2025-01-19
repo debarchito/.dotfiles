@@ -25,6 +25,7 @@
       devenv
       fd
       ffmpeg
+      ferium
       flatpak
       git
       glow

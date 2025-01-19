@@ -30,10 +30,6 @@
         origin = "flathub";
       }
       {
-        appId = "md.obsidian.Obsidian";
-        origin = "flathub";
-      }
-      {
         appId = "org.inkscape.Inkscape";
         origin = "flathub";
       }
@@ -47,6 +43,10 @@
       }
       {
         appId = "com.github.tchx84.Flatseal";
+        origin = "flathub";
+      }
+      {
+        appId = "org.tenacityaudio.Tenacity";
         origin = "flathub";
       }
       {
@@ -104,7 +104,7 @@
       }
       # Others
       {
-        appId = "runtime/org.freedesktop.Platform.VulkanLayer.vkBasalt/x86_64/24.08";
+        appId = "runtime/org.freedesktop.Platform.VulkanLayer.vkBasalt/x86_64/stable";
         origin = "flathub";
       }
       {
