@@ -34,6 +34,7 @@
       legcord
       mold
       mkcert
+      marksman
       nixd
       nixfmt-rfc-style
       nix-output-monitor
