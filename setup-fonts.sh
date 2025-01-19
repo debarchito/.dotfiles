@@ -1,4 +1,4 @@
-#!usr/bin/bash
+#!/usr/bin/bash
 
 sudo add-apt-repository multiverse
 sudo apt update
