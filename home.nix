@@ -35,6 +35,7 @@
       mold
       mkcert
       nixd
+      nixfmt-rfc-style
       nix-output-monitor
       ripgrep
       rainfrog
@@ -49,6 +50,7 @@
       yaml-language-server
       zathura
       # languages
+      deno
       jdk23
       # libs
       gst_all_1.gst-libav

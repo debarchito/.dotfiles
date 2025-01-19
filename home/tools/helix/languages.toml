@@ -1,9 +1,64 @@
 [[language]]
 name = "nix"
+formatter.command = "nixfmt"
 indent = { tab-width = 2, unit = " " }
-formatter = { command = "nix", args = ["fmt"] }
+auto-format = true
 
 [[language]]
 name = "typst"
-auto-format = true
 formatter.command = "typstyle"
+auto-format = true
+
+[[language]]
+name = "html"
+formatter = { command = "deno", args = ["fmt", "-", "--ext", "html"] }
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+
+[[language]]
+name = "css"
+formatter = { command = "deno", args = ["fmt", "-", "--ext", "css"] }
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+
+[[language]]
+name = "json"
+formatter = { command = "deno", args = ["fmt", "-", "--ext", "json"] }
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+
+[[language]]
+name = "jsonc"
+formatter = { command = "deno", args = ["fmt", "-", "--ext", "jsonc"] }
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+
+[[language]]
+name = "yaml"
+formatter = { command = "deno", args = ["fmt", "-", "--ext", "yaml"] }
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["format", "-"] }
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+
+[[language]]
+name = "markdown"
+formatter = { command = "deno", args = ["fmt", "-", "--ext", "md"] }
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+
+[[language]]
+name = "sql"
+formatter = { command = "deno", args = ["fmt", "-", "--ext", "sql"] }
+indent = { tab-width = 2, unit = " " }
+auto-format = true
+
+[[language]]
+name = "fish"
+formatter = { command = "fish_indent" }
+indent = { tab-width = 2, unit = " " }
+auto-format = true

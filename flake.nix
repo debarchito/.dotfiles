@@ -23,7 +23,6 @@
   };
   outputs =
     {
-      self,
       nixpkgs,
       nixpkgs-stable,
       nix-flatpak,
@@ -31,6 +30,7 @@
       nur,
       home-manager,
       system-manager,
+      ...
     }:
     let
       system = "x86_64-linux";
