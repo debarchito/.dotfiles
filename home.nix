@@ -35,6 +35,7 @@
       mold
       mkcert
       marksman
+      nb
       nixd
       nixfmt-rfc-style
       nix-output-monitor
