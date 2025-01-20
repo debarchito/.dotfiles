@@ -28,6 +28,7 @@
       ferium
       flatpak
       git
+      gum
       glow
       gst_all_1.gstreamer
       jq
