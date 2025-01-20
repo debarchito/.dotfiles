@@ -104,7 +104,7 @@
       }
       # Others
       {
-        appId = "runtime/org.freedesktop.Platform.VulkanLayer.vkBasalt/x86_64/stable";
+        appId = "runtime/org.freedesktop.Platform.VulkanLayer.vkBasalt/x86_64/24.08";
         origin = "flathub";
       }
       {
