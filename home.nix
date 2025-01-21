@@ -1,14 +1,13 @@
 {
   config,
   pkgs,
-  nixgl,
   ...
 }:
 
 {
   targets.genericLinux.enable = true;
   xdg.configFile."nixpkgs/config.nix".source = ./home/nixpkgs/config.nix;
-  nixGL.packages = nixgl.packages;
+  nixGL.packages = pkgs.nixgl.packages;
   nixGL.defaultWrapper = "nvidiaPrime";
   nixGL.installScripts = [ "nvidiaPrime" ];
   home.username = "debarchito";
@@ -45,6 +44,7 @@
       rainfrog
       ripgrep-all
       slides
+      snippets-ls
       taplo
       typst
       typstyle

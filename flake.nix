@@ -20,6 +20,10 @@
       url = "github:numtide/system-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    snippets-ls = {
+      url = "github:quantonganh/snippets-ls";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -30,15 +34,24 @@
       nur,
       home-manager,
       system-manager,
+      snippets-ls,
       ...
     }:
     let
       system = "x86_64-linux";
+      pkgs-overlay = final: prev: {
+        inherit nixgl;
+        snippets-ls = snippets-ls.packages.${prev.system}.snippets-ls;
+        stable = import nixpkgs-stable { inherit system; };
+      };
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
         config.allowUnfreePredicate = (pkgs: true);
-        overlays = [ nur.overlays.default ];
+        overlays = [
+          pkgs-overlay
+          nur.overlays.default
+        ];
       };
       pkgs-stable = import nixpkgs-stable { inherit system; };
     in
@@ -46,7 +59,6 @@
       formatter.${system} = pkgs.nixfmt-rfc-style;
       homeConfigurations.debarchito = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit nixgl; };
         modules = [
           nix-flatpak.homeManagerModules.nix-flatpak
           ./home.nix
