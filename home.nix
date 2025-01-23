@@ -30,6 +30,7 @@
       gum
       glow
       gst_all_1.gstreamer
+      inotify-tools
       jq
       just
       legcord
