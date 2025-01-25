@@ -46,10 +46,6 @@
         origin = "flathub";
       }
       {
-        appId = "org.tenacityaudio.Tenacity";
-        origin = "flathub";
-      }
-      {
         appId = "org.qbittorrent.qBittorrent";
         origin = "flathub";
       }
