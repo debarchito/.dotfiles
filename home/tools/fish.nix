@@ -33,9 +33,9 @@
         src = pkgs.fishPlugins.forgit.src;
       }
     ];
-    loginShellInit = ''
-      fish_config theme save "Catppuccin Mocha"
-    '';
+    # loginShellInit = ''
+    #   fish_config theme save "Catppuccin Mocha"
+    # '';
     interactiveShellInit = ''
       set fish_greeting
     '';
