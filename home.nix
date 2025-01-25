@@ -56,7 +56,6 @@
       zathura
       # languages
       deno
-      jdk23
       # libs
       gst_all_1.gst-libav
       gst_all_1.gst-vaapi
