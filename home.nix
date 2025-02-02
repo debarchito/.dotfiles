@@ -94,6 +94,6 @@
     ./home/tools/zoxide.nix
     ./home/tools/zellij.nix
     ./home/apps/librewolf.nix
-    ./home/apps/wezterm.nix
+    ./home/apps/rio.nix
   ];
 }
