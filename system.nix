@@ -41,7 +41,6 @@
         wantedBy = [ "multi-user.target" ];
         after = [ "network-online.target" ];
         wants = [ "network-online.target" ];
-        requires = [ "apparmor.service" ];
         serviceConfig = {
           Type = "notify";
           Environment = [
