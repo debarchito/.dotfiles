@@ -19,8 +19,8 @@
           nvme-cli
         ])
         ++ (with pkgs-stable; [
+          quickemu
           qemu_kvm
-          virt-manager
         ]);
       etc = {
         "polkit-1/rules.d/50-libvirt.rules".text = ''

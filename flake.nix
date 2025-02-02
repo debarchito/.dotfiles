@@ -42,7 +42,6 @@
       pkgs-overlay = final: prev: {
         inherit nixgl;
         snippets-ls = snippets-ls.packages.${prev.system}.snippets-ls;
-        stable = import nixpkgs-stable { inherit system; };
       };
       pkgs = import nixpkgs {
         inherit system;
