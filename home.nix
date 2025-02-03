@@ -17,6 +17,7 @@
     with pkgs;
     [
       # programs
+      chafa
       charm-freeze
       eza
       entr
