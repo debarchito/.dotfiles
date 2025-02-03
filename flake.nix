@@ -55,7 +55,7 @@
       pkgs-stable = import nixpkgs-stable { inherit system; };
     in
     {
-      formatter.${system} = pkgs.nixfmt-rfc-style;
+      formatter.${system} = pkgs.treefmt;
       homeConfigurations.debarchito = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [

@@ -48,6 +48,7 @@
       snippets-ls
       taplo
       typst
+      treefmt
       typstyle
       tinymist
       vhs
