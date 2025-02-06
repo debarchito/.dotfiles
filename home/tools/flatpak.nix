@@ -22,6 +22,18 @@
         origin = "flathub";
       }
       {
+        appId = "io.bassi.Amberol";
+        origin = "flathub";
+      }
+      {
+        appId = "fr.handbrake.ghb";
+        origin = "flathub";
+      }
+      {
+        appId = "com.brave.Browser";
+        origin = "flathub";
+      }
+      {
         appId = "net.nokyan.Resources";
         origin = "flathub";
       }
