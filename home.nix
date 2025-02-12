@@ -23,6 +23,7 @@
       entr
       erdtree
       devenv
+      distrobox
       fd
       ffmpeg
       ferium
