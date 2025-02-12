@@ -35,7 +35,6 @@
       inotify-tools
       jq
       just
-      legcord
       mold
       mkcert
       marksman
@@ -74,6 +73,7 @@
       # programs that need wrapping
       (config.lib.nixGL.wrap blender)
       (config.lib.nixGL.wrap krita)
+      (config.lib.nixGL.wrap legcord)
     ]
   );
   fonts.fontconfig.enable = true;
