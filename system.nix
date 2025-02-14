@@ -1,6 +1,5 @@
 {
   pkgs,
-  pkgs-stable,
   lib,
   ...
 }:
@@ -10,18 +9,13 @@
     system-manager.allowAnyDistro = true;
     nixpkgs.hostPlatform = "x86_64-linux";
     environment = {
-      systemPackages =
-        (with pkgs; [
-          acpi
-          apparmor-utils
-          apparmor-parser
-          docker
-          nvme-cli
-        ])
-        ++ (with pkgs-stable; [
-          quickemu
-          qemu_kvm
-        ]);
+      systemPackages = with pkgs; [
+        acpi
+        apparmor-utils
+        apparmor-parser
+        docker
+        nvme-cli
+      ];
       etc = {
         "polkit-1/rules.d/50-libvirt.rules".text = ''
           polkit.addRule(function(action, subject) {
@@ -81,7 +75,7 @@
         };
         wantedBy = [ "multi-user.target" ];
         script = ''
-          ${pkgs-stable.libvirt}/bin/libvirtd
+          ${pkgs.libvirt}/bin/libvirtd
         '';
       };
     };

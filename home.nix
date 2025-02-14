@@ -74,6 +74,9 @@
       (config.lib.nixGL.wrap blender)
       (config.lib.nixGL.wrap krita)
       (config.lib.nixGL.wrap legcord)
+      (config.lib.nixGL.wrap qemu_kvm)
+      (config.lib.nixGL.wrap quickemu)
+      (config.lib.nixGL.wrap quickgui)
     ]
   );
   fonts.fontconfig.enable = true;

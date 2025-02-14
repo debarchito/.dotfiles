@@ -58,6 +58,7 @@
       formatter.${system} = pkgs.treefmt;
       homeConfigurations.debarchito = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = { inherit pkgs-stable; };
         modules = [
           nix-flatpak.homeManagerModules.nix-flatpak
           ./home.nix
