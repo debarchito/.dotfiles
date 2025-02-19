@@ -97,7 +97,7 @@
     ./home/tools/yazi.nix
     ./home/tools/zoxide.nix
     ./home/tools/zellij.nix
+    ./home/apps/ghostty.nix
     ./home/apps/librewolf.nix
-    ./home/apps/rio.nix
   ];
 }
