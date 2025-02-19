@@ -53,7 +53,7 @@
       };
       search.default = "SearXNG";
       search.force = true;
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         bitwarden
         clearurls
         darkreader
