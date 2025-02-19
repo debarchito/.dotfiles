@@ -33,12 +33,12 @@
       git_status = {
         format = "[[($conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead$behind$stashed$diverged)]($style)";
         style = "cyan";
-        conflicted = " ⚠️";
+        conflicted = " ⚠";
         untracked = " ?";
         modified = " ✎";
         staged = " ●";
         renamed = " »";
-        deleted = " ✖";
+        deleted = " ⌫";
         stashed = " ≡";
         ahead = " ⇡";
         behind = " ⇣";
