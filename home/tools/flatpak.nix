@@ -30,11 +30,11 @@
         origin = "flathub";
       }
       {
-        appId = "com.brave.Browser";
+        appId = "net.nokyan.Resources";
         origin = "flathub";
       }
       {
-        appId = "net.nokyan.Resources";
+        appId = "md.obsidian.Obsidian";
         origin = "flathub";
       }
       {
@@ -79,10 +79,6 @@
       }
       {
         appId = "com.github.unrud.VideoDownloader";
-        origin = "flathub";
-      }
-      {
-        appId = "com.github.finefindus.eyedropper";
         origin = "flathub";
       }
       {

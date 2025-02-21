@@ -72,6 +72,7 @@
       rubik
       # programs that need wrapping
       (config.lib.nixGL.wrap blender)
+      (config.lib.nixGL.wrap brave)
       (config.lib.nixGL.wrap krita)
       (config.lib.nixGL.wrap legcord)
       (config.lib.nixGL.wrap qemu_kvm)
