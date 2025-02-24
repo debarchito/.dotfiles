@@ -9,8 +9,12 @@
   targets.genericLinux.enable = true;
   xdg.configFile."nixpkgs/config.nix".source = ./home/nixpkgs/config.nix;
   nixGL.packages = pkgs.nixgl.packages;
-  nixGL.defaultWrapper = "nvidiaPrime";
-  nixGL.installScripts = [ "nvidiaPrime" ];
+  nixGL.defaultWrapper = "mesa";
+  nixGL.offloadWrapper = "nvidiaPrime";
+  nixGL.installScripts = [
+    "mesa"
+    "nvidiaPrime"
+  ];
   home.username = "debarchito";
   home.homeDirectory = "/home/debarchito";
   home.stateVersion = "25.05";
@@ -72,13 +76,13 @@
       poppins
       rubik
       # programs that need wrapping
-      (config.lib.nixGL.wrap blender)
-      (config.lib.nixGL.wrap krita)
-      (config.lib.nixGL.wrap legcord)
-      (config.lib.nixGL.wrap qemu_kvm)
-      (config.lib.nixGL.wrap quickemu)
-      (config.lib.nixGL.wrap quickgui)
-      (config.lib.nixGL.wrap thorium.thorium-avx2)
+      (config.lib.nixGL.wrapOffload blender)
+      (config.lib.nixGL.wrapOffload krita)
+      (config.lib.nixGL.wrapOffload legcord)
+      (config.lib.nixGL.wrapOffload qemu_kvm)
+      (config.lib.nixGL.wrapOffload quickemu)
+      (config.lib.nixGL.wrapOffload quickgui)
+      (config.lib.nixGL.wrapOffload thorium.thorium-avx2)
     ]
   );
   fonts.fontconfig.enable = true;

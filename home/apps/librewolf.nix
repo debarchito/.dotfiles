@@ -7,7 +7,7 @@
 {
   programs.librewolf = {
     enable = true;
-    package = config.lib.nixGL.wrap pkgs.librewolf;
+    package = config.lib.nixGL.wrapOffload pkgs.librewolf;
     profiles.debarchito = {
       isDefault = true;
       search.engines = {
