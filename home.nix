@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  thorium,
   ...
 }:
 
@@ -72,12 +73,12 @@
       rubik
       # programs that need wrapping
       (config.lib.nixGL.wrap blender)
-      (config.lib.nixGL.wrap brave)
       (config.lib.nixGL.wrap krita)
       (config.lib.nixGL.wrap legcord)
       (config.lib.nixGL.wrap qemu_kvm)
       (config.lib.nixGL.wrap quickemu)
       (config.lib.nixGL.wrap quickgui)
+      (config.lib.nixGL.wrap thorium.thorium-avx2)
     ]
   );
   fonts.fontconfig.enable = true;
