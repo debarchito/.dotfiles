@@ -10,10 +10,10 @@
   xdg.configFile."nixpkgs/config.nix".source = ./home/nixpkgs/config.nix;
   nixGL.packages = pkgs.nixgl.packages;
   nixGL.defaultWrapper = "mesa";
-  nixGL.offloadWrapper = "nvidiaPrime";
+  nixGL.offloadWrapper = "nvidia";
   nixGL.installScripts = [
     "mesa"
-    "nvidiaPrime"
+    "nvidia"
   ];
   home.username = "debarchito";
   home.homeDirectory = "/home/debarchito";
