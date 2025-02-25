@@ -40,6 +40,7 @@
       inotify-tools
       jq
       just
+      lazygit
       mold
       mkcert
       marksman
