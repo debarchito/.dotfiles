@@ -79,6 +79,8 @@
         "layout.css.has-selector.enabled" = true;
         "svg.context-properties.content.enabled" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        "media.ffmpeg.vaapi.enabled" = true;
+        "gfx.webrender.all" = true;
       };
       userChrome = builtins.readFile ./librewolf/userChrome.css;
       userContent = builtins.readFile ./librewolf/userContent.css;
