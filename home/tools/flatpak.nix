@@ -87,10 +87,6 @@
       }
       # Gaming
       {
-        appId = "com.valvesoftware.Steam";
-        origin = "flathub";
-      }
-      {
         appId = "moe.launcher.sleepy-launcher";
         origin = "launcher.moe";
       }
