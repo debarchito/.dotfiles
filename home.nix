@@ -58,6 +58,7 @@
       treefmt
       typstyle
       tinymist
+      umu-launcher
       vhs
       vscode-langservers-extracted
       wl-clipboard
