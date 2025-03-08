@@ -60,6 +60,7 @@
       tinymist
       vhs
       vscode-langservers-extracted
+      wl-clipboard
       yaml-language-server
       zathura
       # languages
