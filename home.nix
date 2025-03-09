@@ -86,6 +86,7 @@
       (config.lib.nixGL.wrapOffload quickemu)
       (config.lib.nixGL.wrapOffload quickgui)
       (config.lib.nixGL.wrapOffload thorium.thorium-avx2)
+      (config.lib.nixGL.wrapOffload zed-editor)
     ]
   );
   fonts.fontconfig.enable = true;
