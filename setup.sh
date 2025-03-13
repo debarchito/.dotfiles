@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 nix run home-manager/master -- switch --flake . --impure --show-trace
-sudo (which nix) run 'github:numtide/system-manager' -- switch --flake .
+sudo $(which nix) run 'github:numtide/system-manager' -- switch --flake .
 sudo $(pwd)/result/bin/activate
 
 if [ $? -ne 0 ]; then
