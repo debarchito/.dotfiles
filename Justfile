@@ -20,3 +20,7 @@ syncthing-up:
 
 syncthing-down:
     docker compose -f compose/syncthing-docker-compose.yml down
+
+alias clean := clear
+clear:
+    nix store gc
