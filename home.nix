@@ -79,13 +79,13 @@
       poppins
       rubik
       # programs that need wrapping
+      (config.lib.nixGL.wrapOffload brave)
       (config.lib.nixGL.wrapOffload blender)
       (config.lib.nixGL.wrapOffload krita)
       (config.lib.nixGL.wrapOffload legcord)
       (config.lib.nixGL.wrapOffload qemu_kvm)
       (config.lib.nixGL.wrapOffload quickemu)
       (config.lib.nixGL.wrapOffload quickgui)
-      (config.lib.nixGL.wrapOffload thorium.thorium-avx2)
       (config.lib.nixGL.wrapOffload zed-editor)
     ]
   );

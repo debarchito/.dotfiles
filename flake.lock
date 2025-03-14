@@ -71,26 +71,6 @@
         "type": "github"
       }
     },
-    "nix-thorium": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1740470564,
-        "narHash": "sha256-ZQCg7jw+ShiDXYj7daXZaJUDi4LLeQJIlWrxKGDcnh0=",
-        "owner": "debarchito",
-        "repo": "nix-thorium",
-        "rev": "b87f3cbb57fdb585c29e19ba5786a8526068a88f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "debarchito",
-        "repo": "nix-thorium",
-        "type": "github"
-      }
-    },
     "nixgl": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -170,7 +150,6 @@
       "inputs": {
         "home-manager": "home-manager",
         "nix-flatpak": "nix-flatpak",
-        "nix-thorium": "nix-thorium",
         "nixgl": "nixgl",
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",

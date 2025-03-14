@@ -24,10 +24,6 @@
       url = "github:quantonganh/snippets-ls";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-thorium = {
-      url = "github:debarchito/nix-thorium";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
   outputs =
     {
@@ -39,7 +35,6 @@
       home-manager,
       system-manager,
       snippets-ls,
-      nix-thorium,
       ...
     }:
     let
@@ -58,7 +53,6 @@
         ];
       };
       pkgs-stable = import nixpkgs-stable { inherit system; };
-      thorium = nix-thorium.packages.${system};
     in
     {
       formatter.${system} = pkgs.treefmt;
@@ -66,7 +60,6 @@
         inherit pkgs;
         extraSpecialArgs = {
           inherit pkgs-stable;
-          inherit thorium;
         };
         modules = [
           nix-flatpak.homeManagerModules.nix-flatpak
