@@ -4,7 +4,8 @@
     settings = {
       command = "fish";
       shell-integration = "fish";
-      window-decoration = "auto";
+      window-decoration = "server";
+      gtk-titlebar = false;
       window-padding-x = 10;
       font-family = "Maple Mono NF";
       font-size = 14;
