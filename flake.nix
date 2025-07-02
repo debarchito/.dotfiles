@@ -24,6 +24,10 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs:
@@ -33,6 +37,7 @@
         inherit system;
         overlays = [
           inputs.dcachix.overlays.default
+          inputs.ghostty.overlays.default
           inputs.helix.overlays.default
           inputs.nur.overlays.default
           inputs.nix-alien.overlays.default
