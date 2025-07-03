@@ -16,6 +16,7 @@
     # programs
     pkgs.aseprite
     pkgs.codebook
+    pkgs.cinny-desktop
     pkgs.deno
     pkgs.distrobox
     (pkgs.bottles.override {
