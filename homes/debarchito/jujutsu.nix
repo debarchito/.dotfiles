@@ -1,7 +1,9 @@
 {
   programs.jujutsu = {
     enable = true;
+    ediff = true;
     settings = {
+      ui.default-command = "log";
       user = {
         name = "Debarchito Nath";
         email = "dev.debarchito.nath@protonmail.com";
