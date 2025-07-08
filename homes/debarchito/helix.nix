@@ -74,6 +74,17 @@ in
             ":set mouse false"
             ":set mouse true"
           ];
+          A-j = [
+            "extend_to_line_bounds"
+            "delete_selection"
+            "paste_after"
+          ];
+          A-k = [
+            "extend_to_line_bounds"
+            "delete_selection"
+            "move_line_up"
+            "paste_before"
+          ];
         };
         insert.C-space = "completion";
       };
