@@ -44,6 +44,7 @@
       cd = "z";
       gc = "git commit -S";
       gcl = "git clone";
+      ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
     };
     functions = {
       run = ''

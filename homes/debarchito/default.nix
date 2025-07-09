@@ -46,6 +46,7 @@
     pkgs.nvd
     pkgs.nixd
     pkgs.nix-alien
+    pkgs.nix-search-tv
     pkgs.nixfmt-rfc-style
     pkgs.nix-output-monitor
     pkgs.obsidian
