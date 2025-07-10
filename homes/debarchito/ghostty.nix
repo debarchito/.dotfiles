@@ -5,9 +5,8 @@
       command = "fish";
       shell-integration = "fish";
       window-decoration = "server";
-      gtk-titlebar = false;
       window-padding-x = 10;
-      window-padding-y = "10,0";
+      window-padding-y = "0,0";
       font-family = "Maple Mono NF";
       font-size = 14;
       font-feature = "-calt, -liga, -dlig";

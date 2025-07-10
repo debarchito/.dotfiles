@@ -6,13 +6,11 @@
   config = lib.mkIf config.trusted-substituters.enable {
     nix.settings = {
       substituters = [
-        "https://devenv.cachix.org"
         "https://debarchito.cachix.org"
         "https://nix-community.cachix.org"
       ];
       trusted-public-keys = [
-        "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
-        "debarchito.cachix.org-1:b9I9LSdMFockuXyfljPeoIcJtIVopf9rVkvkIG20PGg="
+        "debarchito.cachix.org-1:md/bk3JZDoFjVOa6bsIDqaY5hcSec4KPWn8q3PbpCl8="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
     };

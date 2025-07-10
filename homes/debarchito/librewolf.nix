@@ -1,10 +1,9 @@
 { pkgs, ... }:
 
 {
-  programs.firefox = {
+  programs.librewolf = {
     enable = true;
-    package = pkgs.librewolf;
-    profiles.debarchito = {
+    profiles.default = {
       isDefault = true;
       search.engines = {
         "NixOS Search - Packages" = {
@@ -94,6 +93,7 @@
         violentmonkey
         web-archives
       ];
+      extensions.force = true;
       containers = {
         "Personal" = {
           id = 1;
