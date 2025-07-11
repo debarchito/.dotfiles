@@ -107,6 +107,23 @@
         };
       };
       containersForce = true;
+      bookmarks = {
+        force = true;
+        settings = [
+          {
+            name = "redlib.";
+            url = "https://eu.safereddit.com";
+          }
+          {
+            name = "XCancel";
+            url = "https://xcancel.com";
+          }
+          {
+            name = "Invidious";
+            url = "https://yewtu.be";
+          }
+        ];
+      };
       settings = {
         "places.history.enabled" = false;
         "layout.css.has-selector.enabled" = true;
