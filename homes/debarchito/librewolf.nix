@@ -112,7 +112,7 @@
         settings = [
           {
             name = "redlib.";
-            url = "https://eu.safereddit.com";
+            url = "https://safereddit.com";
           }
           {
             name = "XCancel";
