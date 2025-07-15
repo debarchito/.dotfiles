@@ -9,6 +9,7 @@ in
     enableNushellIntegration = true;
     plugins = {
       full-border = pkgs.yaziPlugins.full-border;
+      git = pkgs.yaziPlugins.git;
       no-status = pkgs.yaziPlugins.no-status;
       piper = pkgs.yaziPlugins.piper;
     };
@@ -19,49 +20,63 @@ in
         3
         6
       ];
-      plugin.prepend_previewers = [
-        (
+      plugin = {
+        prepend_previewers = [
+          (
+            {
+              name = "*.md";
+            }
+            // rich
+          )
+          (
+            {
+              name = "*.csv";
+            }
+            // rich
+          )
+          (
+            {
+              name = "*.rst";
+            }
+            // rich
+          )
+          (
+            {
+              name = "*.ipynb";
+            }
+            // rich
+          )
+          (
+            {
+              name = "*.json";
+            }
+            // rich
+          )
           {
-            name = "*.md";
+            name = "*.tar*";
+            run = "piper --format=url -- tar tf \"$1\"";
           }
-          // rich
-        )
-        (
           {
-            name = "*.csv";
+            name = "*/";
+            run = "piper -- eza -TL=3 --color=always --icons=always --group-directories-first --no-quotes \"$1\"";
           }
-          // rich
-        )
-        (
+        ];
+        prepend_fetchers = [
           {
-            name = "*.rst";
+            id = "git";
+            name = "*";
+            run = "git";
           }
-          // rich
-        )
-        (
           {
-            name = "*.ipynb";
+            id = "git";
+            name = "*/";
+            run = "git";
           }
-          // rich
-        )
-        (
-          {
-            name = "*.json";
-          }
-          // rich
-        )
-        {
-          name = "*.tar*";
-          run = "piper --format=url -- tar tf \"$1\"";
-        }
-        {
-          name = "*/";
-          run = "piper -- eza -TL=3 --color=always --icons=always --group-directories-first --no-quotes \"$1\"";
-        }
-      ];
-      preview = {
-        max_width = 1500;
-        max_height = 1000;
+        ];
+        preview = {
+          max_width = 1500;
+          max_height = 1000;
+        };
       };
     };
   };
