@@ -1,7 +1,5 @@
 { lib, pkgs, ... }:
-let
-  rich.run = "piper -- ${pkgs.rich-cli}/bin/rich -j --left --panel=rounded --guides --line-numbers --force-terminal \"$1\"";
-in
+
 {
   programs.yazi = {
     enable = true;
@@ -22,36 +20,10 @@ in
       ];
       plugin = {
         prepend_previewers = [
-          (
-            {
-              name = "*.md";
-            }
-            // rich
-          )
-          (
-            {
-              name = "*.csv";
-            }
-            // rich
-          )
-          (
-            {
-              name = "*.rst";
-            }
-            // rich
-          )
-          (
-            {
-              name = "*.ipynb";
-            }
-            // rich
-          )
-          (
-            {
-              name = "*.json";
-            }
-            // rich
-          )
+          {
+            name = "*.md";
+            run = "piper -- CLICOLOR_FORCE=1 ${pkgs.glow}/bin/glow -w=$w -s=dark \"$1\"";
+          }
           {
             name = "*.tar*";
             run = "piper --format=url -- tar tf \"$1\"";

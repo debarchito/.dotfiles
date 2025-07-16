@@ -34,7 +34,7 @@
     pkgs.inotify-tools
     pkgs.jq
     pkgs.just
-    pkgs.jetbrains.idea-ultimate
+    # pkgs.jetbrains.idea-ultimate
     pkgs.krita
     pkgs.kdePackages.kconfig
     pkgs.kdePackages.karousel
@@ -51,7 +51,9 @@
     pkgs.nix-output-monitor
     pkgs.obsidian
     pkgs.pika-backup
-    pkgs.prismlauncher
+    (pkgs.prismlauncher.override {
+      jdks = [ pkgs.jdk21 ];
+    })
     pkgs.podman-compose
     pkgs.quickemu
     pkgs.qbittorrent
