@@ -34,7 +34,6 @@
     pkgs.inotify-tools
     pkgs.jq
     pkgs.just
-    # pkgs.jetbrains.idea-ultimate
     pkgs.krita
     pkgs.kdePackages.kconfig
     pkgs.kdePackages.karousel
@@ -42,7 +41,7 @@
     pkgs.legcord
     pkgs.libreoffice-qt-fresh
     pkgs.mpv
-    pkgs.marksman
+    pkgs.markdown-oxide
     pkgs.nvd
     pkgs.nixd
     pkgs.nix-alien

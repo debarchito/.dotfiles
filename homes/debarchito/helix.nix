@@ -226,7 +226,7 @@ in
             };
             language-servers = [
               "codebook"
-              "marksman"
+              "markdown-oxide"
               "scls"
             ];
           }
