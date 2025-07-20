@@ -3,9 +3,9 @@
     enable = true;
     lfs.enable = true;
     userName = "Debarchito Nath";
-    userEmail = "dev.debarchito.nath@protonmail.com";
+    userEmail = "debarchiton@proton.me";
     signing = {
-      key = "79647DA76CF74D66";
+      key = "A16B1370EE2B0F04";
       signByDefault = true;
     };
     extraConfig = {
