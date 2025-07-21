@@ -52,7 +52,5 @@
       };
     };
   };
-  xdg.configFile."yazi/theme.toml".source = lib.mkForce ./yazi/theme.toml;
-  xdg.configFile."yazi/Catppuccin-mocha.tmTheme".source = lib.mkForce ./yazi/Catppuccin-mocha.tmTheme;
   xdg.configFile."yazi/plugins/no-header.yazi".source = ./yazi/plugins/no-header.yazi;
 }
