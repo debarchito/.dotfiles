@@ -93,24 +93,25 @@
 
   # Modules.
   imports = [
+    ./bat.nix
+    ./direnv.nix
     ./eza.nix
+    ./fish.nix
+    ./flatpak.nix
+    ./fzf.nix
     ./ghostty.nix
+    ./git.nix
+    ./gpg.nix
+    ./helix.nix
     ./jujutsu.nix
     ./kdeconnect.nix
     ./librewolf.nix
-    ./bat.nix
-    ./direnv.nix
-    ./fzf.nix
-    ./fish.nix
-    ./flatpak.nix
-    ./gpg.nix
-    ./git.nix
-    ./helix.nix
+    ./niri.nix
     ./nushell.nix
     ./obs-studio.nix
     ./starship.nix
     ./yazi.nix
-    ./zoxide.nix
     ./zellij.nix
+    ./zoxide.nix
   ];
 }
