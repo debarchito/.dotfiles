@@ -52,8 +52,8 @@
         modules = [
           inputs.niri.nixosModules.niri
           ./hosts/laptop
-          ./games
-          ./wm
+          ./modules/games
+          ./modules/wm
         ];
       };
       homeConfigurations.debarchito = inputs.home-manager.lib.homeManagerConfiguration {
