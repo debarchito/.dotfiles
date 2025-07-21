@@ -6,12 +6,12 @@
       ui.default-command = "log";
       user = {
         name = "Debarchito Nath";
-        email = "dev.debarchito.nath@protonmail.com";
+        email = "debarchiton@proton.me";
       };
       signing = {
         behavior = "own";
         backend = "gpg";
-        key = "79647DA76CF74D66";
+        key = "A16B1370EE2B0F04";
       };
     };
   };
