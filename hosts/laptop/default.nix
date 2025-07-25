@@ -13,11 +13,15 @@
     ../../modules/hosts/podman.nix
     ../../modules/hosts/vm.nix
     ../../modules/hosts/sunshine.nix
+    ../../modules/hosts/android.nix
   ];
 
   # Some stuff that should exist independently.
   system.stateVersion = "24.11";
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+    android_sdk.accept_license = true;
+  };
 
   # Firmware stuff.
   services.fwupd.enable = true;
@@ -112,6 +116,9 @@
   # OpenSHH
   services.openssh.enable = true;
 
+  # Android
+  android.enable = true;
+
   # Me!
   users.users.debarchito = {
     isNormalUser = true;
@@ -123,6 +130,7 @@
       "bluetooth"
       "libvirtd"
       "kvm"
+      "adbusers"
     ];
   };
 

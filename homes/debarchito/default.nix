@@ -15,6 +15,7 @@
     pkgs.bibata-cursors
     # programs
     pkgs.aseprite
+    pkgs.android-studio
     pkgs.codebook
     pkgs.cinny-desktop
     pkgs.deno
