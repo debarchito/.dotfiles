@@ -22,6 +22,7 @@ in
         idle-timeout = 200;
         end-of-line-diagnostics = "hint";
         file-picker.hidden = false;
+        rainbow-brackets = true;
         statusline = {
           left = [
             "mode"
