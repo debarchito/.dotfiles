@@ -24,14 +24,11 @@
       removeWarningPopup = true;
     })
     pkgs.blender
-    pkgs.easyeffects
     pkgs.fd
     pkgs.ffmpeg
     pkgs.ferium
     pkgs.foliate
     pkgs.fish-lsp
-    pkgs.gearlever
-    pkgs.inkscape
     pkgs.inotify-tools
     pkgs.jq
     pkgs.just
