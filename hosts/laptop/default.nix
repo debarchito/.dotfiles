@@ -82,8 +82,9 @@
   # Graphics stuff.
   graphics.enable = true;
   graphics.nvidia.enable = true;
-  graphics.nvidia.prime.enable = true;
   graphics.nvidia.prime = {
+    enable = true;
+    offload.enable = true;
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:1:0:0";
   };
