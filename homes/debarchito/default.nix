@@ -27,6 +27,7 @@
     pkgs.fd
     pkgs.ffmpeg
     pkgs.ferium
+    pkgs.flutter
     pkgs.foliate
     pkgs.fish-lsp
     pkgs.inotify-tools
