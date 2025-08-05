@@ -47,7 +47,6 @@
     pkgs.nixfmt-rfc-style
     pkgs.nix-output-monitor
     pkgs.obsidian
-    pkgs.pika-backup
     (pkgs.prismlauncher.override {
       jdks = [ pkgs.jdk21 ];
     })

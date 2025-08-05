@@ -9,7 +9,10 @@
         location = "https://flathub.org/repo/flathub.flatpakrepo";
       }
     ];
-    packages = [ ];
+    packages = [
+      "io.github.flattool.Warehouse"
+      "org.gnome.World.PikaBackup"
+    ];
     update.auto.enable = true;
     update.auto.onCalendar = "daily";
   };
