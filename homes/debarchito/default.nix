@@ -17,7 +17,6 @@
     pkgs.aseprite
     pkgs.android-studio
     pkgs.codebook
-    pkgs.cinny-desktop
     pkgs.deno
     pkgs.distrobox
     (pkgs.bottles.override {
