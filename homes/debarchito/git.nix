@@ -14,8 +14,8 @@
         "git@github.com:".insteadOf = "gh:";
         "git@gitlab.com:".insteadOf = "gl:";
         "git@codeberg.org:".insteadOf = "cb:";
-        "git@github.com:debarchito/".insteadOf = "gh:me:";
-        "git@codeberg.org:debarchito/".insteadOf = "cb:me:";
+        "git@github.com:debarchito/".insteadOf = "me@gh:";
+        "git@codeberg.org:debarchito/".insteadOf = "me@cb:";
       };
       status = {
         branch = true;
