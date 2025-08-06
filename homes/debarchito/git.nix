@@ -5,7 +5,7 @@
     userName = "Debarchito Nath";
     userEmail = "debarchiton@proton.me";
     signing = {
-      key = "A16B1370EE2B0F04";
+      key = "5D40AFCF09EE4500";
       signByDefault = true;
     };
     extraConfig = {

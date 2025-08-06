@@ -10,7 +10,7 @@
       signing = {
         behavior = "own";
         backend = "gpg";
-        key = "A16B1370EE2B0F04";
+        key = "5D40AFCF09EE4500";
       };
       ui.default-command = "log";
       git.ignore-files = [ "lfs" ];

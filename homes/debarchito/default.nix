@@ -15,7 +15,6 @@
     pkgs.bibata-cursors
     # programs
     pkgs.aseprite
-    pkgs.android-studio
     pkgs.codebook
     pkgs.deno
     pkgs.distrobox
@@ -26,7 +25,6 @@
     pkgs.fd
     pkgs.ffmpeg
     pkgs.ferium
-    pkgs.flutter
     pkgs.foliate
     pkgs.fish-lsp
     pkgs.inotify-tools
@@ -48,10 +46,10 @@
     pkgs.nixfmt-rfc-style
     pkgs.nix-output-monitor
     pkgs.obsidian
+    pkgs.podman-compose
     (pkgs.prismlauncher.override {
       jdks = [ pkgs.jdk21 ];
     })
-    pkgs.podman-compose
     pkgs.quickemu
     pkgs.qbittorrent
     pkgs.ripgrep
