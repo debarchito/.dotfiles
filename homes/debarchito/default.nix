@@ -92,9 +92,10 @@
     ./bat.nix
     ./direnv.nix
     ./eza.nix
+    ./fzf.nix
     ./fish.nix
     ./flatpak.nix
-    ./fzf.nix
+    ./fastfetch.nix
     ./ghostty.nix
     ./git.nix
     ./gpg.nix
