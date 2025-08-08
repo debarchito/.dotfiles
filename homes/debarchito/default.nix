@@ -26,7 +26,6 @@
     pkgs.fd
     pkgs.ffmpeg
     pkgs.ferium
-    pkgs.foliate
     pkgs.fish-lsp
     pkgs.inotify-tools
     pkgs.jq
@@ -46,7 +45,6 @@
     pkgs.nix-search-tv
     pkgs.nixfmt-rfc-style
     pkgs.nix-output-monitor
-    pkgs.obsidian
     pkgs.podman-compose
     (pkgs.prismlauncher.override {
       jdks = [ pkgs.jdk21 ];
