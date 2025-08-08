@@ -104,7 +104,6 @@
     ./kdeconnect.nix
     ./librewolf.nix
     ./niri.nix
-    ./nushell.nix
     ./obs-studio.nix
     ./starship.nix
     ./yazi.nix
