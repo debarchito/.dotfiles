@@ -15,6 +15,7 @@
     pkgs.bibata-cursors
     # programs
     pkgs.aseprite
+    pkgs.cemu
     pkgs.codebook
     pkgs.deno
     pkgs.distrobox
