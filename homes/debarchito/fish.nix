@@ -38,7 +38,7 @@
       set -gx PATH $PATH $HOME/.local/bin
       # abbrs i am too lazy to nixify
       abbr -a --set-cursor="%" -- gcm 'git commit -S -m "%"';
-      echo && bat -p ~/.config/fastfetch/cat.txt -l nix
+      echo && bat -p ~/.config/default/cat.txt -l nix
     '';
     preferAbbrs = true;
     shellAbbrs = {

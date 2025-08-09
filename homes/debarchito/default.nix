@@ -94,7 +94,6 @@
     ./fzf.nix
     ./fish.nix
     ./flatpak.nix
-    ./fastfetch.nix
     ./ghostty.nix
     ./git.nix
     ./gpg.nix
@@ -109,4 +108,7 @@
     ./zellij.nix
     ./zoxide.nix
   ];
+
+  # XDG stuff.
+  xdg.configFile."default/cat.txt".source = ./default/cat.txt;
 }
