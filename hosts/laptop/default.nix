@@ -29,7 +29,8 @@
   # Fine-grained boot stuff.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.luks.devices."luks-8ab05525-f7cc-435a-9c91-7e2e45f22977".device = "/dev/disk/by-uuid/8ab05525-f7cc-435a-9c91-7e2e45f22977";
+  boot.initrd.luks.devices."luks-8ab05525-f7cc-435a-9c91-7e2e45f22977".device =
+    "/dev/disk/by-uuid/8ab05525-f7cc-435a-9c91-7e2e45f22977";
   boot.extraModprobeConfig = "options kvm_intel nested=1";
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -38,25 +39,17 @@
 
   # Fine-grained localization stuff.
   time.timeZone = "Asia/Kolkata";
-  i18n.supportedLocales = [
-    "en_IN/UTF-8"
-    "en_US.UTF-8/UTF-8"
-  ];
-  i18n.defaultLocale = "en_IN";
+  i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
-    LC_CTYPE = "en_IN";
     LC_ADDRESS = "en_IN";
     LC_IDENTIFICATION = "en_IN";
     LC_MEASUREMENT = "en_IN";
+    LC_MONETARY = "en_IN";
     LC_NAME = "en_IN";
+    LC_NUMERIC = "en_IN";
     LC_PAPER = "en_IN";
     LC_TELEPHONE = "en_IN";
     LC_TIME = "en_IN";
-    LC_MESSAGES = "en_IN";
-    LC_COLLATE = "en_IN";
-    # Use different locale for these
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
   };
 
   # Miscellaneous stuff.
