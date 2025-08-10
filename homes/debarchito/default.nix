@@ -34,7 +34,6 @@
     pkgs.kdePackages.kconfig
     pkgs.kdePackages.karousel
     pkgs.kdePackages.kde-gtk-config
-    pkgs.lazyjj
     pkgs.legcord
     pkgs.libreoffice-qt-fresh
     pkgs.mpv
