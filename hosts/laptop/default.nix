@@ -20,7 +20,7 @@
   system.stateVersion = "24.11";
   nixpkgs.config = {
     allowUnfree = true;
-    android_sdk.accept_license = true;
+    # android_sdk.accept_license = true;
   };
 
   # Firmware stuff.
@@ -110,7 +110,7 @@
   services.openssh.enable = true;
 
   # Android
-  android.enable = true;
+  # android.enable = true;
 
   # Me!
   users.users.debarchito = {
