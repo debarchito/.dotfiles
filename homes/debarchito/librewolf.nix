@@ -85,6 +85,7 @@
         firefox-color
         fastforwardteam
         foxyproxy-standard
+        plasma-integration
         return-youtube-dislikes
         sponsorblock
         tabliss
