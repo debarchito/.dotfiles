@@ -106,7 +106,7 @@ in
             name = "nix";
             formatter.command = "nixfmt";
             language-servers = [
-              "codebook"
+              # "codebook"
               "nixd"
               "scls"
             ];
