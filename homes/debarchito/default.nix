@@ -66,7 +66,6 @@
     pkgs.youtube-music
     pkgs.yaml-language-server
     pkgs.zathura
-    pkgs.zed-editor-fhs
     # fonts
     pkgs.maple-mono.NF
     pkgs.noto-fonts-cjk-sans
@@ -105,6 +104,7 @@
     ./yazi.nix
     ./zellij.nix
     ./zoxide.nix
+    ./zed-editor.nix
   ];
 
   # XDG stuff.
