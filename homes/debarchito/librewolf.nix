@@ -68,14 +68,20 @@
           updateInterval = 24 * 60 * 60 * 1000;
           definedAliases = [ "@aw" ];
         };
-        SearXNG = {
-          urls = [ { template = "https://search.inetol.net/search?q={searchTerms}"; } ];
-          icon = "https://search.inetol.net/favicon.ico";
+        "Leta Google" = {
+          urls = [ { template = "https://leta.mullvad.net/search?q={searchTerms}&engine=google"; } ];
+          icon = "https://leta.mullvad.net/favicon.svg";
           updateInterval = 24 * 60 * 60 * 1000;
-          definedAliases = [ "@sr" ];
+          definedAliases = [ "@lg" ];
+        };
+        "Leta Brave" = {
+          urls = [ { template = "https://leta.mullvad.net/search?q={searchTerms}&engine=brave"; } ];
+          icon = "https://leta.mullvad.net/favicon.svg";
+          updateInterval = 24 * 60 * 60 * 1000;
+          definedAliases = [ "@lb" ];
         };
       };
-      search.default = "SearXNG";
+      search.default = "Leta Google";
       search.force = true;
       extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         bitwarden
