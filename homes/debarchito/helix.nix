@@ -53,7 +53,7 @@ in
           enable = true;
           max-wrap = 10;
         };
-        inline-diagnostics.cursor-line = "error";
+        inline-diagnostics.cursor-line = "hint";
       };
       keys = {
         normal = {
