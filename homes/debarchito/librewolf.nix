@@ -129,6 +129,26 @@
             name = "Invidious";
             url = "https://yewtu.be";
           }
+          {
+            name = "Nix Channel Status";
+            url = "https://status.nixos.org";
+          }
+          {
+            name = "GitHub";
+            url = "https://github.com/debarchito";
+          }
+          {
+            name = "Codeberg";
+            url = "https://codeberg.org/debarchito";
+          }
+          {
+            name = "Tuta";
+            url = "https://app.tuta.com";
+          }
+          {
+            name = "ProtonMail";
+            url = "https://mail.proton.me";
+          }
         ];
       };
       settings = {
