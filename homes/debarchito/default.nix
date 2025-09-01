@@ -1,8 +1,5 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
-let
-  inherit (pkgs) system;
-in
 {
   # General home stuff.
   home.username = "debarchito";
@@ -30,6 +27,7 @@ in
     pkgs.ffmpeg
     pkgs.ferium
     pkgs.fish-lsp
+    pkgs.freerdp3
     pkgs.inotify-tools
     pkgs.jq
     pkgs.just
@@ -70,9 +68,6 @@ in
     pkgs.youtube-music
     pkgs.yaml-language-server
     pkgs.zathura
-    # inputs
-    inputs.winapps.packages.${system}.winapps
-    inputs.winapps.packages.${system}.winapps-launcher
     # fonts
     pkgs.maple-mono.NF
     pkgs.noto-fonts-cjk-sans
