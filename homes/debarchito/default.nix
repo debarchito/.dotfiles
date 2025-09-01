@@ -1,5 +1,8 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
+let
+  inherit (pkgs) system;
+in
 {
   # General home stuff.
   home.username = "debarchito";
@@ -67,6 +70,9 @@
     pkgs.youtube-music
     pkgs.yaml-language-server
     pkgs.zathura
+    # inputs
+    inputs.winapps.packages.${system}.winapps
+    inputs.winapps.packages.${system}.winapps-launcher
     # fonts
     pkgs.maple-mono.NF
     pkgs.noto-fonts-cjk-sans
