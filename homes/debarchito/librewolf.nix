@@ -112,6 +112,11 @@
           color = "orange";
           icon = "fence";
         };
+        "Social Media" = {
+          id = 3;
+          color = "yellow";
+          icon = "circle";
+        };
       };
       containersForce = true;
       bookmarks = {
