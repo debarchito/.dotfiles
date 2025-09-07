@@ -31,6 +31,7 @@
     pkgs.inotify-tools
     pkgs.jq
     pkgs.just
+    pkgs.koji
     pkgs.krita
     pkgs.kdePackages.kconfig
     pkgs.kdePackages.karousel
@@ -55,6 +56,7 @@
     pkgs.ryubing
     pkgs.ripgrep-all
     pkgs.sd
+    pkgs.spr
     pkgs.signal-desktop
     pkgs.simple-completion-language-server
     pkgs.taplo
@@ -97,6 +99,7 @@
     ./flatpak.nix
     ./ghostty.nix
     ./git.nix
+    ./git-cliff.nix
     ./gpg.nix
     ./helix.nix
     ./jujutsu.nix
