@@ -14,7 +14,7 @@
     })
     pkgs.bibata-cursors
     # programs
-    pkgs.aseprite
+    # pkgs.aseprite
     pkgs.cemu
     pkgs.codebook
     pkgs.deno
