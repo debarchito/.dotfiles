@@ -35,7 +35,10 @@
       character = {
         success_symbol = "[ ](#cab4fe)";
         error_symbol = "[ ](#f38ba8)";
-        vimcmd_symbol = "[ ](#a6e3a1)";
+        vimcmd_symbol = "[ ](#a6e3a1)";
+        vimcmd_visual_symbol = "[󰼢 ](#f9e2af)";
+        vimcmd_replace_symbol = "[󰛔 * ](#eba0ac)";
+        vimcmd_replace_one_symbol = "[󰛔 1 ](#eba0ac)";
       };
       git_branch = {
         format = "[$branch]($style)";
