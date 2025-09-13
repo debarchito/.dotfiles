@@ -36,14 +36,44 @@
     interactiveShellInit = ''
       set fish_greeting
       set -gx PATH $PATH $HOME/.local/bin
-      # abbrs i am too lazy to nixify
-      abbr -a --set-cursor="%" -- gcm 'git commit -S -m "%"';
       echo && bat -p ~/.config/default/cat.txt -l nix
     '';
     preferAbbrs = true;
     shellAbbrs = {
       cd = "z";
       ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
+      cgh = {
+        setCursor = "%";
+        expansion = "jj git clone gh:% --colocate";
+      };
+      cgl = {
+        setCursor = "%";
+        expansion = "jj git clone gl:% --colocate";
+      };
+      ccb = {
+        setCursor = "%";
+        expansion = "jj git clone cb:% --colocate";
+      };
+      cmgh = {
+        setCursor = "%";
+        expansion = "jj git clone me@gh:% --colocate";
+      };
+      cmcb = {
+        setCursor = "%";
+        expansion = "jj git clone me@cb:% --colocate";
+      };
+      jjk = {
+        setCursor = "%";
+        expansion = ''jj describe -r % -m "$(koji --stdout)"'';
+      };
+      jjl = {
+        setCursor = "%";
+        expansion = "jj log -r :: -n % --no-pager";
+      };
+      jjh = {
+        setCursor = "%";
+        expansion = "jj log -r 'heads(all())' -n % --no-pager";
+      };
     };
     functions = {
       run = ''
