@@ -12,7 +12,7 @@
         backend = "gpg";
         key = "5D40AFCF09EE4500";
       };
-      ui.default-command = "log";
+      ui.default-command = "status";
       git.ignore-files = [ "lfs" ];
     };
   };
