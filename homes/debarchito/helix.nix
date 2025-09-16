@@ -298,7 +298,7 @@ in
         {
           name = "rust";
           language-servers = [
-            "codebook"
+            # "codebook"
             "rust-analyzer"
             "scls"
           ];
