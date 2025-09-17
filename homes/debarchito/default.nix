@@ -56,7 +56,6 @@
     pkgs.ryubing
     pkgs.ripgrep-all
     pkgs.sd
-    pkgs.spr
     pkgs.signal-desktop
     pkgs.simple-completion-language-server
     pkgs.taplo
