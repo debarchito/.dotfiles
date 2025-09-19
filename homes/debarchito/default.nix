@@ -97,6 +97,7 @@
     ./fish.nix
     ./flatpak.nix
     ./ghostty.nix
+    ./gh.nix
     ./git.nix
     ./git-cliff.nix
     ./gpg.nix
