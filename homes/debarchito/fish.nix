@@ -74,6 +74,25 @@
         setCursor = "%";
         expansion = "jj log -r 'heads(all())' -n % --no-pager";
       };
+      gh_unghost = {
+        setCursor = "%";
+        expansion = ''
+          curl -L \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $(gh auth token)" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            'https://api.github.com/notifications?all=true&since=2025-09-%T00:00:00Z' > ~/.config/default/gh-unghost.json
+          for THREAD_URL in (jq -r '.[].url' ~/.config/default/gh-unghost.json)
+            curl -L \
+               -X DELETE \
+               -H "Accept: application/vnd.github+json" \
+               -H "Authorization: Bearer $(gh auth token)" \
+               -H "X-GitHub-Api-Version: 2022-11-28" \
+               "$THREAD_URL"
+          end
+          rm ~/.config/default/gh-unghost.json
+        '';
+      };
     };
     functions = {
       run = ''
