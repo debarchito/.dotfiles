@@ -20,14 +20,15 @@
     },
     "dcachix": {
       "inputs": {
+        "jj": "jj",
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1758650269,
-        "narHash": "sha256-OGmsjqFySRROqAEOh8vXWWfZ0O1jN/KSYMQoGgjeasI=",
+        "lastModified": 1758733147,
+        "narHash": "sha256-mMbAUrrMxa1VQbx1iJteBF+ah2V3V7ljwSJO3dawvS4=",
         "owner": "debarchito",
         "repo": "dcachix",
-        "rev": "f8b2632bb5f9708d65d5172a8ec85338c0489afc",
+        "rev": "61352040a6ce6fce0a5703c981196bf018d36aa3",
         "type": "github"
       },
       "original": {
@@ -72,19 +73,37 @@
         "type": "github"
       }
     },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "helix": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
         ],
-        "rust-overlay": "rust-overlay"
+        "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1758637370,
-        "narHash": "sha256-7YSEuIEZDgwYk6Rg8AqmLdB6duccCTLeTE3fp7rKCHE=",
+        "lastModified": 1758722153,
+        "narHash": "sha256-q0t19uo2qGy9iA+pvhQ97jQ4jMWJfG3a3diLspPeBAQ=",
         "owner": "helix-editor",
         "repo": "helix",
-        "rev": "ce351f4b11fe7fd7e578904fcea75edeab097397",
+        "rev": "ed08fbd4102e320bf96f2af2854b9de77df7a104",
         "type": "github"
       },
       "original": {
@@ -110,6 +129,29 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "jj": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "dcachix",
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1758704992,
+        "narHash": "sha256-GZqxd7JtoJOVD2t50xBnIdinQpzxJey0BCp80+JI+uI=",
+        "owner": "jj-vcs",
+        "repo": "jj",
+        "rev": "120d492d4eae2615735ec173124d17812164d576",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jj-vcs",
+        "repo": "jj",
         "type": "github"
       }
     },
@@ -227,11 +269,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1758719346,
-        "narHash": "sha256-/0Qtaj/w7kIaPVVv46RWgFkSrwdFzdX5GNNmW7XPPkI=",
+        "lastModified": 1758732354,
+        "narHash": "sha256-r9wfxshJ6taj2AzPw+9j6Bl4M2smrjvn+BVCxmYlVTw=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "ef71f2e23a3fc5cd991ac1e64ff17b1b21458e2b",
+        "rev": "e458e342d9a89f9507984c5bc037c33af43deb34",
         "type": "github"
       },
       "original": {
@@ -255,6 +297,28 @@
     "rust-overlay": {
       "inputs": {
         "nixpkgs": [
+          "dcachix",
+          "jj",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1755139244,
+        "narHash": "sha256-SN1BFA00m+siVAQiGLtTwjv9LV9TH5n8tQcSziV6Nv4=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "aeae248beb2a419e39d483dd9b7fec924aba8d4d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rust-overlay_2": {
+      "inputs": {
+        "nixpkgs": [
           "helix",
           "nixpkgs"
         ]
@@ -270,6 +334,21 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
         "type": "github"
       }
     }
