@@ -1,4 +1,9 @@
-{ lib, ... }:
+{
+  lib,
+  inputs,
+  system,
+  ...
+}:
 
 {
   programs.starship = {
@@ -11,6 +16,7 @@
         "$os"
         "$directory"
         "$pijul_channel"
+        "$\{custom.jj}"
         "$git_branch"
         "$git_state"
         "$git_status"
@@ -78,6 +84,23 @@
       python = {
         format = "@ [ $virtualenv](bold #cba6f7) ";
       };
+      custom.jj = {
+        command = "prompt";
+        format = "$output";
+        ignore_timeout = true;
+        shell = [
+          "starship-jj"
+          "--ignore-working-copy"
+          "starship"
+        ];
+        use_stdin = false;
+        when = true;
+      };
     };
   };
+  home.packages = [
+    inputs.starship-jj.packages.${system}.starship-jj
+  ];
+  xdg.configFile."starship-jj/starship-jj.toml".source =
+    ./starship/plugins/starship-jj/starship-jj.toml;
 }
