@@ -24,6 +24,9 @@
         showStash = true;
         showUntrackedFiles = true;
       };
+      rerere.enable = true;
+      column.ui = "auto";
+      branch.sort = "-committerdate";
     };
   };
   home.packages = [
