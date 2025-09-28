@@ -47,6 +47,7 @@
     pkgs.nix-search-tv
     pkgs.nixfmt-rfc-style
     pkgs.nix-output-monitor
+    pkgs.pijul
     pkgs.podman-compose
     (pkgs.prismlauncher.override {
       jdks = [ pkgs.jdk21 ];
