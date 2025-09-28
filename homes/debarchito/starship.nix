@@ -10,6 +10,7 @@
         "$hostname"
         "$os"
         "$directory"
+        "$pijul_channel"
         "$git_branch"
         "$git_state"
         "$git_status"
@@ -40,8 +41,13 @@
         vimcmd_replace_symbol = "[󰛔 * ](#eba0ac)";
         vimcmd_replace_one_symbol = "[󰛔 1 ](#eba0ac)";
       };
+      pijul_channel = {
+        disabled = false;
+        format = "[󰬗  $channel]($style) ";
+        style = "bright-black";
+      };
       git_branch = {
-        format = "[$branch]($style)";
+        format = "[  $branch]($style)";
         style = "bright-black";
       };
       git_status = {
