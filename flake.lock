@@ -22,15 +22,14 @@
       "inputs": {
         "jj": "jj",
         "nixpkgs": "nixpkgs_2",
-        "quickemu": "quickemu",
         "starship-jj": "starship-jj"
       },
       "locked": {
-        "lastModified": 1759223033,
-        "narHash": "sha256-HtL6qwH4sXSw5se9/+sfOY7AcBV6oVQyOeffiSF+7yk=",
+        "lastModified": 1759228466,
+        "narHash": "sha256-xvDN1VVtaGSkCzJky+FJZY2qUzdoFRtMam5NSh4JDiw=",
         "owner": "debarchito",
         "repo": "dcachix",
-        "rev": "ae81c3bc1fe6350d2c21944216fe94e9eee14435",
+        "rev": "2bb91ff17d8f1c9678e62a8b0ca7be31bb90e07c",
         "type": "github"
       },
       "original": {
@@ -47,28 +46,6 @@
           "nixpkgs"
         ],
         "rust-analyzer-src": "rust-analyzer-src"
-      },
-      "locked": {
-        "lastModified": 1755412999,
-        "narHash": "sha256-qD+X0KuAp0iiqElrlouXM43fmW7VCg7fGQzr6oal318=",
-        "owner": "nix-community",
-        "repo": "fenix",
-        "rev": "fe8535d8c9afe780d5344d28db7fe1de3df736a0",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "fenix",
-        "type": "github"
-      }
-    },
-    "fenix_2": {
-      "inputs": {
-        "nixpkgs": [
-          "starship-jj",
-          "nixpkgs"
-        ],
-        "rust-analyzer-src": "rust-analyzer-src_2"
       },
       "locked": {
         "lastModified": 1755412999,
@@ -120,20 +97,6 @@
         "type": "github"
       }
     },
-    "flake-schemas": {
-      "locked": {
-        "lastModified": 1721999734,
-        "narHash": "sha256-G5CxYeJVm4lcEtaO87LKzOsVnWeTcHGKbKxNamNWgOw=",
-        "rev": "0a5c42297d870156d9c57d8f99e476b738dcd982",
-        "revCount": 75,
-        "type": "tarball",
-        "url": "https://api.flakehub.com/f/pinned/DeterminateSystems/flake-schemas/0.1.5/0190ef2f-61e0-794b-ba14-e82f225e55e6/source.tar.gz"
-      },
-      "original": {
-        "type": "tarball",
-        "url": "https://flakehub.com/f/DeterminateSystems/flake-schemas/%2A.tar.gz"
-      }
-    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -156,27 +119,6 @@
       "inputs": {
         "systems": [
           "dcachix",
-          "starship-jj",
-          "systems"
-        ]
-      },
-      "locked": {
-        "lastModified": 1731533236,
-        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "flake-utils_3": {
-      "inputs": {
-        "systems": [
           "starship-jj",
           "systems"
         ]
@@ -373,38 +315,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1759222485,
-        "narHash": "sha256-ioE6FSaHsEbVlm0/0yM/JAWH2pYS7t3w+/enBuFxyyM=",
+        "lastModified": 1759227970,
+        "narHash": "sha256-w89kxxu1fQVn53TNPHc9AErTWsGHIWPv4Gw51JNMMyo=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "69fda6d9dcae315c1c3da68cf00ba3f540320f98",
+        "rev": "449373069db61749a064981e039d15f82b8355d3",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "NUR",
-        "type": "github"
-      }
-    },
-    "quickemu": {
-      "inputs": {
-        "flake-schemas": "flake-schemas",
-        "nixpkgs": [
-          "dcachix",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1756948943,
-        "narHash": "sha256-F9+LNDIWK0EU3m/ljaLYM+VtdJjZHejVKln9q1MKWtc=",
-        "owner": "quickemu-project",
-        "repo": "quickemu",
-        "rev": "78b938facf4927720f8c4b76d8304b3ea8dc07f1",
-        "type": "github"
-      },
-      "original": {
-        "owner": "quickemu-project",
-        "repo": "quickemu",
         "type": "github"
       }
     },
@@ -417,28 +337,10 @@
         "nix-alien": "nix-alien",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs_3",
-        "nur": "nur",
-        "starship-jj": "starship-jj_2"
+        "nur": "nur"
       }
     },
     "rust-analyzer-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1755004716,
-        "narHash": "sha256-TbhPR5Fqw5LjAeI3/FOPhNNFQCF3cieKCJWWupeZmiA=",
-        "owner": "rust-lang",
-        "repo": "rust-analyzer",
-        "rev": "b2a58b8c6eff3c3a2c8b5c70dbf69ead78284194",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rust-lang",
-        "ref": "nightly",
-        "repo": "rust-analyzer",
-        "type": "github"
-      }
-    },
-    "rust-analyzer-src_2": {
       "flake": false,
       "locked": {
         "lastModified": 1755004716,
@@ -522,29 +424,6 @@
         "type": "gitlab"
       }
     },
-    "starship-jj_2": {
-      "inputs": {
-        "fenix": "fenix_2",
-        "flake-utils": "flake-utils_3",
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "systems": "systems_3"
-      },
-      "locked": {
-        "lastModified": 1757479801,
-        "narHash": "sha256-HTkDZQJnlbv2LlBybpBTNh1Y3/M8RNeQuiked3JaLgI=",
-        "owner": "lanastara_foss",
-        "repo": "starship-jj",
-        "rev": "04557921210b770faefb9ea7ee60152d61b03755",
-        "type": "gitlab"
-      },
-      "original": {
-        "owner": "lanastara_foss",
-        "repo": "starship-jj",
-        "type": "gitlab"
-      }
-    },
     "systems": {
       "locked": {
         "lastModified": 1681028828,
@@ -561,21 +440,6 @@
       }
     },
     "systems_2": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
-      }
-    },
-    "systems_3": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
