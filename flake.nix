@@ -20,10 +20,6 @@
       url = "github:helix-editor/helix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    starship-jj = {
-      url = "gitlab:lanastara_foss/starship-jj";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
   outputs =
     inputs:
@@ -50,7 +46,6 @@
       };
       homeConfigurations.debarchito = inputs.home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit inputs system; };
         modules = [
           inputs.catppuccin.homeModules.catppuccin
           inputs.nix-flatpak.homeManagerModules.nix-flatpak

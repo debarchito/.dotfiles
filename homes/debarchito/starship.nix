@@ -1,9 +1,4 @@
-{
-  lib,
-  inputs,
-  system,
-  ...
-}:
+{ lib, pkgs, ... }:
 
 {
   programs.starship = {
@@ -99,7 +94,7 @@
     };
   };
   home.packages = [
-    inputs.starship-jj.packages.${system}.starship-jj
+    pkgs.starship-jj
   ];
   xdg.configFile."starship-jj/starship-jj.toml".source =
     ./starship/plugins/starship-jj/starship-jj.toml;
