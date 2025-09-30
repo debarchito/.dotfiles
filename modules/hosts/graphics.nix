@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 
 {
   options.graphics = {
@@ -29,16 +34,35 @@
         open = true;
         nvidiaSettings = true;
         package = config.boot.kernelPackages.nvidiaPackages.latest;
-        # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
-        #   version = "575.64.05";
-        #   sha256_64bit = "sha256-hfK1D5EiYcGRegss9+H5dDr/0Aj9wPIJ9NVWP3dNUC0=";
-        #   sha256_aarch64 = "sha256-GRE9VEEosbY7TL4HPFoyo0Ac5jgBHsZg9sBKJ4BLhsA=";
-        #   openSha256 = "sha256-mcbMVEyRxNyRrohgwWNylu45vIqF+flKHnmt47R//KU=";
-        #   settingsSha256 = "sha256-o2zUnYFUQjHOcCrB0w/4L6xI1hVUXLAWgG2Y26BowBE=";
-        #   persistencedSha256 = "sha256-2g5z7Pu8u2EiAh5givP5Q1Y4zk4Cbb06W37rf768NFU=";
-        # };
       };
-      hardware.nvidia-container-toolkit.enable = true;
+      hardware.nvidia-container-toolkit = {
+        enable = true;
+        extraArgs = [
+          "--disable-hook"
+          "create-symlinks"
+        ];
+        package = pkgs.nvidia-container-toolkit.overrideAttrs (old: {
+          version = "git";
+          src = pkgs.fetchFromGitHub {
+            owner = "nvidia";
+            repo = "nvidia-container-toolkit";
+            rev = "e03ac3644d63ec30849dffebd0170811e4903e78"; # v1.18.0-rc.5
+            hash = "sha256-0+uQw7L9nQ5QLAs6DW1UY88TlbxWppWx23sM3g0p1uE=";
+          };
+          postPatch = ''
+            substituteInPlace internal/config/config.go \
+              --replace-fail '/usr/bin/nvidia-container-runtime-hook' "$tools/bin/nvidia-container-runtime-hook" \
+              --replace-fail '/sbin/ldconfig' '${pkgs.glibc.bin}/sbin/ldconfig'
+            # substituteInPlace tools/container/toolkit/toolkit.go \
+            #   --replace-fail '/sbin/ldconfig' '${pkgs.glibc.bin}/sbin/ldconfig'
+            substituteInPlace cmd/nvidia-cdi-hook/update-ldcache/update-ldcache.go \
+              --replace-fail '/sbin/ldconfig' '${pkgs.glibc.bin}/sbin/ldconfig'
+          '';
+        });
+      };
+      environment.systemPackages = [
+        config.hardware.nvidia-container-toolkit.package
+      ];
     })
 
     (lib.mkIf
