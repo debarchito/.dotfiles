@@ -18,6 +18,7 @@
     pkgs.cemu
     pkgs.codebook
     pkgs.deno
+    pkgs.duckdb
     pkgs.distrobox
     (pkgs.bottles.override {
       removeWarningPopup = true;
