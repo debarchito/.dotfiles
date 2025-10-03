@@ -44,23 +44,23 @@
       ns = "nix-search-tv print | fzf --preview 'nix-search-tv preview {}' --scheme history";
       cgh = {
         setCursor = "%";
-        expansion = "jj git clone gh:% --colocate";
+        expansion = "jj git clone gh:%";
       };
       cgl = {
         setCursor = "%";
-        expansion = "jj git clone gl:% --colocate";
+        expansion = "jj git clone gl:%";
       };
       ccb = {
         setCursor = "%";
-        expansion = "jj git clone cb:% --colocate";
+        expansion = "jj git clone cb:%";
       };
       cmgh = {
         setCursor = "%";
-        expansion = "jj git clone me@gh:% --colocate";
+        expansion = "jj git clone me@gh:%";
       };
       cmcb = {
         setCursor = "%";
-        expansion = "jj git clone me@cb:% --colocate";
+        expansion = "jj git clone me@cb:%";
       };
       jjk = {
         setCursor = "%";

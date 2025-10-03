@@ -13,7 +13,10 @@
         key = "5D40AFCF09EE4500";
       };
       ui.default-command = "log";
-      git.ignore-files = [ "lfs" ];
+      git = {
+        colocate = true;
+        ignore-files = [ "lfs" ];
+      };
     };
   };
 }
