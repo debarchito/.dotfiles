@@ -35,8 +35,9 @@
     ];
     interactiveShellInit = ''
       set fish_greeting
+      set -gx fish_key_bindings __fish_user_key_bindings
       set -gx PATH $PATH $HOME/.local/bin
-      echo && bat -p ~/.config/default/cat.txt -l nix
+      echo && bat -p $HOME/.config/default/cat.txt -l nix
     '';
     preferAbbrs = true;
     shellAbbrs = {
@@ -80,6 +81,7 @@
       };
     };
     functions = {
+      __fish_user_key_bindings = "fish_vi_key_bindings default";
       run = ''
         if test (count $argv) -eq 0
           echo "Usage: run <package> [<args>...]"
