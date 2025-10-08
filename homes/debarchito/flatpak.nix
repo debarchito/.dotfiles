@@ -10,8 +10,6 @@
       }
     ];
     packages = [
-      "info.cemu.Cemu"
-      "io.github.ryubing.Ryujinx"
       "io.github.flattool.Warehouse"
       "org.gnome.World.PikaBackup"
     ];

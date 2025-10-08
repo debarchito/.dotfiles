@@ -31,7 +31,6 @@
     pkgs.inotify-tools
     pkgs.jq
     pkgs.just
-    # pkgs.jetbrains.idea-ultimate
     pkgs.koji
     pkgs.krita
     pkgs.kdePackages.kconfig
