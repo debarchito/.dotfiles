@@ -12,7 +12,10 @@
         backend = "gpg";
         key = "5D40AFCF09EE4500";
       };
-      ui.default-command = "log";
+      ui = {
+        default-command = "log";
+        diff-editor = ":builtin";
+      };
       git = {
         colocate = true;
         ignore-files = [ "lfs" ];
