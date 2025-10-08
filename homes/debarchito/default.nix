@@ -15,7 +15,6 @@
     pkgs.bibata-cursors
     # programs
     pkgs.aseprite
-    pkgs.cemu
     pkgs.codebook
     pkgs.deno
     pkgs.duckdb
@@ -56,7 +55,6 @@
     pkgs.quickemu
     pkgs.qbittorrent
     pkgs.ripgrep
-    pkgs.ryubing
     pkgs.ripgrep-all
     pkgs.sd
     pkgs.signal-desktop
