@@ -14,7 +14,7 @@
     })
     pkgs.bibata-cursors
     # programs
-    pkgs.aseprite
+    # pkgs.aseprite
     pkgs.codebook
     pkgs.deno
     pkgs.duckdb
