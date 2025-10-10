@@ -4,6 +4,7 @@
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
+    enableNushellIntegration = true;
     settings = {
       format = lib.concatStrings [
         "$username"

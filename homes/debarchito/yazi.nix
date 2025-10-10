@@ -4,6 +4,7 @@
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
+    enableNushellIntegration = true;
     plugins = {
       full-border = pkgs.yaziPlugins.full-border;
       git = pkgs.yaziPlugins.git;

@@ -105,6 +105,7 @@
     ./jujutsu.nix
     ./kdeconnect.nix
     ./librewolf.nix
+    ./nushell.nix
     ./obs-studio.nix
     ./starship.nix
     ./yazi.nix
