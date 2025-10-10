@@ -33,6 +33,34 @@
         src = pkgs.fishPlugins.forgit.src;
       }
     ];
+    functions = {
+      __fish_user_key_bindings = "fish_vi_key_bindings default";
+      run = ''
+        if test (count $argv) -eq 0
+          echo "Usage: run <package> [<args>...]"
+          return 1
+        end
+        nix run nixpkgs#$argv[1] -- $argv[2..-1]
+      '';
+      runu = ''
+        if test (count $argv) -eq 0
+          echo "Usage: runu <package> [<args>...]"
+          return 1
+        end
+        NIXPKGS_ALLOW_UNFREE=1 nix run --impure nixpkgs#$argv[1] -- $argv[2..-1]
+      '';
+      shell = ''
+        if test (count $argv) -eq 0
+          echo "Usage: shell <package> [<package>...]"
+          return 1
+        end
+        set pkgs
+        for pkg in $argv
+          set -a pkgs nixpkgs#$pkg
+        end
+        nom shell $pkgs --command fish
+      '';
+    };
     interactiveShellInit = ''
       set fish_greeting
       set -gx fish_key_bindings __fish_user_key_bindings
@@ -65,48 +93,21 @@
       };
       jjk = {
         setCursor = "%";
-        expansion = ''jj describe -r % -m "$(koji --stdout)"'';
+        expansion = ''jj desc -r % -m "$(koji --stdout)"'';
       };
       jjl = {
         setCursor = "%";
-        expansion = "jj log -r :: -n % --no-pager";
+        expansion = "jj log -r .. -n % --no-pager";
       };
       jjh = {
         setCursor = "%";
         expansion = "jj log -r 'heads(all())' -n % --no-pager";
       };
+      jjp = "jj git push";
       co = {
         setCursor = "%";
         expansion = "curl -sIL % | rg location:";
       };
-    };
-    functions = {
-      __fish_user_key_bindings = "fish_vi_key_bindings default";
-      run = ''
-        if test (count $argv) -eq 0
-          echo "Usage: run <package> [<args>...]"
-          return 1
-        end
-        nix run nixpkgs#$argv[1] -- $argv[2..-1]
-      '';
-      runu = ''
-        if test (count $argv) -eq 0
-          echo "Usage: runu <package> [<args>...]"
-          return 1
-        end
-        NIXPKGS_ALLOW_UNFREE=1 nix run --impure nixpkgs#$argv[1] -- $argv[2..-1]
-      '';
-      shell = ''
-        if test (count $argv) -eq 0
-          echo "Usage: shell <package> [<package>...]"
-          return 1
-        end
-        set pkgs
-        for pkg in $argv
-          set -a pkgs nixpkgs#$pkg
-        end
-        nom shell $pkgs --command fish
-      '';
     };
   };
 }
