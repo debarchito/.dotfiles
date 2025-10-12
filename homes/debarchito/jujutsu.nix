@@ -9,8 +9,8 @@
         };
         signing = {
           behavior = "own";
-          backend = "gpg";
-          key = "5D40AFCF09EE4500";
+          backend = "ssh";
+          key = "~/.ssh/id_ed25519.pub";
         };
         ui = {
           default-command = "log";

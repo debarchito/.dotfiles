@@ -7,7 +7,8 @@
     userName = "Debarchito Nath";
     userEmail = "debarchiton@proton.me";
     signing = {
-      key = "5D40AFCF09EE4500";
+      format = "ssh";
+      key = "~/.ssh/id_ed25519.pub";
       signByDefault = true;
     };
     extraConfig = {
