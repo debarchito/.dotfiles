@@ -15,6 +15,7 @@
         ui = {
           default-command = "log";
           diff-editor = ":builtin";
+          conflict-marker-style = "snapshot";
         };
         git = {
           colocate = true;
