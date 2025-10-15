@@ -51,7 +51,6 @@
     (pkgs.prismlauncher.override {
       jdks = [ pkgs.jdk21 ];
     })
-    pkgs.quickemu
     pkgs.qbittorrent
     pkgs.ripgrep
     pkgs.ripgrep-all
