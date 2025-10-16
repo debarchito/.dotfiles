@@ -46,8 +46,8 @@
           src = pkgs.fetchFromGitHub {
             owner = "nvidia";
             repo = "nvidia-container-toolkit";
-            rev = "e03ac3644d63ec30849dffebd0170811e4903e78"; # v1.18.0-rc.5
-            hash = "sha256-0+uQw7L9nQ5QLAs6DW1UY88TlbxWppWx23sM3g0p1uE=";
+            rev = "5bb032d60486da9b441a208f225f911efbad35f2"; # v1.18.0-rc.6
+            hash = "sha256-6MQfZ0tDQxDQtLG1/m/qamWRL+Uv5tlQrsX8pO6UxL4=";
           };
           postPatch = ''
             substituteInPlace internal/config/config.go \
