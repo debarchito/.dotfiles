@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-pin-1.url = "github:nixos/nixpkgs/544961dfcce86422ba200ed9a0b00dd4b1486ec5"; # For Kernel, 6.17.2
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     catppuccin.url = "github:catppuccin/nix";
     dcachix.url = "github:debarchito/dcachix";
@@ -34,10 +35,14 @@
           inputs.nix-alien.overlays.default
         ];
       };
+      pkgs-pin-1 = import inputs.nixpkgs-pin-1 {
+        inherit system;
+        config.allowUnfree = true;
+      };
     in
     {
       nixosConfigurations.laptop = inputs.nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs pkgs-pin-1; };
         modules = [
           ./hosts/laptop
           ./modules/games
