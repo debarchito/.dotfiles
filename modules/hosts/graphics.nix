@@ -46,7 +46,7 @@
           src = pkgs.fetchFromGitHub {
             owner = "nvidia";
             repo = "nvidia-container-toolkit";
-            rev = "5bb032d60486da9b441a208f225f911efbad35f2"; # v1.18.0-rc.6
+            rev = "f8daa5e26de9fd7eb79259040b6dd5a52060048c"; # v1.18.0
             hash = "sha256-6MQfZ0tDQxDQtLG1/m/qamWRL+Uv5tlQrsX8pO6UxL4=";
           };
           postPatch = ''
