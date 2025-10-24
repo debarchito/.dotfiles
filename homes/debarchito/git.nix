@@ -4,16 +4,16 @@
   programs.git = {
     enable = true;
     lfs.enable = true;
-    # TODO: userName -> user.name, userEmail -> user.email
-    userName = "Debarchito Nath";
-    userEmail = "debarchiton@proton.me";
     signing = {
       format = "ssh";
       key = "~/.ssh/id_ed25519.pub";
       signByDefault = true;
     };
-    # TODO: extraConfig -> settings
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Debarchito Nath";
+        email = "debarchiton@proton.me";
+      };
       init.defaultBranch = "main";
       url = {
         "git@github.com:".insteadOf = "gh:";
