@@ -39,7 +39,6 @@
     pkgs.kdePackages.kde-gtk-config
     pkgs.legcord
     pkgs.libreoffice-qt-fresh
-    pkgs.mpv
     pkgs.markdown-oxide
     pkgs.nvd
     pkgs.nixd
@@ -91,6 +90,7 @@
   imports = [
     ./atuin.nix
     ./bat.nix
+    ./btop.nix
     ./direnv.nix
     ./eza.nix
     ./fzf.nix
@@ -105,6 +105,7 @@
     ./jujutsu.nix
     ./kdeconnect.nix
     ./librewolf.nix
+    ./mpv.nix
     ./nushell.nix
     ./obs-studio.nix
     ./starship.nix
