@@ -7,6 +7,7 @@
   home.stateVersion = "24.11"; # DO NOT CHANGE!
   home.packages = [
     # themes and icons
+    pkgs.croc
     (pkgs.catppuccin-kde.override {
       flavour = [ "mocha" ];
       accents = [ "mauve" ];
