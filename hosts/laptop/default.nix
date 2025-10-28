@@ -121,6 +121,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "pipewire"
       "audio"
       "bluetooth"
       "libvirtd"
