@@ -64,6 +64,7 @@
     pkgs.unzip
     pkgs.unrar
     pkgs.vscode-langservers-extracted
+    pkgs.winetricks
     pkgs.wl-clipboard
     pkgs.youtube-music
     pkgs.yaml-language-server
