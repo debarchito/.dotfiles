@@ -25,7 +25,10 @@
 
   config = lib.mkMerge [
     (lib.mkIf config.graphics.enable {
-      hardware.graphics.enable = true;
+      hardware.graphics = {
+        enable = true;
+        enable32Bit = true;
+      };
     })
 
     (lib.mkIf (config.graphics.enable && config.graphics.nvidia.enable) {
