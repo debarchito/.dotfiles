@@ -23,7 +23,7 @@
     (pkgs.bottles.override {
       removeWarningPopup = true;
     })
-    pkgs.blender
+    # pkgs.blender
     pkgs.fd
     pkgs.ffmpeg
     pkgs.ferium
