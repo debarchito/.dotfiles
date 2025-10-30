@@ -28,7 +28,7 @@
     pkgs.ffmpeg
     pkgs.ferium
     pkgs.fish-lsp
-    pkgs.freerdp3
+    pkgs.freerdp
     pkgs.inotify-tools
     pkgs.jq
     pkgs.just
