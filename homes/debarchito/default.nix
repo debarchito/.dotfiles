@@ -7,7 +7,6 @@
   home.stateVersion = "24.11"; # DO NOT CHANGE!
   home.packages = [
     # themes and icons
-    pkgs.croc
     (pkgs.catppuccin-kde.override {
       flavour = [ "mocha" ];
       accents = [ "mauve" ];
@@ -16,6 +15,7 @@
     pkgs.bibata-cursors
     # programs
     pkgs.aseprite
+    pkgs.croc
     pkgs.codebook
     pkgs.deno
     pkgs.duckdb
@@ -27,8 +27,8 @@
     pkgs.fd
     pkgs.ffmpeg
     pkgs.ferium
-    pkgs.fish-lsp
     pkgs.freerdp
+    pkgs.fish-lsp
     pkgs.inotify-tools
     pkgs.jq
     pkgs.just
