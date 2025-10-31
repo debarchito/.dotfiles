@@ -5,7 +5,6 @@
     ./hardware-configuration.nix
     ../../modules/hosts/common-settings.nix
     ../../modules/hosts/trusted-substituters.nix
-    ../../modules/hosts/security.nix
     ../../modules/hosts/netmod.nix
     ../../modules/hosts/bluetooth.nix
     ../../modules/hosts/pipewire.nix
@@ -58,7 +57,6 @@
   common-settings.flake = "/home/debarchito/.dotfiles";
   common-settings.gc.options = "--delete-older-than 7d";
   trusted-substituters.enable = true;
-  security.enable = true;
 
   # Networking stuff.
   netmod.enable = true;

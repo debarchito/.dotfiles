@@ -12,6 +12,8 @@
   };
 
   config = lib.mkIf config.common-settings.enable {
+    security.rtkit.enable = true;
+    security.polkit.enable = true;
     services.printing.enable = true;
     nix.settings = {
       experimental-features = [
