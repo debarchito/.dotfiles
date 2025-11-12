@@ -10,7 +10,6 @@
     enable = lib.mkEnableOption "enable vm module";
     kvm.enable = lib.mkEnableOption "enable kvm";
     waydroid.enable = lib.mkEnableOption "enable waydroid";
-    vmware.enable = lib.mkEnableOption "enable vmware";
   };
 
   config = lib.mkMerge [
@@ -34,11 +33,6 @@
 
     (lib.mkIf (config.vm.enable && config.vm.waydroid.enable) {
       virtualisation.waydroid.enable = true;
-    })
-
-    (lib.mkIf (config.vm.enable && config.vm.vmware.enable) {
-      virtualisation.vmware.host.enable = true;
-      virtualisation.vmware.guest.enable = true;
     })
   ];
 }

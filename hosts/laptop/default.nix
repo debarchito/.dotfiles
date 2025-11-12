@@ -86,7 +86,6 @@
   vm.enable = true;
   vm.kvm.enable = true;
   # vm.waydroid.enable = true;
-  # vm.vmware.enable = true;
 
   # Sunshine (and Moonlight) stuff.
   sunshine.enable = true;
