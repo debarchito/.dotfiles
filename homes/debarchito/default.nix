@@ -15,6 +15,7 @@
     pkgs.bibata-cursors
     # programs
     pkgs.aseprite
+    pkgs.bitwarden-cli
     pkgs.croc
     pkgs.calibre
     pkgs.codebook
