@@ -50,7 +50,7 @@
             owner = "nvidia";
             repo = "nvidia-container-toolkit";
             rev = "f8daa5e26de9fd7eb79259040b6dd5a52060048c"; # v1.18.0
-            hash = "sha256-6MQfZ0tDQxDQtLG1/m/qamWRL+Uv5tlQrsX8pO6UxL4=";
+            hash = "sha256-VQcuN+LU7iljpSWrmLBHX67esEQN1HYNPj5cLxUB7dI=";
           };
           postPatch = ''
             substituteInPlace internal/config/config.go \
