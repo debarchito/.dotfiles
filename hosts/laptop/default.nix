@@ -107,7 +107,16 @@
   programs.nix-ld.enable = true;
 
   # OpenSHH
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    ports = [ 5432 ];
+    settings = {
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+      AllowUsers = [ "debarchito" ];
+    };
+  };
 
   # Android
   # android.enable = true;
