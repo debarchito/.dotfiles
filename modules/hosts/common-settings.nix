@@ -14,6 +14,7 @@
   config = lib.mkIf config.common-settings.enable {
     security.rtkit.enable = true;
     security.polkit.enable = true;
+    services.fail2ban.enable = true;
     services.printing.enable = true;
     nix.settings = {
       experimental-features = [
@@ -23,6 +24,7 @@
       ];
       auto-optimise-store = true;
     };
+    programs.nix-ld.enable = true;
     programs.nh = {
       enable = true;
       clean.enable = true;

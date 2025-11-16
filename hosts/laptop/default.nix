@@ -62,6 +62,11 @@
   # Networking stuff.
   netmod.enable = true;
   netmod.name = "laptop";
+  netmod.openssh.enable = true;
+  netmod.openssh.ports = [ 54321 ];
+  netmod.openssh.allowUsers = [ "debarchito" ];
+  netmod.openssh.endlessh.port = 22;
+  netmod.openvpn.enable = true;
 
   # Media stuff.
   bluetooth.enable = true;
@@ -101,21 +106,6 @@
       pkgs.libxcrypt
       pkgs.icu
     ];
-  };
-
-  # Nix-ld.
-  programs.nix-ld.enable = true;
-
-  # OpenSHH
-  services.openssh = {
-    enable = true;
-    ports = [ 5432 ];
-    settings = {
-      PasswordAuthentication = false;
-      KbdInteractiveAuthentication = false;
-      PermitRootLogin = "no";
-      AllowUsers = [ "debarchito" ];
-    };
   };
 
   # Android
