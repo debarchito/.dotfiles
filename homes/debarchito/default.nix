@@ -41,6 +41,7 @@
     pkgs.kdePackages.kde-gtk-config
     pkgs.legcord
     pkgs.libreoffice-qt-fresh
+    pkgs.minework
     pkgs.markdown-oxide
     pkgs.nvd
     pkgs.nixd

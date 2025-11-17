@@ -20,6 +20,10 @@
       url = "github:helix-editor/helix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    minework = {
+      url = "github:debarchito/minework";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs:
@@ -32,6 +36,7 @@
           inputs.helix.overlays.default
           inputs.nur.overlays.default
           inputs.nix-alien.overlays.default
+          inputs.minework.overlays.default
         ];
       };
     in
