@@ -26,6 +26,7 @@
       ui_font_size = 16;
       buffer_font_size = 16;
       buffer_font_family = "Maple Mono NF";
+      relative_line_numbers = "enabled";
       title_bar = {
         show_sign_in = false;
         show_user_picture = false;
@@ -40,6 +41,7 @@
         diagnostics = false;
       };
       disable_ai = true;
+      helix_mode = true;
     };
   };
 }
