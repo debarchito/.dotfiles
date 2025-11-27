@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-librewolf, ... }:
 
 {
   programs.librewolf = {
     enable = true;
+    package = pkgs-librewolf.librewolf;
     profiles.default = {
       isDefault = true;
       search.engines = {

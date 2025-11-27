@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-librewolf.url = "github:nixos/nixpkgs?rev=7a3eeaaac65d8a99b6bdcc79aa5082c80050f992";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     catppuccin.url = "github:catppuccin/nix";
     dcachix.url = "github:debarchito/dcachix";
@@ -39,6 +40,9 @@
           inputs.minework.overlays.default
         ];
       };
+      pkgs-librewolf = import inputs.nixpkgs-librewolf {
+        inherit system;
+      };
     in
     {
       nixosConfigurations.laptop = inputs.nixpkgs.lib.nixosSystem {
@@ -51,6 +55,7 @@
       };
       homeConfigurations.debarchito = inputs.home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = { inherit pkgs-librewolf; };
         modules = [
           inputs.catppuccin.homeModules.catppuccin
           inputs.nix-flatpak.homeManagerModules.nix-flatpak
