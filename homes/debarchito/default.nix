@@ -52,7 +52,7 @@
     pkgs.pijul
     pkgs.podman-compose
     (pkgs.prismlauncher.override {
-      jdks = [ pkgs.jdk21 ];
+      jdks = [ pkgs.jdk25 ];
     })
     pkgs.qbittorrent
     pkgs.ripgrep
