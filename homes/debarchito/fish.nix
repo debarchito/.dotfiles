@@ -103,12 +103,6 @@
         setCursor = "%";
         expansion = "jj log -r 'heads(all())' -n % --no-pager";
       };
-      cghr = "gh repo create --public --source=. --remote=origin && jj git push --all";
-      cghrp = "gh repo create --private --source=. --remote=origin && jj git push --all";
-      co = {
-        setCursor = "%";
-        expansion = "curl -sIL % | rg location:";
-      };
     };
   };
 }

@@ -22,7 +22,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     minework = {
-      url = "github:debarchito/minework";
+      url = "git+https://codeberg.org/debarchito/minework";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

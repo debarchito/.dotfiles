@@ -210,17 +210,17 @@
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
-        "lastModified": 1764213473,
-        "narHash": "sha256-nsuPpBLe93IgGEyt5GL4qha4e+BkidDGEwJTDJtXZOM=",
-        "owner": "debarchito",
-        "repo": "minework",
-        "rev": "c59302c804bbcf8b0b6566626cc3771786000421",
-        "type": "github"
+        "lastModified": 1764309006,
+        "narHash": "sha256-5M+DMjJE9jZlYD4sTeR38uyp4r3KilfcRlRutX9jSWo=",
+        "ref": "refs/heads/main",
+        "rev": "1043bcedb5372f620a1a86406a3f07de004ff3c9",
+        "revCount": 25,
+        "type": "git",
+        "url": "https://codeberg.org/debarchito/minework"
       },
       "original": {
-        "owner": "debarchito",
-        "repo": "minework",
-        "type": "github"
+        "type": "git",
+        "url": "https://codeberg.org/debarchito/minework"
       }
     },
     "naersk": {
