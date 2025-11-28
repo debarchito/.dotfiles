@@ -4,6 +4,7 @@
   programs.librewolf = {
     enable = true;
     package = pkgs-librewolf.librewolf;
+    nativeMessagingHosts = [ pkgs.kdePackages.plasma-browser-integration ];
     profiles.default = {
       isDefault = true;
       search.engines = {
@@ -69,26 +70,13 @@
           updateInterval = 24 * 60 * 60 * 1000;
           definedAliases = [ "@aw" ];
         };
-        "Leta Google" = {
-          urls = [ { template = "https://leta.mullvad.net/search?q={searchTerms}&engine=google"; } ];
-          icon = "https://leta.mullvad.net/favicon.svg";
-          updateInterval = 24 * 60 * 60 * 1000;
-          definedAliases = [ "@lg" ];
-        };
-        "Leta Brave" = {
-          urls = [ { template = "https://leta.mullvad.net/search?q={searchTerms}&engine=brave"; } ];
-          icon = "https://leta.mullvad.net/favicon.svg";
-          updateInterval = 24 * 60 * 60 * 1000;
-          definedAliases = [ "@lb" ];
-        };
       };
-      search.default = "Leta Google";
+      search.default = "StartPage";
       search.force = true;
       extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         bitwarden
         canvasblocker
         darkreader
-        foxytab
         firefox-color
         fastforwardteam
         foxyproxy-standard
@@ -99,7 +87,6 @@
         ublock-origin
         user-agent-string-switcher
         violentmonkey
-        web-archives
       ];
       extensions.force = true;
       containers = {
