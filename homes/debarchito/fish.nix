@@ -34,7 +34,28 @@
       }
     ];
     functions = {
-      __fish_user_key_bindings = "fish_vi_key_bindings default";
+      __fish_user_key_bindings = ''
+        fish_vi_key_bindings default
+        bind -M insert \cg __fish_rga_fzf
+        bind -M default \cg __fish_rga_fzf
+      '';
+      __fish_rga_fzf = ''
+        set RG_PREFIX 'rga --files-with-matches'
+        set selected (
+          FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
+            fzf --bind "change:reload:$RG_PREFIX {q} || true" \
+                --ansi \
+                --disabled \
+                --query "$1" \
+                --preview "rga --pretty --context 5 {q} {}" \
+                --preview-window "70%:wrap"
+        )
+        if test -n "$selected"
+          echo $selected
+          commandline -i $selected
+          commandline -f repaint
+        end
+      '';
       run = ''
         if test (count $argv) -eq 0
           echo "Usage: run <package> [<args>...]"
