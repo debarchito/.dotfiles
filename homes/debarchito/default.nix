@@ -13,7 +13,6 @@
     pkgs.bibata-cursors
     pkgs.aseprite
     pkgs.croc
-    pkgs.calibre
     pkgs.codebook
     pkgs.deno
     pkgs.duckdb
