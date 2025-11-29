@@ -1,19 +1,16 @@
 { pkgs, ... }:
 
 {
-  # General home stuff.
   home.username = "debarchito";
   home.homeDirectory = "/home/debarchito";
-  home.stateVersion = "24.11"; # DO NOT CHANGE!
+  home.stateVersion = "24.11";
   home.packages = [
-    # themes and icons
     (pkgs.catppuccin-kde.override {
       flavour = [ "mocha" ];
       accents = [ "mauve" ];
       winDecStyles = [ "classic" ];
     })
     pkgs.bibata-cursors
-    # programs
     pkgs.aseprite
     pkgs.croc
     pkgs.calibre
@@ -71,25 +68,19 @@
     pkgs.youtube-music
     pkgs.yaml-language-server
     pkgs.zathura
-    # fonts
     pkgs.maple-mono.NF
     pkgs.noto-fonts-cjk-sans
   ];
 
-  # Fontconfig stuff.
   fonts.fontconfig.enable = true;
 
-  # Let home-manager update itself.
   programs.home-manager.enable = true;
 
-  # Allow unfree.
   nixpkgs.config.allowUnfree = true;
 
-  # Catppuccin!
   catppuccin.enable = true;
   catppuccin.flavor = "mocha";
 
-  # Modules.
   imports = [
     ./atuin.nix
     ./bat.nix
@@ -117,7 +108,6 @@
     ./zed-editor.nix
   ];
 
-  # Manual symlink stuff.
   xdg.configFile."default/cat.txt".source = ./default/cat.txt;
   home.file.".julia/config/startup.jl".source = ./julia/startup.jl;
 }

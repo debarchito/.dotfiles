@@ -28,7 +28,6 @@
         networkmanager.enable = true;
         firewall = rec {
           allowedTCPPortRanges = [
-            # KDE Connect (managed by home-manager)
             {
               from = 1714;
               to = 1764;

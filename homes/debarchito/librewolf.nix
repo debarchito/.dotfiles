@@ -1,9 +1,8 @@
-{ pkgs, pkgs-librewolf, ... }:
+{ pkgs, ... }:
 
 {
   programs.librewolf = {
     enable = true;
-    package = pkgs-librewolf.librewolf;
     nativeMessagingHosts = [ pkgs.kdePackages.plasma-browser-integration ];
     profiles.default = {
       isDefault = true;

@@ -1,7 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-librewolf.url = "github:nixos/nixpkgs?rev=7a3eeaaac65d8a99b6bdcc79aa5082c80050f992";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     catppuccin.url = "github:catppuccin/nix";
     dcachix.url = "github:debarchito/dcachix";
@@ -25,11 +24,18 @@
       url = "git+https://codeberg.org/debarchito/minework";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    starship-jj = {
+      url = "gitlab:lanastara_foss/starship-jj";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs:
     let
       system = "x86_64-linux";
+      overlay = final: prev: {
+        starship-jj = inputs.starship-jj.packages.${system}.default;
+      };
       pkgs = import inputs.nixpkgs {
         inherit system;
         overlays = [
@@ -38,10 +44,8 @@
           inputs.nur.overlays.default
           inputs.nix-alien.overlays.default
           inputs.minework.overlays.default
+          overlay
         ];
-      };
-      pkgs-librewolf = import inputs.nixpkgs-librewolf {
-        inherit system;
       };
     in
     {
@@ -55,7 +59,6 @@
       };
       homeConfigurations.debarchito = inputs.home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit pkgs-librewolf; };
         modules = [
           inputs.catppuccin.homeModules.catppuccin
           inputs.nix-flatpak.homeManagerModules.nix-flatpak

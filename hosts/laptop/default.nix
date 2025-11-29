@@ -15,17 +15,14 @@
     ../../modules/hosts/android.nix
   ];
 
-  # Some stuff that should exist independently.
   system.stateVersion = "24.11";
   nixpkgs.config = {
     allowUnfree = true;
     # android_sdk.accept_license = true;
   };
 
-  # Firmware stuff.
   services.fwupd.enable = true;
 
-  # Fine-grained boot stuff.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.initrd.luks.devices."luks-8ab05525-f7cc-435a-9c91-7e2e45f22977".device =
@@ -35,10 +32,8 @@
   boot.kernel.sysctl."vm.max_map_count" = lib.mkForce 16777216;
   boot.tmp.cleanOnBoot = true;
 
-  # Zram stuff.
   zramSwap.enable = true;
 
-  # Fine-grained localization stuff.
   time.timeZone = "Asia/Kolkata";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -53,13 +48,11 @@
     LC_TIME = "en_IN";
   };
 
-  # Miscellaneous stuff.
   common-settings.enable = true;
   common-settings.flake = "/home/debarchito/.dotfiles";
   common-settings.gc.options = "--delete-older-than 7d";
   trusted-substituters.enable = true;
 
-  # Networking stuff.
   netmod.enable = true;
   netmod.name = "laptop";
   netmod.openssh.enable = true;
@@ -68,15 +61,12 @@
   netmod.openssh.endlessh.port = 22;
   netmod.openvpn.enable = true;
 
-  # Media stuff.
   bluetooth.enable = true;
   pipewire.enable = true;
 
-  # Display Manager stuff.
   services.xserver.videoDrivers = [ "nvidia" ];
   services.displayManager.ly.enable = true;
 
-  # Graphics stuff.
   graphics.enable = true;
   graphics.nvidia.enable = true;
   graphics.nvidia.prime = {
@@ -86,19 +76,14 @@
     nvidiaBusId = "PCI:1:0:0";
   };
 
-  # Virtualization stuff.
   podman.enable = true;
   vm.enable = true;
   vm.kvm.enable = true;
-  # vm.waydroid.enable = true;
 
-  # Sunshine (and Moonlight) stuff.
   sunshine.enable = true;
 
-  # Flatpak stuff.
   services.flatpak.enable = true;
 
-  # AppImage stuff.
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
   programs.appimage.package = pkgs.appimage-run.override {
@@ -108,10 +93,6 @@
     ];
   };
 
-  # Android
-  # android.enable = true;
-
-  # Me!
   users.users.debarchito = {
     isNormalUser = true;
     description = "Debarchito Nath";
@@ -127,7 +108,6 @@
     ];
   };
 
-  # Variables stuff.
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     ZED_WINDOW_DECORATIONS = "server";

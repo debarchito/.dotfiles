@@ -1,9 +1,4 @@
-{
-  lib,
-  pkgs,
-  config,
-  ...
-}:
+{ lib, config, ... }:
 
 {
   options.graphics = {
@@ -38,31 +33,7 @@
         nvidiaSettings = true;
         package = config.boot.kernelPackages.nvidiaPackages.latest;
       };
-      hardware.nvidia-container-toolkit = {
-        enable = true;
-        extraArgs = [
-          "--disable-hook"
-          "create-symlinks"
-        ];
-        package = pkgs.nvidia-container-toolkit.overrideAttrs (old: {
-          version = "git";
-          src = pkgs.fetchFromGitHub {
-            owner = "nvidia";
-            repo = "nvidia-container-toolkit";
-            rev = "f8daa5e26de9fd7eb79259040b6dd5a52060048c"; # v1.18.0
-            hash = "sha256-VQcuN+LU7iljpSWrmLBHX67esEQN1HYNPj5cLxUB7dI=";
-          };
-          postPatch = ''
-            substituteInPlace internal/config/config.go \
-              --replace-fail '/usr/bin/nvidia-container-runtime-hook' "$tools/bin/nvidia-container-runtime-hook" \
-              --replace-fail '/sbin/ldconfig' '${pkgs.glibc.bin}/sbin/ldconfig'
-            # substituteInPlace tools/container/toolkit/toolkit.go \
-            #   --replace-fail '/sbin/ldconfig' '${pkgs.glibc.bin}/sbin/ldconfig'
-            substituteInPlace cmd/nvidia-cdi-hook/update-ldcache/update-ldcache.go \
-              --replace-fail '/sbin/ldconfig' '${pkgs.glibc.bin}/sbin/ldconfig'
-          '';
-        });
-      };
+      hardware.nvidia-container-toolkit.enable = true;
       environment.systemPackages = [
         config.hardware.nvidia-container-toolkit.package
       ];
