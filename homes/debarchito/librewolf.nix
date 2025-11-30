@@ -69,8 +69,14 @@
           updateInterval = 24 * 60 * 60 * 1000;
           definedAliases = [ "@aw" ];
         };
+        "SearXNG" = {
+          urls = [ { template = "https://search.tiekoetter.com/search?q={searchTerms}"; } ];
+          icon = "https://search.tiekoetter.com/static/themes/simple/img/favicon.png";
+          updateInterval = 24 * 60 * 60 * 1000;
+          definedAliases = [ "@sr" ];
+        };
       };
-      search.default = "StartPage";
+      search.default = "SearXNG";
       search.force = true;
       extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         bitwarden
