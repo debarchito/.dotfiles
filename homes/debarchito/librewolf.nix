@@ -117,15 +117,15 @@
         settings = [
           {
             name = "redlib.";
-            url = "https://safereddit.com";
+            url = "https://redlib.tiekoetter.com";
           }
           {
-            name = "XCancel";
-            url = "https://xcancel.com";
+            name = "Nitter";
+            url = "https://nitter.tiekoetter.com";
           }
           {
             name = "Invidious";
-            url = "https://yewtu.be";
+            url = "https://invidious.tiekoetter.com";
           }
           {
             name = "Nix Channel Status";
@@ -138,14 +138,6 @@
           {
             name = "Codeberg";
             url = "https://codeberg.org/debarchito";
-          }
-          {
-            name = "Tuta";
-            url = "https://app.tuta.com";
-          }
-          {
-            name = "ProtonMail";
-            url = "https://mail.proton.me";
           }
         ];
       };
