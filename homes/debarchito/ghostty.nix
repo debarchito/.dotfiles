@@ -10,6 +10,7 @@
       font-family = "Maple Mono NF";
       font-size = 14;
       font-feature = "-calt, -liga, -dlig";
+      config-file = "./config-dankcolors";
     };
   };
 }

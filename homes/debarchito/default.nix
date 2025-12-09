@@ -98,6 +98,7 @@
     ./kdeconnect.nix
     ./librewolf.nix
     ./mpv.nix
+    ./niri.nix
     ./nushell.nix
     ./obs-studio.nix
     ./starship.nix

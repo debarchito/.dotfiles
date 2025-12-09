@@ -28,6 +28,19 @@
       url = "gitlab:lanastara_foss/starship-jj";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dankMaterialShell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.dgop.follows = "dgop";
+    };
   };
   outputs =
     inputs:
@@ -42,6 +55,7 @@
           inputs.dcachix.overlays.default
           inputs.helix.overlays.default
           inputs.nur.overlays.default
+          inputs.niri.overlays.niri
           inputs.nix-alien.overlays.default
           inputs.minework.overlays.default
           overlay
@@ -62,6 +76,9 @@
         modules = [
           inputs.catppuccin.homeModules.catppuccin
           inputs.nix-flatpak.homeManagerModules.nix-flatpak
+          inputs.niri.homeModules.niri
+          inputs.dankMaterialShell.homeModules.dankMaterialShell.default
+          inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
           ./homes/debarchito
         ];
       };
