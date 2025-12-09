@@ -47,7 +47,7 @@
     pkgs.pijul
     pkgs.podman-compose
     (pkgs.prismlauncher.override {
-      jdks = [ pkgs.jdk25 ];
+      jdks = [ pkgs.jdk21 ];
     })
     pkgs.qbittorrent
     pkgs.ripgrep
@@ -63,6 +63,7 @@
     pkgs.unrar
     pkgs.vscode-langservers-extracted
     pkgs.winetricks
+    pkgs.wl-mirror
     pkgs.wl-clipboard
     pkgs.youtube-music
     pkgs.yaml-language-server
@@ -77,8 +78,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  catppuccin.enable = true;
-  catppuccin.flavor = "mocha";
+  # catppuccin.enable = true;
+  # catppuccin.flavor = "mocha";
 
   imports = [
     ./atuin.nix

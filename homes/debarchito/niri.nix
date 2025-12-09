@@ -1,7 +1,13 @@
 { pkgs, ... }:
 
 {
-  programs.niri.package = pkgs.niri-unstable;
+  programs.niri = {
+    package = pkgs.niri-unstable;
+    # Doesn't support "inlcudes" yet!
+    config = null;
+  };
+  xdg.configFile."niri/config.kdl".source = ./niri/config.kdl;
+
   programs.dankMaterialShell = {
     enable = true;
     niri = {
@@ -17,8 +23,32 @@
     enableAudioWavelength = true;
     enableCalendarEvents = true;
     enableSystemSound = true;
+    plugins = {
+      displayMirror = {
+        enable = true;
+        src = builtins.fetchGit {
+          url = "https://github.com/debarchito/displayMirror";
+          ref = "main";
+          rev = "92cd44c4fb67834bf71fdd78f83c29df5e0750b2";
+        };
+      };
+      dockerManager = {
+        enable = true;
+        src = builtins.fetchGit {
+          url = "https://github.com/debarchito/dockerManager";
+          ref = "main";
+          rev = "860457bbb043a6651a2cbafe6e77d443123a0b07";
+        };
+      };
+    };
   };
+
   home.packages = [
+    pkgs.pywal
+    pkgs.pywalfox-native
+    pkgs.nautilus
+    pkgs.dsearch
+    pkgs.qt6Packages.qt6ct
     pkgs.xwayland-satellite
   ];
 }
