@@ -5,11 +5,6 @@
   home.homeDirectory = "/home/debarchito";
   home.stateVersion = "24.11";
   home.packages = [
-    (pkgs.catppuccin-kde.override {
-      flavour = [ "mocha" ];
-      accents = [ "mauve" ];
-      winDecStyles = [ "classic" ];
-    })
     pkgs.bibata-cursors
     pkgs.aseprite
     pkgs.croc
@@ -77,9 +72,6 @@
   programs.home-manager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
-
-  # catppuccin.enable = true;
-  # catppuccin.flavor = "mocha";
 
   imports = [
     ./atuin.nix

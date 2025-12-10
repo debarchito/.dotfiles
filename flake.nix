@@ -2,7 +2,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    catppuccin.url = "github:catppuccin/nix";
     dcachix.url = "github:debarchito/dcachix";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -74,7 +73,6 @@
       homeConfigurations.debarchito = inputs.home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          inputs.catppuccin.homeModules.catppuccin
           inputs.nix-flatpak.homeManagerModules.nix-flatpak
           inputs.niri.homeModules.niri
           inputs.dankMaterialShell.homeModules.dankMaterialShell.default
