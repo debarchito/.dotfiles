@@ -1,11 +1,7 @@
 { pkgs, ... }:
 
 {
-  programs.niri = {
-    package = pkgs.niri-unstable;
-    # Doesn't support "inlcudes" yet!
-    config = null;
-  };
+  programs.niri.config = null;
   xdg.configFile."niri/config.kdl".source = ./niri/config.kdl;
 
   programs.dankMaterialShell = {
@@ -46,7 +42,6 @@
   home.packages = [
     pkgs.pywal
     pkgs.pywalfox-native
-    pkgs.nautilus
     pkgs.dsearch
     pkgs.qt6Packages.qt6ct
     pkgs.xwayland-satellite

@@ -65,6 +65,7 @@
       nixosConfigurations.laptop = inputs.nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
+          inputs.niri.nixosModules.niri
           ./hosts/laptop
           ./modules/games
           ./modules/wm
@@ -74,7 +75,7 @@
         inherit pkgs;
         modules = [
           inputs.nix-flatpak.homeManagerModules.nix-flatpak
-          inputs.niri.homeModules.niri
+          inputs.niri.homeModules.config
           inputs.dankMaterialShell.homeModules.dankMaterialShell.default
           inputs.dankMaterialShell.homeModules.dankMaterialShell.niri
           ./homes/debarchito

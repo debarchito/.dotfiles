@@ -1,16 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
-  programs.niri.enable = true;
-  xdg.portal = {
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+  programs.niri = {
     enable = true;
-    wlr.enable = true;
-    configPackages = [
-      pkgs.xdg-desktop-portal-wlr
-    ];
-    extraPortals = [
-      pkgs.xdg-desktop-portal-wlr
-    ];
+    package = pkgs.niri-unstable;
   };
-
 }
