@@ -82,13 +82,11 @@
         bitwarden
         canvasblocker
         darkreader
-        firefox-color
         fastforwardteam
-        foxyproxy-standard
+        pywalfox
         plasma-integration
         return-youtube-dislikes
         sponsorblock
-        tabliss
         ublock-origin
         user-agent-string-switcher
         violentmonkey
@@ -152,8 +150,6 @@
         "widget.gtk.titlebar-action-middle-click-enabled" = true;
         "widget.use-xdg-desktop-portal.file-picker" = 1;
       };
-      userChrome = builtins.readFile ./librewolf/userChrome.css;
-      userContent = builtins.readFile ./librewolf/userContent.css;
     };
   };
 }
