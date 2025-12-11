@@ -40,9 +40,10 @@
   };
 
   home.packages = [
+    pkgs.dsearch
+    pkgs.nautilus
     pkgs.pywal
     pkgs.pywalfox-native
-    pkgs.dsearch
     pkgs.qt6Packages.qt6ct
     pkgs.xwayland-satellite
   ];
