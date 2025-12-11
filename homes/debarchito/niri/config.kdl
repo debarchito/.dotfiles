@@ -42,7 +42,7 @@ layout {
         top 0
         bottom 0
     }
-    focus-ring { width 3; }
+    focus-ring { width 2; }
     border { off; }
     default-column-width
     center-focused-column "always"
