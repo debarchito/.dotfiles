@@ -65,7 +65,7 @@
   pipewire.enable = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  services.displayManager.ly.enable = true;
+  # services.displayManager.ly.enable = true;
 
   graphics.enable = true;
   graphics.nvidia.enable = true;
@@ -110,7 +110,7 @@
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-    ZED_WINDOW_DECORATIONS = "server";
-    SIGNAL_PASSWORD_STORE = "kwallet6";
+    # ZED_WINDOW_DECORATIONS = "server";
+    # SIGNAL_PASSWORD_STORE = "kwallet6";
   };
 }
