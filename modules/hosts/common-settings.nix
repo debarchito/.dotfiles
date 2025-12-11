@@ -16,6 +16,7 @@
     security.polkit.enable = true;
     services.fail2ban.enable = true;
     services.printing.enable = true;
+    services.colord.enable = true;
     nix.settings = {
       experimental-features = [
         "nix-command"
