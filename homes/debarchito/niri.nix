@@ -36,6 +36,14 @@
           rev = "860457bbb043a6651a2cbafe6e77d443123a0b07";
         };
       };
+      easyEffects = {
+        enable = true;
+        src = builtins.fetchGit {
+          url = "https://github.com/debarchito/easyEffects";
+          ref = "main";
+          rev = "ac2726063d308ef28c1704956564f013951e3a0a";
+        };
+      };
     };
   };
 

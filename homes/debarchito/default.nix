@@ -5,6 +5,7 @@
   home.homeDirectory = "/home/debarchito";
   home.stateVersion = "24.11";
   home.packages = [
+    pkgs.blender
     pkgs.bibata-cursors
     pkgs.aseprite
     pkgs.croc
@@ -15,7 +16,7 @@
     (pkgs.bottles.override {
       removeWarningPopup = true;
     })
-    pkgs.blender
+    pkgs.easyeffects
     pkgs.fd
     pkgs.ffmpeg
     pkgs.ferium
