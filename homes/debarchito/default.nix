@@ -95,6 +95,7 @@
     ./niri.nix
     ./nushell.nix
     ./obs-studio.nix
+    ./reaper.nix
     ./starship.nix
     ./yazi.nix
     ./zellij.nix
