@@ -51,7 +51,18 @@ layout {
 cursor {
     xcursor-theme "default"
     xcursor-size 24
+    hide-when-typing
+    hide-after-inactive-ms 1000
 }
+
+hotkey-overlay {
+    skip-at-startup
+    hide-not-bound
+}
+
+spawn-at-startup "dms" "run"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+spawn-at-startup "ghostty" "--gtk-single-instance=true" "--quit-after-last-window-closed=false" "--initial-window=false"
 
 binds {
     Mod+H hotkey-overlay-title="Focus Column Left"     { focus-column-left;    }
@@ -131,7 +142,3 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "brightness" "decrement" "5" ""; }
     XF86MonBrightnessUp allow-when-locked=true   { spawn "dms" "ipc" "brightness" "increment" "5" ""; }
 } 
-
-spawn-at-startup "dms" "run"
-spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
-spawn-at-startup "ghostty" "--gtk-single-instance=true" "--quit-after-last-window-closed=false" "--initial-window=false"
