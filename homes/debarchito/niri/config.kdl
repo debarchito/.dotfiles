@@ -58,7 +58,7 @@ layout {
 
 
 cursor {
-    xcursor-theme "default"
+    xcursor-theme "Bibata-Modern-Ice"
     xcursor-size 24
     hide-when-typing
     hide-after-inactive-ms 1000

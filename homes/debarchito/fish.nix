@@ -124,6 +124,10 @@
         setCursor = "%";
         expansion = "jj log -r 'heads(all())' -n % --no-pager";
       };
+      sns = {
+        setCursor = "%";
+        expansion = "fd % /nix/store | fzf";
+      };
     };
   };
 }
