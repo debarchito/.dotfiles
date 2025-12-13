@@ -49,9 +49,11 @@ layout {
     default-column-display "tabbed"
     tab-indicator {
         hide-when-single-tab
+        place-within-column
         position "left"
-        width 6
-        gaps-between-tabs 3
+        width 8
+        gap 8
+        gaps-between-tabs 4
         corner-radius 8
     }
 }
