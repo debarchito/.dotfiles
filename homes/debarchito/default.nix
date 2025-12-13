@@ -13,6 +13,7 @@
     pkgs.deno
     pkgs.duckdb
     pkgs.distrobox
+    pkgs.davinci-resolve
     (pkgs.bottles.override {
       removeWarningPopup = true;
     })
