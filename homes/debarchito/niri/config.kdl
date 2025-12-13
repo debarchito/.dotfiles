@@ -109,7 +109,7 @@ binds {
     Mod+Alt+F hotkey-overlay-title="Toggle Window Floating"               { switch-focus-between-floating-and-tiling; }
     Mod+Shift+R hotkey-overlay-title="Switch Preset Window Height"        { switch-preset-window-height;              }
     Mod+Ctrl+R hotkey-overlay-title="Reset Window Height"                 { reset-window-height;                      }
-    Mod+Shift+T { toggle-column-tabbed-display; }
+    Mod+Shift+T hotkey-overlay-title="Toggle Column Tabbed Display"       { toggle-column-tabbed-display;             }
     Mod+Shift+Minus hotkey-overlay-title="Decrease Window Width"          { set-window-height "-10%";                 }
     Mod+Shift+Equal hotkey-overlay-title="Increase Window Width"          { set-window-height "+10%";                 }
 
