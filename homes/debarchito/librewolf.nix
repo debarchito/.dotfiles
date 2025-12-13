@@ -141,15 +141,36 @@
       };
       settings = {
         "places.history.enabled" = false;
-        "layout.css.has-selector.enabled" = true;
-        "svg.context-properties.content.enabled" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-        "media.ffmpeg.vaapi.enabled" = true;
-        "gfx.webrender.all" = true;
-        "widget.gtk.non-native-titlebar-buttons.enabled" = true;
-        "widget.gtk.titlebar-action-middle-click-enabled" = true;
-        "widget.use-xdg-desktop-portal.file-picker" = 1;
+        "svg.context-properties.content.enabled" = true;
+        "sidebar.position_start" = true;
+        "parfait.animations.enabled" = true;
+        "parfait.blur.enabled" = false;
+        "parfait.bg.accent-color" = false;
+        "parfait.bg.contrast" = 2;
+        "parfait.bg.gradient" = false;
+        "parfait.bg.opacity" = 4;
+        "parfait.bg.transparent" = false;
+        "parfait.tabs.groups.color" = false;
+        "parfait.sidebar.width.preset" = 2;
+        "parfait.theme.lwt.alt" = false;
+        "parfait.theme.roundness.preset" = 1;
+        "parfait.toolbar.sidebar-gutter" = true;
+        "parfait.toolbar.unified-sidebar" = true;
+        "parfait.traffic-lights.enabled" = false;
+        "parfait.traffic-lights.mono" = false;
+        "parfait.urlbar.url.center" = false;
+        "parfait.urlbar.results.compact" = false;
+        "parfait.urlbar.search-mode.glow" = true;
+        "parfait.window.borderless" = false;
+        "parfait.new-tab.logo" = 1;
+        "parfait.new-tab.bg.pattern" = false;
       };
     };
+  };
+  home.file.".librewolf/default/chrome".source = builtins.fetchGit {
+    url = "https://github.com/debarchito/parfait";
+    ref = "main";
+    rev = "c3dd54122c5ec1a0157171ea56a5e6369070eb20";
   };
 }
