@@ -1,5 +1,12 @@
 { pkgs, ... }:
 
+let
+  qt6ct = pkgs.qt6Packages.qt6ct.overrideAttrs (oldAttrs: {
+    patches = (oldAttrs.patches or [ ]) ++ [
+      ./patches/qt6ct.patch
+    ];
+  });
+in
 {
   programs.niri.config = null;
   xdg.configFile."niri/config.kdl".source = ./niri/config.kdl;
@@ -48,7 +55,7 @@
     pkgs.nautilus
     pkgs.pywal
     pkgs.pywalfox-native
-    pkgs.qt6Packages.qt6ct
+    qt6ct
     pkgs.xwayland-satellite
   ];
 }
