@@ -31,8 +31,6 @@
     pkgs.kdePackages.kconfig
     pkgs.kdePackages.karousel
     pkgs.kdePackages.kde-gtk-config
-    pkgs.legcord
-    pkgs.libreoffice-qt-fresh
     pkgs.minework
     pkgs.markdown-oxide
     pkgs.nvd
@@ -57,6 +55,7 @@
     pkgs.typstyle
     pkgs.unzip
     pkgs.unrar
+    pkgs.vesktop
     pkgs.vscode-langservers-extracted
     pkgs.winetricks
     pkgs.wl-mirror
@@ -77,7 +76,6 @@
   imports = [
     ./atuin.nix
     ./bat.nix
-    ./btop.nix
     ./direnv.nix
     ./eza.nix
     ./fzf.nix
