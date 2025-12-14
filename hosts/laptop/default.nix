@@ -110,7 +110,6 @@
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-    # ZED_WINDOW_DECORATIONS = "server";
-    # SIGNAL_PASSWORD_STORE = "kwallet6";
+    ZED_WINDOW_DECORATIONS = "server";
   };
 }

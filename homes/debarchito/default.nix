@@ -50,7 +50,6 @@
     pkgs.ripgrep
     pkgs.ripgrep-all
     pkgs.sd
-    pkgs.signal-desktop
     pkgs.simple-completion-language-server
     pkgs.taplo
     pkgs.typst
