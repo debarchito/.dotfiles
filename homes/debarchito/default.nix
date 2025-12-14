@@ -5,9 +5,14 @@
   home.homeDirectory = "/home/debarchito";
   home.stateVersion = "24.11";
   home.packages = [
+    pkgs.aseprite
     pkgs.blender
     pkgs.bibata-cursors
-    pkgs.aseprite
+    (pkgs.catppuccin-kde.override {
+      flavour = [ "mocha" ];
+      accents = [ "mauve" ];
+      winDecStyles = [ "classic" ];
+    })
     pkgs.croc
     pkgs.codebook
     pkgs.deno
