@@ -29,7 +29,6 @@
     "/dev/disk/by-uuid/8ab05525-f7cc-435a-9c91-7e2e45f22977";
   boot.kernelPackages = pkgs.linuxPackages_lqx;
   boot.extraModprobeConfig = "options kvm_intel nested=1";
-  boot.kernel.sysctl."vm.max_map_count" = lib.mkForce 16777216;
   boot.tmp.cleanOnBoot = true;
 
   zramSwap.enable = true;
