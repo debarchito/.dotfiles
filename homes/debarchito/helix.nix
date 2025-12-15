@@ -14,6 +14,7 @@ in
     settings = {
       theme = "base16_transparent";
       editor = {
+        popup-border = "popup";
         bufferline = "multiple";
         color-modes = true;
         completion-replace = true;
