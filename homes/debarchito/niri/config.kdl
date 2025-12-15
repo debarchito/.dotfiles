@@ -45,7 +45,8 @@ layout {
     focus-ring { width 2; }
     border { off; }
     default-column-width
-    center-focused-column "always"
+    center-focused-column "never"
+    always-center-single-column
     default-column-display "tabbed"
     tab-indicator {
         hide-when-single-tab
