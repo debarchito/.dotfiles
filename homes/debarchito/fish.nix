@@ -86,7 +86,6 @@
       set fish_greeting
       set -gx fish_key_bindings __fish_user_key_bindings
       set -gx PATH $PATH $HOME/.local/bin
-      echo && bat -p $HOME/.config/default/cat.txt -l nix
     '';
     preferAbbrs = true;
     shellAbbrs = {

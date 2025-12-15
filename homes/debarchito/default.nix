@@ -106,6 +106,5 @@
     ./zed-editor.nix
   ];
 
-  xdg.configFile."default/cat.txt".source = ./default/cat.txt;
   home.file.".julia/config/startup.jl".source = ./julia/startup.jl;
 }
