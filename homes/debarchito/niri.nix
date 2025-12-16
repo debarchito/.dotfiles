@@ -44,7 +44,7 @@ in
         src = builtins.fetchGit {
           url = "https://github.com/debarchito/easyEffects";
           ref = "main";
-          rev = "ac2726063d308ef28c1704956564f013951e3a0a";
+          rev = "f50fdb7a110ddb90b7625bc143884fd773c3d5c7";
         };
       };
     };
