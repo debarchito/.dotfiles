@@ -31,6 +31,10 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    xwayland-satellite = {
+      url = "github:Supreeeme/xwayland-satellite";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     dgop = {
       url = "github:AvengeMedia/dgop";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,6 +51,7 @@
       system = "x86_64-linux";
       overlay = final: prev: {
         starship-jj = inputs.starship-jj.packages.${system}.default;
+        xwayland-satellite = inputs.xwayland-satellite.packages.${system}.default;
       };
       pkgs = import inputs.nixpkgs {
         inherit system;
