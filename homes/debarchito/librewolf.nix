@@ -3,7 +3,10 @@
 {
   programs.librewolf = {
     enable = true;
-    nativeMessagingHosts = [ pkgs.kdePackages.plasma-browser-integration ];
+    nativeMessagingHosts = [
+      pkgs.kdePackages.plasma-browser-integration
+      pkgs.tridactyl-native
+    ];
     profiles.default = {
       isDefault = true;
       search.engines = {
@@ -87,6 +90,7 @@
         plasma-integration
         return-youtube-dislikes
         sponsorblock
+        tridactyl
         ublock-origin
         user-agent-string-switcher
         violentmonkey
