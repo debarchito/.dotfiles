@@ -36,6 +36,7 @@
     pkgs.kdePackages.kconfig
     pkgs.kdePackages.karousel
     pkgs.kdePackages.kde-gtk-config
+    pkgs.libreoffice-qt-fresh
     pkgs.minework
     pkgs.markdown-oxide
     pkgs.nvd
