@@ -179,4 +179,5 @@
     ref = "main";
     rev = "f3e83e71cd1ee19b1d7b4c55fc9d0cc4e112d5f7";
   };
+  xdg.configFile."tridactyl".source = ./librewolf/extensions/tridactyl;
 }
