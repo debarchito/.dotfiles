@@ -177,6 +177,6 @@
   home.file.".librewolf/default/chrome".source = builtins.fetchGit {
     url = "https://github.com/debarchito/parfait";
     ref = "main";
-    rev = "65706f987d016f3122f300b7b18dd4f486afa1bc";
+    rev = "f3e83e71cd1ee19b1d7b4c55fc9d0cc4e112d5f7";
   };
 }
