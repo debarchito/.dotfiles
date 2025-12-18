@@ -11,7 +11,7 @@ in
   programs.niri.config = null;
   xdg.configFile."niri/config.kdl".source = ./niri/config.kdl;
 
-  programs.dankMaterialShell = {
+  programs.dank-material-shell = {
     enable = true;
     niri = {
       enableKeybinds = true;
