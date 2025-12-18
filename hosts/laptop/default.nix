@@ -92,6 +92,8 @@
     ];
   };
 
+  android.enable = true;
+
   users.users.debarchito = {
     isNormalUser = true;
     description = "Debarchito Nath";
@@ -104,6 +106,7 @@
       "libvirtd"
       "kvm"
       "adbusers"
+      "plugdev"
     ];
   };
 
