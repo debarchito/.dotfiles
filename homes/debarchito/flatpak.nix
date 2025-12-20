@@ -11,7 +11,8 @@
     ];
     packages = [
       "io.github.flattool.Warehouse"
-      "org.gnome.World.PikaBackup"
+      # I use flatpak for apps that I don't necessarily want in my config.
+      # Use nixpkgs versions of apps whenever you can!
     ];
     update.auto.enable = true;
     update.auto.onCalendar = "daily";

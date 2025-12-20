@@ -47,6 +47,7 @@
     pkgs.nixfmt-rfc-style
     pkgs.nix-output-monitor
     pkgs.pijul
+    pkgs.pika-backup
     pkgs.podman-compose
     (pkgs.prismlauncher.override {
       jdks = [ pkgs.jdk21 ];
