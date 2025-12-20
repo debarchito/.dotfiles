@@ -28,6 +28,7 @@
     pkgs.ferium
     pkgs.freerdp
     pkgs.fish-lsp
+    pkgs.gearlever
     pkgs.inotify-tools
     pkgs.jq
     pkgs.just
