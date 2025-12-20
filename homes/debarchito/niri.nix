@@ -56,7 +56,6 @@ in
     pkgs.pywal
     pkgs.pywalfox-native
     qt6ct
-    pkgs.xwayland-run
     pkgs.xwayland-satellite
   ];
 }
