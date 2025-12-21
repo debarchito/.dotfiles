@@ -1,5 +1,9 @@
 [config]
 
 [templates.helix]
-input_path = "/home/debarchito/.config/matugen/templates/helix/dankcolors"
+input_path = "/home/debarchito/.config/matugen/templates/helix/dankcolors.toml"
 output_path = "/home/debarchito/.config/helix/themes/dankcolors.toml"
+
+[templates.youtube-music]
+input_path = "/home/debarchito/.config/matugen/templates/youtube-music/dankcolors.css"
+output_path = "/home/debarchito/.config/YouTube Music/themes/dankcolors.css"
