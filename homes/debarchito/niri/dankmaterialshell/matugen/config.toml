@@ -1,0 +1,5 @@
+[config]
+
+[templates.helix]
+input_path = "/home/debarchito/.config/matugen/templates/helix/dankcolors"
+output_path = "/home/debarchito/.config/helix/themes/dankcolors.toml"

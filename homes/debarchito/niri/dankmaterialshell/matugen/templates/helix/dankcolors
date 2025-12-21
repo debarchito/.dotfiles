@@ -1,0 +1,168 @@
+# Helix Base16 Theme - Generated Palette Compatible
+# Designed for matugen dank16 color generation
+
+# UI Elements
+"ui.background" = { bg = "base00" }
+"ui.background.separator" = "base01"
+"ui.cursor" = { fg = "base00", bg = "base07" }
+"ui.cursor.primary" = { fg = "base00", bg = "base0F" }
+"ui.cursor.match" = { bg = "base07", underline = { style = "line" } }
+"ui.cursorline.primary" = { bg = "base01" }
+"ui.linenr" = "base08"
+"ui.linenr.selected" = "base07"
+"ui.statusline" = { fg = "base07", bg = "base00" }
+"ui.statusline.inactive" = { fg = "base08", bg = "base00" }
+"ui.statusline.normal" = { fg = "base0D", bg = "base00" }
+"ui.statusline.insert" = { fg = "base0B", bg = "base00" }
+"ui.statusline.select" = { fg = "base0E", bg = "base00" }
+"ui.bufferline" = { fg = "base08", bg = "base00" }
+"ui.bufferline.active" = { fg = "base07", bg = "base00", underline = { color = "base0D", style = "line" } }
+"ui.bufferline.background" = { bg = "base00" }
+"ui.popup" = { fg = "base07", bg = "base00" }
+"ui.window" = { fg = "base08" }
+"ui.help" = { fg = "base07", bg = "base00" }
+"ui.text" = "base07"
+"ui.text.focus" = { fg = "base0F", bg = "base02" }
+"ui.text.inactive" = "base08"
+"ui.text.info" = "base0D"
+"ui.virtual.whitespace" = "base08"
+"ui.virtual.ruler" = { bg = "base01" }
+"ui.virtual.indent-guide" = "base08"
+"ui.virtual.inlay-hint" = { fg = "base08" }
+"ui.virtual.jump-label" = { fg = "base09", modifiers = ["bold"] }
+
+# Selection
+"ui.selection" = { bg = "base08" }
+"ui.selection.primary" = { bg = "base08" }
+
+# Menus
+"ui.menu" = { fg = "base07", bg = "base00" }
+"ui.menu.selected" = { fg = "base00", bg = "base07" }
+"ui.menu.scroll" = { fg = "base08", bg = "base00" }
+
+# Diagnostics
+"error" = "base09"
+"warning" = "base03"
+"info" = "base0C"
+"hint" = "base08"
+"diagnostic.error" = { underline = { color = "base09", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "base03", style = "curl" } }
+"diagnostic.info" = { underline = { color = "base0C", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "base08", style = "curl" } }
+
+# Diff
+"diff.plus" = "base0A"
+"diff.minus" = "base09"
+"diff.delta" = "base0E"
+
+# Syntax Highlighting
+"comment" = "base08"
+"comment.line" = "base08"
+"comment.block" = "base08"
+"comment.block.documentation" = "base08"
+
+"constant" = "base09"
+"constant.numeric" = "base09"
+"constant.character" = "base09"
+"constant.character.escape" = "base0C"
+"constant.builtin" = "base09"
+
+"string" = "base0B"
+"string.regexp" = "base0C"
+"string.special" = "base0C"
+
+"character" = "base09"
+
+"number" = "base09"
+
+"boolean" = "base09"
+
+"type" = "base0A"
+"type.builtin" = "base0A"
+"type.enum.variant" = "base0A"
+
+"variable" = "base07"
+"variable.builtin" = "base09"
+"variable.parameter" = "base07"
+"variable.other.member" = "base05"
+
+"label" = "base0E"
+
+"punctuation" = "base07"
+"punctuation.delimiter" = "base07"
+"punctuation.bracket" = "base07"
+"punctuation.special" = "base0C"
+
+"keyword" = "base0E"
+"keyword.control" = "base0E"
+"keyword.control.conditional" = "base0E"
+"keyword.control.repeat" = "base0E"
+"keyword.control.import" = "base0E"
+"keyword.control.return" = "base0E"
+"keyword.control.exception" = "base0E"
+"keyword.operator" = "base0E"
+"keyword.directive" = "base0E"
+"keyword.function" = "base0E"
+"keyword.storage" = "base0E"
+"keyword.storage.type" = "base0E"
+"keyword.storage.modifier" = "base0E"
+
+"operator" = "base05"
+
+"function" = "base0C"
+"function.builtin" = "base0C"
+"function.method" = "base0C"
+"function.macro" = "base06"
+"function.special" = "base0C"
+
+"constructor" = "base0C"
+
+"special" = "base0C"
+
+"tag" = "base0E"
+"tag.builtin" = "base0E"
+
+"namespace" = "base0A"
+
+"attribute" = "base0C"
+
+"property" = "base05"
+
+"module" = "base0A"
+
+# Markup (Markdown, etc.)
+"markup.heading" = "base0D"
+"markup.heading.marker" = "base08"
+"markup.list" = "base0E"
+"markup.list.unnumbered" = "base0E"
+"markup.list.numbered" = "base0E"
+"markup.bold" = "base09"
+"markup.italic" = "base0E"
+"markup.strikethrough" = { fg = "base08", strikethrough = true }
+"markup.link" = "base0D"
+"markup.link.url" = { fg = "base0C", underline = { style = "line" } }
+"markup.link.text" = "base0D"
+"markup.link.label" = "base0C"
+"markup.quote" = "base08"
+"markup.raw" = "base0B"
+"markup.raw.inline" = "base0B"
+"markup.raw.block" = "base0B"
+
+# Palette definition
+[palette]
+base00 = "{{dank16.color0.default.hex}}"
+base01 = "{{dank16.color1.default.hex}}"
+base02 = "{{dank16.color2.default.hex}}"
+base03 = "{{dank16.color3.default.hex}}"
+base04 = "{{dank16.color4.default.hex}}"
+base05 = "{{dank16.color5.default.hex}}"
+base06 = "{{dank16.color6.default.hex}}"
+base07 = "{{dank16.color7.default.hex}}"
+base08 = "{{dank16.color8.default.hex}}"
+base09 = "{{dank16.color9.default.hex}}"
+base0A = "{{dank16.color10.default.hex}}"
+base0B = "{{dank16.color11.default.hex}}"
+base0C = "{{dank16.color12.default.hex}}"
+base0D = "{{dank16.color13.default.hex}}"
+base0E = "{{dank16.color14.default.hex}}"
+base0F = "{{dank16.color15.default.hex}}"

@@ -12,7 +12,7 @@ in
     enable = true;
     defaultEditor = true;
     settings = {
-      theme = "base16_transparent";
+      theme = "dankcolors";
       editor = {
         popup-border = "popup";
         bufferline = "multiple";

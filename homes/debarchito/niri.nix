@@ -50,6 +50,9 @@ in
     };
   };
 
+  xdg.configFile."matugen/templates".source = ./niri/dankmaterialshell/matugen/templates;
+  xdg.configFile."matugen/config.toml".source = ./niri/dankmaterialshell/matugen/config.toml;
+
   home.packages = [
     pkgs.dsearch
     pkgs.nautilus
