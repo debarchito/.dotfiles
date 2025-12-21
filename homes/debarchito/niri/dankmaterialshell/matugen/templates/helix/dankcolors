@@ -1,168 +1,185 @@
-# Helix Base16 Theme - Generated Palette Compatible
-# Designed for matugen dank16 color generation
+# UI Elements - Background & Basic
+"ui.background" = { bg = "background" }
+"ui.background.separator" = "outline_variant"
+"ui.text" = "on_surface"
+"ui.text.focus" = { fg = "on_surface", bg = "surface_container_high" }
+"ui.text.inactive" = "outline"
+"ui.text.info" = "primary"
 
-# UI Elements
-"ui.background" = { bg = "base00" }
-"ui.background.separator" = "base01"
-"ui.cursor" = { fg = "base00", bg = "base07" }
-"ui.cursor.primary" = { fg = "base00", bg = "base0F" }
-"ui.cursor.match" = { bg = "base07", underline = { style = "line" } }
-"ui.cursorline.primary" = { bg = "base01" }
-"ui.linenr" = "base08"
-"ui.linenr.selected" = "base07"
-"ui.statusline" = { fg = "base07", bg = "base00" }
-"ui.statusline.inactive" = { fg = "base08", bg = "base00" }
-"ui.statusline.normal" = { fg = "base0D", bg = "base00" }
-"ui.statusline.insert" = { fg = "base0B", bg = "base00" }
-"ui.statusline.select" = { fg = "base0E", bg = "base00" }
-"ui.bufferline" = { fg = "base08", bg = "base00" }
-"ui.bufferline.active" = { fg = "base07", bg = "base00", underline = { color = "base0D", style = "line" } }
-"ui.bufferline.background" = { bg = "base00" }
-"ui.popup" = { fg = "base07", bg = "base00" }
-"ui.window" = { fg = "base08" }
-"ui.help" = { fg = "base07", bg = "base00" }
-"ui.text" = "base07"
-"ui.text.focus" = { fg = "base0F", bg = "base02" }
-"ui.text.inactive" = "base08"
-"ui.text.info" = "base0D"
-"ui.virtual.whitespace" = "base08"
-"ui.virtual.ruler" = { bg = "base01" }
-"ui.virtual.indent-guide" = "base08"
-"ui.virtual.inlay-hint" = { fg = "base08" }
-"ui.virtual.jump-label" = { fg = "base09", modifiers = ["bold"] }
+# Cursor
+"ui.cursor" = { fg = "background", bg = "primary" }
+"ui.cursor.primary" = { fg = "background", bg = "primary" }
+"ui.cursor.match" = { bg = "secondary", modifiers = ["dim"] }
+"ui.cursorline.primary" = { bg = "surface_container" }
 
-# Selection
-"ui.selection" = { bg = "base08" }
-"ui.selection.primary" = { bg = "base08" }
+# Line Numbers
+"ui.linenr" = "outline"
+"ui.linenr.selected" = "primary"
+
+# Status Line
+"ui.statusline" = { fg = "on_surface", bg = "background" }
+"ui.statusline.inactive" = { fg = "outline", bg = "background" }
+"ui.statusline.normal" = { fg = "on_surface", bg = "background" }
+"ui.statusline.insert" = { fg = "on_surface", bg = "background" }
+"ui.statusline.select" = { fg = "on_surface", bg = "background" }
+
+# Buffer Line / Tabs
+"ui.bufferline" = { fg = "outline", bg = "background" }
+"ui.bufferline.active" = { fg = "on_surface", bg = "surface_container_low", underline = { color = "primary", style = "line" } }
+"ui.bufferline.background" = { bg = "background" }
+
+# Popups & Windows
+"ui.popup" = { fg = "on_surface", bg = "surface_container" }
+"ui.window" = { fg = "outline_variant" }
+"ui.help" = { fg = "on_surface", bg = "surface_container_high" }
 
 # Menus
-"ui.menu" = { fg = "base07", bg = "base00" }
-"ui.menu.selected" = { fg = "base00", bg = "base07" }
-"ui.menu.scroll" = { fg = "base08", bg = "base00" }
+"ui.menu" = { fg = "on_surface", bg = "surface_container" }
+"ui.menu.selected" = { fg = "on_primary_container", bg = "primary_container" }
+"ui.menu.scroll" = { fg = "outline", bg = "surface_container" }
+
+# Selection
+"ui.selection" = { bg = "primary_container" }
+"ui.selection.primary" = { bg = "primary_container" }
+
+# Virtual Elements
+"ui.virtual.whitespace" = "outline"
+"ui.virtual.ruler" = { bg = "surface_container" }
+"ui.virtual.indent-guide" = "outline"
+"ui.virtual.inlay-hint" = { fg = "outline" }
+"ui.virtual.jump-label" = { fg = "primary" }
 
 # Diagnostics
-"error" = "base09"
-"warning" = "base03"
-"info" = "base0C"
-"hint" = "base08"
-"diagnostic.error" = { underline = { color = "base09", style = "curl" } }
-"diagnostic.warning" = { underline = { color = "base03", style = "curl" } }
-"diagnostic.info" = { underline = { color = "base0C", style = "curl" } }
-"diagnostic.hint" = { underline = { color = "base08", style = "curl" } }
+"error" = "error"
+"warning" = "tertiary"
+"info" = "primary"
+"hint" = "outline"
+"diagnostic.error" = { underline = { color = "error", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "tertiary", style = "curl" } }
+"diagnostic.info" = { underline = { color = "primary", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "outline", style = "curl" } }
 
 # Diff
-"diff.plus" = "base0A"
-"diff.minus" = "base09"
-"diff.delta" = "base0E"
+"diff.plus" = "secondary"
+"diff.minus" = "error"
+"diff.delta" = "tertiary"
 
-# Syntax Highlighting
-"comment" = "base08"
-"comment.line" = "base08"
-"comment.block" = "base08"
-"comment.block.documentation" = "base08"
+# Syntax Highlighting - Using dank16 colors
 
-"constant" = "base09"
-"constant.numeric" = "base09"
-"constant.character" = "base09"
-"constant.character.escape" = "base0C"
-"constant.builtin" = "base09"
+# Comments
+"comment" = "outline"
+"comment.line" = "outline"
+"comment.block" = "outline"
+"comment.block.documentation" = "outline"
 
-"string" = "base0B"
-"string.regexp" = "base0C"
-"string.special" = "base0C"
+# Keywords - dank16.color5
+"keyword" = "syntax_keyword"
+"keyword.control" = "syntax_keyword"
+"keyword.control.conditional" = "syntax_keyword"
+"keyword.control.repeat" = "syntax_keyword"
+"keyword.control.import" = "syntax_keyword"
+"keyword.control.return" = "syntax_keyword"
+"keyword.control.exception" = "syntax_keyword"
+"keyword.operator" = "syntax_keyword"
+"keyword.directive" = "syntax_keyword"
+"keyword.function" = "syntax_keyword"
+"keyword.storage" = "syntax_keyword"
+"keyword.storage.type" = "syntax_keyword"
+"keyword.storage.modifier" = "syntax_keyword"
 
-"character" = "base09"
+# Strings - dank16.color2
+"string" = "syntax_string"
+"string.regexp" = "syntax_string"
+"string.special" = "syntax_string"
 
-"number" = "base09"
+# Constants/Numbers - dank16.color12
+"constant" = "syntax_constant"
+"constant.numeric" = "syntax_constant"
+"constant.character" = "syntax_constant"
+"constant.character.escape" = "syntax_constant"
+"constant.builtin" = "syntax_constant"
+"number" = "syntax_constant"
+"boolean" = "syntax_constant"
+"character" = "syntax_constant"
 
-"boolean" = "base09"
+# Functions - dank16.color4
+"function" = "syntax_function"
+"function.builtin" = "syntax_function"
+"function.method" = "syntax_function"
+"function.macro" = "syntax_function"
+"function.special" = "syntax_function"
+"constructor" = "syntax_function"
 
-"type" = "base0A"
-"type.builtin" = "base0A"
-"type.enum.variant" = "base0A"
+# Types - secondary color
+"type" = "secondary"
+"type.builtin" = "secondary"
+"type.enum.variant" = "secondary"
+"namespace" = "secondary"
+"module" = "secondary"
 
-"variable" = "base07"
-"variable.builtin" = "base09"
-"variable.parameter" = "base07"
-"variable.other.member" = "base05"
+# Variables
+"variable" = "on_surface"
+"variable.builtin" = "syntax_constant"
+"variable.parameter" = "on_surface"
+"variable.other.member" = "syntax_function"
+"property" = "syntax_function"
 
-"label" = "base0E"
+# Operators & Punctuation
+"operator" = "on_surface"
+"punctuation" = "on_surface"
+"punctuation.delimiter" = "on_surface"
+"punctuation.bracket" = "on_surface"
+"punctuation.special" = "syntax_function"
 
-"punctuation" = "base07"
-"punctuation.delimiter" = "base07"
-"punctuation.bracket" = "base07"
-"punctuation.special" = "base0C"
+# Labels & Tags
+"label" = "syntax_keyword"
+"tag" = "syntax_keyword"
+"tag.builtin" = "syntax_keyword"
+"attribute" = "syntax_function"
 
-"keyword" = "base0E"
-"keyword.control" = "base0E"
-"keyword.control.conditional" = "base0E"
-"keyword.control.repeat" = "base0E"
-"keyword.control.import" = "base0E"
-"keyword.control.return" = "base0E"
-"keyword.control.exception" = "base0E"
-"keyword.operator" = "base0E"
-"keyword.directive" = "base0E"
-"keyword.function" = "base0E"
-"keyword.storage" = "base0E"
-"keyword.storage.type" = "base0E"
-"keyword.storage.modifier" = "base0E"
-
-"operator" = "base05"
-
-"function" = "base0C"
-"function.builtin" = "base0C"
-"function.method" = "base0C"
-"function.macro" = "base06"
-"function.special" = "base0C"
-
-"constructor" = "base0C"
-
-"special" = "base0C"
-
-"tag" = "base0E"
-"tag.builtin" = "base0E"
-
-"namespace" = "base0A"
-
-"attribute" = "base0C"
-
-"property" = "base05"
-
-"module" = "base0A"
+# Special
+"special" = "syntax_function"
 
 # Markup (Markdown, etc.)
-"markup.heading" = "base0D"
-"markup.heading.marker" = "base08"
-"markup.list" = "base0E"
-"markup.list.unnumbered" = "base0E"
-"markup.list.numbered" = "base0E"
-"markup.bold" = "base09"
-"markup.italic" = "base0E"
-"markup.strikethrough" = { fg = "base08", strikethrough = true }
-"markup.link" = "base0D"
-"markup.link.url" = { fg = "base0C", underline = { style = "line" } }
-"markup.link.text" = "base0D"
-"markup.link.label" = "base0C"
-"markup.quote" = "base08"
-"markup.raw" = "base0B"
-"markup.raw.inline" = "base0B"
-"markup.raw.block" = "base0B"
+"markup.heading" = { fg = "primary" }
+"markup.heading.marker" = "outline"
+"markup.list" = "syntax_keyword"
+"markup.list.unnumbered" = "syntax_keyword"
+"markup.list.numbered" = "syntax_keyword"
+"markup.bold" = "on_surface"
+"markup.italic" = "syntax_keyword"
+"markup.strikethrough" = { fg = "outline", strikethrough = true }
+"markup.link" = "primary"
+"markup.link.url" = { fg = "primary", underline = { style = "line" } }
+"markup.link.text" = "primary"
+"markup.link.label" = "primary"
+"markup.quote" = "outline"
+"markup.raw" = "syntax_string"
+"markup.raw.inline" = "syntax_string"
+"markup.raw.block" = "syntax_string"
 
-# Palette definition
+# Palette definition - Material Design colors + dank16 for syntax
 [palette]
-base00 = "{{dank16.color0.default.hex}}"
-base01 = "{{dank16.color1.default.hex}}"
-base02 = "{{dank16.color2.default.hex}}"
-base03 = "{{dank16.color3.default.hex}}"
-base04 = "{{dank16.color4.default.hex}}"
-base05 = "{{dank16.color5.default.hex}}"
-base06 = "{{dank16.color6.default.hex}}"
-base07 = "{{dank16.color7.default.hex}}"
-base08 = "{{dank16.color8.default.hex}}"
-base09 = "{{dank16.color9.default.hex}}"
-base0A = "{{dank16.color10.default.hex}}"
-base0B = "{{dank16.color11.default.hex}}"
-base0C = "{{dank16.color12.default.hex}}"
-base0D = "{{dank16.color13.default.hex}}"
-base0E = "{{dank16.color14.default.hex}}"
-base0F = "{{dank16.color15.default.hex}}"
+# Material Design semantic colors
+background = "{{colors.background.default.hex}}"
+foreground = "{{colors.on_surface.default.hex}}"
+surface_container = "{{colors.surface_container.default.hex}}"
+surface_container_low = "{{colors.surface_container_low.default.hex}}"
+surface_container_high = "{{colors.surface_container_high.default.hex}}"
+on_surface = "{{colors.on_surface.default.hex}}"
+primary = "{{colors.primary.default.hex}}"
+on_primary = "{{colors.on_primary.default.hex}}"
+primary_container = "{{colors.primary_container.default.hex}}"
+on_primary_container = "{{colors.on_primary_container.default.hex}}"
+secondary = "{{colors.secondary.default.hex}}"
+tertiary = "{{colors.tertiary.default.hex}}"
+error = "{{colors.error.default.hex}}"
+on_error = "{{colors.on_error.default.hex}}"
+outline = "{{colors.outline.default.hex}}"
+outline_variant = "{{colors.outline_variant.default.hex}}"
+
+# dank16 colors for syntax highlighting
+syntax_keyword = "{{dank16.color5.default.hex}}"
+syntax_string = "{{dank16.color2.default.hex}}"
+syntax_constant = "{{dank16.color12.default.hex}}"
+syntax_function = "{{dank16.color4.default.hex}}"
