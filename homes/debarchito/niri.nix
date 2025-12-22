@@ -3,7 +3,7 @@
 let
   qt6ct = pkgs.qt6Packages.qt6ct.overrideAttrs (oldAttrs: {
     patches = (oldAttrs.patches or [ ]) ++ [
-      ./patches/qt6ct.patch
+      ./_patches/qt6ct.patch
     ];
   });
 in
