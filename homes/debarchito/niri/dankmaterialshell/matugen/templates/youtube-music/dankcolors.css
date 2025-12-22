@@ -1248,11 +1248,11 @@ button.yt-icon-button > yt-icon {
 }
 
 button.yt-icon-button {
-  color: var(--ctp-text) !important;
-  --iron-icon-theme-color: var(--ctp-text) !important;
-  --icon-color: var(--ctp-text) !important;
-  --iron-icon-fill-color: var(--ctp-text) !important;
-  --iron-icon-stroke-color: var(--ctp-text) !important;
+  color: var(--ctp-accent) !important;
+  --iron-icon-theme-color: var(--ctp-accent) !important;
+  --icon-color: var(--ctp-accent) !important;
+  --iron-icon-fill-color: var(--ctp-accent) !important;
+  --iron-icon-stroke-color: var(--ctp-accent) !important;
 }
 
 yt-icon-button.previous-items-button,

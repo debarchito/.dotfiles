@@ -6,7 +6,7 @@
 "ui.text.info" = "primary"
 "ui.cursor" = { fg = "background", bg = "primary" }
 "ui.cursor.primary" = { fg = "background", bg = "primary" }
-"ui.cursor.match" = { bg = "secondary", modifiers = ["dim"] }
+"ui.cursor.match" = { fg = "background", bg = "primary" }
 "ui.cursorline.primary" = { bg = "surface_container" }
 "ui.linenr" = "outline"
 "ui.linenr.selected" = "primary"
