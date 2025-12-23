@@ -24,8 +24,8 @@ input {
         tap
         natural-scroll
     }
-    warp-mouse-to-focus mode="center-xy-always"
-    focus-follows-mouse max-scroll-amount="95%"
+    // warp-mouse-to-focus mode="center-xy-always"
+    // focus-follows-mouse max-scroll-amount="95%"
 }
 
 output "eDP-2" {
