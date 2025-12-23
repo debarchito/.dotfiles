@@ -46,7 +46,6 @@
     pkgs.nix-search-tv
     pkgs.nixfmt-rfc-style
     pkgs.nix-output-monitor
-    pkgs.pijul
     pkgs.pika-backup
     pkgs.podman-compose
     (pkgs.prismlauncher.override {
@@ -90,11 +89,8 @@
     ./fish.nix
     ./flatpak.nix
     ./ghostty.nix
-    ./git.nix
-    ./git-cliff.nix
     ./gpg.nix
     ./helix.nix
-    ./jujutsu.nix
     ./kdeconnect.nix
     ./librewolf.nix
     ./mpv.nix
@@ -103,6 +99,7 @@
     ./obs-studio.nix
     ./reaper.nix
     ./starship.nix
+    ./vcs.nix
     ./yazi.nix
     ./zellij.nix
     ./zoxide.nix
