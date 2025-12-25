@@ -1,7 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-nvidia.url = "github:nixos/nixpks/c6245e83d836d0433170a16eb185cefe0572f8b8";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     dcachix.url = "github:debarchito/dcachix";
     home-manager = {
@@ -68,7 +67,7 @@
       };
     in
     {
-      nixosConfigurations.laptop = inputs.nixpkgs-nvidia.lib.nixosSystem {
+      nixosConfigurations.laptop = inputs.nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
           inputs.niri.nixosModules.niri
