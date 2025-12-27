@@ -174,10 +174,10 @@
       };
     };
   };
-  home.file.".librewolf/default/chrome".source = builtins.fetchGit {
+  home.file.".librewolf/default/chrome".source = fetchGit {
     url = "https://github.com/debarchito/parfait";
     ref = "main";
-    rev = "d074179556a760595e1eee2161d94acddaa463ab";
+    rev = "091bb2978ec2a5912a6b7fee90e57e443b895a34";
   };
   xdg.configFile."tridactyl".source = ./librewolf/extensions/tridactyl;
 }

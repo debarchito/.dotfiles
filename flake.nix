@@ -23,10 +23,6 @@
       url = "git+https://codeberg.org/debarchito/minework";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    starship-jj = {
-      url = "gitlab:lanastara_foss/starship-jj";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -50,7 +46,6 @@
     let
       system = "x86_64-linux";
       overlay = final: prev: {
-        starship-jj = inputs.starship-jj.packages.${system}.default;
         xwayland-satellite = inputs.xwayland-satellite.packages.${system}.default;
       };
       pkgs = import inputs.nixpkgs {
