@@ -67,7 +67,7 @@
     pkgs.winetricks
     pkgs.wl-mirror
     pkgs.wl-clipboard
-    pkgs.youtube-music
+    pkgs.pear-desktop
     pkgs.yaml-language-server
     pkgs.zathura
     pkgs.maple-mono.NF

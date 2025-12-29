@@ -31,14 +31,9 @@
       url = "github:Supreeeme/xwayland-satellite";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dgop = {
-      url = "github:AvengeMedia/dgop";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    dankMaterialShell = {
+    dms = {
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.dgop.follows = "dgop";
     };
   };
   outputs =
@@ -76,8 +71,8 @@
         modules = [
           inputs.nix-flatpak.homeManagerModules.nix-flatpak
           inputs.niri.homeModules.config
-          inputs.dankMaterialShell.homeModules.dank-material-shell
-          inputs.dankMaterialShell.homeModules.niri
+          inputs.dms.homeModules.dank-material-shell
+          inputs.dms.homeModules.niri
           ./homes/debarchito
         ];
       };
