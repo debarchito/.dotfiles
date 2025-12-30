@@ -48,6 +48,7 @@
     pkgs.nix-output-monitor
     pkgs.pika-backup
     pkgs.podman-compose
+    pkgs.pulse-visualizer
     (pkgs.prismlauncher.override {
       jdks = [ pkgs.jdk21 ];
     })

@@ -35,6 +35,10 @@
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    pulse-visualizer = {
+      url = "github:debarchito/pulse-visualizer/f0a91f128e92a5e725440ca6b4512d32ef040627";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     inputs:
@@ -52,6 +56,7 @@
           inputs.niri.overlays.niri
           inputs.nix-alien.overlays.default
           inputs.minework.overlays.default
+          inputs.pulse-visualizer.overlays.default
           overlay
         ];
       };
