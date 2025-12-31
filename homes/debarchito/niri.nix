@@ -58,6 +58,10 @@ in
     };
   };
 
+  xdg.configFile."DankMaterialShell/settings.json".source = ./niri/dankmaterialshell/settings.json;
+  xdg.configFile."DankMaterialShell/plugin_settings.json".source =
+    ./niri/dankmaterialshell/plugin_settings.json;
+
   xdg.configFile."matugen/templates".source = ./niri/dankmaterialshell/matugen/templates;
   xdg.configFile."matugen/config.toml".source = ./niri/dankmaterialshell/matugen/config.toml;
 

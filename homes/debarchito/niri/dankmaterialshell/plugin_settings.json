@@ -1,0 +1,20 @@
+{
+  "displayMirror": {
+    "enabled": true,
+    "autoRefresh": false
+  },
+  "dockerManager": {
+    "enabled": true,
+    "dockerBinary": "podman",
+    "terminalApp": "ghostty --gtk-single-instance=true",
+    "shellPath": "/home/debarchito/.nix-profile/bin/fish"
+  },
+  "easyEffects": {
+    "enabled": true,
+    "currentOutputIndex": -1,
+    "currentInputIndex": -1
+  },
+  "nixMonitor": {
+    "enabled": true
+  }
+}
