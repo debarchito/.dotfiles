@@ -1,7 +1,7 @@
 {
   "displayMirror": {
     "enabled": true,
-    "autoRefresh": false
+    "autoRefresh": true
   },
   "dockerManager": {
     "enabled": true,
@@ -16,5 +16,29 @@
   },
   "nixMonitor": {
     "enabled": true
+  },
+  "commandRunner": {
+    "enabled": true,
+    "terminal": "ghostty",
+    "history": []
+  },
+  "emojiLauncher": {
+    "enabled": true
+  },
+  "niriWindows": {
+    "enabled": true,
+    "noTrigger": false,
+    "trigger": "!"
+  },
+  "webSearch": {
+    "enabled": true,
+    "searchEngines": [],
+    "defaultEngine": "duckduckgo",
+    "noTrigger": false,
+    "trigger": "?"
+  },
+  "calculator": {
+    "enabled": true,
+    "trigger": "="
   }
 }

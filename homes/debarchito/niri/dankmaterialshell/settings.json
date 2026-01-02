@@ -57,6 +57,18 @@
   "privacyShowScreenShareIcon": false,
   "controlCenterWidgets": [
     {
+      "id": "brightnessSlider",
+      "enabled": true,
+      "width": 50,
+      "instanceId": "mjs4hyt3p651vwwr22a0asvfts0v0",
+      "deviceName": ""
+    },
+    {
+      "id": "idleInhibitor",
+      "enabled": true,
+      "width": 50
+    },
+    {
       "id": "volumeSlider",
       "enabled": true,
       "width": 50
@@ -73,18 +85,6 @@
     },
     {
       "id": "audioInput",
-      "enabled": true,
-      "width": 50
-    },
-    {
-      "id": "brightnessSlider",
-      "enabled": true,
-      "width": 50,
-      "instanceId": "mjs4hyt3p651vwwr22a0asvfts0v0",
-      "deviceName": ""
-    },
-    {
-      "id": "idleInhibitor",
       "enabled": true,
       "width": 50
     },
@@ -119,7 +119,7 @@
       "width": 50
     },
     {
-      "id": "builtin_cups",
+      "id": "plugin_displayMirror",
       "enabled": true,
       "width": 50
     },
@@ -354,7 +354,8 @@
         },
         {
           "id": "diskUsage",
-          "enabled": true
+          "enabled": true,
+          "mountPath": "/"
         },
         {
           "id": "battery",

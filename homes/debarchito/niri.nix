@@ -23,6 +23,30 @@ in
     enableAudioWavelength = true;
     enableCalendarEvents = true;
     plugins = {
+      appShortcut = {
+        enable = true;
+        src = fetchGit {
+          url = "https://github.com/debarchito/appShortcut";
+          ref = "main";
+          rev = "373400a84e40b0fb73d6c809ea33c425b529c35f";
+        };
+      };
+      calculator = {
+        enable = true;
+        src = fetchGit {
+          url = "https://github.com/debarchito/calculator";
+          ref = "main";
+          rev = "de6dbd59b7630e897a50e107f704c1cd4a131128";
+        };
+      };
+      commandRunner = {
+        enable = true;
+        src = fetchGit {
+          url = "https://github.com/debarchito/commandRunner";
+          ref = "main";
+          rev = "d89a09413e2fc041089b595a06c0fb316b12e17a";
+        };
+      };
       displayMirror = {
         enable = true;
         src = fetchGit {
@@ -47,12 +71,28 @@ in
           rev = "f50fdb7a110ddb90b7625bc143884fd773c3d5c7";
         };
       };
-      appShortcut = {
+      emojiLauncher = {
         enable = true;
         src = fetchGit {
-          url = "https://github.com/debarchito/appShortcut";
+          url = "https://github.com/debarchito/emojiLauncher";
           ref = "main";
-          rev = "373400a84e40b0fb73d6c809ea33c425b529c35f";
+          rev = "2951ec7f823c983c11b6b231403581a386a7c9f6";
+        };
+      };
+      niriWindows = {
+        enable = true;
+        src = fetchGit {
+          url = "https://github.com/debarchito/niriWindows";
+          ref = "main";
+          rev = "b845277ad505556caff828241ec6a80a75f0e034";
+        };
+      };
+      webSearch = {
+        enable = true;
+        src = fetchGit {
+          url = "https://github.com/debarchito/webSearch";
+          ref = "main";
+          rev = "81ccd9fd8249b3c9ef40dde42549f807e36ae3e3";
         };
       };
     };
