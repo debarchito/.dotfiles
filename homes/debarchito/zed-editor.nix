@@ -5,8 +5,6 @@
     enable = true;
     extensions = [
       "astro"
-      "catppuccin"
-      "catppuccin-icons"
       "docker-compose"
       "dockerfile"
       "git-firefly"
@@ -17,11 +15,10 @@
       "toml"
     ];
     userSettings = {
-      icon_theme = "Catppuccin Mocha";
       theme = {
         mode = "system";
-        light = lib.mkForce "Catppuccin Latte";
-        dark = "Catppuccin Mocha";
+        light = lib.mkForce "Matugen Light";
+        dark = "Matugen Dark";
       };
       ui_font_size = 16;
       buffer_font_size = 16;
