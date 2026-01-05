@@ -44,7 +44,7 @@ in
         src = fetchGit {
           url = "https://github.com/debarchito/commandRunner";
           ref = "main";
-          rev = "d89a09413e2fc041089b595a06c0fb316b12e17a";
+          rev = "3739e3b8a07e36fc52dbe76130574aab10e3a36e";
         };
       };
       displayMirror = {
