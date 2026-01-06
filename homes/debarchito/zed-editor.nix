@@ -5,6 +5,7 @@
     enable = true;
     extensions = [
       "astro"
+      "codebook"
       "docker-compose"
       "dockerfile"
       "git-firefly"
