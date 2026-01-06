@@ -31,17 +31,17 @@
           Fedora = " ";
           NixOS = "󱄅 ";
         };
-        style = "bold #cba6f7";
+        style = "bold cyan";
       };
-      directory.style = "#cba6f7";
+      directory.style = "cyan";
       line_break.disabled = true;
       character = {
-        success_symbol = "[ ](#cab4fe)";
-        error_symbol = "[ ](#f38ba8)";
-        vimcmd_symbol = "[ ](#a6e3a1)";
-        vimcmd_visual_symbol = "[󰼢 ](#f9e2af)";
-        vimcmd_replace_symbol = "[󰛔 * ](#eba0ac)";
-        vimcmd_replace_one_symbol = "[󰛔 1 ](#eba0ac)";
+        success_symbol = "[ ](cyan)";
+        error_symbol = "[ ](red)";
+        vimcmd_symbol = "[ ](green)";
+        vimcmd_visual_symbol = "[󰼢 ](orange)";
+        vimcmd_replace_symbol = "[󰛔 * ](orange)";
+        vimcmd_replace_one_symbol = "[󰛔 1 ](orange)";
       };
       pijul_channel = {
         disabled = false;
@@ -54,7 +54,7 @@
       };
       git_status = {
         format = "[[($conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead$behind$stashed$diverged)]($style)";
-        style = "cyan";
+        style = "orange";
         conflicted = " ⚠";
         untracked = " ?";
         modified = " ✎";
@@ -72,13 +72,13 @@
       };
       cmd_duration = {
         format = "[$duration]($style) ";
-        style = "bold #cba6f7";
+        style = "bold cyan";
       };
       nix_shell = {
-        format = "@ [󱄅 $name](bold #89b4fa) ";
+        format = "@ [󱄅 $name](bold blue) ";
       };
       python = {
-        format = "@ [ $virtualenv](bold #cba6f7) ";
+        format = "@ [ $virtualenv](bold cyan) ";
       };
       custom.jj = {
         command = "prompt";
