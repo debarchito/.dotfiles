@@ -110,7 +110,7 @@ in
     pkgs.nautilus
     pkgs.pywal
     pkgs.pywalfox-native
-    qt6ct
     pkgs.xwayland-satellite
+    qt6ct
   ];
 }

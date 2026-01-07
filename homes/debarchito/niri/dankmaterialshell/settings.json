@@ -13,6 +13,13 @@
   "cornerRadius": 8,
   "niriLayoutGapsOverride": -1,
   "niriLayoutRadiusOverride": -1,
+  "niriLayoutBorderSize": -1,
+  "hyprlandLayoutGapsOverride": -1,
+  "hyprlandLayoutRadiusOverride": -1,
+  "hyprlandLayoutBorderSize": -1,
+  "mangoLayoutGapsOverride": -1,
+  "mangoLayoutRadiusOverride": -1,
+  "mangoLayoutBorderSize": -1,
   "use24HourClock": true,
   "showSeconds": false,
   "useFahrenheit": false,
@@ -130,10 +137,12 @@
     }
   ],
   "showWorkspaceIndex": true,
+  "showWorkspaceName": true,
   "showWorkspacePadding": true,
   "workspaceScrolling": false,
   "showWorkspaceApps": true,
   "maxWorkspaceIcons": 5,
+  "groupWorkspaceApps": true,
   "workspacesPerMonitor": true,
   "showOccupiedWorkspacesOnly": true,
   "reverseScrolling": false,
@@ -142,7 +151,7 @@
   "waveProgressEnabled": true,
   "scrollTitleEnabled": true,
   "audioVisualizerEnabled": true,
-  "audioScrollEnabled": true,
+  "audioScrollMode": "volume",
   "clockCompactMode": false,
   "focusedWindowCompactMode": false,
   "runningAppsCompactMode": true,
@@ -159,13 +168,27 @@
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
   "niriOverviewOverlayEnabled": true,
-  "weatherLocation": "Guwahati, Assam",
-  "weatherCoordinates": "26.1578514,91.6916460",
   "useAutoLocation": false,
   "weatherEnabled": false,
   "networkPreference": "wifi",
   "vpnLastConnected": "",
-  "iconTheme": "System Default",
+  "iconTheme": "breeze",
+  "cursorSettings": {
+    "theme": "Bibata-Modern-Ice",
+    "size": 24,
+    "niri": {
+      "hideWhenTyping": true,
+      "hideAfterInactiveMs": 5000
+    },
+    "hyprland": {
+      "hideOnKeyPress": false,
+      "hideOnTouch": false,
+      "inactiveTimeout": 0
+    },
+    "dwl": {
+      "cursorHideTimeout": 0
+    }
+  },
   "launcherLogoMode": "os",
   "launcherLogoCustomPath": "",
   "launcherLogoColorOverride": "primary",
@@ -203,6 +226,8 @@
   "loginctlLockIntegration": true,
   "fadeToLockEnabled": false,
   "fadeToLockGracePeriod": 5,
+  "fadeToDpmsEnabled": false,
+  "fadeToDpmsGracePeriod": 5,
   "launchPrefix": "",
   "brightnessDevicePins": {},
   "wifiNetworkPins": {},
@@ -216,6 +241,8 @@
   "runDmsMatugenTemplates": true,
   "matugenTemplateGtk": true,
   "matugenTemplateNiri": true,
+  "matugenTemplateHyprland": true,
+  "matugenTemplateMangowc": true,
   "matugenTemplateQt5ct": true,
   "matugenTemplateQt6ct": true,
   "matugenTemplateFirefox": true,
@@ -259,11 +286,18 @@
   "maxFprintTries": 15,
   "lockScreenActiveMonitor": "all",
   "lockScreenInactiveColor": "#000000",
+  "lockScreenNotificationMode": 0,
   "hideBrightnessSlider": false,
   "notificationTimeoutLow": 5000,
   "notificationTimeoutNormal": 5000,
   "notificationTimeoutCritical": 0,
   "notificationPopupPosition": 3,
+  "notificationHistoryEnabled": true,
+  "notificationHistoryMaxCount": 50,
+  "notificationHistoryMaxAgeDays": 7,
+  "notificationHistorySaveLow": true,
+  "notificationHistorySaveNormal": true,
+  "notificationHistorySaveCritical": true,
   "osdAlwaysShowValue": true,
   "osdPosition": 5,
   "osdVolumeEnabled": true,
@@ -414,7 +448,9 @@
       "maximizeDetection": true,
       "scrollEnabled": false,
       "scrollXBehavior": "column",
-      "scrollYBehavior": "workspace"
+      "scrollYBehavior": "workspace",
+      "shadowIntensity": 0,
+      "shadowColorMode": "text"
     }
   ],
   "desktopClockEnabled": false,
@@ -487,5 +523,10 @@
   "desktopWidgetPositions": {},
   "desktopWidgetGridSettings": {},
   "desktopWidgetInstances": [],
-  "configVersion": 4
+  "builtInPluginSettings": {
+    "dms_settings_search": {
+      "trigger": "?"
+    }
+  },
+  "configVersion": 5
 }
