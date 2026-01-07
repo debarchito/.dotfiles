@@ -14,8 +14,8 @@ in
   programs.dank-material-shell = {
     enable = true;
     niri = {
-      enableKeybinds = true;
       enableSpawn = true;
+      includes.enable = false;
     };
     enableSystemMonitoring = true;
     enableVPN = true;
