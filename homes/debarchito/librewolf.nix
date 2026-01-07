@@ -5,6 +5,7 @@
     enable = true;
     nativeMessagingHosts = [
       pkgs.kdePackages.plasma-browser-integration
+      pkgs.pywalfox-native
       pkgs.tridactyl-native
     ];
     profiles.default = {
