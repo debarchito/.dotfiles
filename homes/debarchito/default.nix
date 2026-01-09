@@ -35,6 +35,7 @@
     pkgs.krita
     pkgs.kdePackages.kconfig
     pkgs.kdePackages.karousel
+    pkgs.kdePackages.kdenlive
     pkgs.kdePackages.kde-gtk-config
     pkgs.libreoffice-qt-fresh
     pkgs.minework
