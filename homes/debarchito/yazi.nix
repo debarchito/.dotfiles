@@ -22,75 +22,70 @@
       plugin = {
         prepend_previewers = [
           {
-            name = "*.md";
+            url = "*.md";
             run = "piper -- CLICOLOR_FORCE=1 ${pkgs.glow}/bin/glow -w=$w -s=dark \"$1\"";
           }
           {
-            name = "*.tar*";
+            url = "*.tar*";
             run = "piper --format=url -- tar tf \"$1\"";
           }
           {
-            name = "*.csv";
+            url = "*.csv";
             run = "duckdb";
           }
           {
-            name = "*.tsv";
+            url = "*.tsv";
             run = "duckdb";
           }
           {
-            name = "*.parquet";
+            url = "*.parquet";
             run = "duckdb";
           }
           {
-            name = "*.xlsx";
+            url = "*.xlsx";
             run = "duckdb";
           }
           {
-            name = "*.duckdb";
+            url = "*.duckdb";
             run = "duckdb";
           }
           {
-            name = "*/";
+            url = "*/";
             run = "piper -- eza -TL=3 --color=always --icons=always --group-directories-first --no-quotes \"$1\"";
           }
         ];
         prepend_fetchers = [
           {
             id = "git";
-            name = "*";
+            url = "*";
             run = "git";
           }
           {
             id = "git";
-            name = "*/";
+            url = "*/";
             run = "git";
           }
         ];
         prepend_preloaders = [
           {
-            name = "*.csv";
+            url = "*.csv";
             run = "duckdb";
-            multi = false;
           }
           {
-            name = "*.tsv";
+            url = "*.tsv";
             run = "duckdb";
-            multi = false;
           }
           {
-            name = "*.parquet";
+            url = "*.parquet";
             run = "duckdb";
-            multi = false;
           }
           {
-            name = "*.xlsx";
+            url = "*.xlsx";
             run = "duckdb";
-            multi = false;
           }
           {
-            name = "*.duckdb";
+            url = "*.duckdb";
             run = "duckdb";
-            multi = false;
           }
         ];
         preview = {
