@@ -73,14 +73,14 @@
           updateInterval = 24 * 60 * 60 * 1000;
           definedAliases = [ "@aw" ];
         };
-        "StartPage" = {
-          urls = [ { template = "https://www.startpage.com/sp/search?query={searchTerms}"; } ];
-          icon = "https://www.startpage.com/sp/cdn/favicons/mobile/apple-icon-57x57.png";
+        "SearXNG" = {
+          urls = [ { template = "https://searx.tiekoetter.com/search?q={searchTerms}"; } ];
+          icon = "https://searx.tiekoetter.com/static/themes/simple/img/favicon.png";
           updateInterval = 24 * 60 * 60 * 1000;
-          definedAliases = [ "@sp" ];
+          definedAliases = [ "@sn" ];
         };
       };
-      search.default = "StartPage";
+      search.default = "SearXNG";
       search.force = true;
       extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         bitwarden
