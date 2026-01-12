@@ -104,7 +104,7 @@
     ./yazi.nix
     ./zellij.nix
     ./zoxide.nix
-    # ./zed-editor.nix
+    ./zed-editor.nix
   ];
 
   home.file.".julia/config/startup.jl".source = ./julia/startup.jl;
