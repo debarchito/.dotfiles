@@ -31,6 +31,10 @@
   boot.extraModprobeConfig = "options kvm_intel nested=1";
   boot.tmp.cleanOnBoot = true;
 
+  services.btrfs.autoScrub.enable = true;
+  services.btrfs.autoScrub.fileSystems = [ "/" ];
+  services.btrfs.autoScrub.interval = "weekly";
+
   zramSwap.enable = true;
 
   time.timeZone = "Asia/Kolkata";
