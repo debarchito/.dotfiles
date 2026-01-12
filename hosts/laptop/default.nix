@@ -1,27 +1,23 @@
-{ pkgs, ... }:
+{ pkgs, userName, ... }:
 
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/hosts/common-settings.nix
-    ../../modules/hosts/trusted-substituters.nix
-    ../../modules/hosts/netmod.nix
     ../../modules/hosts/bluetooth.nix
-    ../../modules/hosts/pipewire.nix
+    ../../modules/hosts/common-settings.nix
     ../../modules/hosts/graphics.nix
+    ../../modules/hosts/netmod.nix
+    ../../modules/hosts/pipewire.nix
     ../../modules/hosts/podman.nix
-    ../../modules/hosts/vm.nix
+    ../../modules/hosts/steam.nix
     ../../modules/hosts/sunshine.nix
-    ../../modules/hosts/android.nix
+    ../../modules/hosts/trusted-substituters.nix
+    ../../modules/hosts/vm.nix
   ];
 
   system.stateVersion = "24.11";
-  nixpkgs.config = {
-    allowUnfree = true;
-    # android_sdk.accept_license = true;
-  };
 
-  services.fwupd.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -52,41 +48,42 @@
   };
 
   common-settings.enable = true;
-  common-settings.flake = "/home/debarchito/.dotfiles";
-  common-settings.gc.options = "--delete-older-than 7d";
+  common-settings.flake = "/home/${userName}/.dotfiles";
+  common-settings.gcOptions = "--delete-older-than 7d";
   trusted-substituters.enable = true;
 
   netmod.enable = true;
   netmod.name = "laptop";
+  netmod.allowPortRanges = [
+    {
+      from = 1714;
+      to = 1764;
+    }
+  ];
   netmod.openssh.enable = true;
   netmod.openssh.ports = [ 54321 ];
-  netmod.openssh.allowUsers = [ "debarchito" ];
+  netmod.openssh.allowUsers = [ userName ];
   netmod.openssh.endlessh.port = 22;
   netmod.openvpn.enable = true;
 
   bluetooth.enable = true;
   pipewire.enable = true;
 
-  services.xserver.videoDrivers = [ "nvidia" ];
-  # services.displayManager.ly.enable = true;
-
   graphics.enable = true;
   graphics.nvidia.enable = true;
-  graphics.nvidia.prime = {
-    enable = true;
-    offload.enable = true;
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:1:0:0";
-  };
+  graphics.nvidia.prime.enable = true;
+  graphics.nvidia.prime.offload.enable = true;
+  graphics.nvidia.prime.intelBusId = "PCI:0:2:0";
+  graphics.nvidia.prime.nvidiaBusId = "PCI:1:0:0";
 
   podman.enable = true;
+  podman.settings = {
+    dns_enabled = true;
+  };
   vm.enable = true;
   vm.kvm.enable = true;
 
-  sunshine.enable = true;
-
   services.flatpak.enable = true;
-
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
   programs.appimage.package = pkgs.appimage-run.override {
@@ -96,21 +93,20 @@
     ];
   };
 
-  android.enable = true;
+  steam.enable = true;
+  sunshine.enable = true;
 
-  users.users.debarchito = {
+  users.users.${userName} = {
     isNormalUser = true;
-    description = "Debarchito Nath";
+    description = "${userName}'s account";
     extraGroups = [
-      "networkmanager"
-      "wheel"
-      "pipewire"
-      "audio"
       "bluetooth"
-      "libvirtd"
       "kvm"
-      "adbusers"
+      "libvirtd"
+      "networkmanager"
+      "pipewire"
       "plugdev"
+      "wheel"
     ];
   };
 

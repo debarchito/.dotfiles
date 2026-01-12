@@ -3,34 +3,35 @@
 {
   options.common-settings = {
     enable = lib.mkEnableOption "common settings that can be utilized for multiple hosts";
-    gc.options = lib.mkOption {
-      description = "additional options for gc";
-    };
     flake = lib.mkOption {
       description = "path to the flake to use";
+    };
+    gcOptions = lib.mkOption {
+      description = "additional options for gc";
     };
   };
 
   config = lib.mkIf config.common-settings.enable {
-    security.rtkit.enable = true;
     security.polkit.enable = true;
-    services.fail2ban.enable = true;
-    services.printing.enable = true;
+    security.rtkit.enable = true;
+
     services.colord.enable = true;
-    nix.settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-        "pipe-operators"
-      ];
-      auto-optimise-store = true;
-    };
+    services.fail2ban.enable = true;
+    services.fwupd.enable = true;
+    services.printing.enable = true;
+
+    nix.settings.experimental-features = [
+      "nix-command"
+      "flakes"
+      "pipe-operators"
+    ];
+    nix.settings.auto-optimise-store = true;
+
     programs.nix-ld.enable = true;
-    programs.nh = {
-      enable = true;
-      clean.enable = true;
-      clean.extraArgs = config.common-settings.gc.options;
-      flake = config.common-settings.flake;
-    };
+
+    programs.nh.enable = true;
+    programs.nh.flake = config.common-settings.flake;
+    programs.nh.clean.enable = true;
+    programs.nh.clean.extraArgs = config.common-settings.gcOptions;
   };
 }
