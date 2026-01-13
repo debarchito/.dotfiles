@@ -46,6 +46,7 @@
     pkgs.nix-search-tv
     pkgs.nixfmt
     pkgs.nix-output-monitor
+    pkgs.pijul
     pkgs.pika-backup
     pkgs.podman-compose
     pkgs.pulse-visualizer
@@ -75,23 +76,26 @@
     pkgs.noto-fonts-cjk-sans
   ];
 
-  fonts.fontconfig.enable = true;
-
   programs.home-manager.enable = true;
+
+  fonts.fontconfig.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
   imports = [
     ./atuin.nix
     ./bat.nix
+    ./delta.nix
     ./direnv.nix
     ./eza.nix
-    ./fzf.nix
     ./fish.nix
     ./flatpak.nix
+    ./fzf.nix
     ./ghostty.nix
+    ./git.nix
     ./gpg.nix
     ./helix.nix
+    ./jujutsu.nix
     ./kdeconnect.nix
     ./librewolf.nix
     ./mpv.nix
@@ -100,11 +104,10 @@
     ./obs-studio.nix
     ./reaper.nix
     ./starship.nix
-    ./vcs.nix
     ./yazi.nix
+    ./zed-editor.nix
     ./zellij.nix
     ./zoxide.nix
-    ./zed-editor.nix
   ];
 
   home.file.".julia/config/startup.jl".source = ./julia/startup.jl;
