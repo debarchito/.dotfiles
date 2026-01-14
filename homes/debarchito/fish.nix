@@ -113,17 +113,29 @@
       setCursor = "%";
       expansion = "jj git clone me@cb:%";
     };
-    jjk = {
+    jd = {
       setCursor = "%";
       expansion = ''jj desc -r % -m "$(koji --stdout)"'';
     };
-    jjl = {
+    jl = {
       setCursor = "%";
       expansion = "jj log -r .. -n % --no-pager";
     };
-    jjh = {
+    jh = {
       setCursor = "%";
       expansion = "jj log -r 'heads(all())' -n % --no-pager";
+    };
+    jbmc = {
+      setCursor = "%";
+      expansion = "jj bookmark move -f % -t @";
+    };
+    jbmb = {
+      setCursor = "%";
+      expansion = "jj bookmark move -f % -t @-";
+    };
+    jbmat = {
+      setCursor = "%";
+      expansion = "jj bookmark move -f 'heads(..@- & bookmarks())' -t %";
     };
     sns = {
       setCursor = "%";
