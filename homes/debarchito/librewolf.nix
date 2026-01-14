@@ -86,9 +86,6 @@
       darkreader
       fastforwardteam
       pywalfox
-      plasma-integration
-      return-youtube-dislikes
-      sponsorblock
       tridactyl
       ublock-origin
       user-agent-string-switcher
