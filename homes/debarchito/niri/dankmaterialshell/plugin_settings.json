@@ -14,16 +14,15 @@
     "currentOutputIndex": -1,
     "currentInputIndex": -1
   },
-  "nixMonitor": {
-    "enabled": true
-  },
   "commandRunner": {
     "enabled": true,
     "terminal": "ghostty",
-    "history": []
+    "history": [],
+    "trigger": ">"
   },
   "emojiLauncher": {
-    "enabled": true
+    "enabled": true,
+    "trigger": ":"
   },
   "niriWindows": {
     "enabled": true,
@@ -35,7 +34,7 @@
     "searchEngines": [],
     "defaultEngine": "duckduckgo",
     "noTrigger": false,
-    "trigger": "?"
+    "trigger": "&"
   },
   "calculator": {
     "enabled": true,
