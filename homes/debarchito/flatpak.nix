@@ -10,8 +10,8 @@
   ];
   services.flatpak.packages = [
     "io.github.flattool.Warehouse"
-    # I use flatpak for apps that I don't necessarily want in my config.
-    # Use nixpkgs versions of apps whenever you can!
+    "com.github.tchx84.Flatseal"
+    # NOTE: I generally use flatpak apps for very specific scenarios where the nixpkgs version doesn't cut it.
   ];
   services.flatpak.update.auto.enable = true;
   services.flatpak.update.auto.onCalendar = "daily";
