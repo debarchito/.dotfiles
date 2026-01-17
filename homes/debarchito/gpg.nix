@@ -7,5 +7,5 @@
   services.gpg-agent.enableFishIntegration = true;
   services.gpg-agent.enableNushellIntegration = true;
   services.gpg-agent.enableSshSupport = true;
-  services.gpg-agent.pinentry.package = pkgs.pinentry-qt;
+  services.gpg-agent.pinentry.package = pkgs.pinentry-curses;
 }

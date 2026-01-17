@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 
 {
   options.pipewire.enable = lib.mkEnableOption "enable pipewire module";
@@ -9,5 +14,10 @@
     services.pipewire.pulse.enable = true;
     services.pipewire.jack.enable = true;
     services.pipewire.wireplumber.enable = true;
+
+    environment.systemPackages = [
+      pkgs.qjackctl
+      pkgs.qpwgraph
+    ];
   };
 }
