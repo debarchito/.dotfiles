@@ -15,3 +15,7 @@ output_path = "/home/debarchito/.config/zed/themes/dankcolors.json"
 [templates.ghostty]
 input_path = "/home/debarchito/.config/matugen/templates/ghostty/dankcolors"
 output_path = "/home/debarchito/.config/ghostty/themes/dankcolors"
+
+[templates.tridactyl]
+input_path = "/home/debarchito/.config/matugen/templates/tridactyl/dankcolors.css"
+output_path = "/home/debarchito/.config/tridactyl/themes/dankcolors.css"
