@@ -50,7 +50,7 @@
 "comment.block" = "outline"
 "comment.block.documentation" = "outline"
 
-"keyword" = "syntax_keyword"
+"keyword" = { fg = "syntax_keyword", modifier = ["bold"] }
 "keyword.control" = "syntax_keyword"
 "keyword.control.conditional" = "syntax_keyword"
 "keyword.control.repeat" = "syntax_keyword"
@@ -143,6 +143,6 @@ error = "{{colors.error.default.hex}}"
 on_error = "{{colors.on_error.default.hex}}"
 outline = "{{colors.outline.default.hex}}"
 outline_variant = "{{colors.outline_variant.default.hex}}"
-syntax_keyword = "{{dank16.color5.default.hex}}"
+syntax_keyword = "{{dank16.color4.default.hex}}"
 syntax_string = "{{dank16.color2.default.hex}}"
-syntax_constant = "{{dank16.color12.default.hex}}"
+syntax_constant = "{{dank16.color14.default.hex}}"
