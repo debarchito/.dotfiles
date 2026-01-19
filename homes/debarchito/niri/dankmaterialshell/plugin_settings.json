@@ -9,6 +9,9 @@
     "terminalApp": "ghostty --gtk-single-instance=true",
     "shellPath": "/home/debarchito/.nix-profile/bin/fish"
   },
+  "dankKDEConnect": {
+    "enabled": true
+  },
   "easyEffects": {
     "enabled": true,
     "currentOutputIndex": -1,

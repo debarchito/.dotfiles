@@ -63,6 +63,16 @@ in
         rev = "860457bbb043a6651a2cbafe6e77d443123a0b07";
       };
     };
+    dankKDEConnect = {
+      enable = true;
+      src = "${
+        fetchGit {
+          url = "https://github.com/debarchito/dms-plugins";
+          ref = "master";
+          rev = "bd1033ed94647bf6753b1337148480598e3a7a25";
+        }
+      }/DankKDEConnect";
+    };
     easyEffects = {
       enable = true;
       src = fetchGit {

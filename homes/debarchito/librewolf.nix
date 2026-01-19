@@ -173,7 +173,7 @@
   home.file.".librewolf/default/chrome".source = fetchGit {
     url = "https://github.com/debarchito/parfait";
     ref = "main";
-    rev = "45c62983f80d6e6dd5a3e2a1028c0fcdaa27b7c3";
+    rev = "2134c790a2b48f05c403bc214105b720788a0163";
   };
 
   xdg.configFile."tridactyl/tridactylrc".source = ./librewolf/extensions/tridactyl/tridactylrc;
