@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-librewolf.url = "github:nixos/nixpkgs/4525c1a464addb7bfb001540ee776ee4df8fda49";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -67,6 +68,10 @@
           overlay
         ];
       };
+
+      pkgs-librewolf = import inputs.nixpkgs-librewolf {
+        inherit system;
+      };
     in
     {
       nixosConfigurations.${systemName} = inputs.nixpkgs.lib.nixosSystem {
@@ -83,6 +88,7 @@
 
       homeConfigurations.${userName} = inputs.home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = { inherit pkgs-librewolf; };
         modules = [
           inputs.niri.homeModules.config
           inputs.dms.homeModules.niri
