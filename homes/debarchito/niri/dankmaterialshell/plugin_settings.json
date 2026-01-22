@@ -9,7 +9,14 @@
     "terminalApp": "ghostty --gtk-single-instance=true",
     "shellPath": "/home/debarchito/.nix-profile/bin/fish"
   },
+  "dankBitwarden": {
+    "enabled": true,
+    "trigger": "["
+  },
   "dankKDEConnect": {
+    "enabled": true
+  },
+  "dankNotepadModule": {
     "enabled": true
   },
   "easyEffects": {
@@ -38,9 +45,5 @@
     "defaultEngine": "duckduckgo",
     "noTrigger": false,
     "trigger": "&"
-  },
-  "calculator": {
-    "enabled": true,
-    "trigger": "="
   }
 }

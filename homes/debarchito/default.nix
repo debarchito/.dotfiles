@@ -102,6 +102,7 @@
     ./niri.nix
     ./nushell.nix
     ./obs-studio.nix
+    ./rbw.nix
     ./reaper.nix
     ./starship.nix
     ./yazi.nix
