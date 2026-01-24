@@ -19,3 +19,11 @@ output_path = "/home/debarchito/.config/ghostty/themes/dankcolors"
 [templates.tridactyl]
 input_path = "/home/debarchito/.config/matugen/templates/tridactyl/dankcolors.css"
 output_path = "/home/debarchito/.config/tridactyl/themes/dankcolors.css"
+
+[templates.yazi]
+input_path = "/home/debarchito/.config/matugen/templates/yazi/dankcolors.toml"
+output_path = "/home/debarchito/.config/yazi/theme.toml"
+
+[templates.vesktop]
+input_path = "/home/debarchito/.config/matugen/templates/vesktop/dankcolors.css"
+output_path = "/home/debarchito/.config/vesktop/themes/dankcolors.css"
