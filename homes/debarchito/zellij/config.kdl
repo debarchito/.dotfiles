@@ -1,18 +1,28 @@
-ui {
-  pane_frames {
-    hide_session_name false
-  }
+theme "dankcolors";
+theme_dir "/home/debarchito/.config/zellij/themes";
+
+simplified_ui true;
+default_layout "compact";
+pane_frames false;
+
+copy_command "wl-copy";
+copy_on_select false;
+
+default_shell "fish";
+on_force_close "detach";
+
+plugins {
+  tab-bar { path "tab-bar"; }
+  status-bar { path "status-bar"; }
+  strider { path "strider"; }
+  compact-bar { path "compact-bar"; }
 }
+
 keybinds clear-defaults=true {
-  normal {
-    unbind "Ctrl p"
-    unbind "Ctrl o"
-    unbind "Ctrl q"
-    unbind "Ctrl h"
-  }
   locked {
     bind "Ctrl g" { SwitchToMode "Normal"; }
   }
+
   resize {
     bind "Ctrl n" { SwitchToMode "Normal"; }
     bind "h" "Left" { Resize "Increase Left"; }
@@ -26,6 +36,7 @@ keybinds clear-defaults=true {
     bind "=" "+" { Resize "Increase"; }
     bind "-" { Resize "Decrease"; }
   }
+
   pane {
     bind "Ctrl a" { SwitchToMode "Normal"; }
     bind "h" "Left" { MoveFocus "Left"; SwitchToMode "Normal"; }
@@ -35,7 +46,7 @@ keybinds clear-defaults=true {
     bind "p" { SwitchFocus; SwitchToMode "Normal"; }
     bind "n" { NewPane; SwitchToMode "Normal"; }
     bind "d" { NewPane "Down"; SwitchToMode "Normal"; }
-    //bind "r" { NewPane "Right"; SwitchToMode "Normal"; }
+    bind "r" { NewPane "Right"; SwitchToMode "Normal"; }
     bind "x" { CloseFocus; SwitchToMode "Normal"; }
     bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
     bind "f" { TogglePaneFrames; SwitchToMode "Normal"; }
@@ -44,6 +55,7 @@ keybinds clear-defaults=true {
     bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
     bind "r" { SwitchToMode "RenamePane"; PaneNameInput 0;}
   }
+
   tab {
     bind "Ctrl t" { SwitchToMode "Normal"; }
     bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
@@ -66,6 +78,7 @@ keybinds clear-defaults=true {
     bind "9" { GoToTab 9; SwitchToMode "Normal"; }
     bind "a" { ToggleTab; SwitchToMode "Normal"; }
   }
+
   scroll {
     bind "Ctrl s" { SwitchToMode "Normal"; }
     bind "e" { EditScrollback; SwitchToMode "Normal"; }
@@ -78,6 +91,7 @@ keybinds clear-defaults=true {
     bind "d" { HalfPageScrollDown; }
     bind "u" { HalfPageScrollUp; }
   }
+
   search {
     bind "Ctrl /" { SwitchToMode "Normal"; }
     bind "j" "Down" { ScrollDown; }
@@ -92,18 +106,22 @@ keybinds clear-defaults=true {
     bind "w" { SearchToggleOption "Wrap"; }
     bind "o" { SearchToggleOption "WholeWord"; }
   }
+
   entersearch {
     bind "Ctrl s" "Esc" { SwitchToMode "Scroll"; }
     bind "Enter" { SwitchToMode "Search"; }
   }
+
   renametab {
     bind "Ctrl c" { SwitchToMode "Normal"; }
     bind "Esc" { UndoRenameTab; SwitchToMode "Tab"; }
   }
+
   renamepane {
     bind "Ctrl c" { SwitchToMode "Normal"; }
     bind "Esc" { UndoRenamePane; SwitchToMode "Pane"; }
   }
+
   session {
     bind "Ctrl x" { SwitchToMode "Normal"; }
     bind "Ctrl x" { SwitchToMode "Scroll"; }
@@ -116,6 +134,7 @@ keybinds clear-defaults=true {
       SwitchToMode "Normal"
     }
   }
+
   tmux {
     bind "[" { SwitchToMode "Scroll"; }
     bind "Ctrl b" { Write 2; SwitchToMode "Normal"; }
@@ -139,6 +158,7 @@ keybinds clear-defaults=true {
     bind "Space" { NextSwapLayout; }
     bind "x" { CloseFocus; SwitchToMode "Normal"; }
   }
+
   shared_except "locked" {
     bind "Ctrl g" { SwitchToMode "Locked"; }
     bind "Alt n" { NewPane; }
@@ -151,52 +171,36 @@ keybinds clear-defaults=true {
     bind "Alt [" { PreviousSwapLayout; }
     bind "Alt ]" { NextSwapLayout; }
   }
+
   shared_except "normal" "locked" {
     bind "Enter" "Esc" { SwitchToMode "Normal"; }
   }
+  
   shared_except "pane" "locked" {
     bind "Ctrl a" { SwitchToMode "Pane"; }
   }
+
   shared_except "resize" "locked" {
     bind "Ctrl n" { SwitchToMode "Resize"; }
   }
+  
   shared_except "scroll" "locked" {
     bind "Ctrl s" { SwitchToMode "Scroll"; }
   }
+
   shared_except "session" "locked" {
     bind "Ctrl x" { SwitchToMode "Session"; }
   }
+
   shared_except "tab" "locked" {
     bind "Ctrl t" { SwitchToMode "Tab"; }
   }
+
   shared_except "renametab" "locked" {
     bind "Alt r" { SwitchToMode "RenameTab"; }
   }
+  
   shared_except "tmux" "locked" {
     bind "Ctrl b" { SwitchToMode "Tmux"; }
   }
 }
-
-plugins {
-  tab-bar { path "tab-bar"; }
-  status-bar { path "status-bar"; }
-  strider { path "strider"; }
-  compact-bar { path "compact-bar"; }
-}
-on_force_close "detach"
-simplified_ui true
-default_shell "fish"
-pane_frames false
-// auto_layout true
-theme "catppuccin-mocha"
-default_layout "compact"
-// default_mode "locked"
-// mouse_mode false
-// scroll_buffer_size 10000
-// copy_command "xclip -selection clipboard" // x11
-// copy_command "wl-copy"                    // wayland
-// copy_clipboard "primary"
-// copy_on_select false
-// mirror_session true
-// layout_dir "/home/debarchito/.config/zellij/layouts"
-theme_dir "/home/debarchito/.config/zellij/themes"

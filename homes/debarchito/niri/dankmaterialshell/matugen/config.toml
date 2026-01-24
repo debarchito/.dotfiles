@@ -27,3 +27,7 @@ output_path = "/home/debarchito/.config/yazi/theme.toml"
 [templates.vesktop]
 input_path = "/home/debarchito/.config/matugen/templates/vesktop/dankcolors.css"
 output_path = "/home/debarchito/.config/vesktop/themes/dankcolors.css"
+
+[templates.zellij]
+input_path = "/home/debarchito/.config/matugen/templates/zellij/dankcolors.kdl"
+output_path = "/home/debarchito/.config/zellij/themes/dankcolors.kdl"
