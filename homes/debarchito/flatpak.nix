@@ -9,8 +9,10 @@
     }
   ];
   services.flatpak.packages = [
-    "io.github.flattool.Warehouse"
     "com.github.tchx84.Flatseal"
+    "io.github.flattool.Warehouse"
+    "org.gnome.World.PikaBackup"
+    "org.kde.kdenlive"
     # NOTE: I generally use flatpak apps for very specific scenarios where the nixpkgs version doesn't cut it.
   ];
   services.flatpak.update.auto.enable = true;

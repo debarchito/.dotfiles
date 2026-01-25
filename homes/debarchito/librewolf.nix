@@ -1,8 +1,7 @@
-{ pkgs, pkgs-librewolf, ... }:
+{ pkgs, ... }:
 
 {
   programs.librewolf.enable = true;
-  programs.librewolf.package = pkgs-librewolf.librewolf;
   programs.librewolf.nativeMessagingHosts = [
     pkgs.pywalfox-native
     pkgs.tridactyl-native
@@ -174,7 +173,7 @@
   home.file.".librewolf/default/chrome".source = fetchGit {
     url = "https://github.com/debarchito/parfait";
     ref = "main";
-    rev = "c42fa974c14dbbc2d823a34ee294a054e15499fa";
+    rev = "87ad0da5f4e5b8135fe012b391792bcfbc6fd848";
   };
 
   xdg.configFile."tridactyl/tridactylrc".source = ./librewolf/extensions/tridactyl/tridactylrc;

@@ -27,7 +27,7 @@ in
       officialDankModules = fetchGit {
         url = "https://github.com/debarchito/dms-plugins";
         ref = "master";
-        rev = "de077d66832419caabed9aacc3241ae3e3a0eb31";
+        rev = "3829fb61f63adeea45c6d3cc6fc18c95fe69f5ef";
       };
     in
     {
@@ -44,7 +44,7 @@ in
         src = fetchGit {
           url = "https://github.com/debarchito/commandRunner";
           ref = "main";
-          rev = "2bf0a17e71a652429b7bf72dcad303f7052d1e0c";
+          rev = "933b4770e15da95db3decc26b321ca20eb08c05a";
         };
       };
       displayMirror = {
@@ -92,7 +92,7 @@ in
         src = fetchGit {
           url = "https://github.com/debarchito/emojiLauncher";
           ref = "main";
-          rev = "f4f474c9d981686b977cccb5f152cb0010185b22";
+          rev = "f6d3b734b84f81b272ea4f9ab88d5f3470aa3551";
         };
       };
       niriWindows = {
@@ -108,7 +108,7 @@ in
         src = fetchGit {
           url = "https://github.com/debarchito/webSearch";
           ref = "main";
-          rev = "81642b2b61c107adaef15addb01b817083bb72ff";
+          rev = "de9d645a12135f840262298f42e462955e40d992";
         };
       };
     };
