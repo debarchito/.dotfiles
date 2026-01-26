@@ -67,6 +67,7 @@ in
           q = ":bc";
           Q = ":bc!";
         };
+        C-i = ":toggle-option lsp.display-inlay-hints";
         C-y = [
           ":sh rm -f /tmp/unique-file"
           ":insert-output yazi \"%{buffer_name}\" --chooser-file=/tmp/unique-file"
