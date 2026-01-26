@@ -1,5 +1,4 @@
-# Taken from: https://github.com/InioX/matugen-themes/blob/main/templates/yazi-theme.toml
-# : Manager [[[
+# Adapted from: https://github.com/InioX/matugen-themes/blob/main/templates/yazi-theme.toml
 
 [mgr]
 cwd = { fg = "{{colors.on_surface.default.hex}}" }
@@ -23,28 +22,13 @@ count_selected = { fg = "{{colors.on_primary.default.hex}}", bg = "{{colors.tert
 border_symbol = "│"
 border_style = { fg = "{{colors.surface_tint.default.hex}}" }
 
-# : ]]]
-
-
-# : Indicator [[[
-
 [indicator]
 padding = { open = "█", close = "█" }
-
-# : ]]]
-
-
-# : Tabs [[[
 
 [tabs]
 active = { fg = "{{colors.primary.default.hex}}", bold = true, bg = "{{colors.surface.default.hex}}" }
 inactive = { fg = "{{colors.secondary.default.hex}}", bg = "{{colors.surface.default.hex}}" }
 sep_inner = { open = "[", close = "]" }
-
-# : ]]]
-
-
-# : Mode [[[
 
 [mode]
 # Mode
@@ -58,11 +42,6 @@ select_alt = { bg = "{{colors.surface_variant.default.hex}}", fg = "{{colors.on_
 # Unset mode
 unset_main = { bg = "{{colors.tertiary.default.hex}}", fg = "{{colors.on_tertiary.default.hex}}", bold = true }
 unset_alt = { bg = "{{colors.surface_variant.default.hex}}", fg = "{{colors.on_surface_variant.default.hex}}" }
-
-# : ]]]
-
-
-# : Status [[[
 
 [status]
 sep_left = { open = "🭁", close = "🭠" }
@@ -80,11 +59,6 @@ progress_label = { bold = true }
 progress_normal = { fg = "{{colors.primary.default.hex}}", bg = "{{colors.surface_bright.default.hex}}" }
 progress_error = { fg = "{{colors.error.default.hex}}", bg = "{{colors.surface_bright.default.hex}}" }
 
-# : ]]]
-
-
-# : Which [[[
-
 [which]
 cols = 3
 mask = { bg = "{{colors.surface_bright.default.hex}}" }
@@ -94,90 +68,34 @@ desc = { fg = "{{colors.on_surface.default.hex}}" }
 separator = " ▶ "
 separator_style = { fg = "{{colors.on_surface.default.hex}}" }
 
-# : ]]]
-
-
-# : Notify [[[
-
 [notify]
 title_info = { fg = "{{colors.tertiary.default.hex}}" }
 title_warn = { fg = "{{colors.primary.default.hex}}" }
 title_error = { fg = "{{colors.error.default.hex}}" }
-
-# : ]]]
-
-
-# : Picker [[[
 
 [pick]
 border = { fg = "{{colors.primary.default.hex}}" }
 active = { fg = "{{colors.tertiary.default.hex}}", bold = true }
 inactive = {}
 
-# : ]]]
-
-
-# : Input [[[
-
 [input]
 border = { fg = "{{colors.primary.default.hex}}" }
 value = { fg = "{{colors.on_surface.default.hex}}" }
 
-# : ]]]
-
-
-# : Completion [[[
-
 [cmp]
 border = { fg = "{{colors.primary.default.hex}}", bg = "{{colors.on_primary.default.hex}}" }
-
-# : ]]]
-
-
-# : Tasks [[[
 
 [tasks]
 border = { fg = "{{colors.primary.default.hex}}" }
 title = {}
 hovered = { fg = "{{colors.tertiary_fixed.default.hex}}", underline = true }
 
-# : ]]]
-
-
-# : Help [[[
-
 [help]
 on = { fg = "{{colors.on_surface.default.hex}}" }
 run = { fg = "{{colors.on_surface.default.hex}}" }
 footer = { fg = "{{colors.on_secondary.default.hex}}", bg = "{{colors.secondary.default.hex}}" }
 
-# : ]]]
-
-
-# : File-specific styles [[[
-
-[filetype]
-
-rules = [
-  # Images
-  { mime = "image/*", fg = "#94e2d5" },
-
-  # Media
-  { mime = "{audio,video}/*", fg = "#f9e2af" },
-
-  # Archives
-  { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#f5c2e7" },
-
-  # Documents
-  { mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
-
-  # Special files
-  { name = "*", is = "orphan", bg = "{{colors.error_container.default.hex}}" },
-  { name = "*", is = "exec", fg = "{{colors.on_error_container.default.hex}}" },
-
-  # Fallback
-  { url = "*", fg = "{{colors.on_surface.default.hex}}" },
-  { url = "*/", fg = "{{colors.surface_tint.default.hex}}" },
+[icon]
+prepend_conds = [
+  { if = "dir", text = "", fg = "{{colors.primary.default.hex}}" },
 ]
-
-# : ]]]
