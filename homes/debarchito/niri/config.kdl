@@ -97,6 +97,7 @@ binds {
     Mod+Shift+F repeat=false hotkey-overlay-title="Fullscreen Window"                  { fullscreen-window;                        }
     Mod+Ctrl+F repeat=false hotkey-overlay-title="Toggle Window Floating"              { toggle-window-floating;                   }
     Mod+Alt+F repeat=false hotkey-overlay-title="Toggle Window Floating"               { switch-focus-between-floating-and-tiling; }
+    Mod+Ctrl+Shift+F repeat=false hotkey-overlay-title="Toggle Windowed Fullscreen"    { toggle-windowed-fullscreen;               }
     Mod+Shift+R repeat=false hotkey-overlay-title="Switch Preset Window Height"        { switch-preset-window-height;              }
     Mod+Ctrl+R repeat=false hotkey-overlay-title="Reset Window Height"                 { reset-window-height;                      }
     Mod+Shift+T repeat=false hotkey-overlay-title="Toggle Column Tabbed Display"       { toggle-column-tabbed-display;             }
@@ -137,6 +138,10 @@ binds {
     Mod+Ctrl+L repeat=false hotkey-overlay-title="Toggle Lock Screen"                              { spawn "dms" "ipc" "lock" "lock";            }
     Mod+Shift+M allow-when-locked=true repeat=false hotkey-overlay-title="Toggle Light/Dark Theme" { spawn "dms" "ipc" "call" "theme" "toggle";  }
     Mod+Shift+N allow-when-locked=true repeat=false hotkey-overlay-title="Toggle Night Mode"       { spawn "dms" "ipc" "night" "toggle";         }
+
+    Mod+Ctrl+W repeat=false hotkey-overlay-title="Set Dynamic Cast to Focused Window"  { set-dynamic-cast-window;   };
+    Mod+Ctrl+M repeat=false hotkey-overlay-title="Set Dynamic Cast to Focused Monitor" { set-dynamic-cast-monitor;  };
+    Mod+Ctrl+C repeat=false hotkey-overlay-title="Clear Dynamic Cast"                  { clear-dynamic-cast-target; };
 
     XF86AudioLowerVolume allow-when-locked=true repeat=false  { spawn "dms" "ipc" "audio" "decrement" "5";         }
     XF86AudioMicMute allow-when-locked=true repeat=false      { spawn "dms" "ipc" "audio" "micmute";               }
