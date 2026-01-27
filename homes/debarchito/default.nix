@@ -48,9 +48,6 @@
     pkgs.pijul
     pkgs.podman-compose
     pkgs.pulse-visualizer
-    (pkgs.prismlauncher.override {
-      jdks = [ pkgs.jdk21 ];
-    })
     pkgs.qbittorrent
     pkgs.ripgrep
     pkgs.ripgrep-all
