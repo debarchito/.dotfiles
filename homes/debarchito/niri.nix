@@ -27,7 +27,7 @@ in
       officialDankModules = fetchGit {
         url = "https://github.com/debarchito/dms-plugins";
         ref = "master";
-        rev = "3829fb61f63adeea45c6d3cc6fc18c95fe69f5ef";
+        rev = "b4e59f331a4ba4ba12e114a646b5814f07b950c9";
       };
     in
     {
