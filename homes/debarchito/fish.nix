@@ -38,6 +38,7 @@
       bind -M insert \cg __fish_rga_fzf
       bind -M default \cg __fish_rga_fzf
     '';
+    __fish_which = "command --search (string sub --start=2 $argv)";
     __fish_rga_fzf = ''
       set RG_PREFIX 'rga --files-with-matches'
       set selected (
@@ -53,6 +54,17 @@
         echo $selected
         commandline -i $selected
         commandline -f repaint
+      end
+    '';
+    __fish_nix_search = ''
+      set -l result (nix-search-tv print \
+        | fzf --preview 'nix-search-tv preview {}' --scheme history \
+        | rg --color=never -o '[^ ]+$' \
+        | tr -d '\n')
+      if test -n "$result"
+          echo $result
+      else
+          echo $argv[1]
       end
     '';
     run = ''
@@ -89,10 +101,6 @@
   programs.fish.preferAbbrs = true;
   programs.fish.shellAbbrs = {
     cd = "z";
-    ns = "nix-search-tv print \\
-| fzf --preview 'nix-search-tv preview {}' --scheme history \\
-| rg --color=never -o '[^ ]+$' \\
-| tr -d '\\n'";
     cgh = {
       setCursor = "%";
       expansion = "jj git clone gh:%";
@@ -140,6 +148,15 @@
     sns = {
       setCursor = "%";
       expansion = "fd % /nix/store | fzf";
+    };
+    "=" = {
+      regex = ''=\w+'';
+      position = "anywhere";
+      function = "__fish_which";
+    };
+    "~ns" = {
+      position = "anywhere";
+      function = "__fish_nix_search";
     };
   };
 }
