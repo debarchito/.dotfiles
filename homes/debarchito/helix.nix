@@ -1,12 +1,5 @@
-let
-  common-options = {
-    indent = {
-      tab-width = 2;
-      unit = " ";
-    };
-    auto-format = true;
-  };
-in
+{ pkgs, ... }:
+
 {
   programs.helix.enable = true;
   programs.helix.defaultEditor = true;
@@ -69,8 +62,8 @@ in
         };
         C-i = ":toggle-option lsp.display-inlay-hints";
         C-y = [
-          ":sh rm -f /tmp/unique-file"
-          ":insert-output yazi \"%{buffer_name}\" --chooser-file=/tmp/unique-file"
+          ":sh rm -f /tmp/yazi-buffer"
+          ":insert-output yazi \"%{buffer_name}\" --chooser-file=/tmp/yazi-buffer"
           ":insert-output echo '\x1b[?1049h\x1b[?2004h' > /dev/tty"
           ":open %sh{cat /tmp/unique-file}"
           ":redraw"
@@ -94,216 +87,244 @@ in
   };
   programs.helix.languages = {
     language-server = {
-      codebook = {
-        command = "codebook-lsp";
+      spellcheck = {
+        command = "${pkgs.codebook}/bin/codebook-lsp";
         args = [ "serve" ];
       };
-      scls = {
-        command = "simple-completion-language-server";
-      };
+      completion.command = "${pkgs.simple-completion-language-server}/bin/simple-completion-language-server";
+      nix.command = "${pkgs.nixd}/bin/nixd";
+      html.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-html-language-server";
+      css.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-css-language-server";
+      json.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
+      yaml.command = "${pkgs.yaml-language-server}/bin/yaml-language-server";
+      markdown.command = "${pkgs.markdown-oxide}/bin/markdown-oxide";
+      fish.command = "${pkgs.fish-lsp}/bin/fish-lsp";
+      toml.command = "${pkgs.taplo}/bin/taplo";
+      typst.command = "${pkgs.tinymist}/bin/tinymist";
     };
-    language = [
-      (
-        {
-          name = "nix";
-          formatter.command = "nixfmt";
-          language-servers = [
-            "nixd"
-            "scls"
-          ];
-        }
-        // common-options
-      )
-      (
-        {
-          name = "html";
-          formatter = {
-            command = "deno";
-            args = [
-              "fmt"
-              "-"
-              "--ext"
+    language =
+      let
+        deno = "${pkgs.deno}/bin/deno";
+        common-options = {
+          indent = {
+            tab-width = 2;
+            unit = " ";
+          };
+          auto-format = true;
+        };
+      in
+      [
+        (
+          {
+            name = "nix";
+            formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
+            language-servers = [
+              "spellcheck"
+              "nix"
+              "completion"
+            ];
+          }
+          // common-options
+        )
+        (
+          {
+            name = "html";
+            formatter = {
+              command = deno;
+              args = [
+                "fmt"
+                "-"
+                "--ext"
+                "html"
+              ];
+            };
+            language-servers = [
+              "spellcheck"
               "html"
+              "completion"
             ];
+          }
+          // common-options
+        )
+        (
+          {
+            name = "css";
+            formatter = {
+              command = deno;
+              args = [
+                "fmt"
+                "-"
+                "--ext"
+                "css"
+              ];
+            };
             language-servers = [
-              "codebook"
-              "vscode-html-language-server"
-              "scls"
-            ];
-          };
-        }
-        // common-options
-      )
-      (
-        {
-          name = "css";
-          formatter = {
-            command = "deno";
-            args = [
-              "fmt"
-              "-"
-              "--ext"
+              "spellcheck"
               "css"
+              "completion"
             ];
-          };
-          language-servers = [
-            "codebook"
-            "vscode-css-language-server"
-            "scls"
-          ];
-        }
-        // common-options
-      )
-      (
-        {
-          name = "json";
-          formatter = {
-            command = "deno";
-            args = [
-              "fmt"
-              "-"
-              "--ext"
-              "json"
-            ];
-          };
-          language-servers = [
-            "codebook"
-            "vscode-json-language-server"
-            "scls"
-          ];
-        }
-        // common-options
-      )
-      (
-        {
-          name = "jsonc";
-          formatter = {
-            command = "deno";
-            args = [
-              "fmt"
-              "-"
-              "--ext"
-              "jsonc"
-            ];
-          };
-          language-servers = [
-            "codebook"
-            "vscode-json-language-server"
-            "scls"
-          ];
-        }
-        // common-options
-      )
-      (
-        {
-          name = "yaml";
-          formatter = {
-            command = "deno";
-            args = [
-              "fmt"
-              "-"
-              "--ext"
-              "yaml"
-            ];
-          };
-          language-servers = [
-            "codebook"
-            "yaml-language-server"
-            "scls"
-          ];
-        }
-        // common-options
-      )
-      (
-        {
-          name = "markdown";
-          formatter = {
-            command = "deno";
-            args = [
-              "fmt"
-              "-"
-              "--ext"
-              "md"
-            ];
-          };
-          language-servers = [
-            "codebook"
-            "markdown-oxide"
-            "scls"
-          ];
-        }
-        // common-options
-      )
-      (
-        {
-          name = "sql";
-          formatter = {
-            command = "deno";
-            args = [
-              "fmt"
-              "-"
-              "--ext"
-              "sql"
-            ];
+          }
+          // common-options
+        )
+        (
+          {
+            name = "json";
+            formatter = {
+              command = deno;
+              args = [
+                "fmt"
+                "-"
+                "--ext"
+                "json"
+              ];
+            };
             language-servers = [
-              "codebook"
-              "scls"
+              "spellcheck"
+              "json"
+              "completion"
             ];
-          };
-        }
-        // common-options
-      )
-      (
-        {
-          name = "fish";
-          formatter.command = "fish_indent";
-          language-servers = [
-            "codebook"
-            "fish-lsp"
-            "scls"
-          ];
-        }
-        // common-options
-      )
-      (
-        {
-          name = "toml";
-          formatter = {
-            command = "taplo";
-            args = [
-              "format"
-              "-"
+          }
+          // common-options
+        )
+        (
+          {
+            name = "jsonc";
+            formatter = {
+              command = deno;
+              args = [
+                "fmt"
+                "-"
+                "--ext"
+                "jsonc"
+              ];
+            };
+            language-servers = [
+              "spellcheck"
+              "json"
+              "completion"
             ];
-          };
-          language-servers = [
-            "codebook"
-            "taplo"
-            "scls"
-          ];
-        }
-        // common-options
-      )
-      (
+          }
+          // common-options
+        )
+        (
+          {
+            name = "yaml";
+            formatter = {
+              command = deno;
+              args = [
+                "fmt"
+                "-"
+                "--ext"
+                "yaml"
+              ];
+            };
+            language-servers = [
+              "spellcheck"
+              "yaml"
+              "completion"
+            ];
+          }
+          // common-options
+        )
+        (
+          {
+            name = "markdown";
+            formatter = {
+              command = deno;
+              args = [
+                "fmt"
+                "-"
+                "--ext"
+                "md"
+              ];
+            };
+            language-servers = [
+              "spellcheck"
+              "markdown"
+              "completion"
+            ];
+          }
+          // common-options
+        )
+        (
+          {
+            name = "sql";
+            formatter = {
+              command = deno;
+              args = [
+                "fmt"
+                "-"
+                "--ext"
+                "sql"
+              ];
+              language-servers = [
+                "spellcheck"
+                "completion"
+              ];
+            };
+          }
+          // common-options
+        )
+        (
+          {
+            name = "fish";
+            formatter.command = "fish_indent";
+            language-servers = [
+              "spellcheck"
+              "fish"
+              "completion"
+            ];
+          }
+          // common-options
+        )
+        (
+          {
+            name = "toml";
+            formatter = {
+              command = "${pkgs.taplo}/bin/taplo";
+              args = [
+                "format"
+                "-"
+              ];
+            };
+            language-servers = [
+              "spellcheck"
+              "toml"
+              "completion"
+            ];
+          }
+          // common-options
+        )
+        (
+          {
+            name = "typst";
+            formatter.command = "${pkgs.typstyle}/bin/typstyle";
+            language-servers = [
+              "spellcheck"
+              "typst"
+              "completion"
+            ];
+          }
+          // common-options
+        )
+        # NOTE: Formatting for these languages should be project specific and not global.
         {
-          name = "typst";
-          formatter.command = "typstyle";
+          name = "rust";
           language-servers = [
-            "codebook"
-            "tinymist"
-            "scls"
+            "spellcheck"
+            "rust-analyzer"
+            "completion"
           ];
         }
-        // common-options
-      )
-      {
-        name = "rust";
-        language-servers = [
-          "codebook"
-          "rust-analyzer"
-          "scls"
-        ];
-      }
-    ];
+        {
+          name = "ocaml";
+          language-servers = [
+            "spellcheck"
+            "ocamllsp"
+            "completion"
+          ];
+        }
+      ];
   };
 
   xdg.configFile."helix/snippets/nix.json".source = ./helix/snippets/nix.json;
