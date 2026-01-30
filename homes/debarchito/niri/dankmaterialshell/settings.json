@@ -10,6 +10,7 @@
   "dockTransparency": 1,
   "widgetBackgroundColor": "sch",
   "widgetColorMode": "default",
+  "controlCenterTileColorMode": "primary",
   "cornerRadius": 8,
   "niriLayoutGapsOverride": -1,
   "niriLayoutRadiusOverride": -1,
@@ -145,6 +146,7 @@
   "workspaceScrolling": false,
   "showWorkspaceApps": true,
   "maxWorkspaceIcons": 5,
+  "workspaceAppIconSizeOffset": 0,
   "groupWorkspaceApps": true,
   "workspaceFollowFocus": false,
   "showOccupiedWorkspacesOnly": true,
@@ -165,6 +167,9 @@
   "clockCompactMode": false,
   "focusedWindowCompactMode": false,
   "runningAppsCompactMode": true,
+  "barMaxVisibleApps": 0,
+  "barMaxVisibleRunningApps": 0,
+  "barShowOverflowBadge": true,
   "keyboardLayoutNameCompactMode": false,
   "runningAppsCurrentWorkspace": false,
   "runningAppsGroupByApp": false,
@@ -221,7 +226,6 @@
   "useAutoLocation": false,
   "weatherEnabled": false,
   "networkPreference": "wifi",
-  "vpnLastConnected": "",
   "iconTheme": "breeze",
   "cursorSettings": {
     "theme": "Bibata-Modern-Ice",
@@ -333,6 +337,9 @@
   "dockLauncherLogoSizeOffset": 0,
   "dockLauncherLogoBrightness": 0.5,
   "dockLauncherLogoContrast": 1,
+  "dockMaxVisibleApps": 0,
+  "dockMaxVisibleRunningApps": 0,
+  "dockShowOverflowBadge": true,
   "notificationOverlayEnabled": false,
   "modalDarkenBackground": true,
   "lockScreenShowPowerActions": true,
@@ -397,6 +404,11 @@
   "showOnLastDisplay": {},
   "niriOutputSettings": {},
   "hyprlandOutputSettings": {},
+  "displayProfiles": {},
+  "activeDisplayProfile": {},
+  "displayProfileAutoSelect": false,
+  "displayShowDisconnected": false,
+  "displaySnapToEdge": true,
   "barConfigs": [
     {
       "id": "default",
@@ -413,18 +425,20 @@
           "enabled": true
         },
         {
-          "id": "dockerManager",
-          "enabled": true
-        },
-        {
           "id": "focusedWindow",
           "enabled": true,
           "focusedWindowCompactMode": true
         }
       ],
       "centerWidgets": [
-        "music",
-        "clock",
+        {
+          "id": "music",
+          "enabled": true
+        },
+        {
+          "id": "clock",
+          "enabled": true
+        },
         {
           "id": "privacyIndicator",
           "enabled": true
@@ -450,19 +464,11 @@
         {
           "id": "memUsage",
           "enabled": true,
+          "minimumWidth": false,
           "showSwap": true
         },
         {
-          "id": "diskUsage",
-          "enabled": true,
-          "mountPath": "/"
-        },
-        {
           "id": "battery",
-          "enabled": true
-        },
-        {
-          "id": "idleInhibitor",
           "enabled": true
         },
         {
@@ -482,6 +488,14 @@
         },
         {
           "id": "easyEffects",
+          "enabled": true
+        },
+        {
+          "id": "dockerManager",
+          "enabled": true
+        },
+        {
+          "id": "powerMenuButton",
           "enabled": true
         }
       ],
