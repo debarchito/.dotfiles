@@ -3,10 +3,10 @@
 {
   home.packages = [
     (pkgs.reaper.overrideAttrs (_: {
-      version = "7.59";
+      version = "7.60";
       src = pkgs.fetchurl {
-        url = "https://www.reaper.fm/files/7.x/reaper759_linux_x86_64.tar.xz";
-        hash = "sha256-II2QOv7eHD4JtE5We1uuEuCt5RZmK6VFtZFyLEArUSc=";
+        url = "https://www.reaper.fm/files/7.x/reaper760_linux_x86_64.tar.xz";
+        hash = "sha256-I3P4hTI1QGufmpeQGet5YkLB6A4FiRPFC6MehUKGRCU=";
       };
     }))
     pkgs.yabridge
