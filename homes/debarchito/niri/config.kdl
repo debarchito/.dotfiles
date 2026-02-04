@@ -5,6 +5,7 @@ include "dms/cursor.kdl";
 include "dms/layout.kdl";
 include "dms/outputs.kdl";
 include "dms/wpblur.kdl";
+include "dms/windowrules.kdl";
 
 environment {
   QT_QPA_PLATFORMTHEME "qt6ct"
