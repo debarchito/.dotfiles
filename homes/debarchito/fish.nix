@@ -34,7 +34,7 @@
   ];
   programs.fish.functions = {
     __fish_user_key_bindings = ''
-      fish_vi_key_bindings default
+      fish_vi_key_bindings default 2>/dev/null
       bind -M insert \cg __fish_rga_fzf
       bind -M default \cg __fish_rga_fzf
     '';
