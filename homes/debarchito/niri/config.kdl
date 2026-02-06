@@ -15,6 +15,12 @@ environment {
 
 prefer-no-csd
 
+overview {
+    workspace-shadow {
+        off
+    }
+}
+
 input {
     keyboard {
         xkb {

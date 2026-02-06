@@ -27,7 +27,7 @@ in
       officialDankModules = fetchGit {
         url = "https://github.com/debarchito/dms-plugins";
         ref = "master";
-        rev = "738293e3ef5441dfc928aefea34c1e63cb1180aa";
+        rev = "889760cbeefe175dd1a24ab73f11f2560a1fdbd9";
       };
     in
     {
@@ -68,8 +68,12 @@ in
         src = fetchGit {
           url = "https://github.com/debarchito/dankBitwarden";
           ref = "main";
-          rev = "df4cf77ed4c06639f19f7a3ce8fb8bc00850ff67";
+          rev = "ec0ae13de2095be63587a2193afe282e8a872864";
         };
+      };
+      dankHooks = {
+        enable = true;
+        src = "${officialDankModules}/DankHooks";
       };
       dankKDEConnect = {
         enable = true;
@@ -78,14 +82,6 @@ in
       dankNotepadModule = {
         enable = true;
         src = "${officialDankModules}/DankNotepadModule";
-      };
-      easyEffects = {
-        enable = true;
-        src = fetchGit {
-          url = "https://github.com/debarchito/easyEffects";
-          ref = "main";
-          rev = "f50fdb7a110ddb90b7625bc143884fd773c3d5c7";
-        };
       };
       emojiLauncher = {
         enable = true;
@@ -100,7 +96,7 @@ in
         src = fetchGit {
           url = "https://github.com/debarchito/niriWindows";
           ref = "main";
-          rev = "2ae932e21a4491af27329dfff8b4f1514d0a4657";
+          rev = "b866af4cb599e7eeae90779b959f56b1a9905f18";
         };
       };
       webSearch = {

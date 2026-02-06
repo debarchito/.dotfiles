@@ -8,11 +8,6 @@
     pkgs.aseprite
     pkgs.blender
     pkgs.bibata-cursors
-    (pkgs.catppuccin-kde.override {
-      flavour = [ "mocha" ];
-      accents = [ "mauve" ];
-      winDecStyles = [ "classic" ];
-    })
     pkgs.duckdb
     pkgs.distrobox
     (pkgs.bottles.override {
@@ -28,11 +23,13 @@
     pkgs.just
     pkgs.koji
     pkgs.krita
-    pkgs.kdePackages.kconfig
-    pkgs.kdePackages.karousel
-    pkgs.kdePackages.kde-gtk-config
+    pkgs.kdePackages.dolphin
+    pkgs.kdePackages.gwenview
+    pkgs.kdePackages.okular
     pkgs.minework
     pkgs.markdown-oxide
+    pkgs.nurl
+    pkgs.nix-init
     pkgs.nix-alien
     pkgs.nix-search-tv
     pkgs.nix-output-monitor
@@ -46,6 +43,7 @@
     pkgs.unzip
     pkgs.unrar
     pkgs.vesktop
+    pkgs.wtype
     pkgs.wl-mirror
     pkgs.wl-clipboard
     pkgs.pear-desktop

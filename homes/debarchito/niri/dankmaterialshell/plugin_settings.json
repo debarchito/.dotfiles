@@ -11,10 +11,12 @@
   },
   "dankBitwarden": {
     "enabled": true,
-    "trigger": "["
+    "trigger": "@",
+    "noTrigger": false
   },
   "dankKDEConnect": {
-    "enabled": true
+    "enabled": true,
+    "selectedDeviceId": "e100d420_afce_4f41_bb37_58887ccfc478"
   },
   "dankNotepadModule": {
     "enabled": true
@@ -27,8 +29,11 @@
   "commandRunner": {
     "enabled": true,
     "terminal": "ghostty",
-    "history": [],
-    "trigger": ">"
+    "history": [
+      "fish --help"
+    ],
+    "trigger": "$",
+    "noTrigger": false
   },
   "emojiLauncher": {
     "enabled": true,
@@ -45,5 +50,8 @@
     "defaultEngine": "duckduckgo",
     "noTrigger": false,
     "trigger": "&"
+  },
+  "dankHooks": {
+    "enabled": true
   }
 }
