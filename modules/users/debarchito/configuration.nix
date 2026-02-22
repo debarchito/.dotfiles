@@ -102,6 +102,7 @@ in
         self.modules.homeManager.options-browsers
         self.modules.homeManager.options-editors
         self.modules.homeManager.options-media
+        self.modules.homeManager.options-packaging
         self.modules.homeManager."users-${username}"
         {
           home.stateVersion = "24.11";
@@ -134,6 +135,8 @@ in
       editors.zed-editor.enable = true;
 
       media.daw.enable = true;
+
+      packaging.flatpak.enableEssentials = true;
 
       programs = {
         distrobox.enable = true;

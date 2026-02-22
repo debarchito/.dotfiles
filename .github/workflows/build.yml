@@ -15,9 +15,9 @@ jobs:
           name: debarchito
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
       - name: Build Blender with CUDA support
-        run: NIXPKGS_ALLOW_UNFREE=1 nix build .#blender --impure
+        run: nix build .#blender
       - name: Build OBS Studio with CUDA support
-        run: NIXPKGS_ALLOW_UNFREE=1 nix build .#obs-studio --impure
+        run: nix build .#obs-studio
       - name: Build starship-jj
         run: nix build .#starship-jj
       - name: Upload artifacts to Cachix
