@@ -1,0 +1,231 @@
+/* Adapted from: https://github.com/devnullvoid/tridactyl/blob/main/themes/catppuccin-mocha.css */
+
+/* MIT License
+
+Copyright (c) 2026 Jonathan Rogers
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. */
+
+:root {
+  --bg: {{colors.surface.default.hex}};
+  --fg: {{colors.on_surface.default.hex}};
+  --accent: {{colors.primary.default.hex}};
+  --accent-container: {{colors.primary_container.default.hex}};
+  --surface-variant: {{colors.surface_variant.default.hex}};
+  --on-surface-variant: {{colors.on_surface_variant.default.hex}};
+  --color0: {{dank16.color0.default.hex}};
+  --color1: {{dank16.color1.default.hex}};
+  --color2: {{dank16.color2.default.hex}};
+  --color3: {{dank16.color3.default.hex}};
+  --color4: {{dank16.color4.default.hex}};
+  --color6: {{dank16.color6.default.hex}};
+  --color12: {{dank16.color12.default.hex}};
+  --font: "Maple Mono NF", monospace;
+  --border-radius: 8px;
+  --currentline: var(--surface-variant);
+  --tridactyl-fg: var(--fg);
+  --tridactyl-bg: var(--bg);
+  --tridactyl-url-fg: var(--color6);
+  --tridactyl-url-bg: var(--bg);
+  --tridactyl-highlight-box-bg: var(--surface-variant);
+  --tridactyl-highlight-box-fg: var(--fg);
+  --tridactyl-of-fg: var(--fg);
+  --tridactyl-of-bg: var(--surface-variant);
+  --tridactyl-cmdl-fg: var(--fg);
+  --tridactyl-cmdl-bg: var(--bg);
+  --tridactyl-cmdl-font-family: var(--font);
+  --tridactyl-cmplt-font-family: var(--font);
+  --tridactyl-hintspan-font-family: var(--font);
+  --tridactyl-hintspan-fg: {{colors.on_primary.default.hex}} !important;
+  --tridactyl-hintspan-bg: var(--accent) !important;
+  --tridactyl-hint-active-fg: none;
+  --tridactyl-hint-active-bg: none;
+  --tridactyl-hint-active-outline: none;
+  --tridactyl-hint-bg: none;
+  --tridactyl-hint-outline: none;
+  --tridactyl-border: var(--accent);
+  --tridactyl-completions-title: var(--color12);
+  --tridactyl-completions-title-focused: var(--accent);
+  --tridactyl-completions-url: var(--color2);
+  --tridactyl-completions-header: var(--color4);
+}
+
+#command-line-holder {
+  order: 1;
+  border: 2px solid var(--tridactyl-border);
+  border-radius: calc(var(--border-radius) / 2) calc(var(--border-radius) / 2) 0
+    0;
+  background: var(--tridactyl-bg);
+}
+
+#command-line-holder #tridactyl-colon {
+  display: none;
+}
+
+#tridactyl-input {
+  padding: 1rem;
+  color: var(--tridactyl-fg);
+  width: 90%;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  background: var(--tridactyl-bg);
+  padding-left: unset;
+  padding: 1rem;
+}
+
+#completions table {
+  font-size: 0.8rem;
+  font-weight: 400;
+  border-spacing: 0;
+  table-layout: fixed;
+  padding: 1rem 0;
+}
+
+#completions > div {
+  max-height: calc(20 * var(--option-height));
+  min-height: calc(10 * var(--option-height));
+}
+
+#completions {
+  --option-height: 1.4em;
+  color: var(--tridactyl-fg);
+  background: var(--tridactyl-bg);
+  display: inline-block;
+  font-size: unset;
+  font-weight: 400;
+  overflow: hidden;
+  width: 100%;
+  border-top: unset;
+  border-radius: 0 0 calc(var(--border-radius) / 2)
+    calc(var(--border-radius) / 2);
+  order: 2;
+}
+
+#completions .HistoryCompletionSource {
+  max-height: unset;
+  min-height: unset;
+}
+
+#completions .HistoryCompletionSource table {
+  width: 100%;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+#completions .BmarkCompletionSource {
+  max-height: unset;
+  min-height: unset;
+}
+
+#completions table tr td.prefix,
+#completions table tr td.privatewindow,
+#completions table tr td.container,
+#completions table tr td.icon {
+  display: none;
+}
+
+#completions .BufferCompletionSource table {
+  width: unset;
+  border-spacing: unset;
+  table-layout: unset;
+}
+
+#completions table tr.BufferCompletionOption {
+  white-space: wrap;
+}
+
+#completions table tr.BufferCompletionOption td.content {
+  width: auto;
+}
+
+#completions table tr .title,
+#completions table tr td.excmd {
+  padding-left: 1rem;
+  color: var(--tridactyl-completions-title);
+}
+
+#completions table tr .content,
+#completions table tr td.documentation {
+  padding-right: 1rem;
+}
+
+#completions table tr.ExcmdCompletionOption .documentation {
+  white-space: pre-line;
+}
+
+#completions table tr {
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#completions table tr td {
+  padding: 0.25rem 0;
+}
+
+#completions .sectionHeader {
+  background: unset;
+  font-weight: bold;
+  border-bottom: unset;
+  padding: 1rem 1rem 0 !important;
+  padding-left: unset;
+  padding-bottom: 0.2rem;
+  color: var(--tridactyl-completions-header);
+}
+
+#cmdline_iframe {
+  position: fixed !important;
+  bottom: unset;
+  top: 25% !important;
+  left: 10% !important;
+  z-index: 2147483647 !important;
+  width: 80% !important;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 20px !important;
+  border-radius: calc(var(--border-radius) / 2) !important;
+  overflow: hidden;
+}
+
+.TridactylStatusIndicator {
+  position: fixed !important;
+  bottom: 0.5rem !important;
+  right: 0.5rem !important;
+  background: var(--tridactyl-bg) !important;
+  border: unset !important;
+  border: 1px var(--accent) solid !important;
+  border-radius: calc(var(--border-radius) / 2) !important;
+  font-size: 12pt !important;
+  padding: 0.8ex !important;
+}
+
+#completions .focused {
+  background: var(--currentline);
+  font-weight: 600;
+}
+
+#completions .focused td.title,
+#completions .focused td.excmd {
+  color: var(--tridactyl-completions-title-focused);
+}
+
+#completions .focused .url,
+#completions .focused td.documentation,
+#completions .focused td.content {
+  background: var(--currentline);
+  color: var(--tridactyl-completions-url);
+}

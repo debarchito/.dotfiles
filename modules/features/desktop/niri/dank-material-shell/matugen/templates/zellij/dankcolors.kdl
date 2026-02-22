@@ -1,0 +1,15 @@
+themes {
+    dankcolors {
+        fg      {{colors.on_surface.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        bg      {{colors.surface.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        black   {{colors.surface_bright.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        red     {{colors.error.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        green   {{colors.primary.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        yellow  {{colors.tertiary.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        blue    {{colors.secondary.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        magenta {{colors.inverse_primary.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        cyan    {{colors.primary_container.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        white   {{colors.on_surface_variant.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        orange  {{colors.error_container.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+    }
+}
