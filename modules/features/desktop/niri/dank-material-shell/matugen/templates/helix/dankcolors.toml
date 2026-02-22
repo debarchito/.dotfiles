@@ -1,0 +1,273 @@
+<* if {{ is_dark_mode }} *>
+"ui.background" = { bg = "{{colors.surface_container_low.dark.hex}}" }
+"ui.background.separator" = "{{colors.outline_variant.dark.hex}}"
+"ui.cursor" = { fg = "{{colors.background.dark.hex}}", bg = "{{colors.primary.dark.hex}}" }
+"ui.cursor.primary" = { fg = "{{colors.background.dark.hex}}", bg = "{{colors.primary.dark.hex}}" }
+"ui.cursor.match" = { fg = "{{colors.on_tertiary_container.dark.hex}}", bg = "{{colors.tertiary_container.dark.hex}}" }
+"ui.cursor.insert" = { fg = "{{colors.background.dark.hex}}", bg = "{{colors.secondary.dark.hex}}" }
+"ui.cursor.select" = { fg = "{{colors.background.dark.hex}}", bg = "{{colors.tertiary.dark.hex}}" }
+"ui.linenr" = "{{colors.on_surface_variant.dark.hex}}"
+"ui.linenr.selected" = { fg = "{{colors.primary.dark.hex}}", modifiers = ["bold"] }
+"ui.statusline" = { fg = "{{colors.on_surface.dark.hex}}", bg = "{{colors.surface_container.dark.hex}}" }
+"ui.statusline.inactive" = { fg = "{{colors.on_surface_variant.dark.hex}}", bg = "{{colors.surface_container_low.dark.hex}}" }
+"ui.statusline.normal" = { fg = "{{colors.on_primary.dark.hex}}", bg = "{{colors.primary.dark.hex}}" }
+"ui.statusline.insert" = { fg = "{{colors.on_secondary.dark.hex}}", bg = "{{colors.secondary.dark.hex}}" }
+"ui.statusline.select" = { fg = "{{colors.on_tertiary.dark.hex}}", bg = "{{colors.tertiary.dark.hex}}" }
+"ui.bufferline" = { fg = "{{colors.on_surface_variant.dark.hex}}", bg = "{{colors.surface_container.dark.hex}}" }
+"ui.bufferline.active" = { fg = "{{colors.on_surface.dark.hex}}", bg = "{{colors.surface_container_high.dark.hex}}", modifiers = ["bold"] }
+"ui.bufferline.background" = { bg = "{{colors.surface_container.dark.hex}}" }
+"ui.popup" = { fg = "{{colors.on_surface.dark.hex}}", bg = "{{colors.surface_container_high.dark.hex}}" }
+"ui.popup.info" = { fg = "{{colors.on_surface.dark.hex}}", bg = "{{colors.surface_container_high.dark.hex}}" }
+"ui.window" = { fg = "{{colors.outline_variant.dark.hex}}" }
+"ui.help" = { fg = "{{colors.on_surface.dark.hex}}", bg = "{{colors.surface_container_high.dark.hex}}" }
+"ui.text" = "{{colors.on_surface.dark.hex}}"
+"ui.text.focus" = { fg = "{{colors.on_primary_container.dark.hex}}", bg = "{{colors.primary_container.dark.hex}}" }
+"ui.text.inactive" = "{{colors.on_surface_variant.dark.hex}}"
+"ui.text.info" = { fg = "{{colors.on_surface.dark.hex}}", bg = "{{colors.surface_container_highest.dark.hex}}" }
+"ui.virtual" = "{{colors.outline_variant.dark.hex}}"
+"ui.virtual.ruler" = { bg = "{{colors.surface_container.dark.hex}}" }
+"ui.virtual.whitespace" = "{{colors.outline_variant.dark.hex}}"
+"ui.virtual.indent-guide" = "{{colors.outline_variant.dark.hex}}"
+"ui.virtual.inlay-hint" = { fg = "{{colors.on_surface_variant.dark.hex}}", modifiers = ["dim"] }
+"ui.virtual.jump-label" = { fg = "{{colors.on_primary.dark.hex}}", bg = "{{colors.primary.dark.hex}}", modifiers = ["bold"] }
+"ui.menu" = { fg = "{{colors.on_surface.dark.hex}}", bg = "{{colors.surface_container_high.dark.hex}}" }
+"ui.menu.selected" = { fg = "{{colors.on_secondary_container.dark.hex}}", bg = "{{colors.secondary_container.dark.hex}}" }
+"ui.menu.scroll" = { fg = "{{colors.on_surface_variant.dark.hex}}", bg = "{{colors.surface_container.dark.hex}}" }
+"ui.selection" = { bg = "{{colors.secondary_container.dark.hex}}" }
+"ui.selection.primary" = { bg = "{{colors.primary_container.dark.hex}}" }
+"ui.highlight" = { bg = "{{colors.surface_container_highest.dark.hex}}" }
+"ui.gutter" = { bg = "{{colors.surface_container_low.dark.hex}}" }
+"ui.gutter.selected" = { bg = "{{colors.surface_container_high.dark.hex}}" }
+"ui.cursorline.primary" = { bg = "{{colors.surface_container_high.dark.hex}}" }
+"ui.highlight.frameline" = { bg = "{{colors.tertiary_container.dark.hex}}" }
+
+"error" = "{{colors.error.dark.hex}}"
+"warning" = "{{colors.tertiary_fixed_dim.dark.hex}}"
+"info" = "{{colors.primary.dark.hex}}"
+"hint" = "{{colors.primary.dark.hex}}"
+
+"diagnostic" = { modifiers = ["underlined"] }
+"diagnostic.error" = { underline = { color = "{{colors.error.dark.hex}}", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "{{colors.tertiary_fixed_dim.dark.hex}}", style = "curl" } }
+"diagnostic.info" = { underline = { color = "{{colors.primary.dark.hex}}", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "{{colors.primary.dark.hex}}", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
+"diff.plus" = "{{colors.tertiary.dark.hex}}"
+"diff.plus.gutter" = "{{colors.tertiary.dark.hex}}"
+"diff.minus" = "{{colors.error.dark.hex}}"
+"diff.minus.gutter" = "{{colors.error.dark.hex}}"
+"diff.delta" = "{{colors.secondary.dark.hex}}"
+"diff.delta.gutter" = "{{colors.secondary.dark.hex}}"
+
+"comment" = { fg = "{{colors.on_surface_variant.dark.hex}}", modifiers = ["italic"] }
+"comment.block.documentation" = { fg = "{{colors.on_surface_variant.dark.hex}}", modifiers = ["italic"] }
+
+"constant" = "{{colors.tertiary.dark.hex}}"
+"constant.builtin" = "{{colors.tertiary.dark.hex}}"
+"constant.builtin.boolean" = "{{colors.tertiary.dark.hex}}"
+"constant.character" = "{{colors.tertiary.dark.hex}}"
+"constant.character.escape" = "{{colors.tertiary_fixed_dim.dark.hex}}"
+"constant.numeric" = "{{colors.tertiary_fixed.dark.hex}}"
+
+"string" = "{{colors.tertiary.dark.hex}}"
+"string.regexp" = "{{colors.tertiary_fixed.dark.hex}}"
+"string.special" = "{{colors.on_tertiary_container.dark.hex}}"
+"string.special.symbol" = "{{colors.tertiary.dark.hex}}"
+
+"variable" = "{{colors.on_surface.dark.hex}}"
+"variable.builtin" = "{{colors.primary.dark.hex}}"
+"variable.parameter" = "{{colors.on_surface.dark.hex}}"
+"variable.other.member" = "{{colors.on_surface.dark.hex}}"
+
+"type" = "{{colors.primary_fixed.dark.hex}}"
+"type.builtin" = "{{colors.primary_fixed.dark.hex}}"
+"type.enum.variant" = "{{colors.primary_fixed.dark.hex}}"
+
+"function" = "{{colors.primary.dark.hex}}"
+"function.builtin" = "{{colors.primary.dark.hex}}"
+"function.macro" = "{{colors.secondary.dark.hex}}"
+"function.method" = "{{colors.primary.dark.hex}}"
+"function.special" = "{{colors.primary.dark.hex}}"
+
+"keyword" = "{{colors.secondary.dark.hex}}"
+"keyword.control" = "{{colors.secondary.dark.hex}}"
+"keyword.control.conditional" = "{{colors.secondary.dark.hex}}"
+"keyword.control.repeat" = "{{colors.secondary.dark.hex}}"
+"keyword.control.import" = "{{colors.secondary.dark.hex}}"
+"keyword.control.return" = "{{colors.secondary.dark.hex}}"
+"keyword.control.exception" = "{{colors.secondary.dark.hex}}"
+"keyword.operator" = "{{colors.on_surface_variant.dark.hex}}"
+"keyword.directive" = "{{colors.secondary.dark.hex}}"
+"keyword.function" = "{{colors.secondary.dark.hex}}"
+"keyword.storage" = "{{colors.secondary.dark.hex}}"
+"keyword.storage.type" = "{{colors.secondary.dark.hex}}"
+"keyword.storage.modifier" = "{{colors.secondary.dark.hex}}"
+
+"punctuation" = "{{colors.on_surface_variant.dark.hex}}"
+"punctuation.bracket" = "{{colors.secondary_fixed.dark.hex}}"
+"punctuation.delimiter" = "{{colors.on_surface_variant.dark.hex}}"
+"punctuation.special" = "{{colors.secondary.dark.hex}}"
+
+"tag" = "{{colors.secondary.dark.hex}}"
+"tag.builtin" = "{{colors.secondary.dark.hex}}"
+
+"markup.heading" = { fg = "{{colors.primary.dark.hex}}", modifiers = ["bold"] }
+"markup.heading.marker" = "{{colors.on_surface_variant.dark.hex}}"
+"markup.list" = "{{colors.secondary.dark.hex}}"
+"markup.list.numbered" = "{{colors.secondary.dark.hex}}"
+"markup.list.unnumbered" = "{{colors.secondary.dark.hex}}"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "{{colors.primary.dark.hex}}", modifiers = ["underlined"] }
+"markup.link.text" = "{{colors.tertiary.dark.hex}}"
+"markup.link.label" = "{{colors.secondary.dark.hex}}"
+"markup.quote" = "{{colors.tertiary.dark.hex}}"
+"markup.raw" = "{{colors.tertiary.dark.hex}}"
+"markup.raw.inline" = "{{colors.tertiary.dark.hex}}"
+
+"attribute" = "{{colors.secondary.dark.hex}}"
+"constructor" = "{{colors.secondary.dark.hex}}"
+"operator" = "{{colors.on_surface_variant.dark.hex}}"
+"label" = "{{colors.secondary.dark.hex}}"
+"namespace" = "{{colors.primary_fixed.dark.hex}}"
+"special" = "{{colors.primary.dark.hex}}"
+<* else *>
+"ui.background" = { bg = "{{colors.surface_container_low.light.hex}}" }
+"ui.background.separator" = "{{colors.outline_variant.light.hex}}"
+"ui.cursor" = { fg = "{{colors.background.light.hex}}", bg = "{{colors.primary.light.hex}}" }
+"ui.cursor.primary" = { fg = "{{colors.background.light.hex}}", bg = "{{colors.primary.light.hex}}" }
+"ui.cursor.match" = { fg = "{{colors.on_tertiary_container.light.hex}}", bg = "{{colors.tertiary_container.light.hex}}" }
+"ui.cursor.insert" = { fg = "{{colors.background.light.hex}}", bg = "{{colors.secondary.light.hex}}" }
+"ui.cursor.select" = { fg = "{{colors.background.light.hex}}", bg = "{{colors.tertiary.light.hex}}" }
+"ui.linenr" = "{{colors.on_surface_variant.light.hex}}"
+"ui.linenr.selected" = { fg = "{{colors.primary.light.hex}}", modifiers = ["bold"] }
+"ui.statusline" = { fg = "{{colors.on_surface.light.hex}}", bg = "{{colors.surface_container.light.hex}}" }
+"ui.statusline.inactive" = { fg = "{{colors.on_surface_variant.light.hex}}", bg = "{{colors.surface_container_low.light.hex}}" }
+"ui.statusline.normal" = { fg = "{{colors.on_primary.light.hex}}", bg = "{{colors.primary.light.hex}}" }
+"ui.statusline.insert" = { fg = "{{colors.on_secondary.light.hex}}", bg = "{{colors.secondary.light.hex}}" }
+"ui.statusline.select" = { fg = "{{colors.on_tertiary.light.hex}}", bg = "{{colors.tertiary.light.hex}}" }
+"ui.bufferline" = { fg = "{{colors.on_surface_variant.light.hex}}", bg = "{{colors.surface_container.light.hex}}" }
+"ui.bufferline.active" = { fg = "{{colors.on_surface.light.hex}}", bg = "{{colors.surface_container_high.light.hex}}", modifiers = ["bold"] }
+"ui.bufferline.background" = { bg = "{{colors.surface_container.light.hex}}" }
+"ui.popup" = { fg = "{{colors.on_surface.light.hex}}", bg = "{{colors.surface_container_high.light.hex}}" }
+"ui.popup.info" = { fg = "{{colors.on_surface.light.hex}}", bg = "{{colors.surface_container_high.light.hex}}" }
+"ui.window" = { fg = "{{colors.outline_variant.light.hex}}" }
+"ui.help" = { fg = "{{colors.on_surface.light.hex}}", bg = "{{colors.surface_container_high.light.hex}}" }
+"ui.text" = "{{colors.on_surface.light.hex}}"
+"ui.text.focus" = { fg = "{{colors.on_primary_container.light.hex}}", bg = "{{colors.primary_container.light.hex}}" }
+"ui.text.inactive" = "{{colors.on_surface_variant.light.hex}}"
+"ui.text.info" = { fg = "{{colors.on_surface.light.hex}}", bg = "{{colors.surface_container_highest.light.hex}}" }
+"ui.virtual" = "{{colors.outline_variant.light.hex}}"
+"ui.virtual.ruler" = { bg = "{{colors.surface_container.light.hex}}" }
+"ui.virtual.whitespace" = "{{colors.outline_variant.light.hex}}"
+"ui.virtual.indent-guide" = "{{colors.outline_variant.light.hex}}"
+"ui.virtual.inlay-hint" = { fg = "{{colors.on_surface_variant.light.hex}}", modifiers = ["dim"] }
+"ui.virtual.jump-label" = { fg = "{{colors.on_primary.light.hex}}", bg = "{{colors.primary.light.hex}}", modifiers = ["bold"] }
+"ui.menu" = { fg = "{{colors.on_surface.light.hex}}", bg = "{{colors.surface_container_high.light.hex}}" }
+"ui.menu.selected" = { fg = "{{colors.on_secondary_container.light.hex}}", bg = "{{colors.secondary_container.light.hex}}" }
+"ui.menu.scroll" = { fg = "{{colors.on_surface_variant.light.hex}}", bg = "{{colors.surface_container.light.hex}}" }
+"ui.selection" = { bg = "{{colors.secondary_container.light.hex}}" }
+"ui.selection.primary" = { bg = "{{colors.primary_container.light.hex}}" }
+"ui.highlight" = { bg = "{{colors.surface_container_highest.light.hex}}" }
+"ui.gutter" = { bg = "{{colors.surface_container_low.light.hex}}" }
+"ui.gutter.selected" = { bg = "{{colors.surface_container_high.light.hex}}" }
+"ui.cursorline.primary" = { bg = "{{colors.surface_container_high.light.hex}}" }
+"ui.highlight.frameline" = { bg = "{{colors.tertiary_container.light.hex}}" }
+
+"error" = "{{colors.error.light.hex}}"
+"warning" = "{{colors.tertiary_fixed_dim.light.hex}}"
+"info" = "{{colors.primary.light.hex}}"
+"hint" = "{{colors.primary.light.hex}}"
+
+"diagnostic" = { modifiers = ["underlined"] }
+"diagnostic.error" = { underline = { color = "{{colors.error.light.hex}}", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "{{colors.tertiary_fixed_dim.light.hex}}", style = "curl" } }
+"diagnostic.info" = { underline = { color = "{{colors.primary.light.hex}}", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "{{colors.primary.light.hex}}", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
+"diff.plus" = "{{colors.tertiary.light.hex}}"
+"diff.plus.gutter" = "{{colors.tertiary.light.hex}}"
+"diff.minus" = "{{colors.error.light.hex}}"
+"diff.minus.gutter" = "{{colors.error.light.hex}}"
+"diff.delta" = "{{colors.secondary.light.hex}}"
+"diff.delta.gutter" = "{{colors.secondary.light.hex}}"
+
+"comment" = { fg = "{{colors.on_surface_variant.light.hex}}", modifiers = ["italic"] }
+"comment.block.documentation" = { fg = "{{colors.on_surface_variant.light.hex}}", modifiers = ["italic"] }
+
+"constant" = "{{colors.tertiary.light.hex}}"
+"constant.builtin" = "{{colors.tertiary.light.hex}}"
+"constant.builtin.boolean" = "{{colors.tertiary.light.hex}}"
+"constant.character" = "{{colors.tertiary.light.hex}}"
+"constant.character.escape" = "{{colors.tertiary_fixed_dim.light.hex}}"
+"constant.numeric" = "{{colors.primary.light.hex}}"
+
+"string" = "{{colors.tertiary.light.hex}}"
+"string.regexp" = "{{colors.tertiary_fixed.light.hex}}"
+"string.special" = "{{colors.on_tertiary_container.light.hex}}"
+"string.special.symbol" = "{{colors.tertiary.light.hex}}"
+
+"variable" = "{{colors.on_surface.light.hex}}"
+"variable.builtin" = "{{colors.primary.light.hex}}"
+"variable.parameter" = "{{colors.on_surface.light.hex}}"
+"variable.other.member" = "{{colors.on_surface.light.hex}}"
+
+"type" = "{{colors.primary.light.hex}}"
+"type.builtin" = "{{colors.primary.light.hex}}"
+"type.enum.variant" = "{{colors.primary.light.hex}}"
+
+"function" = "{{colors.primary.light.hex}}"
+"function.builtin" = "{{colors.primary.light.hex}}"
+"function.macro" = "{{colors.secondary.light.hex}}"
+"function.method" = "{{colors.primary.light.hex}}"
+"function.special" = "{{colors.primary.light.hex}}"
+
+"keyword" = "{{colors.secondary.light.hex}}"
+"keyword.control" = "{{colors.secondary.light.hex}}"
+"keyword.control.conditional" = "{{colors.secondary.light.hex}}"
+"keyword.control.repeat" = "{{colors.secondary.light.hex}}"
+"keyword.control.import" = "{{colors.secondary.light.hex}}"
+"keyword.control.return" = "{{colors.secondary.light.hex}}"
+"keyword.control.exception" = "{{colors.secondary.light.hex}}"
+"keyword.operator" = "{{colors.on_surface_variant.light.hex}}"
+"keyword.directive" = "{{colors.secondary.light.hex}}"
+"keyword.function" = "{{colors.secondary.light.hex}}"
+"keyword.storage" = "{{colors.secondary.light.hex}}"
+"keyword.storage.type" = "{{colors.secondary.light.hex}}"
+"keyword.storage.modifier" = "{{colors.secondary.light.hex}}"
+
+"punctuation" = "{{colors.on_surface_variant.light.hex}}"
+"punctuation.bracket" = "{{colors.on_surface_variant.light.hex}}"
+"punctuation.delimiter" = "{{colors.on_surface_variant.light.hex}}"
+"punctuation.special" = "{{colors.secondary.light.hex}}"
+
+"tag" = "{{colors.secondary.light.hex}}"
+"tag.builtin" = "{{colors.secondary.light.hex}}"
+
+"markup.heading" = { fg = "{{colors.primary.light.hex}}", modifiers = ["bold"] }
+"markup.heading.marker" = "{{colors.on_surface_variant.light.hex}}"
+"markup.list" = "{{colors.secondary.light.hex}}"
+"markup.list.numbered" = "{{colors.secondary.light.hex}}"
+"markup.list.unnumbered" = "{{colors.secondary.light.hex}}"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "{{colors.primary.light.hex}}", modifiers = ["underlined"] }
+"markup.link.text" = "{{colors.tertiary.light.hex}}"
+"markup.link.label" = "{{colors.secondary.light.hex}}"
+"markup.quote" = "{{colors.tertiary.light.hex}}"
+"markup.raw" = "{{colors.tertiary.light.hex}}"
+"markup.raw.inline" = "{{colors.tertiary.light.hex}}"
+
+"attribute" = "{{colors.secondary.light.hex}}"
+"constructor" = "{{colors.secondary.light.hex}}"
+"operator" = "{{colors.on_surface_variant.light.hex}}"
+"label" = "{{colors.secondary.light.hex}}"
+"namespace" = "{{colors.primary.light.hex}}"
+"special" = "{{colors.primary.light.hex}}"
+<* endif *>

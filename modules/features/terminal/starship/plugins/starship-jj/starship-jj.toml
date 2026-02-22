@@ -1,0 +1,31 @@
+"$schema" = "https://gitlab.com/Lanastara/lanastara_foss/-/raw/v0.3.0/schema.json?ref_type=tags"
+module_separator = " "
+
+[bookmarks]
+exclude = []
+
+[[module]]
+type = "Bookmarks"
+separator = " "
+color = "BrightBlack"
+behind_symbol = "⇡"
+max_bookmarks = 1
+max_length = 10
+surround_with_quotes = false
+
+[[module]]
+type = "Metrics"
+color = "Magenta"
+template = "[{changed} {added} {removed}]"
+
+[module.changed_files]
+prefix = " "
+color = "Cyan"
+
+[module.added_lines]
+prefix = " "
+color = "Green"
+
+[module.removed_lines]
+prefix = " "
+color = "Red"

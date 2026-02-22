@@ -1,0 +1,64 @@
+[config]
+
+[templates.ghostty]
+input_path = "/home/@USERNAME@/.config/matugen/templates/ghostty/dankcolors"
+output_path = "/home/@USERNAME@/.config/ghostty/themes/dankcolors"
+
+[templates.helix]
+input_path = "/home/@USERNAME@/.config/matugen/templates/helix/dankcolors.toml"
+output_path = "/home/@USERNAME@/.config/helix/themes/dankcolors.toml"
+
+[templates.tridactyl]
+input_path = "/home/@USERNAME@/.config/matugen/templates/tridactyl/dankcolors.css"
+output_path = "/home/@USERNAME@/.config/tridactyl/themes/dankcolors.css"
+
+[templates.vesktop]
+input_path = "/home/@USERNAME@/.config/matugen/templates/vesktop/dankcolors.css"
+output_path = "/home/@USERNAME@/.config/vesktop/themes/dankcolors.css"
+
+[templates.yazi]
+input_path = "/home/@USERNAME@/.config/matugen/templates/yazi/dankcolors.toml"
+output_path = "/home/@USERNAME@/.config/yazi/theme.toml"
+
+[templates.youtube-music]
+input_path = "/home/@USERNAME@/.config/matugen/templates/youtube-music/dankcolors.css"
+output_path = "/home/@USERNAME@/.config/YouTube Music/themes/dankcolors.css"
+
+[templates.zellij]
+input_path = "/home/@USERNAME@/.config/matugen/templates/zellij/dankcolors.kdl"
+output_path = "/home/@USERNAME@/.config/zellij/themes/dankcolors.kdl"
+
+[templates.zeditor]
+input_path = "/home/@USERNAME@/.config/matugen/templates/zeditor/dankcolors.json"
+output_path = "/home/@USERNAME@/.config/zed/themes/dankcolors.json"
+
+[templates.papirus-folders]
+input_path = "/home/@USERNAME@/.config/matugen/templates/matugen/placeholder"
+colors_to_compare = [
+  { name = "adwaita", color = "#aacae8" },
+  { name = "blue", color = "#7cabe2" },
+  { name = "breeze", color = "#7fc4e9" },
+  { name = "carmine", color = "#b54142" },
+  { name = "darkcyan", color = "#72bbc4" },
+  { name = "green", color = "#a1bf80" },
+  { name = "indigo", color = "#838dca" },
+  { name = "nordic", color = "#9db4cb" },
+  { name = "palebrown", color = "#d6c9bd" },
+  { name = "pink", color = "#ec87a9" },
+  { name = "teal", color = "#159a80" },
+  { name = "white", color = "#e4e4e4" },
+  { name = "yellow", color = "#f3c863" },
+  { name = "black", color = "#797979" },
+  { name = "bluegrey", color = "#869aa4" },
+  { name = "brown", color = "#bda68e" },
+  { name = "cyan", color = "#41c7d8" },
+  { name = "deeporange", color = "#e98a68" },
+  { name = "grey", color = "#a6a6a6" },
+  { name = "magenta", color = "#d192e0" },
+  { name = "orange", color = "#eba96a" },
+  { name = "paleorange", color = "#ebd1a7" },
+  { name = "red", color = "#e27c7c" },
+  { name = "violet", color = "#9b7fcb" },
+]
+compare_to = "{{colors.primary.default.hex}}"
+post_hook = "papirus-folders -C {{closest_color}} --theme Papirus"

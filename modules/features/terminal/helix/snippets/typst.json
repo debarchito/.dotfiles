@@ -1,0 +1,373 @@
+{
+  "math dollar": {
+    "prefix": "mm",
+    "body": [
+      "$$1 $ $0"
+    ],
+    "description": "math dollar"
+  },
+  "mathmode with $$": {
+    "prefix": "@mm",
+    "body": [
+      "$ \n   $1\n$"
+    ],
+    "description": "math mode with \\[ \\]"
+  },
+  "alpha": {
+    "prefix": "@a",
+    "body": "alpha ",
+    "description": "Greek letter alpha"
+  },
+  "beta": {
+    "prefix": "@b",
+    "body": "beta ",
+    "description": "Greek letter beta"
+  },
+  "chi": {
+    "prefix": "@c",
+    "body": "chi ",
+    "description": "Greek letter chi"
+  },
+  "delta": {
+    "prefix": "@d",
+    "body": "delta ",
+    "description": "Greek letter delta"
+  },
+  "epsilon": {
+    "prefix": "@e",
+    "body": "epsilon ",
+    "description": "Greek letter epsilon"
+  },
+  "phi": {
+    "prefix": "@f",
+    "body": "phi ",
+    "description": "Greek letter phi"
+  },
+  "gamma": {
+    "prefix": "@g",
+    "body": "gamma ",
+    "description": "Greek letter gamma"
+  },
+  "eta": {
+    "prefix": "@h",
+    "body": "eta ",
+    "description": "Greek letter eta"
+  },
+  "iota": {
+    "prefix": "@i",
+    "body": "iota ",
+    "description": "Greek letter iota"
+  },
+  "kappa": {
+    "prefix": "@k",
+    "body": "kappa ",
+    "description": "Greek letter kappa"
+  },
+  "lambda": {
+    "prefix": "@l",
+    "body": "lambda ",
+    "description": "Greek letter lambda"
+  },
+  "mu": {
+    "prefix": "@m",
+    "body": "mu ",
+    "description": "Greek letter mu"
+  },
+  "nu": {
+    "prefix": "@n",
+    "body": "nu ",
+    "description": "Greek letter nu"
+  },
+  "pi": {
+    "prefix": "@p",
+    "body": "pi ",
+    "description": "Greek letter pi"
+  },
+  "theta": {
+    "prefix": "@q",
+    "body": "theta ",
+    "description": "Greek letter theta"
+  },
+  "rho": {
+    "prefix": "@r",
+    "body": "rho ",
+    "description": "Greek letter rho"
+  },
+  "sigma": {
+    "prefix": "@s",
+    "body": "sigma ",
+    "description": "Greek letter sigma"
+  },
+  "tau": {
+    "prefix": "@t",
+    "body": "tau ",
+    "description": "Greek letter tau"
+  },
+  "upsilon": {
+    "prefix": "@u",
+    "body": "upsilon ",
+    "description": "Greek letter upsilon"
+  },
+  "omega": {
+    "prefix": "@o",
+    "body": "omega ",
+    "description": "Greek letter omega"
+  },
+  "wedge": {
+    "prefix": "@&",
+    "body": "wedge ",
+    "description": "Greek letter wedge"
+  },
+  "xi": {
+    "prefix": "@x",
+    "body": "xi ",
+    "description": "Greek letter xi"
+  },
+  "psi": {
+    "prefix": "@y",
+    "body": "psi ",
+    "description": "Greek letter psi"
+  },
+  "zeta": {
+    "prefix": "@z",
+    "body": "zeta ",
+    "description": "Greek letter zeta"
+  },
+  "Delta": {
+    "prefix": "@D",
+    "body": "Delta ",
+    "description": "Greek letter Delta"
+  },
+  "Phi": {
+    "prefix": "@F",
+    "body": "Phi ",
+    "description": "Greek letter Phi"
+  },
+  "Gamma": {
+    "prefix": "@G",
+    "body": "Gamma ",
+    "description": "Greek letter Gamma"
+  },
+  "Theta": {
+    "prefix": "@Q",
+    "body": "Theta ",
+    "description": "Greek letter Theta"
+  },
+  "Lambda": {
+    "prefix": "@L",
+    "body": "Lambda ",
+    "description": "Greek letter Lambda"
+  },
+  "Xi": {
+    "prefix": "@X",
+    "body": "Xi ",
+    "description": "Greek letter Xi"
+  },
+  "Psi": {
+    "prefix": "@Y",
+    "body": "Psi ",
+    "description": "Greek letter Psi"
+  },
+  "Sigma": {
+    "prefix": "@S",
+    "body": "Sigma ",
+    "description": "Greek letter Sigma"
+  },
+  "Upsilon": {
+    "prefix": "@U",
+    "body": "Upsilon ",
+    "description": "Greek letter Upsilon"
+  },
+  "Omega": {
+    "prefix": "@W",
+    "body": "Omega ",
+    "description": "Greek letter Omega"
+  },
+  "varepsilon": {
+    "prefix": "@ve",
+    "body": "varepsilon ",
+    "description": "Greek letter varepsilon"
+  },
+  "varphi": {
+    "prefix": "@vf",
+    "body": "varphi ",
+    "description": "Greek letter varphi"
+  },
+  "varsigma": {
+    "prefix": "@vs",
+    "body": "varsigma ",
+    "description": "Greek letter varsigma"
+  },
+  "vartheta": {
+    "prefix": "@vq",
+    "body": "vartheta ",
+    "description": "Greek letter vartheta"
+  },
+  "infinity": {
+    "prefix": "@8",
+    "body": "infinity ",
+    "description": "Infinity symbol"
+  },
+  "exists": {
+    "prefix": "EE",
+    "body": "exists ",
+    "description": "Exists symbol"
+  },
+  "forall": {
+    "prefix": "FF",
+    "body": "forall ",
+    "description": "Forall symbol"
+  },
+  "fraction": {
+    "prefix": "FRAC",
+    "body": "frac($1, $2)",
+    "description": "Fraction"
+  },
+  "times": {
+    "prefix": "@*",
+    "body": "times ",
+    "description": "Times symbol"
+  },
+  "partial": {
+    "prefix": "@6",
+    "body": "partial ",
+    "description": "Partial symbol"
+  },
+  "equiv": {
+    "prefix": "@=",
+    "body": "equiv ",
+    "description": "Equiv symbol"
+  },
+  "sqrt": {
+    "prefix": "@sq",
+    "body": "sqrt($1)",
+    "description": "Square root"
+  },
+  "root": {
+    "prefix": "@root",
+    "body": "root($2, $1)",
+    "description": "Root"
+  },
+  "subscript": {
+    "prefix": "__",
+    "body": "_($1)",
+    "description": "Subscript"
+  },
+  "superscript": {
+    "prefix": "**",
+    "body": "^($1)",
+    "description": "Superscript"
+  },
+  "bold text": {
+    "prefix": "TBF",
+    "body": "*$1*",
+    "description": "Bold text"
+  },
+  "italic text": {
+    "prefix": "TIT",
+    "body": "_$1_",
+    "description": "Italic text (used for emphasis)"
+  },
+  "smallcap text": {
+    "prefix": "TSC",
+    "body": "#smallcaps[$1]",
+    "description": "Smallcaped text"
+  },
+  "underline text": {
+    "prefix": "TUL",
+    "body": "#underline[$1]",
+    "description": "Underlined text"
+  },
+  "overline text": {
+    "prefix": "TOL",
+    "body": "#overline[$1]",
+    "description": "Overlined text"
+  },
+  "uppercase text": {
+    "prefix": "TUC",
+    "body": "#upper[$1]",
+    "description": "Text in uppercase letters"
+  },
+  "lowercase text": {
+    "prefix": "TLC",
+    "body": "#lower[$1]",
+    "description": "Text in lowercase letters"
+  },
+  "superscript text": {
+    "prefix": "TSP",
+    "body": "#super[$1]",
+    "description": "Superscript text"
+  },
+  "subscript text": {
+    "prefix": "TSB",
+    "body": "#sub[$1]",
+    "description": "Subscript text"
+  },
+  "strike text": {
+    "prefix": "TST",
+    "body": "#strike[$1]",
+    "description": "Striked text"
+  },
+  "code text": {
+    "prefix": "TCODE",
+    "body": "```${1:language} \n\n``` ",
+    "description": "Code text"
+  },
+  "bold math text": {
+    "prefix": "MBF",
+    "body": "bold($1) ",
+    "description": "Bold math text"
+  },
+  "serif math text": {
+    "prefix": "MSR",
+    "body": "serif($1) ",
+    "description": "Default roman math font"
+  },
+  "sans-serif math text": {
+    "prefix": "MSS",
+    "body": "sans($1) ",
+    "description": "Sans-serif math font"
+  },
+  "fraktur math text": {
+    "prefix": "MFR",
+    "body": "frak($1) ",
+    "description": "Fraktur (Gothic) math font"
+  },
+  "monospaced math text": {
+    "prefix": "MTT",
+    "body": "mono($1) ",
+    "description": "Monospaced math font"
+  },
+  "blackboard bold math text": {
+    "prefix": "MBB",
+    "body": "bb($1) ",
+    "description": "Blackboard bold math font"
+  },
+  "calligraphic math text": {
+    "prefix": "MCA",
+    "body": "cal($1) ",
+    "description": "Calligraphic math font"
+  },
+  "figure": {
+    "prefix": "FIG",
+    "body": [
+      "#figure(",
+      " ${1:content} ,",
+      "caption : [${2:caption}]",
+      ")<${3:reference}>"
+    ],
+    "description": "Figure"
+  },
+  "table": {
+    "prefix": "TABLE",
+    "body": [
+      "#table(",
+      "  columns: ${1:columns},",
+      "  //// align: ,",
+      "  table.header[${2:header}],",
+      "  [${3:data}]",
+      ")"
+    ],
+    "description": "Table"
+  }
+}
