@@ -461,6 +461,22 @@
         "url": "https://flakehub.com/f/NixOS/nixpkgs/0.2505"
       }
     },
+    "nixpkgs-1": {
+      "locked": {
+        "lastModified": 1769503773,
+        "narHash": "sha256-UKSI/9wRvgh2AIqU51vl/QQ1u9y4vt5G6kbtUnM2Fgg=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "7d1e6f1288a41e5fdbd4c5c82d495b51d49511a4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "7d1e6f1288a41e5fdbd4c5c82d495b51d49511a4",
+        "type": "github"
+      }
+    },
     "nixpkgs-23-11": {
       "locked": {
         "lastModified": 1717159533,
@@ -506,22 +522,6 @@
         "owner": "NixOS",
         "ref": "nixos-25.11",
         "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-yabridge": {
-      "locked": {
-        "lastModified": 1769503773,
-        "narHash": "sha256-UKSI/9wRvgh2AIqU51vl/QQ1u9y4vt5G6kbtUnM2Fgg=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "7d1e6f1288a41e5fdbd4c5c82d495b51d49511a4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "7d1e6f1288a41e5fdbd4c5c82d495b51d49511a4",
         "type": "github"
       }
     },
@@ -611,10 +611,10 @@
         "nix-alien": "nix-alien",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs_3",
+        "nixpkgs-1": "nixpkgs-1",
         "nixpkgs-lib": [
           "nixpkgs"
         ],
-        "nixpkgs-yabridge": "nixpkgs-yabridge",
         "nur": "nur",
         "starship-jj": "starship-jj",
         "systems": "systems_2",

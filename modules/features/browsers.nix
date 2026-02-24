@@ -113,6 +113,7 @@
               darkreader
               fastforwardteam
               pywalfox
+              sidebery
               tridactyl
               ublock-origin
               user-agent-string-switcher

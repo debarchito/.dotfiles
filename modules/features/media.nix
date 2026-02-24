@@ -8,10 +8,11 @@
   flake-file.inputs = {
     musnix.url = lib.mkDefault "github:musnix/musnix";
     musnix.inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
-    nixpkgs-yabridge.url = lib.mkDefault "github:nixos/nixpkgs/7d1e6f1288a41e5fdbd4c5c82d495b51d49511a4";
+    nixpkgs-1.url = lib.mkDefault "github:nixos/nixpkgs/7d1e6f1288a41e5fdbd4c5c82d495b51d49511a4";
   };
 
-  flake.modules.nixos.options-media =
+  flake.modules.nixos.options-media = moduleWithSystem (
+    { system, ... }:
     {
       lib,
       config,
@@ -42,59 +43,65 @@
         default = { };
       };
 
-      config = lib.mkIf config.media.enable (
-        lib.mkMerge [
-          {
-            services.pipewire = {
-              enable = true;
-              alsa.enable = true;
-              pulse.enable = true;
-              jack.enable = true;
-              wireplumber.enable = true;
-            };
-          }
+      config =
+        let
+          pkgs-1 = import inputs.nixpkgs-1 { inherit system; };
+        in
+        lib.mkIf config.media.enable (
+          lib.mkMerge [
+            {
+              services.pipewire = {
+                enable = true;
+                alsa.enable = true;
+                pulse.enable = true;
+                jack.enable = true;
+                wireplumber.enable = true;
+              };
+            }
 
-          (lib.mkIf config.media.bluetooth.enable {
-            hardware.bluetooth.enable = true;
-          })
+            (lib.mkIf config.media.bluetooth.enable {
+              hardware.bluetooth.enable = true;
+            })
 
-          (lib.mkIf config.media.routing.enable {
-            environment.systemPackages = [
-              pkgs.qpwgraph
-            ];
-          })
+            (lib.mkIf config.media.routing.enable {
+              environment.systemPackages = [
+                pkgs.qpwgraph
+              ];
+            })
 
-          (lib.mkIf config.media.optimizations.enable {
-            musnix.enable = true;
+            (lib.mkIf config.media.optimizations.enable {
+              musnix.enable = true;
 
-            services.pipewire.extraConfig.jack = {
-              "10-clock-rate" = {
-                "jack.properties" = {
-                  "node.latency" = "128/48000";
-                  "node.rate" = "1/48000";
-                  "node.lock-quantum" = true;
+              services.pipewire.extraConfig.jack = {
+                "10-clock-rate" = {
+                  "jack.properties" = {
+                    "node.latency" = "128/48000";
+                    "node.rate" = "1/48000";
+                    "node.lock-quantum" = true;
+                  };
                 };
               };
-            };
-          })
+            })
 
-          (lib.mkIf config.media.streaming.server.enable {
-            services.sunshine = {
-              enable = true;
-              autoStart = config.media.streaming.server.autostart;
-              capSysAdmin = true;
-              openFirewall = true;
-            };
-          })
+            (lib.mkIf config.media.streaming.server.enable {
+              services.sunshine = {
+                enable = true;
+                package = pkgs-1.sunshine;
+                autoStart = config.media.streaming.server.autostart;
+                capSysAdmin = true;
+                openFirewall = true;
+              };
+            })
 
-          (lib.mkIf config.media.streaming.client.enable {
-            environment.systemPackages = [
-              pkgs.moonlight-qt
-            ];
-          })
-        ]
-      );
-    };
+            (lib.mkIf config.media.streaming.client.enable {
+              environment.systemPackages = [
+                pkgs.moonlight-qt
+              ];
+            })
+          ]
+        );
+    }
+  );
 
   flake.modules.homeManager.options-media = moduleWithSystem (
     { self', system, ... }:
@@ -116,13 +123,13 @@
 
       config =
         let
-          pkgs-yabridge = import inputs.nixpkgs-yabridge { inherit system; };
+          pkgs-1 = import inputs.nixpkgs-1 { inherit system; };
         in
         lib.mkIf config.media.daw.enable {
           home.packages = [
             self'.packages.reaper
-            pkgs-yabridge.yabridge
-            pkgs-yabridge.yabridgectl
+            pkgs-1.yabridge
+            pkgs-1.yabridgectl
           ];
 
           xdg.configFile."REAPER/UserPlugins/reaper_reapack-x86_64.so".source =
