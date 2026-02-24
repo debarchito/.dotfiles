@@ -1,2 +1,5 @@
 set smoothscroll false
 set theme dankcolors
+
+bind J tabnext
+bind K tabprev
