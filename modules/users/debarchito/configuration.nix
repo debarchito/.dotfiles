@@ -26,6 +26,7 @@ in
         "libvirtd"
         "kvm"
         "audio"
+        "wireshark"
       ];
     };
 
@@ -45,6 +46,7 @@ in
         settings.AllowUsers = [ username ];
       };
       openvpn.enable = true;
+      wireshark.enable = true;
     };
 
     media = {
