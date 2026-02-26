@@ -219,10 +219,11 @@
           };
         };
 
-        home.file.".librewolf/default/chrome".source = fetchGit {
-          url = "https://github.com/debarchito/parfait";
-          ref = "main";
-          rev = "1c936f9365fe076a33d9305a40279144834cfe13";
+        home.file.".librewolf/default/chrome".source = pkgs.fetchFromGitHub {
+          owner = "debarchito";
+          repo = "parfait";
+          rev = "6d49704abe0a302f334697ba12a2639fe2ec0e40";
+          hash = "sha256-QGoAETCAeAXLCEdRbiKq0BknLLtT556zZI1exHIvaoI=";
         };
 
         xdg.configFile."tridactyl/tridactylrc".source =
