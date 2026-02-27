@@ -1,0 +1,33 @@
+font: Poppins 12
+
+separator: "  ➜  "
+anchor: center
+
+background: "{{colors.surface.default.hex}}"
+color: "{{colors.on_surface.default.hex}}"
+
+border: "{{colors.primary.default.hex}}"
+border_width: 2
+corner_r: 5
+
+padding: 15
+rows_per_column: 5
+column_padding: 25
+margin_right: 0
+margin_bottom: 0
+margin_left: 0
+margin_top: 0
+
+inhibit_compositor_keyboard_shortcuts: true
+auto_kbd_layout: true
+
+menu:
+  - key: e
+    desc: Explorer
+    submenu:
+      - key: d
+        desc: Dolphin
+        cmd: dolphin
+      - key: n
+        desc: Nautilus
+        cmd: nautilus
