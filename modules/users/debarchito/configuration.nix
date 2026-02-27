@@ -116,11 +116,19 @@ in
   );
 
   flake.modules.homeManager."users-${username}" = moduleWithSystem (
-    { self', ... }:
+    { self', system, ... }:
     { pkgs, ... }:
     {
       nixpkgs.overlays = [
         inputs.nix-alien.overlays.default
+        # Overlay for packages with build errors
+        (_: _: {
+          inherit (inputs.nixpkgs-1.legacyPackages.${system})
+            gearlever
+            khal
+            krita
+            ;
+        })
       ];
 
       home = {
