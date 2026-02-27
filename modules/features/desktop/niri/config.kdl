@@ -129,7 +129,7 @@ binds {
     Mod+Shift+9 repeat=false hotkey-overlay-title="Move Column to Workspace 9" { move-column-to-workspace 9; }
 
     Mod+T repeat=false hotkey-overlay-title="Open Terminal" { spawn "ghostty" "--gtk-single-instance=true"; }
-    Mod+E repeat=false hotkey-overlay-title="Open Explorer" { spawn "nautilus";                             }
+    Mod+E repeat=false hotkey-overlay-title="Open Explorer" { spawn "wlr-which-key" "--initial-keys" "e";   }
     Mod+B repeat=false hotkey-overlay-title="Open Browser"  { spawn "librewolf";                            }
 
     Print repeat=false hotkey-overlay-title="Take a Screenshot"                                    { spawn "dms" "screenshot";                   }

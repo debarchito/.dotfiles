@@ -8,30 +8,6 @@ output_path = "/home/@USERNAME@/.config/ghostty/themes/dankcolors"
 input_path = "/home/@USERNAME@/.config/matugen/templates/helix/dankcolors.toml"
 output_path = "/home/@USERNAME@/.config/helix/themes/dankcolors.toml"
 
-[templates.tridactyl]
-input_path = "/home/@USERNAME@/.config/matugen/templates/tridactyl/dankcolors.css"
-output_path = "/home/@USERNAME@/.config/tridactyl/themes/dankcolors.css"
-
-[templates.vesktop]
-input_path = "/home/@USERNAME@/.config/matugen/templates/vesktop/dankcolors.css"
-output_path = "/home/@USERNAME@/.config/vesktop/themes/dankcolors.css"
-
-[templates.yazi]
-input_path = "/home/@USERNAME@/.config/matugen/templates/yazi/dankcolors.toml"
-output_path = "/home/@USERNAME@/.config/yazi/theme.toml"
-
-[templates.youtube-music]
-input_path = "/home/@USERNAME@/.config/matugen/templates/youtube-music/dankcolors.css"
-output_path = "/home/@USERNAME@/.config/YouTube Music/themes/dankcolors.css"
-
-[templates.zellij]
-input_path = "/home/@USERNAME@/.config/matugen/templates/zellij/dankcolors.kdl"
-output_path = "/home/@USERNAME@/.config/zellij/themes/dankcolors.kdl"
-
-[templates.zeditor]
-input_path = "/home/@USERNAME@/.config/matugen/templates/zeditor/dankcolors.json"
-output_path = "/home/@USERNAME@/.config/zed/themes/dankcolors.json"
-
 [templates.papirus-folders]
 input_path = "/home/@USERNAME@/.config/matugen/templates/matugen/placeholder"
 output_path = "/home/@USERNAME@/.cache/matugen/placeholder"
@@ -63,3 +39,31 @@ colors_to_compare = [
 ]
 compare_to = "{{colors.primary.default.hex}}"
 post_hook = "papirus-folders -C {{closest_color}} --theme Papirus"
+
+[templates.tridactyl]
+input_path = "/home/@USERNAME@/.config/matugen/templates/tridactyl/dankcolors.css"
+output_path = "/home/@USERNAME@/.config/tridactyl/themes/dankcolors.css"
+
+[templates.vesktop]
+input_path = "/home/@USERNAME@/.config/matugen/templates/vesktop/dankcolors.css"
+output_path = "/home/@USERNAME@/.config/vesktop/themes/dankcolors.css"
+
+[templates.wlr-which-key]
+input_path = "/home/@USERNAME@/.config/matugen/templates/wlr-which-key/config.yaml"
+output_path = "/home/@USERNAME@/.config/wlr-which-key/config.yaml"
+
+[templates.yazi]
+input_path = "/home/@USERNAME@/.config/matugen/templates/yazi/dankcolors.toml"
+output_path = "/home/@USERNAME@/.config/yazi/theme.toml"
+
+[templates.youtube-music]
+input_path = "/home/@USERNAME@/.config/matugen/templates/youtube-music/dankcolors.css"
+output_path = "/home/@USERNAME@/.config/YouTube Music/themes/dankcolors.css"
+
+[templates.zellij]
+input_path = "/home/@USERNAME@/.config/matugen/templates/zellij/dankcolors.kdl"
+output_path = "/home/@USERNAME@/.config/zellij/themes/dankcolors.kdl"
+
+[templates.zeditor]
+input_path = "/home/@USERNAME@/.config/matugen/templates/zeditor/dankcolors.json"
+output_path = "/home/@USERNAME@/.config/zed/themes/dankcolors.json"

@@ -133,6 +133,7 @@
 
       config = lib.mkIf config.desktop.niri.dms.enable {
         programs = {
+          # Borked till the day "includes" is supported!
           niri.config = null;
           dank-material-shell = {
             enable = true;
@@ -153,21 +154,20 @@
 
         xdg.configFile =
           let
-            niri = ./desktop/niri;
-            dank-material-shell = "${niri}/dank-material-shell";
+            dank-material-shell = ./desktop/dank-material-shell;
             vars = {
               USERNAME = config.home.username;
             };
           in
           {
-            "niri/config.kdl".source = "${niri}/config.kdl";
+            "niri/config.kdl".source = ./desktop/niri/config.kdl;
             "DankMaterialShell/settings.json".source = "${dank-material-shell}/settings.json";
             "DankMaterialShell/plugin_settings.json".source =
               pkgs.replaceVars "${dank-material-shell}/plugin_settings.json" vars;
             "matugen/templates".source = "${dank-material-shell}/matugen/templates";
             "matugen/config.toml".source = pkgs.replaceVars "${dank-material-shell}/matugen/config.toml" vars;
-            "qt5ct/qt5ct.conf".source = pkgs.replaceVars "${niri}/qt5ct/qt5ct.conf" vars;
-            "qt6ct/qt6ct.conf".source = pkgs.replaceVars "${niri}/qt6ct/qt6ct.conf" vars;
+            "qt5ct/qt5ct.conf".source = pkgs.replaceVars ./desktop/qt5ct/qt5ct.conf vars;
+            "qt6ct/qt6ct.conf".source = pkgs.replaceVars ./desktop/qt6ct/qt6ct.conf vars;
           };
 
         fonts.fontconfig = {
@@ -200,6 +200,7 @@
           pkgs.poppins
           pkgs.maple-mono.NF
           pkgs.noto-fonts-cjk-sans
+          pkgs.wlr-which-key
           self'.packages.papirus-folders
           pkgs.kdePackages.breeze
           pkgs.libsForQt5.qt5ct
