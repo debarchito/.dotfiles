@@ -8,6 +8,10 @@ output_path = "/home/@USERNAME@/.config/ghostty/themes/dankcolors"
 input_path = "/home/@USERNAME@/.config/matugen/templates/helix/dankcolors.toml"
 output_path = "/home/@USERNAME@/.config/helix/themes/dankcolors.toml"
 
+[templates.kdeglobals]
+input_path = "/home/@USERNAME@/.config/matugen/templates/kdeglobals/dankcolors"
+output_path = "/home/@USERNAME@/.config/kdeglobals"
+
 [templates.papirus-folders]
 input_path = "/home/@USERNAME@/.config/matugen/templates/matugen/placeholder"
 output_path = "/home/@USERNAME@/.cache/matugen/placeholder"
