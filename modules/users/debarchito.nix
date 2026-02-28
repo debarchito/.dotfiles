@@ -116,19 +116,11 @@ in
   );
 
   flake.modules.homeManager."users-${username}" = moduleWithSystem (
-    { self', system, ... }:
+    { self', ... }:
     { pkgs, ... }:
     {
       nixpkgs.overlays = [
         inputs.nix-alien.overlays.default
-        # Overlay for packages with build errors
-        (_: _: {
-          inherit (inputs.nixpkgs-1.legacyPackages.${system})
-            gearlever
-            khal
-            krita
-            ;
-        })
       ];
 
       home = {
@@ -220,6 +212,8 @@ in
           ];
         };
 
+        onlyoffice.enable = true;
+
         rbw = {
           enable = true;
           settings = {
@@ -253,6 +247,7 @@ in
         pkgs.kdePackages.okular
         pkgs.nix-alien
         pkgs.nix-output-monitor
+        pkgs.pika-backup
         pkgs.pear-desktop
         pkgs.qbittorrent
         pkgs.wl-mirror

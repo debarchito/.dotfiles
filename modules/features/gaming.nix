@@ -1,6 +1,11 @@
 {
   flake.modules.nixos.options-gaming =
-    { lib, config, ... }:
+    {
+      lib,
+      config,
+      pkgs,
+      ...
+    }:
     {
       options.gaming = lib.mkOption {
         type = lib.types.submodule {
@@ -22,6 +27,10 @@
             gamescopeSession.enable = true;
             extest.enable = true;
           };
+
+          environment.systemPackages = [
+            pkgs.protonplus
+          ];
         })
 
         (lib.mkIf config.gaming.gamescope.enable {
