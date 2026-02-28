@@ -65,7 +65,6 @@
             packages = [
               "com.github.tchx84.Flatseal"
               "io.github.flattool.Warehouse"
-              "org.gnome.World.PikaBackup"
               # NOTE: I generally use flatpak apps for very specific scenarios where the nixpkgs version doesn't cut it.
             ];
             update.auto.enable = true;
