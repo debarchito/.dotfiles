@@ -16,18 +16,18 @@
       };
     };
 
-  flake.modules.nixos.users-debarchito = moduleWithSystem (
-    { system, ... }:
-    {
-      nixpkgs.overlays = [
-        (_: _: {
-          inherit (inputs.nixpkgs-1.legacyPackages.${system})
-            sunshine
-            ;
-        })
-      ];
-    }
-  );
+  # flake.modules.nixos.users-debarchito = moduleWithSystem (
+  #   { system, ... }:
+  #   {
+  #     nixpkgs.overlays = [
+  #       (_: _: {
+  #         inherit (inputs.nixpkgs-1.legacyPackages.${system})
+  #           # <none for now>
+  #           ;
+  #       })
+  #     ];
+  #   }
+  # );
 
   flake.modules.homeManager.users-debarchito = moduleWithSystem (
     { system, ... }:
@@ -36,8 +36,6 @@
         (_: _: {
           inherit (inputs.nixpkgs-1.legacyPackages.${system})
             gearlever
-            khal
-            krita
             ;
         })
       ];
