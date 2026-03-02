@@ -251,7 +251,6 @@ in
         pkgs.pear-desktop
         pkgs.qbittorrent
         pkgs.wl-mirror
-        pkgs.wl-clipboard
       ];
     }
   );

@@ -143,7 +143,9 @@
         home.packages = [
           pkgs.git-branchless
           pkgs.koji
+          pkgs.ripdrag
           pkgs.sd
+          pkgs.wl-clipboard
         ];
       };
     };
