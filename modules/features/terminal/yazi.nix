@@ -104,6 +104,14 @@
           keymap = {
             mgr.prepend_keymap = [
               {
+                on = "y";
+                run = [
+                  "shell -- for path in %s; do echo \"file://$path\"; done | wl-copy -t text/uri-list"
+                  "yank"
+                ];
+                desc = "Yank selection to clipboard";
+              }
+              {
                 on = "H";
                 run = "plugin duckdb -1";
                 desc = "Scroll one column to the left";
@@ -124,10 +132,28 @@
               {
                 on = [
                   "g"
+                  "r"
+                ];
+                run = "shell -- ya emit cd \"$(git rev-parse --show-toplevel)\"";
+                desc = "Go to Git root";
+              }
+              {
+                on = [
+                  "g"
                   "u"
                 ];
                 run = "plugin duckdb -ui";
                 desc = "Open with DuckDB UI";
+              }
+              {
+                on = "<A-d>";
+                run = "shell -- ripdrag --no-click --and-exit --icon-size 64 --target --all \"$@\" | while read filepath; do cp -nR \"$filepath\" .; done";
+                desc = "Drag-n-drop files from and to Yazi";
+              }
+              {
+                on = "<A-D>";
+                run = "shell -- ripdrag --no-click --and-exit --icon-size 64 --target --all \"$@\" | while read filepath; do cp -fR \"$filepath\" .; done";
+                desc = "Drag-n-drop files to and from Yazi";
               }
             ];
           };
