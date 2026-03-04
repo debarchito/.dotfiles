@@ -5,7 +5,7 @@
   ...
 }:
 {
-  flake-file.inputs.nixpkgs-1.url = lib.mkDefault "github:nixos/nixpkgs/7d1e6f1288a41e5fdbd4c5c82d495b51d49511a4";
+  flake-file.inputs.nixpkgs-1.url = lib.mkDefault "github:nixos/nixpkgs/e4bf2a3807d74a0634fdc17de7622ce1be9c8cee";
 
   perSystem =
     { system, ... }:
@@ -16,19 +16,6 @@
       };
     };
 
-  # flake.modules.nixos.users-debarchito = moduleWithSystem (
-  #   { system, ... }:
-  #   {
-  #     nixpkgs.overlays = [
-  #       (_: _: {
-  #         inherit (inputs.nixpkgs-1.legacyPackages.${system})
-  #           # <none for now>
-  #           ;
-  #       })
-  #     ];
-  #   }
-  # );
-
   flake.modules.homeManager.users-debarchito = moduleWithSystem (
     { system, ... }:
     {
@@ -36,6 +23,7 @@
         (_: _: {
           inherit (inputs.nixpkgs-1.legacyPackages.${system})
             gearlever
+            zed-editor
             ;
         })
       ];
