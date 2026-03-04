@@ -132,7 +132,10 @@ in
 
       terminal.common.enable = true;
 
-      browsers.librewolf.enable = true;
+      browsers = {
+        helium.enable = true;
+        librewolf.enable = true;
+      };
 
       editors.zed-editor.enable = true;
 

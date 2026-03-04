@@ -31,3 +31,12 @@ menu:
       - key: n
         desc: Nautilus
         cmd: nautilus
+  - key: b
+    desc: Browser
+    submenu:
+      - key: h
+        desc: Helium
+        cmd: helium
+      - key: l
+        desc: LibreWolf
+        cmd: librewolf

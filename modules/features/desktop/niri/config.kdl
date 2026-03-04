@@ -130,7 +130,7 @@ binds {
 
     Mod+T repeat=false hotkey-overlay-title="Open Terminal" { spawn "ghostty" "--gtk-single-instance=true"; }
     Mod+E repeat=false hotkey-overlay-title="Open Explorer" { spawn "wlr-which-key" "--initial-keys" "e";   }
-    Mod+B repeat=false hotkey-overlay-title="Open Browser"  { spawn "librewolf";                            }
+    Mod+B repeat=false hotkey-overlay-title="Open Browser"  { spawn "wlr-which-key" "--initial-keys" "b";   }
 
     Print repeat=false hotkey-overlay-title="Take a Screenshot"                                    { spawn "dms" "screenshot";                   }
     Mod+M repeat=false hotkey-overlay-title="Toggle Process List"                                  { spawn "dms" "ipc" "processlist" "toggle";   }
