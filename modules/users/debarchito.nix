@@ -243,7 +243,6 @@ in
         self'.packages.bottles
         pkgs.duckdb
         pkgs.ffmpeg
-        pkgs.gearlever
         pkgs.krita
         pkgs.kdePackages.dolphin
         pkgs.kdePackages.gwenview
