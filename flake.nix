@@ -34,7 +34,6 @@
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
-    nixpkgs-1.url = "github:nixos/nixpkgs/e4bf2a3807d74a0634fdc17de7622ce1be9c8cee";
     nixpkgs-lib.follows = "nixpkgs";
     nur = {
       inputs.nixpkgs.follows = "nixpkgs";
