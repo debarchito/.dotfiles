@@ -461,22 +461,6 @@
         "url": "https://flakehub.com/f/NixOS/nixpkgs/0.2505"
       }
     },
-    "nixpkgs-1": {
-      "locked": {
-        "lastModified": 1771664057,
-        "narHash": "sha256-CdF2++fKUaRNtjUNeSsmICoGGaDM/FVAIvJd64MIUrA=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "e4bf2a3807d74a0634fdc17de7622ce1be9c8cee",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "e4bf2a3807d74a0634fdc17de7622ce1be9c8cee",
-        "type": "github"
-      }
-    },
     "nixpkgs-23-11": {
       "locked": {
         "lastModified": 1717159533,
@@ -608,12 +592,12 @@
         "nix-alien": "nix-alien",
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs_3",
-        "nixpkgs-1": "nixpkgs-1",
         "nixpkgs-lib": [
           "nixpkgs"
         ],
         "nur": "nur",
         "starship-jj": "starship-jj",
+        "systems": "systems_2",
         "treefmt-nix": "treefmt-nix",
         "xwayland-satellite": "xwayland-satellite"
       }
@@ -680,6 +664,21 @@
       }
     },
     "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
       "locked": {
         "lastModified": 1681028828,
         "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",

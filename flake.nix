@@ -43,6 +43,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "gitlab:lanastara_foss/starship-jj";
     };
+    systems.url = "github:nix-systems/default";
     treefmt-nix = {
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:numtide/treefmt-nix";
