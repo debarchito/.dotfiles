@@ -37,8 +37,8 @@
             extraInstallCommands =
               # bash
               ''
-                install -m 444 -D ${appimageContents}/helium.desktop $out/share/applications/helium.desktop
-                install -m 444 -D ${appimageContents}/helium.png $out/share/icons/hicolor/512x512/apps/helium.png
+                ${pkgs.coreutils}/bin/install -m 444 -D ${appimageContents}/helium.desktop $out/share/applications/helium.desktop
+                ${pkgs.coreutils}/bin/install -m 444 -D ${appimageContents}/helium.png $out/share/icons/hicolor/512x512/apps/helium.png
 
                 substituteInPlace $out/share/applications/helium.desktop \
                   --replace 'Exec=AppRun' 'Exec=helium'

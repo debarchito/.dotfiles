@@ -29,6 +29,7 @@
               show_sign_in = false;
               show_user_picture = false;
             };
+            window_decorations = "server";
             terminal = {
               font_family = "Maple Mono NF";
               shell.program = "fish";
