@@ -171,6 +171,10 @@
               setCursor = "%";
               expansion = "fd % /nix/store | fzf";
             };
+            nrh = {
+              setCursor = "%";
+              expansion = "nurl % 2>/dev/null | hx";
+            };
             "=" = {
               regex = ''=[^\s]+'';
               position = "anywhere";
