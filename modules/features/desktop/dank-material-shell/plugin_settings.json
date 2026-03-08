@@ -28,7 +28,8 @@
   },
   "calculator": {
     "enabled": true,
-    "noTrigger": true
+    "trigger": "=",
+    "noTrigger": false
   },
   "commandRunner": {
     "enabled": true,

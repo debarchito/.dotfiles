@@ -12,6 +12,10 @@ output_path = "/home/@USERNAME@/.config/helix/themes/dankcolors.toml"
 input_path = "/home/@USERNAME@/.config/matugen/templates/kdeglobals/dankcolors"
 output_path = "/home/@USERNAME@/.config/kdeglobals"
 
+[templates.obs-studio]
+input_path = "/home/@USERNAME@/.config/matugen/templates/obs-studio/dankcolors.obt"
+output_path = "/home/@USERNAME@/.config/obs-studio/themes/dankcolors.obt"
+
 [templates.papirus-folders]
 input_path = "/home/@USERNAME@/.config/matugen/templates/matugen/placeholder"
 output_path = "/home/@USERNAME@/.cache/matugen/placeholder"
