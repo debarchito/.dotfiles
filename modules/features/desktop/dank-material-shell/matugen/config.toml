@@ -17,7 +17,7 @@ input_path = "/home/@USERNAME@/.config/matugen/templates/matugen/placeholder"
 output_path = "/home/@USERNAME@/.cache/matugen/placeholder"
 colors_to_compare = [
   { name = "adwaita", color = "#8E99F3" },
-  { name = "blue", color = "#1E88E5" },
+  { name = "blue", color = "#0071BC" },
   { name = "breeze", color = "#29B6F6" },
   { name = "carmine", color = "#D32F2F" },
   { name = "darkcyan", color = "#00897B" },
