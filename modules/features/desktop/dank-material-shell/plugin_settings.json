@@ -26,6 +26,10 @@
     "currentOutputIndex": -1,
     "currentInputIndex": -1
   },
+  "calculator": {
+    "enabled": true,
+    "noTrigger": true
+  },
   "commandRunner": {
     "enabled": true,
     "terminal": "ghostty",

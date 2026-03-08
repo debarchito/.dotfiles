@@ -74,9 +74,13 @@
     }:
     let
       dankPlugins = {
+        calculator = {
+          rev = "07d7c123a5aee9ac4fd4347bbae36d5957b021f9";
+          hash = "sha256-bhV22bL38CJp58Y8tCY8sEBRYxmuk671fEymmdg0Yuk=";
+        };
         commandRunner = {
-          rev = "548b7d79aa8967443d44e57293a2e0fe16d65f36";
-          hash = "sha256-cF8D6HdNI5b60O07xAoq33howGquTNSQXC/znnaZEys=";
+          rev = "a6252e8f397eeeb80e10b5a92713118221493dae";
+          hash = "sha256-utn8o1p2s/lFL8ObrY3DfGXqOZsuKL+oj6UResKxFLI=";
         };
         displayMirror = {
           rev = "92cd44c4fb67834bf71fdd78f83c29df5e0750b2";
@@ -91,24 +95,24 @@
           hash = "sha256-FKmMTqUCR/Rl/WJT9Q/+q8IsNPIDW+7ZJSX0zmkrs18=";
         };
         emojiLauncher = {
-          rev = "15d8ea655bbec7854883ea5e9b8b367494a1daf4";
-          hash = "sha256-k/Bvhuad5ZmAt29Ts1e57pJgzNESFwGhLCnaoo31R9w=";
+          rev = "cb5a2ae79084f84890135005ed2e60567307e690";
+          hash = "sha256-5VpvUbFeatfuGdnUlNa5FB78R4dN1Zw9r/uWpUxHHfU=";
         };
         niriWindows = {
           rev = "b866af4cb599e7eeae90779b959f56b1a9905f18";
           hash = "sha256-KkB+xq4AObTqTDxtBVqfCsnxn0jnNk3iM4vpk9jlEBA=";
         };
         webSearch = {
-          rev = "34dc01f2d3eabcc7f6e6bc2908f64be787d396c5";
-          hash = "sha256-w+5rEpjYRyMA/gX98Ejyl2IFpLRO7QszbZHLibjT5S4=";
+          rev = "8ec42a2dff96b94cdd0d40b57c1acd815c15079a";
+          hash = "sha256-S1A50s7cKE0NuidC+x589wIxqGA6JW8GrCVEkCddMQs=";
         };
       };
 
       officialDankRepository = pkgs.fetchFromGitHub {
         owner = "debarchito";
         repo = "dms-plugins";
-        rev = "0de003833c3677abd1c80bd3e200a59756b51590";
-        hash = "sha256-t5aqLWTqCW6BGhqmJpQ5MtQVEiUo0lktiTwxEJ3w1mE=";
+        rev = "141841fc85e01494df6d217bd5a27c65da87256d";
+        hash = "sha256-/155wFIotV9xiZzX9XRGs3ANjBcLJwS4kNDDNO6WkF0=";
       };
 
       officialDankPlugins = [
@@ -200,6 +204,7 @@
           pkgs.poppins
           pkgs.maple-mono.NF
           pkgs.noto-fonts-cjk-sans
+          pkgs.nurl
           pkgs.wlr-which-key
           self'.packages.papirus-folders
           pkgs.kdePackages.breeze
