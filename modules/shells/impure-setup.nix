@@ -6,41 +6,48 @@
         pkgs.writers.writeFishBin "execute-impure-setup" { }
           # fish
           ''
-            set ICON_DIR "''$HOME/.local/share/icons"
-            set GIT "${pkgs.git}/bin/git"
-            set REPO_URL "https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git"
-            set REPO_REV "702499f331aa9c38309e1af99de4021013916297"
+            set CP              '${pkgs.coreutils}/bin/cp'
+            set GIT             '${lib.getExe pkgs.git}'
+            set MKDIR           '${pkgs.coreutils}/bin/mkdir'
+            set MKTEMP          '${pkgs.coreutils}/bin/mktemp'
+            set PYWALFOX_NATIVE '${lib.getExe pkgs.pywalfox-native}'
+            set RM              '${pkgs.coreutils}/bin/rm'
+            set LN              '${pkgs.coreutils}/bin/ln'
 
-            echo "[-*-] Setting up Papirus icon theme."
+            set ICON_DIR "$HOME/.local/share/icons"
+            set REPO_URL 'https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git'
+            set REPO_REV '702499f331aa9c38309e1af99de4021013916297'
+
+            echo '[-*-] Setting up Papirus icon theme.'
 
             if test -d "$ICON_DIR/Papirus"
               echo "[?] Papirus icon theme already exists as: $ICON_DIR/Papirus"
-              echo "    [1] Remove existing theme and re-install."
-              echo "    [2] Skip Papirus icon theme setup."
+              echo '    [1] Remove existing theme and re-install.'
+              echo '    [2] Skip Papirus icon theme setup.'
               
-              read -l -P "Select an option [1/2*] : " confirm
+              read -l -P 'Select an option [1/2*] : ' confirm
               
-              switch $confirm
+              switch "$confirm"
                 case 1
-                  echo "[?] Removing existing Papirus installation."
-                  rm -rf "$ICON_DIR/Papirus"
+                  echo '[?] Removing existing Papirus installation.'
+                  "$RM" -rf "$ICON_DIR/Papirus"
                 case 2
-                  echo "[?] Skipping Papirus icon theme setup."
-                  set skip_papirus true
+                  echo '[?] Skipping Papirus icon theme setup.'
+                  set skip_papirus_installation true
                 case '*'
-                  echo "[?] Defaulting to: Skip Papirus icon theme setup."
-                  set skip_papirus true
+                  echo '[?] Defaulting to: Skip Papirus icon theme setup.'
+                  set skip_papirus_installation true
               end
             end
 
-            if not set -q skip_papirus
-              echo "[-*-] Fetching Papirus icon theme."
+            if not set -q skip_papirus_installation
+              echo '[-*-] Fetching Papirus icon theme.'
 
-              mkdir -p "$ICON_DIR"
-              set TMP_DIR (mktemp -d)
+              "$MKDIR" -p "$ICON_DIR"
+              set TMP_DIR ("$MKTEMP" -d)
               
               function cleanup --on-event fish_exit --inherit-variable TMP_DIR
-                  rm -rf "$TMP_DIR"
+                  "$RM" -rf "$TMP_DIR"
               end
 
               "$GIT" -c advice.detachedHead=false clone \
@@ -52,19 +59,19 @@
 
               echo "[-*-] Copying Papirus icon theme to: $ICON_DIR/Papirus"
 
-              cp -r "$TMP_DIR/Papirus" "$ICON_DIR/Papirus"
+              "$CP" -r "$TMP_DIR/Papirus" "$ICON_DIR/Papirus"
 
               echo "[+] Successfully installed Papirus icon theme to: $ICON_DIR/Papirus"
             end
 
-            echo "[-*-] Setting up pywalfox for LibreWolf."
+            echo -e '\n[-*-] Setting up pywalfox for LibreWolf.'
 
-            ${lib.getExe pkgs.pywalfox-native} install --browser librewolf
+            "$PYWALFOX_NATIVE" install --browser librewolf
 
-            mkdir -p "''$HOME/.cache/wal"
-            ${pkgs.coreutils}/bin/ln -sf "''$HOME/.cache/wal/dank-pywalfox.json" "''$HOME/.cache/wal/colors.json"
+            "$MKDIR" -p "$HOME/.cache/wal"
+            "$LN" -sf "$HOME/.cache/wal/dank-pywalfox.json" "$HOME/.cache/wal/colors.json"
 
-            echo "[+] Successfully setup pywalfox for LibreWolf."
+            echo '[+] Successfully setup pywalfox for LibreWolf.'
           '';
     in
     {
@@ -76,7 +83,7 @@
           execute-impure-setup
         ];
         shellHook = ''
-          echo "[?] Setup shell loaded. Run \"execute-impure-setup\" to apply the setup changes."
+          echo '[?] Setup shell loaded. Run "execute-impure-setup" to apply the setup changes.'
         '';
       };
     };
