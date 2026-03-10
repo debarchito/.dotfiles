@@ -236,24 +236,27 @@ in
         kdeconnect.enable = true;
       };
 
-      home.packages = [
-        pkgs.aseprite
-        self'.packages.blender
-        pkgs.bibata-cursors
-        self'.packages.bottles
-        pkgs.duckdb
-        pkgs.ffmpeg
-        pkgs.krita
-        pkgs.kdePackages.dolphin
-        pkgs.kdePackages.gwenview
-        pkgs.kdePackages.okular
-        pkgs.nix-alien
-        pkgs.nix-output-monitor
-        pkgs.pika-backup
-        pkgs.pear-desktop
-        pkgs.qbittorrent
-        pkgs.wl-mirror
-      ];
+      home = {
+        packages = [
+          pkgs.aseprite
+          self'.packages.blender
+          pkgs.bibata-cursors
+          self'.packages.bottles
+          pkgs.duckdb
+          pkgs.ffmpeg
+          pkgs.krita
+          pkgs.kdePackages.dolphin
+          pkgs.kdePackages.gwenview
+          pkgs.kdePackages.okular
+          pkgs.nix-alien
+          pkgs.nix-output-monitor
+          pkgs.pika-backup
+          pkgs.pear-desktop
+          pkgs.qbittorrent
+          pkgs.wl-mirror
+        ];
+        file.".julia/config/startup.jl".source = ../scripts/julia/startup.jl;
+      };
     }
   );
 }
