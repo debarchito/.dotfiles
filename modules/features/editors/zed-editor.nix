@@ -40,6 +40,7 @@
             };
             disable_ai = true;
             helix_mode = true;
+            load_direnv = "shell_hook";
           };
         };
       };
