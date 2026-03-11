@@ -21,11 +21,12 @@ in
       isNormalUser = true;
       inherit description;
       extraGroups = [
-        "wheel"
-        "networkmanager"
-        "libvirtd"
-        "kvm"
+        "adbusers"
         "audio"
+        "kvm"
+        "libvirtd"
+        "networkmanager"
+        "wheel"
         "wireshark"
       ];
     };
@@ -239,6 +240,7 @@ in
       home = {
         packages = [
           pkgs.aseprite
+          pkgs.android-tools
           self'.packages.blender
           pkgs.bibata-cursors
           self'.packages.bottles
