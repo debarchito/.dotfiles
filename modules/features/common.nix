@@ -1,7 +1,17 @@
+{ lib, inputs, ... }:
 {
+  flake-file.inputs.nix-index-database = {
+    url = lib.mkDefault "github:nix-community/nix-index-database";
+    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+  };
+
   flake.modules.nixos.options-common =
     { lib, config, ... }:
     {
+      imports = [
+        inputs.nix-index-database.nixosModules.default
+      ];
+
       options.common = lib.mkOption {
         type = lib.types.submodule {
           options = {
@@ -46,6 +56,7 @@
                   extraArgs = config.common.gc.arguments;
                 };
               };
+              nix-index-database.comma.enable = true;
             };
           }
 
