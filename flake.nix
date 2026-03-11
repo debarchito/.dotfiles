@@ -33,6 +33,10 @@
       url = "github:thiagokokada/nix-alien";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    nix-index-database = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/nix-index-database";
+    };
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
     nixpkgs-lib.follows = "nixpkgs";
     nur = {
