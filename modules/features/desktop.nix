@@ -106,6 +106,10 @@
           rev = "8ec42a2dff96b94cdd0d40b57c1acd815c15079a";
           hash = "sha256-S1A50s7cKE0NuidC+x589wIxqGA6JW8GrCVEkCddMQs=";
         };
+        wallpaperCarousel = {
+          rev = "bcce06efc5c8fc47e15ba1bd4326ddab21ebc2d4";
+          hash = "sha256-SOH/9td8VgBCDDcDulHHsFxU2QcYF6maBVYDe/bwXLY=";
+        };
       };
 
       officialDankRepository = pkgs.fetchFromGitHub {

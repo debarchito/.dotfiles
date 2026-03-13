@@ -59,5 +59,8 @@
   },
   "dankHooks": {
     "enabled": true
+  },
+  "wallpaperCarousel": {
+    "enabled": true
   }
 }
