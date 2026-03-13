@@ -112,14 +112,14 @@
                   updateInterval = 24 * 60 * 60 * 1000;
                   definedAliases = [ "@aw" ];
                 };
-                "SearXNG" = {
-                  urls = [ { template = "https://searx.tiekoetter.com/search?q={searchTerms}"; } ];
-                  icon = "https://searx.tiekoetter.com/static/themes/simple/img/favicon.png";
+                "DuckDuckGo NoAI" = {
+                  urls = [ { template = "https://noai.duckduckgo.com/?q={searchTerms}"; } ];
+                  icon = "https://noai.duckduckgo.com/favicon.ico";
                   updateInterval = 24 * 60 * 60 * 1000;
-                  definedAliases = [ "@sn" ];
+                  definedAliases = [ "@ddgna" ];
                 };
               };
-              search.default = "SearXNG";
+              search.default = "DuckDuckGo NoAI";
               search.force = true;
               extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
                 bitwarden
