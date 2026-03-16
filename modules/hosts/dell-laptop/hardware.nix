@@ -14,7 +14,7 @@ in
       boot.loader.efi.canTouchEfiVariables = true;
       boot.initrd.luks.devices."luks-8ab05525-f7cc-435a-9c91-7e2e45f22977".device =
         "/dev/disk/by-uuid/8ab05525-f7cc-435a-9c91-7e2e45f22977";
-      boot.kernelPackages = pkgs.linuxPackages_lqx;
+      boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
       boot.extraModprobeConfig = "options kvm_intel nested=1";
       boot.tmp.cleanOnBoot = true;
 
