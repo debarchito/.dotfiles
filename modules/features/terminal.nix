@@ -140,13 +140,15 @@
             "zellij/config.kdl".source = pkgs.replaceVars ./terminal/zellij/config.kdl vars;
           };
 
-        home.packages = [
-          pkgs.git-branchless
-          pkgs.koji
-          pkgs.ripdrag
-          pkgs.sd
-          pkgs.wl-clipboard
-        ];
+        home.packages = builtins.attrValues {
+          inherit (pkgs)
+            git-branchless
+            koji
+            ripdrag
+            sd
+            wl-clipboard
+            ;
+        };
       };
     };
 }

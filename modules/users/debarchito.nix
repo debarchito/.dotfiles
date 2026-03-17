@@ -238,25 +238,24 @@ in
       };
 
       home = {
-        packages = [
-          pkgs.aseprite
-          pkgs.android-tools
-          self'.packages.blender
-          pkgs.bibata-cursors
-          self'.packages.bottles
-          pkgs.duckdb
-          pkgs.ffmpeg
-          pkgs.krita
-          pkgs.kdePackages.dolphin
-          pkgs.kdePackages.gwenview
-          pkgs.kdePackages.okular
-          pkgs.nix-alien
-          pkgs.nix-output-monitor
-          pkgs.pika-backup
-          pkgs.pear-desktop
-          pkgs.qbittorrent
-          pkgs.wl-mirror
-        ];
+        packages = builtins.attrValues {
+          inherit (pkgs)
+            aseprite
+            android-tools
+            bibata-cursors
+            duckdb
+            ffmpeg
+            krita
+            nix-alien
+            nix-output-monitor
+            pika-backup
+            pear-desktop
+            qbittorrent
+            wl-mirror
+            ;
+          inherit (pkgs.kdePackages) dolphin gwenview okular;
+          inherit (self'.packages) blender bottles;
+        };
         file.".julia/config/startup.jl".source = ../scripts/julia/startup.jl;
       };
     }

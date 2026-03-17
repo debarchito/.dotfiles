@@ -29,10 +29,11 @@
           programs.appimage.enable = true;
           programs.appimage.binfmt = true;
           programs.appimage.package = pkgs.appimage-run.override {
-            extraPkgs = pkgs: [
-              pkgs.libxcrypt
-              pkgs.icu
-            ];
+            extraPkgs =
+              pkgs:
+              builtins.attrValues {
+                inherit (pkgs) libxcrypt icu;
+              };
           };
         })
       ];
@@ -53,23 +54,21 @@
       };
 
       config = lib.mkIf config.packaging.flatpak.enableEssentials {
-        services = {
-          flatpak = {
-            enable = true;
-            remotes = lib.mkOptionDefault [
-              {
-                name = "flathub";
-                location = "https://flathub.org/repo/flathub.flatpakrepo";
-              }
-            ];
-            packages = [
-              "com.github.tchx84.Flatseal"
-              "io.github.flattool.Warehouse"
-              # NOTE: I generally use flatpak apps for very specific scenarios where the nixpkgs version doesn't cut it.
-            ];
-            update.auto.enable = true;
-            update.auto.onCalendar = "daily";
-          };
+        services.flatpak = {
+          enable = true;
+          remotes = lib.mkOptionDefault [
+            {
+              name = "flathub";
+              location = "https://flathub.org/repo/flathub.flatpakrepo";
+            }
+          ];
+          packages = [
+            "com.github.tchx84.Flatseal"
+            "io.github.flattool.Warehouse"
+            # NOTE: I generally use flatpak apps for very specific scenarios where the nixpkgs version doesn't cut it.
+          ];
+          update.auto.enable = true;
+          update.auto.onCalendar = "daily";
         };
       };
     };
