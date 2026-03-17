@@ -13,11 +13,13 @@
           enableFishIntegration = true;
           shellWrapperName = "yy";
           plugins = {
-            full-border = pkgs.yaziPlugins.full-border;
-            git = pkgs.yaziPlugins.git;
-            no-status = pkgs.yaziPlugins.no-status;
-            piper = pkgs.yaziPlugins.piper;
-            duckdb = pkgs.yaziPlugins.duckdb;
+            inherit (pkgs.yaziPlugins)
+              full-border
+              git
+              no-status
+              piper
+              duckdb
+              ;
           };
           initLua = ./yazi/init.lua;
           settings = {

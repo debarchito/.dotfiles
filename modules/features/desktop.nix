@@ -203,20 +203,19 @@
           };
         };
 
-        home.packages = [
-          pkgs.lora
-          pkgs.poppins
-          pkgs.maple-mono.NF
-          pkgs.noto-fonts-cjk-sans
-          pkgs.nurl
-          pkgs.wlr-which-key
-          self'.packages.papirus-folders
-          pkgs.kdePackages.breeze
-          pkgs.libsForQt5.qt5ct
-          self'.packages.qt6ct
-          pkgs.pywal
-          pkgs.pywalfox-native
-        ];
+        home.packages = builtins.attrValues {
+          inherit (pkgs)
+            lora
+            poppins
+            noto-fonts-cjk-sans
+            wlr-which-key
+            pywalfox-native
+            ;
+          inherit (pkgs.maple-mono) NF;
+          inherit (pkgs.kdePackages) breeze;
+          inherit (pkgs.libsForQt5) qt5ct;
+          inherit (self'.packages) papirus-folders qt6ct;
+        };
       };
     }
   );

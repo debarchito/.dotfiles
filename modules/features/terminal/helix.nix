@@ -98,19 +98,19 @@
           languages = {
             language-server = {
               spellcheck = {
-                command = "${pkgs.codebook}/bin/codebook-lsp";
+                command = lib.getExe pkgs.codebook;
                 args = [ "serve" ];
               };
-              completion.command = "${pkgs.simple-completion-language-server}/bin/simple-completion-language-server";
-              nix.command = "${pkgs.nixd}/bin/nixd";
+              completion.command = lib.getExe pkgs.simple-completion-language-server;
+              nix.command = lib.getExe pkgs.nixd;
               html.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-html-language-server";
               css.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-css-language-server";
               json.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
-              yaml.command = "${pkgs.yaml-language-server}/bin/yaml-language-server";
-              markdown.command = "${pkgs.markdown-oxide}/bin/markdown-oxide";
-              fish.command = "${pkgs.fish-lsp}/bin/fish-lsp";
-              toml.command = "${pkgs.taplo}/bin/taplo";
-              typst.command = "${pkgs.tinymist}/bin/tinymist";
+              yaml.command = lib.getExe pkgs.yaml-language-server;
+              markdown.command = lib.getExe pkgs.markdown-oxide;
+              fish.command = lib.getExe pkgs.fish-lsp;
+              toml.command = lib.getExe pkgs.taplo;
+              typst.command = lib.getExe pkgs.tinymist;
             };
             language =
               let

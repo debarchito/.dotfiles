@@ -114,16 +114,17 @@
       };
 
       config = lib.mkIf config.media.daw.enable {
-        home.packages = [
-          self'.packages.reaper
-          pkgs.yabridge
-          pkgs.yabridgectl
-        ];
+        home.packages = builtins.attrValues {
+          inherit (pkgs) yabridge yabridgectl;
+          inherit (self'.packages) reaper;
+        };
 
-        xdg.configFile."REAPER/UserPlugins/reaper_reapack-x86_64.so".source =
-          "${pkgs.reaper-reapack-extension}/UserPlugins/reaper_reapack-x86_64.so";
-        xdg.configFile."REAPER/UserPlugins/reaper_sws-x86_64.so".source =
-          "${pkgs.reaper-sws-extension}/UserPlugins/reaper_sws-x86_64.so";
+        xdg.configFile = {
+          "REAPER/UserPlugins/reaper_reapack-x86_64.so".source =
+            "${pkgs.reaper-reapack-extension}/UserPlugins/reaper_reapack-x86_64.so";
+          "REAPER/UserPlugins/reaper_sws-x86_64.so".source =
+            "${pkgs.reaper-sws-extension}/UserPlugins/reaper_sws-x86_64.so";
+        };
 
         home.file.".vst3/Stochas.vst3".source = "${pkgs.stochas}/lib/vst3/Stochas.vst3";
       };
