@@ -1,24 +1,33 @@
 [config]
 
+[templates.bat]
+input_path = "~/.config/matugen/templates/syntect/dankcolors.tmTheme"
+output_path = "~/.config/bat/themes/dankcolors.tmTheme"
+post_hook = "bat cache --build"
+
+[templates.fish]
+input_path = "~/.config/matugen/templates/fish/dankcolors.fish"
+output_path = "~/.config/fish/conf.d/dankcolors.fish"
+
 [templates.ghostty]
-input_path = "/home/@USERNAME@/.config/matugen/templates/ghostty/dankcolors"
-output_path = "/home/@USERNAME@/.config/ghostty/themes/dankcolors"
+input_path = "~/.config/matugen/templates/ghostty/dankcolors"
+output_path = "~/.config/ghostty/themes/dankcolors"
 
 [templates.helix]
-input_path = "/home/@USERNAME@/.config/matugen/templates/helix/dankcolors.toml"
-output_path = "/home/@USERNAME@/.config/helix/themes/dankcolors.toml"
+input_path = "~/.config/matugen/templates/helix/dankcolors.toml"
+output_path = "~/.config/helix/themes/dankcolors.toml"
 
 [templates.kdeglobals]
-input_path = "/home/@USERNAME@/.config/matugen/templates/kdeglobals/dankcolors"
-output_path = "/home/@USERNAME@/.config/kdeglobals"
+input_path = "~/.config/matugen/templates/kdeglobals/dankcolors"
+output_path = "~/.config/kdeglobals"
 
 [templates.obs-studio]
-input_path = "/home/@USERNAME@/.config/matugen/templates/obs-studio/dankcolors.obt"
-output_path = "/home/@USERNAME@/.config/obs-studio/themes/dankcolors.obt"
+input_path = "~/.config/matugen/templates/obs-studio/dankcolors.obt"
+output_path = "~/.config/obs-studio/themes/dankcolors.obt"
 
 [templates.papirus-folders]
-input_path = "/home/@USERNAME@/.config/matugen/templates/matugen/placeholder"
-output_path = "/home/@USERNAME@/.cache/matugen/placeholder"
+input_path = "~/.config/matugen/templates/matugen/placeholder"
+output_path = "~/.cache/matugen/placeholder"
 colors_to_compare = [
   { name = "adwaita", color = "#8E99F3" },
   { name = "blue", color = "#0071BC" },
@@ -49,29 +58,29 @@ compare_to = "{{colors.primary.default.hex}}"
 post_hook = "papirus-folders -C {{closest_color}} --theme Papirus"
 
 [templates.tridactyl]
-input_path = "/home/@USERNAME@/.config/matugen/templates/tridactyl/dankcolors.css"
-output_path = "/home/@USERNAME@/.config/tridactyl/themes/dankcolors.css"
+input_path = "~/.config/matugen/templates/tridactyl/dankcolors.css"
+output_path = "~/.config/tridactyl/themes/dankcolors.css"
 
 [templates.vesktop]
-input_path = "/home/@USERNAME@/.config/matugen/templates/vesktop/dankcolors.css"
-output_path = "/home/@USERNAME@/.config/vesktop/themes/dankcolors.css"
+input_path = "~/.config/matugen/templates/vesktop/dankcolors.css"
+output_path = "~/.config/vesktop/themes/dankcolors.css"
 
 [templates.wlr-which-key]
-input_path = "/home/@USERNAME@/.config/matugen/templates/wlr-which-key/config.yaml"
-output_path = "/home/@USERNAME@/.config/wlr-which-key/config.yaml"
+input_path = "~/.config/matugen/templates/wlr-which-key/config.yaml"
+output_path = "~/.config/wlr-which-key/config.yaml"
 
 [templates.yazi]
-input_path = "/home/@USERNAME@/.config/matugen/templates/yazi/dankcolors.toml"
-output_path = "/home/@USERNAME@/.config/yazi/theme.toml"
+input_path = "~/.config/matugen/templates/yazi/dankcolors.toml"
+output_path = "~/.config/yazi/theme.toml"
 
 [templates.youtube-music]
-input_path = "/home/@USERNAME@/.config/matugen/templates/youtube-music/dankcolors.css"
-output_path = "/home/@USERNAME@/.config/YouTube Music/themes/dankcolors.css"
+input_path = "~/.config/matugen/templates/youtube-music/dankcolors.css"
+output_path = "~/.config/YouTube Music/themes/dankcolors.css"
 
 [templates.zellij]
-input_path = "/home/@USERNAME@/.config/matugen/templates/zellij/dankcolors.kdl"
-output_path = "/home/@USERNAME@/.config/zellij/themes/dankcolors.kdl"
+input_path = "~/.config/matugen/templates/zellij/dankcolors.kdl"
+output_path = "~/.config/zellij/themes/dankcolors.kdl"
 
 [templates.zeditor]
-input_path = "/home/@USERNAME@/.config/matugen/templates/zeditor/dankcolors.json"
-output_path = "/home/@USERNAME@/.config/zed/themes/dankcolors.json"
+input_path = "~/.config/matugen/templates/zeditor/dankcolors.json"
+output_path = "~/.config/zed/themes/dankcolors.json"

@@ -1,0 +1,937 @@
+<!-- Adapted from: https://github.com/catppuccin/bat/blob/main/themes/Catppuccin%20Mocha.tmTheme -->
+
+<!-- MIT License
+
+Copyright (c) 2021 Catppuccin
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>name</key>
+  <string>dankcolors</string>
+  <key>semanticClass</key>
+  <string><* if {{ is_dark_mode }} *>theme.dark.dankcolors<* else *>theme.light.dankcolors<* endif *></string>
+  <key>uuid</key>
+  <string>dankcolors-matugen-syntect</string>
+  <key>colorSpaceName</key>
+  <string>sRGB</string>
+  <key>settings</key>
+  <array>
+    <dict>
+      <key>settings</key>
+      <dict>
+        <key>background</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.surface_container_low.dark.hex}}<* else *>{{colors.surface_container_low.light.hex}}<* endif *></string>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_surface.dark.hex}}<* else *>{{colors.on_surface.light.hex}}<* endif *></string>
+        <key>caret</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+        <key>lineHighlight</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.surface_container_high.dark.hex}}<* else *>{{colors.surface_container_high.light.hex}}<* endif *></string>
+        <key>selection</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary_container.dark.hex}}<* else *>{{colors.secondary_container.light.hex}}<* endif *></string>
+        <key>findHighlight</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary_container.dark.hex}}<* else *>{{colors.tertiary_container.light.hex}}<* endif *></string>
+        <key>gutterForeground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_surface_variant.dark.hex}}<* else *>{{colors.on_surface_variant.light.hex}}<* endif *></string>
+        <key>activeGuide</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.outline_variant.dark.hex}}<* else *>{{colors.outline_variant.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Basic text and variables</string>
+      <key>scope</key>
+      <string>text, source, variable.other.readwrite, punctuation.definition.variable</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_surface.dark.hex}}<* else *>{{colors.on_surface.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Punctuation</string>
+      <key>scope</key>
+      <string>punctuation</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_surface_variant.dark.hex}}<* else *>{{colors.on_surface_variant.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Comment</string>
+      <key>scope</key>
+      <string>comment, punctuation.definition.comment</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_surface_variant.dark.hex}}<* else *>{{colors.on_surface_variant.light.hex}}<* endif *></string>
+        <key>fontStyle</key>
+        <string>italic</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>String</string>
+      <key>scope</key>
+      <string>string, punctuation.definition.string</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary.dark.hex}}<* else *>{{colors.tertiary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>String Regexp</string>
+      <key>scope</key>
+      <string>string.regexp</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary_fixed.dark.hex}}<* else *>{{colors.tertiary_fixed.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Escape Character</string>
+      <key>scope</key>
+      <string>constant.character.escape</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary_fixed_dim.dark.hex}}<* else *>{{colors.tertiary_fixed_dim.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Constant numeric and boolean</string>
+      <key>scope</key>
+      <string>constant.numeric, variable.other.constant, entity.name.constant, constant.language.boolean, constant.language.false, constant.language.true</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary.dark.hex}}<* else *>{{colors.tertiary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Constant language</string>
+      <key>scope</key>
+      <string>constant.language</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary.dark.hex}}<* else *>{{colors.tertiary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Keyword</string>
+      <key>scope</key>
+      <string>keyword, keyword.operator.word, keyword.operator.new, variable.language.super, support.type.primitive, storage.type, storage.modifier, punctuation.definition.keyword</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Keyword operator</string>
+      <key>scope</key>
+      <string>keyword.operator, punctuation.accessor, punctuation.definition.generic, punctuation.definition.tag, punctuation.separator.key-value</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_surface_variant.dark.hex}}<* else *>{{colors.on_surface_variant.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Function</string>
+      <key>scope</key>
+      <string>entity.name.function, meta.function-call.method, support.function, support.function.misc, variable.function</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Function macro</string>
+      <key>scope</key>
+      <string>entity.name.macro, support.function.macro, meta.macro</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Type</string>
+      <key>scope</key>
+      <string>meta.type, meta.type-alias, support.type, entity.name.type, entity.name.class, entity.name.struct, entity.name.enum</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary_fixed.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Namespace</string>
+      <key>scope</key>
+      <string>entity.name.namespace, entity.name.module</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary_fixed.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Variable parameter</string>
+      <key>scope</key>
+      <string>variable.parameter, meta.function.parameters</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_surface.dark.hex}}<* else *>{{colors.on_surface.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Variable builtin</string>
+      <key>scope</key>
+      <string>variable.language, support.variable</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Tag</string>
+      <key>scope</key>
+      <string>entity.name.tag</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Attribute name</string>
+      <key>scope</key>
+      <string>entity.other.attribute-name</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Constructor</string>
+      <key>scope</key>
+      <string>meta.function-call.constructor, entity.name.function.constructor</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Invalid</string>
+      <key>scope</key>
+      <string>invalid, invalid.illegal, invalid.deprecated</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.error.dark.hex}}<* else *>{{colors.error.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Diff inserted</string>
+      <key>scope</key>
+      <string>markup.inserted.diff</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary.dark.hex}}<* else *>{{colors.tertiary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Diff deleted</string>
+      <key>scope</key>
+      <string>markup.deleted.diff</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.error.dark.hex}}<* else *>{{colors.error.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Diff changed</string>
+      <key>scope</key>
+      <string>markup.changed.diff</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Diff header</string>
+      <key>scope</key>
+      <string>meta.diff.header.from-file, meta.diff.header.to-file, punctuation.definition.from-file.diff, punctuation.definition.to-file.diff</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup heading</string>
+      <key>scope</key>
+      <string>markup.heading, entity.name.section</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+        <key>fontStyle</key>
+        <string>bold</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup heading 1</string>
+      <key>scope</key>
+      <string>heading.1.markdown punctuation.definition.heading.markdown, heading.1.markdown, markup.heading.setext.1.markdown, markup.heading.1.markdown</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+        <key>fontStyle</key>
+        <string>bold</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup heading 2-6</string>
+      <key>scope</key>
+      <string>heading.2.markdown, heading.3.markdown, heading.4.markdown, heading.5.markdown, heading.6.markdown, markup.heading.2.markdown, markup.heading.markdown</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+        <key>fontStyle</key>
+        <string>bold</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup bold</string>
+      <key>scope</key>
+      <string>markup.bold</string>
+      <key>settings</key>
+      <dict>
+        <key>fontStyle</key>
+        <string>bold</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup italic</string>
+      <key>scope</key>
+      <string>markup.italic</string>
+      <key>settings</key>
+      <dict>
+        <key>fontStyle</key>
+        <string>italic</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup strikethrough</string>
+      <key>scope</key>
+      <string>markup.strikethrough</string>
+      <key>settings</key>
+      <dict>
+        <key>fontStyle</key>
+        <string>strikethrough</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup link URL</string>
+      <key>scope</key>
+      <string>punctuation.definition.link, markup.underline.link</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+        <key>fontStyle</key>
+        <string>underline</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup link text</string>
+      <key>scope</key>
+      <string>string.other.link.title.markdown, markup.link</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary.dark.hex}}<* else *>{{colors.tertiary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup list</string>
+      <key>scope</key>
+      <string>markup.list, punctuation.definition.list.begin.markdown, markup.list.bullet</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup quote</string>
+      <key>scope</key>
+      <string>markup.quote, punctuation.definition.quote.begin</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary.dark.hex}}<* else *>{{colors.tertiary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup raw inline</string>
+      <key>scope</key>
+      <string>markup.inline.raw.string.markdown, markup.raw.block.markdown, punctuation.definition.raw.markdown</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary.dark.hex}}<* else *>{{colors.tertiary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>JSON keys</string>
+      <key>scope</key>
+      <string>source.json meta.mapping.key string, support.type.property-name.json, punctuation.support.type.property-name.json</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_surface.dark.hex}}<* else *>{{colors.on_surface.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>TOML keys</string>
+      <key>scope</key>
+      <string>support.type.property-name.toml, punctuation.support.type.property-name.toml, support.type.property-name.table</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_surface.dark.hex}}<* else *>{{colors.on_surface.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>YAML keys</string>
+      <key>scope</key>
+      <string>entity.name.tag.yaml, support.type.property-name.yaml, punctuation.support.type.property-name.yaml</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_surface.dark.hex}}<* else *>{{colors.on_surface.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>YAML constants</string>
+      <key>scope</key>
+      <string>constant.language.yaml</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary.dark.hex}}<* else *>{{colors.tertiary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>YAML anchors</string>
+      <key>scope</key>
+      <string>entity.name.type.anchor.yaml, variable.other.alias.yaml, punctuation.definition.anchor.yaml, punctuation.definition.alias.yaml</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>CSS property name</string>
+      <key>scope</key>
+      <string>support.type.property-name.css, support.type.vendored.property-name</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>CSS pseudo class</string>
+      <key>scope</key>
+      <string>source.css entity.other.attribute-name.pseudo-class, source.css entity.other.attribute-name.class.css</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>CSS variables</string>
+      <key>scope</key>
+      <string>source.css meta.property-list variable, meta.property-list variable.other.less</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Nix attribute names</string>
+      <key>scope</key>
+      <string>entity.other.attribute-name.multipart.nix, entity.other.attribute-name.single.nix</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_surface.dark.hex}}<* else *>{{colors.on_surface.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Nix parameter names</string>
+      <key>scope</key>
+      <string>variable.parameter.name.nix, variable.parameter.nix</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_surface.dark.hex}}<* else *>{{colors.on_surface.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Nix interpolated parameter names</string>
+      <key>scope</key>
+      <string>meta.embedded variable.parameter.name.nix, string.interpolated.nix</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_tertiary_container.dark.hex}}<* else *>{{colors.on_tertiary_container.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Nix paths</string>
+      <key>scope</key>
+      <string>string.unquoted.path.nix, string.unquoted.spath.nix, string.unquoted.url.nix</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary_fixed.dark.hex}}<* else *>{{colors.tertiary_fixed.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Nix keywords</string>
+      <key>scope</key>
+      <string>keyword.other.nix, keyword.other.inherit.nix</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Nix operators</string>
+      <key>scope</key>
+      <string>keyword.operator.nix, keyword.operator.bind.nix</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_surface_variant.dark.hex}}<* else *>{{colors.on_surface_variant.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Nix builtin functions</string>
+      <key>scope</key>
+      <string>support.function.nix</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Nix constants</string>
+      <key>scope</key>
+      <string>constant.language.nix</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary.dark.hex}}<* else *>{{colors.tertiary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Nix numeric</string>
+      <key>scope</key>
+      <string>constant.numeric.nix</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary_fixed.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Nix punctuation attrset</string>
+      <key>scope</key>
+      <string>punctuation.definition.attrset.nix, punctuation.definition.attrset-or-function.nix</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary_fixed.dark.hex}}<* else *>{{colors.on_surface_variant.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Nix punctuation function</string>
+      <key>scope</key>
+      <string>punctuation.definition.entity.function.nix, punctuation.definition.entity.function.1.nix, punctuation.definition.entity.function.2.nix, punctuation.definition.entity.function.3.nix, punctuation.definition.entity.function.4.nix</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Rust keyword</string>
+      <key>scope</key>
+      <string>entity.name.function.macro.rules.rust, storage.type.module.rust, storage.modifier.rust, storage.type.struct.rust, storage.type.enum.rust, storage.type.trait.rust, storage.type.union.rust, storage.type.impl.rust, storage.type.rust, storage.type.function.rust, storage.type.type.rust</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Rust macro</string>
+      <key>scope</key>
+      <string>support.macro.rust, meta.macro.rust support.function.rust, entity.name.function.macro.rust</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Rust lifetime</string>
+      <key>scope</key>
+      <string>storage.modifier.lifetime.rust, entity.name.type.lifetime</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+        <key>fontStyle</key>
+        <string>italic</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Rust type</string>
+      <key>scope</key>
+      <string>entity.name.type.numeric.rust, entity.name.impl.rust, entity.name.trait.rust, entity.name.struct.rust, entity.name.union.rust, storage.type.source.rust</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary_fixed.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Rust function</string>
+      <key>scope</key>
+      <string>meta.function.call.rust</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Rust constants</string>
+      <key>scope</key>
+      <string>constant.other.caps.rust</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary.dark.hex}}<* else *>{{colors.tertiary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Rust attribute</string>
+      <key>scope</key>
+      <string>meta.annotation.rust, meta.annotation.rust punctuation, meta.attribute.rust, punctuation.definition.attribute.rust</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+        <key>fontStyle</key>
+        <string>italic</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Shell keyword</string>
+      <key>scope</key>
+      <string>keyword.control.flow.shell, keyword.other.shell</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Shell interpolation</string>
+      <key>scope</key>
+      <string>source.shell punctuation.section.interpolation, punctuation.definition.evaluation.backticks.shell</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_surface_variant.dark.hex}}<* else *>{{colors.on_surface_variant.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Shell shebang</string>
+      <key>scope</key>
+      <string>comment.line.shebang, punctuation.definition.comment.shebang.shell, meta.shebang.shell</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.on_surface_variant.dark.hex}}<* else *>{{colors.on_surface_variant.light.hex}}<* endif *></string>
+        <key>fontStyle</key>
+        <string>italic</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Python keyword</string>
+      <key>scope</key>
+      <string>keyword.control.flow.python, keyword.operator.logical.python, storage.type.function.python</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Python builtin</string>
+      <key>scope</key>
+      <string>support.function.builtin.python, support.type.exception.python</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Python self</string>
+      <key>scope</key>
+      <string>variable.parameter.function.language.special.self.python, variable.language.special.self.python</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+        <key>fontStyle</key>
+        <string>italic</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Python constants</string>
+      <key>scope</key>
+      <string>constant.language.python</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.tertiary.dark.hex}}<* else *>{{colors.tertiary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Python decorator</string>
+      <key>scope</key>
+      <string>entity.name.function.decorator.python, punctuation.definition.decorator.python</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+        <key>fontStyle</key>
+        <string>italic</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Man page headings</string>
+      <key>scope</key>
+      <string>markup.heading.synopsis.man, markup.heading.title.man, markup.heading.other.man</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.primary.dark.hex}}<* else *>{{colors.primary.light.hex}}<* endif *></string>
+        <key>fontStyle</key>
+        <string>bold</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Man page options</string>
+      <key>scope</key>
+      <string>entity.name</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string><* if {{ is_dark_mode }} *>{{colors.secondary.dark.hex}}<* else *>{{colors.secondary.light.hex}}<* endif *></string>
+      </dict>
+    </dict>
+
+  </array>
+</dict>
+</plist>
