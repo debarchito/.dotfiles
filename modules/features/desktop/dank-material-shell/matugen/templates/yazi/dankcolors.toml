@@ -24,6 +24,7 @@
 
 [mgr]
 cwd = { fg = "{{colors.on_surface.default.hex}}" }
+syntect_theme = "~/.config/bat/themes/dankcolors.tmTheme"
 
 find_keyword = { fg = "{{colors.error.default.hex}}", bold = true, italic = true, underline = true }
 find_position = { fg = "{{colors.error.default.hex}}", bold = true, italic = true }

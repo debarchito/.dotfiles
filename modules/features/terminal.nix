@@ -31,7 +31,10 @@
             };
           };
 
-          bat.enable = true;
+          bat = {
+            enable = true;
+            config.theme = "dankcolors";
+          };
 
           delta = {
             enable = true;

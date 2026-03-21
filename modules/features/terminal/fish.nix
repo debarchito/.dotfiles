@@ -54,7 +54,7 @@
               ''
                 set RG_PREFIX 'rga --files-with-matches'
                 set selected (
-                  FZF_DEFAULT_COMMAND="$RG_PREFIX '$1'" \
+                  FZF_DEFAULT_COMMAND="$RG_PREFIX '$argv[1]'" \
                     fzf --bind "change:reload:$RG_PREFIX {q} || true" \
                         --ansi \
                         --disabled \

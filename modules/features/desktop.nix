@@ -173,7 +173,7 @@
             "DankMaterialShell/plugin_settings.json".source =
               pkgs.replaceVars "${dank-material-shell}/plugin_settings.json" vars;
             "matugen/templates".source = "${dank-material-shell}/matugen/templates";
-            "matugen/config.toml".source = pkgs.replaceVars "${dank-material-shell}/matugen/config.toml" vars;
+            "matugen/config.toml".source = "${dank-material-shell}/matugen/config.toml";
             "qt5ct/qt5ct.conf".source = pkgs.replaceVars ./desktop/qt5ct/qt5ct.conf vars;
             "qt6ct/qt6ct.conf".source = pkgs.replaceVars ./desktop/qt6ct/qt6ct.conf vars;
           };
