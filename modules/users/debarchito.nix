@@ -240,17 +240,18 @@ in
       home = {
         packages = builtins.attrValues {
           inherit (pkgs)
-            aseprite
             android-tools
+            aseprite
             bibata-cursors
             duckdb
             ffmpeg
             krita
             nix-alien
             nix-output-monitor
-            pika-backup
             pear-desktop
+            pika-backup
             qbittorrent
+            trash-cli
             wl-mirror
             ;
           inherit (pkgs.kdePackages) dolphin gwenview okular;
