@@ -14,11 +14,12 @@
           shellWrapperName = "yy";
           plugins = {
             inherit (pkgs.yaziPlugins)
+              duckdb
               full-border
               git
               no-status
               piper
-              duckdb
+              recycle-bin
               ;
           };
           initLua = ./yazi/init.lua;
@@ -114,22 +115,12 @@
                 desc = "Yank selection to clipboard";
               }
               {
-                on = "H";
-                run = "plugin duckdb -1";
-                desc = "Scroll one column to the left";
-              }
-              {
-                on = "L";
-                run = "plugin duckdb +1";
-                desc = "Scroll one column to the right";
-              }
-              {
                 on = [
                   "g"
-                  "o"
+                  "t"
                 ];
-                run = "plugin duckdb -open";
-                desc = "Open with DuckDB";
+                run = "plugin recycle-bin";
+                desc = "Manage Trash";
               }
               {
                 on = [
@@ -142,10 +133,20 @@
               {
                 on = [
                   "g"
-                  "u"
+                  "d"
                 ];
-                run = "plugin duckdb -ui";
-                desc = "Open with DuckDB UI";
+                run = "plugin duckdb -open";
+                desc = "Open with DuckDB";
+              }
+              {
+                on = "H";
+                run = "plugin duckdb -1";
+                desc = "Scroll one column to the left";
+              }
+              {
+                on = "L";
+                run = "plugin duckdb +1";
+                desc = "Scroll one column to the right";
               }
               {
                 on = "<A-d>";
