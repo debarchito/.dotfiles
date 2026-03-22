@@ -71,10 +71,13 @@ in
       };
     };
 
-    qemu = {
-      enable = true;
-      runAsRoot = true;
-      manager.enable = true;
+    virtualisation' = {
+      qemu = {
+        enable = true;
+        runAsRoot = true;
+        manager.enable = true;
+      };
+      waydroid.enable = true;
     };
 
     desktop = {
