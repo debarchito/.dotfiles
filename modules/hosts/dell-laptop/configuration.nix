@@ -12,7 +12,7 @@ in
       self.modules.nixos.options-graphics
       self.modules.nixos.options-media
       self.modules.nixos.options-containers'
-      self.modules.nixos.options-qemu
+      self.modules.nixos.options-virtualisation'
       self.modules.nixos.options-desktop
       self.modules.nixos.options-packaging
       self.modules.nixos.options-gaming
