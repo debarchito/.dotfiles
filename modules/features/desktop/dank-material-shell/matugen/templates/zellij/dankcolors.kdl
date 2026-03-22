@@ -1,15 +1,33 @@
+<* if {{ is_dark_mode }}*>
 themes {
     dankcolors {
-        fg      {{colors.on_surface.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
-        bg      {{colors.surface.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
-        black   {{colors.surface_bright.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
-        red     {{colors.error.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
-        green   {{colors.primary.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
-        yellow  {{colors.tertiary.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
-        blue    {{colors.secondary.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
-        magenta {{colors.inverse_primary.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
-        cyan    {{colors.primary_container.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
-        white   {{colors.on_surface_variant.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
-        orange  {{colors.error_container.default.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        bg      {{colors.surface_variant.dark.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        fg      {{colors.on_surface.dark.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        red     {{colors.error.dark.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        green   {{colors.primary.dark.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        blue    {{colors.secondary.dark.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        yellow  {{colors.tertiary.dark.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        magenta {{colors.tertiary_fixed_dim.dark.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        orange  {{colors.secondary_fixed_dim.dark.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        cyan    {{colors.primary_fixed_dim.dark.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        black   {{colors.surface_container_lowest.dark.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        white   {{colors.on_surface.dark.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
     }
 }
+<* else *>
+themes {
+    dankcolors {
+        bg      {{colors.surface_variant.light.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        fg      {{colors.on_surface.light.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        red     {{colors.error.light.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        green   {{colors.primary.light.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        blue    {{colors.secondary.light.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        yellow  {{colors.tertiary.light.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        magenta {{colors.tertiary_fixed_dim.light.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        orange  {{colors.secondary_fixed_dim.light.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        cyan    {{colors.primary_fixed_dim.light.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        black   {{colors.surface_container_lowest.light.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+        white   {{colors.on_surface.light.rgb | replace: "rgb(", "" | replace: ",", "" | replace: ")", "" }}
+    }
+}
+<* endif *>
