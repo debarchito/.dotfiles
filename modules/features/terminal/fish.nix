@@ -123,6 +123,7 @@
           preferAbbrs = true;
           shellAbbrs = {
             cd = "z";
+            sudo = "run0";
             cgh = {
               setCursor = "%";
               expansion = "jj git clone gh:%";
