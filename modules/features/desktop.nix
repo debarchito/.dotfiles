@@ -193,6 +193,7 @@
             name = "Poppins";
             size = 10;
           };
+          gtk4.theme = config.gtk.theme;
         };
 
         qt = {
