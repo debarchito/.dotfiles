@@ -44,18 +44,6 @@
     ],
     "description": "fetchurl with default empty hash"
   },
-  "package-arguments": {
-    "prefix": "pkg",
-    "body": [
-      "{ lib",
-      ", ${1:stdenv}",
-      ", $2",
-      "}:",
-      "",
-      "$0"
-    ],
-    "description": "Package arguments, starting with { lib"
-  },
   "stdenv.mkDerivation": {
     "prefix": "mkd",
     "body": [
@@ -95,9 +83,13 @@
     "description": "Nixpkgs' minimal meta attribute set"
   },
   "with": {
-    "prefix": "with",
-    "body": ["with $1; $0;"],
-    "description": "with expression"
+    "prefix": "av",
+    "body": [
+      "builtins.attrValues {",
+      "  inherit ($1) $0;",
+      "}"
+    ],
+    "description": "alternative to with without the downsides"
   },
   "inherit": {
     "prefix": "inherit",
@@ -109,17 +101,24 @@
     "body": [
       "inputs = {",
       "  nixpkgs.url = \"https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz\";",
-      "  systems.url = \"github:nix-systems/default\";",
-      "  flake-parts.url = \"github:hercules-ci/flake-parts\";",
+      "  nixpkgs-lib.follows = \"nixpkgs\";",
+      "  flake-parts = {",
+      "    url = \"github:hercules-ci/flake-parts\";",
+      "    inputs.nixpkgs-lib.follows = \"nixpkgs-lib\";",
+      "  };",
       "};",
       "outputs =",
-      "  { systems, flake-parts, ... }@inputs:",
+      "  { flake-parts, ... }@inputs:",
       "  flake-parts.lib.mkFlake { inherit inputs; } {",
-      "    systems = import systems;",
+      "    systems = [",
+      "      \"x86_64-linux\"",
+      "      \"aarch64-linux\"",
+      "    ];",
       "    perSystem =",
       "      { pkgs, ... }:",
       "      {",
       "        devShells.default = pkgs.mkShell {",
+      "          name = \"$1-dev\";",
       "          packages = [ $0 ];",
       "        };",
       "      };",
