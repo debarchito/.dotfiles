@@ -255,7 +255,7 @@ in
             wl-mirror
             ;
           inherit (pkgs.kdePackages) dolphin gwenview okular;
-          inherit (self'.packages) bottles;
+          inherit (self'.packages) blender bottles;
         };
 
         file.".julia/config/startup.jl".source = ../scripts/julia/startup.jl;
