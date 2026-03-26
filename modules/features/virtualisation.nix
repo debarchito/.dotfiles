@@ -60,7 +60,12 @@
           })
 
           (lib.mkIf config.virtualisation'.waydroid.enable {
-            virtualisation.waydroid.enable = true;
+            virtualisation.waydroid = {
+              enable = true;
+              package = pkgs.waydroid-nftables;
+            };
+
+            networking.firewall.trustedInterfaces = [ "waydroid0" ];
 
             environment.systemPackages = [
               inputs.waydroid-script.packages.${system}.default
