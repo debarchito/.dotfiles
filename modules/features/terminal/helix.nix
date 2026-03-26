@@ -77,6 +77,8 @@
                   "move_line_up"
                   "paste_before"
                 ];
+                C-r = ":reload";
+                C-a = ":reload-all";
                 C-i = ":toggle-option lsp.display-inlay-hints";
                 C-y =
                   let
