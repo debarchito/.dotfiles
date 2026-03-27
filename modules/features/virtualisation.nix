@@ -1,14 +1,7 @@
+{ inputs, moduleWithSystem, ... }:
 {
-  lib,
-  inputs,
-  moduleWithSystem,
-  ...
-}:
-{
-  flake-file.inputs.waydroid-script.url = lib.mkDefault "github:casualsnek/waydroid_script";
-
   flake.modules.nixos.options-virtualisation' = moduleWithSystem (
-    { system, ... }:
+    { system, self', ... }:
     {
       lib,
       config,
@@ -67,9 +60,9 @@
 
             networking.firewall.trustedInterfaces = [ "waydroid0" ];
 
-            environment.systemPackages = [
-              inputs.waydroid-script.packages.${system}.default
-            ];
+            environment.systemPackages = builtins.attrValues {
+              inherit (self'.packages) waydroid-script waydroid-choose-gpu;
+            };
           })
         ]
       );
