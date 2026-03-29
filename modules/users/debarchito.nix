@@ -208,6 +208,8 @@ in
 
         mpv.enable = true;
 
+        nushell.enable = true;
+
         nix-search-tv.enable = true;
 
         obs-studio = {
