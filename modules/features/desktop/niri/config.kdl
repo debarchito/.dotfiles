@@ -138,7 +138,6 @@ binds {
     Mod+B repeat=false hotkey-overlay-title="Open Browser"  { spawn "wlr-which-key" "--initial-keys" "b";   }
 
     Print repeat=false hotkey-overlay-title="Take a Screenshot"                                    { spawn "dms" "screenshot";                       }
-    Mod+W repeat=false hotkey-overlay-title="Choose Wallpapers"                                    { spawn "dms" "ipc" "wallpaperCarousel" "toggle"; }
     Mod+M repeat=false hotkey-overlay-title="Toggle Process List"                                  { spawn "dms" "ipc" "processlist" "toggle";       }
     Mod+N repeat=false hotkey-overlay-title="Toggle Notification Center"                           { spawn "dms" "ipc" "notifications" "toggle";     }
     Mod+P repeat=false hotkey-overlay-title="Toggle Notepad"                                       { spawn "dms" "ipc" "notepad" "toggle";           }
