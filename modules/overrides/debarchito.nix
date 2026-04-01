@@ -16,19 +16,6 @@
       };
     };
 
-  flake.modules.nixos.users-debarchito = moduleWithSystem (
-    { system, ... }:
-    {
-      nixpkgs.overlays = [
-        (_: _: {
-          inherit (inputs.nixpkgs-1.legacyPackages.${system})
-            openvpn3
-            ;
-        })
-      ];
-    }
-  );
-
   flake.modules.homeManager.users-debarchito = moduleWithSystem (
     { system, ... }:
     {
