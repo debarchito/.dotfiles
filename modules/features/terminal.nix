@@ -126,11 +126,14 @@
           };
         };
 
-        services.gpg-agent = {
-          enable = true;
-          enableFishIntegration = true;
-          enableSshSupport = true;
-          pinentry.package = pkgs.pinentry-qt;
+        services = {
+          cliphist.enable = true;
+          gpg-agent = {
+            enable = true;
+            enableFishIntegration = true;
+            enableSshSupport = true;
+            pinentry.package = pkgs.pinentry-qt;
+          };
         };
 
         xdg.configFile =

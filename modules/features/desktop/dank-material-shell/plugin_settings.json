@@ -59,5 +59,11 @@
   },
   "dankHooks": {
     "enabled": true
+  },
+  "screenRecorder": {
+    "enabled": true
+  },
+  "usbManager": {
+    "enabled": true
   }
 }

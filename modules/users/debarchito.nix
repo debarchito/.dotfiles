@@ -95,6 +95,8 @@ in
       gamescope.enable = true;
       gamemode.enable = true;
     };
+
+    programs.gpu-screen-recorder.enable = true;
   };
 
   flake.homeConfigurations."${username}@dell-laptop" = withSystem "x86_64-linux" (

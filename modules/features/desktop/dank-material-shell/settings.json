@@ -48,6 +48,10 @@
   "modalElevationEnabled": true,
   "popoutElevationEnabled": true,
   "barElevationEnabled": true,
+  "blurEnabled": false,
+  "blurBorderColor": "outline",
+  "blurBorderCustomColor": "#ffffff",
+  "blurBorderOpacity": 1,
   "wallpaperFillMode": "Stretch",
   "blurredWallpaperLayer": true,
   "blurWallpaperOnOverview": false,
@@ -253,6 +257,7 @@
   "sortAppsAlphabetically": false,
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
+  "rememberLastQuery": false,
   "spotlightSectionViewModes": {
     "apps": "list"
   },
@@ -370,6 +375,7 @@
       "harmony": 0.5
     }
   },
+  "matugenTemplateNeovimSetBackground": true,
   "showDock": true,
   "dockAutoHide": true,
   "dockSmartAutoHide": false,
@@ -564,6 +570,14 @@
           "showMicPercent": false,
           "showBatteryIcon": false,
           "showPrinterIcon": false
+        },
+        {
+          "id": "screenRecorder",
+          "enabled": true
+        },
+        {
+          "id": "usbManager",
+          "enabled": true
         },
         {
           "id": "powerMenuButton",
