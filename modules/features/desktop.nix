@@ -106,6 +106,14 @@
           rev = "8ec42a2dff96b94cdd0d40b57c1acd815c15079a";
           hash = "sha256-S1A50s7cKE0NuidC+x589wIxqGA6JW8GrCVEkCddMQs=";
         };
+        screenRecorder = {
+          rev = "b32375014743317abfad44d6daadf39fc2859d0b";
+          hash = "sha256-tmLRZqcqrBpLiA3a6/YI5hxbZNojtwDiWziw/l0DQ1g=";
+        };
+        usbManager = {
+          rev = "0a2e13ea9e6cc6061688e073d41df26eb66f0e45";
+          hash = "sha256-mh9J3xl+DXDgLOWeNhB/phOoRowZuL+RTBI+mn+Dze8=";
+        };
       };
 
       officialDankRepository = pkgs.fetchFromGitHub {
