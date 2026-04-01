@@ -3,7 +3,6 @@
   self,
   inputs,
   withSystem,
-  moduleWithSystem,
   ...
 }:
 let
@@ -121,8 +120,7 @@ in
     }
   );
 
-  flake.modules.homeManager."users-${username}" = moduleWithSystem (
-    { self', ... }:
+  flake.modules.homeManager."users-${username}" =
     { pkgs, ... }:
     {
       nixpkgs.overlays = [
@@ -216,7 +214,6 @@ in
 
         obs-studio = {
           enable = true;
-          package = self'.packages.obs-studio;
           plugins = [
             pkgs.obs-studio-plugins.obs-pipewire-audio-capture
             pkgs.obs-studio-plugins.obs-vkcapture
@@ -250,6 +247,8 @@ in
             android-tools
             aseprite
             bibata-cursors
+            blender
+            bottles
             duckdb
             ffmpeg
             krita
@@ -262,11 +261,9 @@ in
             wl-mirror
             ;
           inherit (pkgs.kdePackages) dolphin gwenview okular;
-          inherit (self'.packages) blender bottles;
         };
 
         file.".julia/config/startup.jl".source = ../scripts/julia/startup.jl;
       };
-    }
-  );
+    };
 }

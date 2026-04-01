@@ -1,9 +1,4 @@
-{
-  inputs,
-  moduleWithSystem,
-  lib,
-  ...
-}:
+{ inputs, lib, ... }:
 {
   flake-file.inputs = {
     musnix.url = lib.mkDefault "github:musnix/musnix";
@@ -95,8 +90,7 @@
       );
     };
 
-  flake.modules.homeManager.options-media = moduleWithSystem (
-    { self', ... }:
+  flake.modules.homeManager.options-media =
     {
       pkgs,
       lib,
@@ -115,8 +109,7 @@
 
       config = lib.mkIf config.media.daw.enable {
         home.packages = builtins.attrValues {
-          inherit (pkgs) yabridge yabridgectl;
-          inherit (self'.packages) reaper;
+          inherit (pkgs) reaper yabridge yabridgectl;
         };
 
         xdg.configFile = {
@@ -128,6 +121,5 @@
 
         home.file.".vst3/Stochas.vst3".source = "${pkgs.stochas}/lib/vst3/Stochas.vst3";
       };
-    }
-  );
+    };
 }

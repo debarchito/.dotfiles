@@ -1,8 +1,11 @@
-{ moduleWithSystem, ... }:
 {
-  flake.modules.homeManager.options-terminal = moduleWithSystem (
-    { self', ... }:
-    { lib, config, ... }:
+  flake.modules.homeManager.options-terminal =
+    {
+      lib,
+      config,
+      pkgs,
+      ...
+    }:
     {
       config = lib.mkIf config.terminal.common.enable {
         programs.starship = {
@@ -99,12 +102,11 @@
         };
 
         home.packages = [
-          self'.packages.starship-jj
+          pkgs.starship-jj
         ];
 
         xdg.configFile."starship-jj/starship-jj.toml".source =
           ./starship/plugins/starship-jj/starship-jj.toml;
       };
-    }
-  );
+    };
 }

@@ -1,9 +1,4 @@
-{
-  lib,
-  inputs,
-  moduleWithSystem,
-  ...
-}:
+{ lib, inputs, ... }:
 {
   flake-file.inputs = {
     niri = {
@@ -64,8 +59,7 @@
       ];
     };
 
-  flake.modules.homeManager.options-desktop = moduleWithSystem (
-    { self', ... }:
+  flake.modules.homeManager.options-desktop =
     {
       lib,
       config,
@@ -204,7 +198,7 @@
           enable = true;
           platformTheme = {
             name = "qtct";
-            package = self'.packages.qt6ct;
+            package = pkgs.qt6ct;
           };
         };
 
@@ -215,13 +209,13 @@
             noto-fonts-cjk-sans
             wlr-which-key
             pywalfox-native
+            papirus-folders
+            qt6ct
             ;
           inherit (pkgs.maple-mono) NF;
           inherit (pkgs.kdePackages) breeze;
           inherit (pkgs.libsForQt5) qt5ct;
-          inherit (self'.packages) papirus-folders qt6ct;
         };
       };
-    }
-  );
+    };
 }

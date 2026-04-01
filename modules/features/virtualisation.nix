@@ -1,7 +1,5 @@
-{ inputs, moduleWithSystem, ... }:
 {
-  flake.modules.nixos.options-virtualisation' = moduleWithSystem (
-    { system, self', ... }:
+  flake.modules.nixos.options-virtualisation' =
     {
       lib,
       config,
@@ -61,11 +59,10 @@
             networking.firewall.trustedInterfaces = [ "waydroid0" ];
 
             environment.systemPackages = builtins.attrValues {
-              inherit (self'.packages) waydroid-script waydroid-choose-gpu;
+              inherit (pkgs) waydroid-script waydroid-choose-gpu;
             };
           })
         ]
       );
-    }
-  );
+    };
 }
