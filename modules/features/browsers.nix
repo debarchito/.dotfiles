@@ -1,17 +1,11 @@
-{
-  lib,
-  inputs,
-  moduleWithSystem,
-  ...
-}:
+{ lib, inputs, ... }:
 {
   flake-file.inputs.nur = {
     url = lib.mkDefault "github:nix-community/NUR";
     inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
   };
 
-  flake.modules.homeManager.options-browsers = moduleWithSystem (
-    { self', ... }:
+  flake.modules.homeManager.options-browsers =
     {
       lib,
       config,
@@ -32,7 +26,7 @@
       config = lib.mkMerge [
         (lib.mkIf config.browsers.helium.enable {
           home.packages = [
-            self'.packages.helium
+            pkgs.helium
           ];
         })
 
@@ -247,6 +241,5 @@
             ./browsers/librewolf/extensions/tridactyl/tridactylrc;
         })
       ];
-    }
-  );
+    };
 }

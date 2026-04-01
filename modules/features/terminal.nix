@@ -148,7 +148,6 @@
 
         home.packages = builtins.attrValues {
           inherit (pkgs)
-            git-branchless
             koji
             ripdrag
             sd

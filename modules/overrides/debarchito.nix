@@ -1,12 +1,5 @@
+{ inputs, moduleWithSystem, ... }:
 {
-  lib,
-  inputs,
-  moduleWithSystem,
-  ...
-}:
-{
-  flake-file.inputs.nixpkgs-1.url = lib.mkDefault "github:nixos/nixpkgs/b40629efe5d6ec48dd1efba650c797ddbd39ace0";
-
   perSystem =
     { system, ... }:
     {
@@ -16,13 +9,32 @@
       };
     };
 
-  flake.modules.homeManager.users-debarchito = moduleWithSystem (
-    { system, ... }:
+  flake.modules.nixos.users-debarchito = moduleWithSystem (
+    { self', ... }:
     {
       nixpkgs.overlays = [
         (_: _: {
-          inherit (inputs.nixpkgs-1.legacyPackages.${system})
-            git-branchless
+          inherit (self'.packages) waydroid-choose-gpu waydroid-script;
+        })
+      ];
+    }
+  );
+
+  flake.modules.homeManager.users-debarchito = moduleWithSystem (
+    { self', ... }:
+    {
+      nixpkgs.overlays = [
+        (_: _: {
+          inherit (self'.packages)
+            blender
+            bottles
+            helium
+            obs-studio
+            papirus-folders
+            qt6ct
+            reaper
+            sioyek
+            starship-jj
             ;
         })
       ];
