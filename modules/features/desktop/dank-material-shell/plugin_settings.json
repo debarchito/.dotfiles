@@ -62,8 +62,5 @@
   },
   "screenRecorder": {
     "enabled": true
-  },
-  "usbManager": {
-    "enabled": true
   }
 }
