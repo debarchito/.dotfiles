@@ -576,10 +576,6 @@
           "enabled": true
         },
         {
-          "id": "usbManager",
-          "enabled": true
-        },
-        {
           "id": "powerMenuButton",
           "enabled": true
         }
