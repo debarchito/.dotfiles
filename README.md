@@ -31,6 +31,23 @@ nix develop .#impure-setup --command fish
 execute-impure-setup
 ```
 
-## 2. Licensing
+## 2. Templates
+
+This repo also contains tailored development templates. List all available
+templates using:
+
+```fish
+nix eval github:debarchito/.dotfiles#templates --json | jq -r "keys[]"
+```
+
+Initialize a template using:
+
+```fish
+nix flake init -t github:debarchito/.dotfiles#<template>
+```
+
+If no `<template>` is provided, initializes the default flake template.
+
+## 3. Licensing
 
 The repository is licensed under the [zlib](/LICENSE) license.
