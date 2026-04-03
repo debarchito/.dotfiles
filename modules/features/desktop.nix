@@ -101,8 +101,8 @@
           hash = "sha256-S1A50s7cKE0NuidC+x589wIxqGA6JW8GrCVEkCddMQs=";
         };
         screenRecorder = {
-          rev = "b32375014743317abfad44d6daadf39fc2859d0b";
-          hash = "sha256-tmLRZqcqrBpLiA3a6/YI5hxbZNojtwDiWziw/l0DQ1g=";
+          rev = "7206b590d69a165d30b5bbb66b033f1a15b49aff";
+          hash = "sha256-ndH8KHH+gzFIXWceqeUmy/w7oGj7ZvCEIacBfV1D+KU=";
         };
       };
 
