@@ -26,9 +26,7 @@ nh home switch -c <user>@<host>
 Lastly, run the setup script to apply all the impure adjustments:
 
 ```fish
-nix develop .#impure-setup --command fish
-# inside the development shell, run:
-execute-impure-setup
+nix run .#impure-setup
 ```
 
 ## 2. Templates
