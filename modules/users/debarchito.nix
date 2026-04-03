@@ -256,6 +256,7 @@ in
             krita
             nix-alien
             nix-output-monitor
+            nix-prefetch-github
             pear-desktop
             pika-backup
             qbittorrent
