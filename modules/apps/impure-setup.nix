@@ -2,21 +2,21 @@
   perSystem =
     { pkgs, lib, ... }:
     let
-      execute-impure-setup =
-        pkgs.writers.writeFishBin "execute-impure-setup" { }
+      impure-setup =
+        pkgs.writers.writeFishBin "impure-setup" { }
           # fish
           ''
-            set CP              '${pkgs.coreutils}/bin/cp'
+            set CP              '${lib.getExe' pkgs.coreutils "cp"}'
             set GIT             '${lib.getExe pkgs.git}'
-            set MKDIR           '${pkgs.coreutils}/bin/mkdir'
-            set MKTEMP          '${pkgs.coreutils}/bin/mktemp'
+            set MKDIR           '${lib.getExe' pkgs.coreutils "mkdir"}'
+            set MKTEMP          '${lib.getExe' pkgs.coreutils "mktemp"}'
             set PYWALFOX_NATIVE '${lib.getExe pkgs.pywalfox-native}'
-            set RM              '${pkgs.coreutils}/bin/rm'
-            set LN              '${pkgs.coreutils}/bin/ln'
+            set RM              '${lib.getExe' pkgs.coreutils "rm"}'
+            set LN              '${lib.getExe' pkgs.coreutils "ln"}'
 
             set ICON_DIR "$HOME/.local/share/icons"
             set REPO_URL 'https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git'
-            set REPO_REV '702499f331aa9c38309e1af99de4021013916297'
+            set REPO_REV 'c5a48381fce7fda86fb9067fd7816f7de11c0aeb'
 
             echo '[-*-] Setting up Papirus icon theme.'
 
@@ -75,16 +75,9 @@
           '';
     in
     {
-      devShells.impure-setup = pkgs.mkShellNoCC {
-        name = "impure-setup";
-        nativeBuildInputs = [
-          pkgs.git
-          pkgs.pywalfox-native
-          execute-impure-setup
-        ];
-        shellHook = ''
-          echo '[?] Setup shell loaded. Run "execute-impure-setup" to apply the setup changes.'
-        '';
+      apps.impure-setup = {
+        type = "app";
+        program = impure-setup;
       };
     };
 }
