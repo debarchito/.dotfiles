@@ -4,9 +4,8 @@ synopsis: "{{synopsis}}"
 description: "{{description}}"
 maintainer: ["Debarchito Nath <debarchiton@proton.me>"]
 authors: ["Debarchito Nath <debarchiton@proton.me>"]
-# license: "GPL-3.0-only"
-homepage: "https://codeberg.org/debarchito/{{name:s}}"
-bug-reports: "https://codeberg.org/debarchito/{{name:s}}/issues"
+homepage: "https://codeberg.org/debarchito/{{name:k}}"
+bug-reports: "https://codeberg.org/debarchito/{{name:k}}/issues"
 depends: [
   "dune" {>= "3.22"}
   "ocaml" {>= "5.4.1"}
@@ -25,5 +24,5 @@ build: [
     "@doc" {with-doc}
   ]
 ]
-dev-repo: "git+https://codeberg.org/debarchito/{{name:s}}.git"
+dev-repo: "git+https://codeberg.org/debarchito/{{name:k}}.git"
 x-maintenance-intent: ["(latest)"]

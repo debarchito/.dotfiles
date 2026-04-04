@@ -1,4 +1,4 @@
 First test
 
   $ {{name:s}}
-  Hello World!
+  2 + 2 = 4

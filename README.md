@@ -38,16 +38,16 @@ templates. Get started using:
 nix run github:debarchito/.dotfiles#generate
 ```
 
-Initialize a template (e.g OCaml) using:
+Initialize a template (e.g Rust) using:
 
 ```fish
-nix run github:debarchito/.dotfiles#generate ocaml ~/Development/ocaml-test name=ocaml-test
+nix run github:debarchito/.dotfiles#generate rust ./hello-world name=hello-world description="Say hello to the world!"
 ```
 
 The run using:
 
 ```fish
-nix run ~/Development/ocaml-test#ocaml_test 2>/dev/null
+nix run ./hello-world
 ```
 
 ## 3. Licensing
