@@ -1,4 +1,4 @@
 First test
 
-  $ hello
+  $ {{name:s}}
   Hello World!

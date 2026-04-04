@@ -1,0 +1,2 @@
+description = "An opam-nix powered OCaml template setup the way @debarchito likes it"
+params = ["name", "synopsis", "description"]

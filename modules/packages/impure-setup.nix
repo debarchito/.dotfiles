@@ -75,6 +75,10 @@
           '';
     in
     {
+      packages = {
+        inherit impure-setup;
+      };
+
       apps.impure-setup = {
         type = "app";
         program = impure-setup;

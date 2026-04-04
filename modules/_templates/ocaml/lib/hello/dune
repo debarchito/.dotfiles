@@ -1,6 +1,0 @@
-(include_subdirs qualified)
-
-(library
- (name hello)
- (public_name hello))
-

@@ -1,0 +1,2 @@
+description = "A generic flake-parts template"
+params = ["name"]

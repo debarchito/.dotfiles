@@ -33,6 +33,7 @@
           inherit (self'.packages)
             blender
             bottles
+            generate
             helium
             obs-studio
             papirus-folders

@@ -31,20 +31,24 @@ nix run .#impure-setup
 
 ## 2. Templates
 
-This repo also contains tailored development templates. List all available
-templates using:
+This repo also contains a templating engine alongside tailored development
+templates. Get started using:
 
 ```fish
-nix eval github:debarchito/.dotfiles#templates --json | jq -r "keys[]"
+nix run github:debarchito/.dotfiles#generate
 ```
 
-Initialize a template using:
+Initialize a template (e.g OCaml) using:
 
 ```fish
-nix flake init -t github:debarchito/.dotfiles#<template>
+nix run github:debarchito/.dotfiles#generate ocaml ~/Development/ocaml-test name=ocaml-test
 ```
 
-If no `<template>` is provided, initializes the default flake template.
+The run using:
+
+```fish
+nix run ~/Development/ocaml-test#ocaml_test 2>/dev/null
+```
 
 ## 3. Licensing
 
