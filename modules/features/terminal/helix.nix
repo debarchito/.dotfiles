@@ -104,7 +104,10 @@
                 args = [ "serve" ];
               };
               completion.command = lib.getExe pkgs.simple-completion-language-server;
-              nix.command = lib.getExe pkgs.nixd;
+              nix = {
+                command = lib.getExe pkgs.tix;
+                args = [ "lsp" ];
+              };
               html.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-html-language-server";
               css.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-css-language-server";
               json.command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";

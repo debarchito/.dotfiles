@@ -1,5 +1,10 @@
 { inputs, moduleWithSystem, ... }:
 {
+  flake-file.inputs.tix = {
+    url = "github:JRMurr/tix";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   perSystem =
     { system, ... }:
     {
@@ -21,7 +26,7 @@
   );
 
   flake.modules.homeManager.users-debarchito = moduleWithSystem (
-    { self', ... }:
+    { self', system, ... }:
     {
       nixpkgs.overlays = [
         (_: _: {
@@ -36,6 +41,7 @@
             sioyek
             starship-jj
             ;
+          tix = inputs.tix.packages.${system}.default;
         })
       ];
     }

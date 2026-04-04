@@ -37,7 +37,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
-    nixpkgs-1.url = "github:nixos/nixpkgs/b40629efe5d6ec48dd1efba650c797ddbd39ace0";
     nixpkgs-lib.follows = "nixpkgs";
     nur = {
       url = "github:nix-community/NUR";
@@ -45,6 +44,10 @@
     };
     starship-jj = {
       url = "gitlab:lanastara_foss/starship-jj";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    tix = {
+      url = "github:JRMurr/tix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     treefmt-nix = {
