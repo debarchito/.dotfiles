@@ -1,0 +1,2 @@
+description = "A crane powered Rust template"
+params = ["name", "description"]
