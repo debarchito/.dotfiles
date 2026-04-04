@@ -104,11 +104,7 @@
                 args = [ "serve" ];
               };
               completion.command = lib.getExe pkgs.simple-completion-language-server;
-              nix-1.command = lib.getExe pkgs.nixd;
-              nix-2 = {
-                command = lib.getExe' pkgs.tix "tix";
-                args = [ "lsp" ];
-              };
+              nix.command = lib.getExe pkgs.nixd;
               html.command = lib.getExe' pkgs.vscode-langservers-extracted "vscode-html-language-server";
               css.command = lib.getExe' pkgs.vscode-langservers-extracted "vscode-css-language-server";
               json.command = lib.getExe' pkgs.vscode-langservers-extracted "vscode-json-language-server";
@@ -136,8 +132,7 @@
                     formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
                     language-servers = [
                       "spellcheck"
-                      "nix-1"
-                      "nix-2"
+                      "nix"
                       "completion"
                     ];
                   }

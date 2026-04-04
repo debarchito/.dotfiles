@@ -1,2 +1,2 @@
-description = "An opam-nix powered OCaml template setup the way @debarchito likes it"
+description = "An opam-nix powered OCaml template"
 params = ["name", "synopsis", "description"]
