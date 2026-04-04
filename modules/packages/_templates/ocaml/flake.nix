@@ -52,7 +52,7 @@
 
           basePackagesQuery = {
             ocaml-base-compiler = "*";
-            hello = "*";
+            {{name:s}} = "*";
           };
 
           devPackagesQuery = {
@@ -81,18 +81,18 @@
           };
 
           packages = rec {
-            inherit (scope) hello;
-            default = hello;
+            inherit (scope) {{name:s}};
+            default = {{name:s}};
             fmt = self'.formatter;
           };
 
           overlayAttrs = {
-            inherit (scope) hello;
+            inherit (scope) {{name:s}};
           };
 
           devShells.default = pkgs.mkShell {
-            name = "hello-dev";
-            inputsFrom = [ scope.hello ];
+            name = "{{name:k}}-dev";
+            inputsFrom = [ scope.{{name:s}} ];
             nativeBuildInputs = devPackages;
           };
         };

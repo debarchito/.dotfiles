@@ -139,6 +139,7 @@ in
             bottles
             duckdb
             ffmpeg
+            generate
             krita
             nix-alien
             nix-output-monitor
@@ -151,119 +152,118 @@ in
             ;
           inherit (pkgs.kdePackages) dolphin gwenview okular;
         };
+        file.".julia/config/startup.jl".source = ../scripts/julia/startup.jl;
+      };
 
-        desktop.niri.dms.enable = true;
+      desktop.niri.dms.enable = true;
 
-        terminal.common.enable = true;
+      terminal.common.enable = true;
 
-        browsers = {
-          helium.enable = true;
-          librewolf.enable = true;
-        };
+      browsers = {
+        helium.enable = true;
+        librewolf.enable = true;
+      };
 
-        editors.zed-editor.enable = true;
+      editors.zed-editor.enable = true;
 
-        media.daw.enable = true;
+      media.daw.enable = true;
 
-        packaging.flatpak.enableEssentials = true;
+      packaging.flatpak.enableEssentials = true;
 
-        programs = {
-          distrobox.enable = true;
+      programs = {
+        distrobox.enable = true;
 
-          # terminal.common.enable -> git.enable
-          git = {
-            settings = {
-              user = {
-                name = "Debarchito Nath";
-                email = "debarchiton@proton.me";
-              };
-              url = {
-                "git@github.com:".insteadOf = "gh:";
-                "git@gitlab.com:".insteadOf = "gl:";
-                "git@codeberg.org:".insteadOf = "cb:";
-                "git@github.com:debarchito/".insteadOf = "me@gh:";
-                "git@codeberg.org:debarchito/".insteadOf = "me@cb:";
-              };
-            };
-            signing = {
-              format = "ssh";
-              signByDefault = true;
-              key = "~/.ssh/id_ed25519.pub";
-            };
-          };
-
-          ghostty = {
-            enable = true;
-            settings = {
-              command = "fish";
-              shell-integration = "fish";
-              window-decoration = "none";
-              window-padding-x = 10;
-              window-padding-y = "0,0";
-              font-family = "Maple Mono NF";
-              font-size = 15;
-              font-feature = "-calt,-zero,-cv02,+cv01,+cv61";
-              config-file = "./themes/dankcolors";
-              app-notifications = "no-clipboard-copy,no-config-reload";
-            };
-          };
-
-          # terminal.common.enable -> helix.enable
-          helix.defaultEditor = true;
-
-          home-manager.enable = true;
-
-          # terminal.common.enable -> jujutsu.enable
-          jujutsu.settings = {
+        # terminal.common.enable -> git.enable
+        git = {
+          settings = {
             user = {
               name = "Debarchito Nath";
               email = "debarchiton@proton.me";
             };
-            signing = {
-              backend = "ssh";
-              behavior = "own";
-              key = "~/.ssh/id_ed25519.pub";
+            url = {
+              "git@github.com:".insteadOf = "gh:";
+              "git@gitlab.com:".insteadOf = "gl:";
+              "git@codeberg.org:".insteadOf = "cb:";
+              "git@github.com:debarchito/".insteadOf = "me@gh:";
+              "git@codeberg.org:debarchito/".insteadOf = "me@cb:";
             };
           };
-
-          mpv.enable = true;
-
-          nushell.enable = true;
-
-          nix-search-tv.enable = true;
-
-          obs-studio = {
-            enable = true;
-            plugins = [
-              pkgs.obs-studio-plugins.obs-pipewire-audio-capture
-              pkgs.obs-studio-plugins.obs-vkcapture
-            ];
+          signing = {
+            format = "ssh";
+            signByDefault = true;
+            key = "~/.ssh/id_ed25519.pub";
           };
-
-          onlyoffice.enable = true;
-
-          rbw = {
-            enable = true;
-            settings = {
-              email = "debarchitonath@gmail.com";
-              pinentry = pkgs.pinentry-qt;
-            };
-          };
-
-          thunderbird.enable = true;
-
-          vesktop.enable = true;
-
-          zathura.enable = true;
         };
 
-        services = {
-          easyeffects.enable = true;
-
-          kdeconnect.enable = true;
+        ghostty = {
+          enable = true;
+          settings = {
+            command = "fish";
+            shell-integration = "fish";
+            window-decoration = "none";
+            window-padding-x = 10;
+            window-padding-y = "0,0";
+            font-family = "Maple Mono NF";
+            font-size = 15;
+            font-feature = "-calt,-zero,-cv02,+cv01,+cv61";
+            config-file = "./themes/dankcolors";
+            app-notifications = "no-clipboard-copy,no-config-reload";
+          };
         };
 
-        file.".julia/config/startup.jl".source = ../scripts/julia/startup.jl;
+        # terminal.common.enable -> helix.enable
+        helix.defaultEditor = true;
+
+        home-manager.enable = true;
+
+        # terminal.common.enable -> jujutsu.enable
+        jujutsu.settings = {
+          user = {
+            name = "Debarchito Nath";
+            email = "debarchiton@proton.me";
+          };
+          signing = {
+            backend = "ssh";
+            behavior = "own";
+            key = "~/.ssh/id_ed25519.pub";
+          };
+        };
+
+        mpv.enable = true;
+
+        nushell.enable = true;
+
+        nix-search-tv.enable = true;
+
+        obs-studio = {
+          enable = true;
+          plugins = [
+            pkgs.obs-studio-plugins.obs-pipewire-audio-capture
+            pkgs.obs-studio-plugins.obs-vkcapture
+          ];
+        };
+
+        onlyoffice.enable = true;
+
+        rbw = {
+          enable = true;
+          settings = {
+            email = "debarchitonath@gmail.com";
+            pinentry = pkgs.pinentry-qt;
+          };
+        };
+
+        thunderbird.enable = true;
+
+        vesktop.enable = true;
+
+        zathura.enable = true;
+      };
+
+      services = {
+        easyeffects.enable = true;
+
+        kdeconnect.enable = true;
       };
     };
 }

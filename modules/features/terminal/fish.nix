@@ -172,10 +172,6 @@
               setCursor = "%";
               expansion = "fd % /nix/store | fzf";
             };
-            nt = {
-              setCursor = "%";
-              expansion = "nix flake init -t github:debarchito/.dotfiles#%";
-            };
             "=" = {
               regex = ''=[^\s]+'';
               position = "anywhere";

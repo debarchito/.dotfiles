@@ -20,9 +20,11 @@
         { pkgs, ... }:
         {
           devShells.default = pkgs.mkShell {
-            name = "hello-dev";
+            name = "{{name:k}}-dev";
             packages = builtins.attrValues {
-              inherit (pkgs) hello;
+              inherit (pkgs)
+                # your packages go here...
+                ;
             };
           };
         };
