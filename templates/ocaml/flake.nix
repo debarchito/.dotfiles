@@ -83,7 +83,6 @@
           packages = rec {
             inherit (scope) {{name:s}};
             default = {{name:s}};
-            fmt = self'.formatter;
           };
 
           overlayAttrs = {

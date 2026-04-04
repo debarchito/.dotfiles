@@ -3,5 +3,7 @@ name = "{{name:k}}"
 description = "{{description}}"
 version = "0.1.0"
 edition = "2024"
+repository = "https://codeberg.org/debarchito/{{name:k}}"
+keywords = ["{{name:k}}"]
 
 [dependencies]

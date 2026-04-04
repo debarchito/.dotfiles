@@ -8,32 +8,33 @@
         import sys
         import shutil
 
-        TEMPLATES_PATH = "${./_templates}"
+        TEMPLATES_PATH = "${../../templates}"
 
 
         def show_help():
-            print("Usage: generate <template> <target-dir> [<k>=<v> ...]")
-            print("       generate list")
+            print("Usage:")
+            print("  generate <template> <target-dir> [<key>=<value> ...]")
+            print("  generate list")
             print("\nArguments:")
-            print("  <template>     Name of the template (from _templates/)")
-            print("  <target-dir>   Directory to generate into (. for current)")
-            print("  <key>=<value>  One or more substitution variables")
+            print("  <template>           Name of the template")
+            print("  <target-dir>         Directory to generate into")
+            print("  [<key>=<value> ...]  One or more substitution variables")
             print("\nPlaceholders:")
-            print("  {{key}}         Raw value")
-            print("  {{key:f}}       flatcase         e.g. mylib")
-            print("  {{key:k}}       kebab-case       e.g. my-lib")
-            print("  {{key:s}}       snake_case       e.g. my_lib")
-            print("  {{key:TS}}      Title_Snake      e.g. My_Lib")
-            print("  {{key:Hs}}      Header_snake     e.g. My_lib")
-            print("  {{key:TK}}      Title-Kebab      e.g. My-Lib")
-            print("  {{key:Hk}}      Header-kebab     e.g. My-lib")
-            print("  {{key:c}}       camelCase        e.g. myLib")
-            print("  {{key:P}}       PascalCase       e.g. MyLib")
-            print("  {{key:H}}       Headercase       e.g. Mylib")
-            print("  {{key:S}}       SCREAMCASE       e.g. MYLIB")
-            print("  {{key:SS}}      SCREAMING_SNAKE  e.g. MY_LIB")
-            print("  {{key:SK}}      SCREAMING-KEBAB  e.g. MY-LIB")
-            print("\n  \\{{key}}        Literal {{key}} (no substitution)")
+            print("  {{key}}         Raw                   e.g. my lib")
+            print("  {{key:f}}       flatcase              e.g. mylib")
+            print("  {{key:s}}       snake_case            e.g. my_lib")
+            print("  {{key:k}}       kebab-case            e.g. my-lib")
+            print("  {{key:c}}       camelCase             e.g. myLib")
+            print("  {{key:P}}       PascalCase            e.g. MyLib")
+            print("  {{key:H}}       Headercase            e.g. Mylib")
+            print("  {{key:S}}       SCREAMINGCASE         e.g. MYLIB")
+            print("  {{key:TS}}      Title_Snake_Case      e.g. My_Lib")
+            print("  {{key:Hs}}      Header_snake_case     e.g. My_lib")
+            print("  {{key:TK}}      Title-Kebab-Case      e.g. My-Lib")
+            print("  {{key:Hk}}      Header-kebab-case     e.g. My-lib")
+            print("  {{key:SS}}      SCREAMING_SNAKE_CASE  e.g. MY_LIB")
+            print("  {{key:SK}}      SCREAMING-KEBAB-CASE  e.g. MY-LIB")
+            print("  \\{{key}}        Literal {{key}}")
 
 
         def parse_template_meta(meta_path):
