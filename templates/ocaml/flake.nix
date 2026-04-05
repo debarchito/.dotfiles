@@ -67,6 +67,11 @@
           devPackages = builtins.attrValues (pkgs.lib.getAttrs (builtins.attrNames devPackagesQuery) scope);
         in
         {
+          packages = rec {
+            inherit (scope) {{name:s}};
+            default = {{name:s}};
+          };
+
           treefmt = {
             projectRootFile = "flake.nix";
             programs = {
@@ -78,11 +83,6 @@
                 };
               };
             };
-          };
-
-          packages = rec {
-            inherit (scope) {{name:s}};
-            default = {{name:s}};
           };
 
           overlayAttrs = {

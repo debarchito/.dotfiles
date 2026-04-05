@@ -1,0 +1,2 @@
+description = "An uv2nix powered Python template"
+params = ["name", "description"]

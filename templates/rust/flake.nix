@@ -42,7 +42,7 @@
       ];
 
       perSystem =
-        { system, config, ... }:
+        { system, ... }:
         let
           pkgs = import nixpkgs {
             inherit system;
@@ -73,7 +73,7 @@
             }
           );
         in
-        {
+        rec {
           packages = {
             inherit {{name:k}};
             default = {{name:k}};
@@ -102,22 +102,18 @@
               }
             );
 
-            {{name:k}}-fmt = craneLib.cargoFmt {
-              inherit src;
-            };
-
             {{name:k}}-audit = craneLib.cargoAudit {
               inherit src advisory-db;
             };
           };
 
           overlayAttrs = {
-            inherit (config.packages) {{name:k}};
+            inherit {{name:k}};
           };
 
           devShells.default = craneLib.devShell {
             name = "{{name:k}}-dev";
-            checks = config.checks;
+            inherit checks;
             inherit (commonArgs) RUSTFLAGS;
           };
         };
