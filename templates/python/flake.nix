@@ -53,10 +53,8 @@
       ];
 
       perSystem =
-        { pkgs, config, ... }:
+        { lib, pkgs, config, ... }:
         let
-          lib = pkgs.lib;
-
           src = lib.cleanSource ./.;
 
           pythonSet =
