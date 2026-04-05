@@ -41,6 +41,7 @@
 
       perSystem =
         {
+          lib,
           pkgs,
           system,
           self',
@@ -48,7 +49,6 @@
         }:
         let
           on = opam-nix.lib.${system};
-          lib = pkgs.lib;
 
           basePackagesQuery = {
             ocaml-base-compiler = "*";

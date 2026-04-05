@@ -1,0 +1,2 @@
+description = "A Typst + Sioyek template"
+params = ["name"]
