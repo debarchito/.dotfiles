@@ -65,11 +65,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1775400798,
-        "narHash": "sha256-1x8Vy0yC8TU6VEbiuqOcu4FW4chwcNel4d4NasOox3c=",
+        "lastModified": 1775513957,
+        "narHash": "sha256-02RnaVim/pEX+JNY4dhbRklEL48f7l+PWziJ3Jy8OfY=",
         "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
-        "rev": "59826555391bd7210e82f100947e7ec4eb476174",
+        "rev": "3194fc3fbef21ab9d0157de20800b2c01337bb38",
         "type": "github"
       },
       "original": {
@@ -322,11 +322,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1775457047,
-        "narHash": "sha256-HXWISaieWkm+zcZkBbqDgu6yxlFX3JHxnVRv7mBH8Og=",
+        "lastModified": 1775526208,
+        "narHash": "sha256-Z0hOXe2Ddq/zKSuJKyAhKsk2b0WfC4Lgs4118Y8CUD4=",
         "owner": "sodiboo",
         "repo": "niri-flake",
-        "rev": "b9f29e2ade937c5fc8ae2d3fe8c026698c32c044",
+        "rev": "1bd103a028626e596271fa2111b6b6c81a870f31",
         "type": "github"
       },
       "original": {
@@ -545,11 +545,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1775036866,
-        "narHash": "sha256-ByAX1LkhCwZ94+KnFAmnJSMAvui7kgCxjHgUHsWAbfI=",
-        "rev": "6201e203d09599479a3b3450ed24fa81537ebc4e",
+        "lastModified": 1775423009,
+        "narHash": "sha256-hvNLo3SaIwi6+Cm5NMLyFQYJrYagpsYap4EfQe9CQpc=",
+        "rev": "68d8aa3d661f0e6bd5862291b5bb263b2a6595c9",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre972949.6201e203d095/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre975402.68d8aa3d661f/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
@@ -578,11 +578,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775477432,
-        "narHash": "sha256-xJKlsc1lyl6dkKyLncuCtGsvaamPTnlcuMBAPIxGtv0=",
+        "lastModified": 1775529590,
+        "narHash": "sha256-QZAdia9wiJgRIJLP8E9ZqzMVEI2K7sx4rRnbdbw5IMc=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "e02d307869006acabea53df12b2ddda763e74831",
+        "rev": "7160f65183cf183aaf44bda8297fa38555db5a6a",
         "type": "github"
       },
       "original": {

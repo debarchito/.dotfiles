@@ -131,7 +131,11 @@
 
             shellHook = ''
               unset PYTHONPATH
+
               export REPO_ROOT=$(${lib.getExe pkgs.git} rev-parse --show-toplevel 2>/dev/null || pwd)
+
+              export VIRTUAL_ENV="${devVenv}"
+              ln -sfn ${devVenv} .venv
             '';
           };
         };
