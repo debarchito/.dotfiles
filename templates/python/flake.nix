@@ -100,11 +100,16 @@
                     devVenv
                     pkgs.basedpyright
                   ];
-                  PYTHONPATH = "${devVenv}/${pythonSet.python.sitePackages}";
                 }
                 ''
-                  cd ${src}
-                  XDG_CACHE_HOME=/tmp/cache basedpyright
+                  cp -r ${src}/. $TMPDIR/src
+                  chmod -R u+w $TMPDIR/src
+
+                  cd $TMPDIR/src
+                  ln -s ${devVenv} .venv
+
+                  XDG_CACHE_HOME=$TMPDIR/cache basedpyright
+
                   touch $out
                 '';
           };
@@ -133,8 +138,8 @@
               unset PYTHONPATH
 
               export REPO_ROOT=$(${lib.getExe pkgs.git} rev-parse --show-toplevel 2>/dev/null || pwd)
-
               export VIRTUAL_ENV="${devVenv}"
+
               ln -sfn ${devVenv} .venv
             '';
           };
