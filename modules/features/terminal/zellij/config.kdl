@@ -6,7 +6,7 @@ theme_dir "/home/@USERNAME@/.config/zellij/themes";
 
 simplified_ui  true;
 default_layout "compact";
-pane_frames    false;
+pane_frames    true;
 
 copy_command   "wl-copy";
 copy_on_select false;
@@ -141,7 +141,7 @@ keybinds clear-defaults=true {
         floating            true
         move_to_focused_tab true
       };
-      SwitchToMode "Normal"
+      SwitchToMode "Normal";
     }
   }
 
