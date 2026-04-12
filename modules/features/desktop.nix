@@ -9,6 +9,10 @@
       url = lib.mkDefault "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
+    quickshell = {
+      url = lib.mkDefault "github:quickshell-mirror/quickshell";
+      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+    };
     xwayland-satellite = {
       url = lib.mkDefault "github:Supreeeme/xwayland-satellite";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
@@ -134,11 +138,16 @@
       };
 
       config = lib.mkIf config.desktop.niri.dms.enable {
+        nixpkgs.overlays = [
+          inputs.quickshell.overlays.default
+        ];
+
         programs = {
           # Borked till the day "includes" is supported!
           niri.config = null;
           dank-material-shell = {
             enable = true;
+            quickshell.package = pkgs.quickshell;
             niri.includes.enable = false;
             plugins =
               (lib.mapAttrs (name: value: {

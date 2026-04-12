@@ -65,11 +65,11 @@
         "quickshell": "quickshell"
       },
       "locked": {
-        "lastModified": 1775750923,
-        "narHash": "sha256-BkJZN2O74p+5AujAEhmJBU7kSPLu+DVBPOoI63Hmy8w=",
+        "lastModified": 1775925898,
+        "narHash": "sha256-L4YStOZEbyNyRL7fLVcnaJW+GJRLDKNltbUhCygtNys=",
         "owner": "AvengeMedia",
         "repo": "DankMaterialShell",
-        "rev": "f2df53afcd0870445e7f3cd45e91ac135a04442e",
+        "rev": "f61438e11f5a0e28f7d7bd9b9afafae874a5c3b0",
         "type": "github"
       },
       "original": {
@@ -578,11 +578,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775903814,
-        "narHash": "sha256-qIPguU9crolwp2i7Q9njiZpgiWeYzy9dPECaxuXLnW0=",
+        "lastModified": 1775968513,
+        "narHash": "sha256-YL1w6EHmlsJb6sGGly9WkwD+YmP56CNWfXRstFtjm6w=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "563c672ef32abe2aaf7910eb7f55ff41c997ce15",
+        "rev": "e86044b022e64798da9bd1b8a154c1b75f01cc9d",
         "type": "github"
       },
       "original": {
@@ -613,6 +613,26 @@
         "url": "https://git.outfoxxed.me/quickshell/quickshell"
       }
     },
+    "quickshell_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775720097,
+        "narHash": "sha256-p+vqkCuFfVNyQBo370wr6MebNUvz55RZiC0m8YKUhvQ=",
+        "owner": "quickshell-mirror",
+        "repo": "quickshell",
+        "rev": "d4c92973b53d9fa34cc110d3b974eb6bde5b3027",
+        "type": "github"
+      },
+      "original": {
+        "owner": "quickshell-mirror",
+        "repo": "quickshell",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "determinate": "determinate",
@@ -631,6 +651,7 @@
           "nixpkgs"
         ],
         "nur": "nur",
+        "quickshell": "quickshell_2",
         "starship-jj": "starship-jj",
         "treefmt-nix": "treefmt-nix",
         "waydroid-script": "waydroid-script",
