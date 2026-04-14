@@ -256,8 +256,6 @@ in
         thunderbird.enable = true;
 
         vesktop.enable = true;
-
-        zathura.enable = true;
       };
 
       services = {
