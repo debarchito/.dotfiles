@@ -25,6 +25,13 @@
     };
     niri = {
       url = "github:sodiboo/niri-flake";
+      inputs = {
+        niri-unstable.follows = "niri-source";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+    niri-source = {
+      url = "github:niri-wm/niri";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-alien = {
