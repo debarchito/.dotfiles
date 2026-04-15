@@ -5,6 +5,10 @@ input_path = "~/.config/matugen/templates/syntect/dankcolors.tmTheme"
 output_path = "~/.config/bat/themes/dankcolors.tmTheme"
 post_hook = "bat cache --build"
 
+[templates.emacs]
+input_path = "~/.config/matugen/templates/emacs/dankcolors-theme.el"
+output_path = "~/.cache/emacs/themes/dankcolors-theme.el"
+
 [templates.fish]
 input_path = "~/.config/matugen/templates/fish/dankcolors.fish"
 output_path = "~/.config/fish/conf.d/dankcolors.fish"

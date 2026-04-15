@@ -2,16 +2,6 @@
   flake.modules.homeManager.options-editors =
     { lib, config, ... }:
     {
-
-      options.editors = lib.mkOption {
-        type = lib.types.submodule {
-          options = {
-            zed-editor.enable = lib.mkEnableOption "enable zed editor";
-          };
-        };
-        default = { };
-      };
-
       config = lib.mkIf config.editors.zed-editor.enable {
         programs.zed-editor = {
           enable = true;
