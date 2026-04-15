@@ -1,9 +1,14 @@
 { lib, inputs, ... }:
 {
   flake-file.inputs = {
+    niri-source = {
+      url = lib.mkDefault "github:niri-wm/niri";
+      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+    };
     niri = {
       url = lib.mkDefault "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+      inputs.niri-unstable.follows = lib.mkDefault "niri-source";
     };
     dms = {
       url = lib.mkDefault "github:AvengeMedia/DankMaterialShell";

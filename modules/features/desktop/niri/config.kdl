@@ -156,3 +156,12 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true repeat=false { spawn "dms" "ipc" "brightness" "decrement" "5" ""; }
     XF86MonBrightnessUp allow-when-locked=true repeat=false   { spawn "dms" "ipc" "brightness" "increment" "5" ""; }
 }
+
+window-rule {
+    opacity 0.85
+
+    background-effect {
+        blur true
+        xray true
+    }
+}

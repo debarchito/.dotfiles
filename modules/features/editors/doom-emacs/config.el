@@ -4,8 +4,8 @@
 (add-to-list 'custom-theme-load-path "~/.cache/emacs/themes")
 (setq doom-theme 'dankcolors)
 (setq display-line-numbers-type 'relative)
-(setq doom-font (font-spec :family "Maple Mono NF" :size 15.0)
-      doom-variable-pitch-font (font-spec :family "Maple Mono NF" :size 15.0))
+(setq doom-font (font-spec :family "Maple Mono NF" :size 14.0)
+      doom-variable-pitch-font (font-spec :family "Maple Mono NF" :size 14.0))
 (add-to-list 'default-frame-alist '(font . "Maple Mono NF-15:cv01=1:cv61=1:calt=0:zero=0:cv02=0"))
 
 ;; Editing
