@@ -8,8 +8,8 @@
             nativeBuildInputs = [ pkgs.makeWrapper ];
           }
           ''
-            ${pkgs.coreutils}/bin/mkdir -p $out/bin
-            makeWrapper ${pkgs.papirus-folders}/bin/papirus-folders $out/bin/papirus-folders \
+            ${lib.getExe' pkgs.coreutils "mkdir"} -p $out/bin
+            makeWrapper ${lib.getExe pkgs.papirus-folders} $out/bin/papirus-folders \
               --prefix PATH : ${lib.makeBinPath [ pkgs.gtk3 ]}
           '';
     };

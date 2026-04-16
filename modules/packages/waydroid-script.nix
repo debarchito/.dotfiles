@@ -6,7 +6,7 @@
     { pkgs, system, ... }:
     {
       packages.waydroid-script = pkgs.writeShellScriptBin "waydroid-script" ''
-        exec ${inputs.waydroid-script.packages.${system}.default}/bin/waydroid_script "$@"
+        exec ${lib.getExe' inputs.waydroid-script.packages.${system}.default "waydroid_script"} "$@"
       '';
     };
 }

@@ -3,7 +3,7 @@
   flake-file.inputs = {
     niri-source = {
       url = lib.mkDefault "github:niri-wm/niri";
-      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+      flake = false;
     };
     niri = {
       url = lib.mkDefault "github:sodiboo/niri-flake";

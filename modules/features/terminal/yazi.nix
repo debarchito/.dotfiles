@@ -33,7 +33,7 @@
               prepend_previewers = [
                 {
                   url = "*.md";
-                  run = "piper -- CLICOLOR_FORCE=1 ${pkgs.glow}/bin/glow -w=$w -s=dark \"$1\"";
+                  run = "piper -- CLICOLOR_FORCE=1 ${lib.getExe pkgs.glow} -w=$w -s=dark \"$1\"";
                 }
                 {
                   url = "*.tar*";
