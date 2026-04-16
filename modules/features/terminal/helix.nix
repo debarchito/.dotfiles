@@ -86,9 +86,9 @@
                   in
                   [
                     ":sh rm -f ${buffer}"
-                    ":insert-output ${pkgs.yazi}/bin/yazi \"%{buffer_name}\" --chooser-file=${buffer}"
-                    ":insert-output ${pkgs.coreutils}/bin/echo '\x1b[?1049h\x1b[?2004h' > /dev/tty"
-                    ":open %sh{${pkgs.coreutils}/bin/cat ${buffer}}"
+                    ":insert-output ${lib.getExe pkgs.yazi} \"%{buffer_name}\" --chooser-file=${buffer}"
+                    ":insert-output ${lib.getExe' pkgs.coreutils "echo"} '\x1b[?1049h\x1b[?2004h' > /dev/tty"
+                    ":open %sh{${lib.getExe' pkgs.coreutils "cat"} ${buffer}}"
                     ":redraw"
                     ":set mouse false"
                     ":set mouse true"
@@ -116,7 +116,7 @@
             };
             language =
               let
-                deno = "${pkgs.deno}/bin/deno";
+                deno = "${lib.getExe pkgs.deno}";
                 common-options = {
                   indent = {
                     tab-width = 2;
@@ -129,7 +129,7 @@
                 (
                   {
                     name = "nix";
-                    formatter.command = "${pkgs.nixfmt}/bin/nixfmt";
+                    formatter.command = "${lib.getExe pkgs.nixfmt}";
                     language-servers = [
                       "spellcheck"
                       "nix"
@@ -293,7 +293,7 @@
                   {
                     name = "toml";
                     formatter = {
-                      command = "${pkgs.taplo}/bin/taplo";
+                      command = "${lib.getExe pkgs.taplo}";
                       args = [
                         "format"
                         "-"
@@ -310,7 +310,7 @@
                 (
                   {
                     name = "typst";
-                    formatter.command = "${pkgs.typstyle}/bin/typstyle";
+                    formatter.command = "${lib.getExe pkgs.typstyle}";
                     language-servers = [
                       "spellcheck"
                       "typst"

@@ -32,7 +32,7 @@
     };
     niri-source = {
       url = "github:niri-wm/niri";
-      inputs.nixpkgs.follows = "nixpkgs";
+      flake = false;
     };
     nix-alien = {
       url = "github:thiagokokada/nix-alien";
