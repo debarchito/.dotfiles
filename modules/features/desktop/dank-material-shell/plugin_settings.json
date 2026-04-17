@@ -55,12 +55,24 @@
     "searchEngines": [],
     "defaultEngine": "duckduckgo",
     "noTrigger": false,
-    "trigger": ">"
+    "trigger": ">",
+    "disabledEngines": []
   },
   "dankHooks": {
     "enabled": true
   },
   "screenRecorder": {
     "enabled": true
+  },
+  "clipboardPlus": {
+    "enabled": true,
+    "tabOrder": "clipboard,search,category,pinned,todo",
+    "tabOrderEnabled": "clipboard,search,category,pinned,todo",
+    "backgroundOpacity": 80,
+    "showBarWidget": false,
+    "showPanelSeparator": true,
+    "hidePanelBackground": false,
+    "panelOpacityPinned": 20,
+    "listenClipboardWhileOpen": true
   }
 }

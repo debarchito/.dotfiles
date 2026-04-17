@@ -540,6 +540,10 @@
           "enabled": true
         },
         {
+          "id": "clipboardPlus",
+          "enabled": true
+        },
+        {
           "id": "dankKDEConnect",
           "enabled": true
         },
