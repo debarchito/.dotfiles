@@ -38,7 +38,7 @@
         type = lib.types.submodule {
           options = {
             niri.enable = lib.mkEnableOption "enable unstable niri builds";
-            labwc.nested.enable = lib.mkEnableOption "enable labwc primarily as a nested compositor";
+            labwc.enable = lib.mkEnableOption "enable labwc";
           };
         };
         default = { };
@@ -62,7 +62,7 @@
           ];
         })
 
-        (lib.mkIf config.desktop.labwc.nested.enable {
+        (lib.mkIf config.desktop.labwc.enable {
           programs.labwc.enable = true;
         })
       ];
@@ -141,95 +141,104 @@
 
       options.desktop = lib.mkOption {
         type = lib.types.submodule {
-          options.niri.dms.enable = lib.mkEnableOption "enable my dank-material-shell setup";
+          options = {
+            niri.dms.enable = lib.mkEnableOption "enable my dank-material-shell setup for niri";
+            labwc.dms.enable = lib.mkEnableOption "enable my dank-material-shell setup for labwc";
+          };
         };
         default = { };
       };
 
-      config = lib.mkIf config.desktop.niri.dms.enable {
-        nixpkgs.overlays = [
-          inputs.quickshell.overlays.default
-        ];
+      config = lib.mkMerge [
+        (lib.mkIf config.desktop.niri.dms.enable {
+          nixpkgs.overlays = [
+            inputs.quickshell.overlays.default
+          ];
 
-        programs = {
-          # Borked till the day "includes" is supported!
-          niri.config = null;
-          dank-material-shell = {
-            enable = true;
-            quickshell.package = pkgs.quickshell;
-            niri.includes.enable = false;
-            plugins =
-              (lib.mapAttrs (name: value: {
-                src = pkgs.fetchFromGitHub {
-                  owner = "debarchito";
-                  repo = name;
-                  inherit (value) rev hash;
-                };
-              }) dankPlugins)
-              // (lib.genAttrs officialDankPlugins (name: {
-                src = "${officialDankRepository}/${name}";
-              }));
-          };
-        };
-
-        xdg.configFile =
-          let
-            dank-material-shell = ./desktop/dank-material-shell;
-            vars = {
-              USERNAME = config.home.username;
+          programs = {
+            # Borked till the day "includes" is supported!
+            niri.config = null;
+            dank-material-shell = {
+              enable = true;
+              quickshell.package = pkgs.quickshell;
+              niri.includes.enable = false;
+              plugins =
+                (lib.mapAttrs (name: value: {
+                  src = pkgs.fetchFromGitHub {
+                    owner = "debarchito";
+                    repo = name;
+                    inherit (value) rev hash;
+                  };
+                }) dankPlugins)
+                // (lib.genAttrs officialDankPlugins (name: {
+                  src = "${officialDankRepository}/${name}";
+                }));
             };
-          in
-          {
-            "niri/config.kdl".source = ./desktop/niri/config.kdl;
-            "DankMaterialShell/settings.json".source = "${dank-material-shell}/settings.json";
-            "DankMaterialShell/plugin_settings.json".source =
-              pkgs.replaceVars "${dank-material-shell}/plugin_settings.json" vars;
-            "matugen/templates".source = "${dank-material-shell}/matugen/templates";
-            "matugen/config.toml".source = "${dank-material-shell}/matugen/config.toml";
-            "qt5ct/qt5ct.conf".source = pkgs.replaceVars ./desktop/qt5ct/qt5ct.conf vars;
-            "qt6ct/qt6ct.conf".source = pkgs.replaceVars ./desktop/qt6ct/qt6ct.conf vars;
           };
 
-        fonts.fontconfig = {
-          enable = true;
-          defaultFonts = {
-            serif = [ "Lora" ];
-            sansSerif = [ "Poppins" ];
-            monospace = [ "Maple Mono NF" ];
-          };
-        };
+          xdg.configFile =
+            let
+              dank-material-shell = ./desktop/dank-material-shell;
+              vars = {
+                USERNAME = config.home.username;
+              };
+            in
+            {
+              "niri/config.kdl".source = ./desktop/niri/config.kdl;
+              "DankMaterialShell/settings.json".source = "${dank-material-shell}/settings.json";
+              "DankMaterialShell/plugin_settings.json".source =
+                pkgs.replaceVars "${dank-material-shell}/plugin_settings.json" vars;
+              "matugen/templates".source = "${dank-material-shell}/matugen/templates";
+              "matugen/config.toml".source = "${dank-material-shell}/matugen/config.toml";
+              "qt5ct/qt5ct.conf".source = pkgs.replaceVars ./desktop/qt5ct/qt5ct.conf vars;
+              "qt6ct/qt6ct.conf".source = pkgs.replaceVars ./desktop/qt6ct/qt6ct.conf vars;
+            };
 
-        gtk = {
-          enable = true;
-          font = {
-            name = "Poppins";
-            size = 10;
+          fonts.fontconfig = {
+            enable = true;
+            defaultFonts = {
+              serif = [ "Lora" ];
+              sansSerif = [ "Poppins" ];
+              monospace = [ "Maple Mono NF" ];
+            };
           };
-          gtk4.theme = config.gtk.theme;
-        };
 
-        qt = {
-          enable = true;
-          platformTheme = {
-            name = "qtct";
-            package = pkgs.qt6ct;
+          gtk = {
+            enable = true;
+            font = {
+              name = "Poppins";
+              size = 10;
+            };
+            gtk4.theme = config.gtk.theme;
           };
-        };
 
-        home.packages = builtins.attrValues {
-          inherit (pkgs)
-            lora
-            poppins
-            noto-fonts-cjk-sans
-            wlr-which-key
-            pywalfox-native
-            papirus-folders
-            qt6ct
-            ;
-          inherit (pkgs.maple-mono) NF;
-          inherit (pkgs.kdePackages) breeze;
-          inherit (pkgs.libsForQt5) qt5ct;
-        };
-      };
+          qt = {
+            enable = true;
+            platformTheme = {
+              name = "qtct";
+              package = pkgs.qt6ct;
+            };
+          };
+
+          home.packages = builtins.attrValues {
+            inherit (pkgs)
+              lora
+              poppins
+              noto-fonts-cjk-sans
+              wlr-which-key
+              pywalfox-native
+              papirus-folders
+              qt6ct
+              ;
+            inherit (pkgs.maple-mono) NF;
+            inherit (pkgs.kdePackages) breeze;
+            inherit (pkgs.libsForQt5) qt5ct;
+          };
+        })
+
+        (lib.mkIf config.desktop.labwc.dms.enable {
+          xdg.configFile."labwc/autostart".text = "dms run &";
+        })
+      ];
     };
 }

@@ -79,10 +79,7 @@ in
       waydroid.enable = true;
     };
 
-    desktop = {
-      niri.enable = true;
-      labwc.nested.enable = true;
-    };
+    desktop.niri.enable = true;
 
     packaging = {
       flatpak.enable = true;
@@ -155,7 +152,10 @@ in
         file.".julia/config/startup.jl".source = ../scripts/julia/startup.jl;
       };
 
-      desktop.niri.dms.enable = true;
+      desktop = {
+        niri.dms.enable = true;
+        labwc.dms.enable = true;
+      };
 
       terminal.common.enable = true;
 
