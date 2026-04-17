@@ -137,17 +137,19 @@ binds {
     Mod+E repeat=false hotkey-overlay-title="Open Explorer" { spawn "wlr-which-key" "--initial-keys" "e";   }
     Mod+B repeat=false hotkey-overlay-title="Open Browser"  { spawn "wlr-which-key" "--initial-keys" "b";   }
 
-    Print repeat=false hotkey-overlay-title="Take a Screenshot"                                    { spawn "dms" "screenshot";                       }
-    Mod+M repeat=false hotkey-overlay-title="Toggle Process List"                                  { spawn "dms" "ipc" "processlist" "toggle";       }
-    Mod+N repeat=false hotkey-overlay-title="Toggle Notification Center"                           { spawn "dms" "ipc" "notifications" "toggle";     }
-    Mod+P repeat=false hotkey-overlay-title="Toggle Notepad"                                       { spawn "dms" "ipc" "notepad" "toggle";           }
-    Mod+V repeat=false hotkey-overlay-title="Toggle Clipboard Manager"                             { spawn "dms" "ipc" "clipboard" "toggle";         }
-    Mod+X repeat=false hotkey-overlay-title="Toggle Power Menu"                                    { spawn "dms" "ipc" "powermenu" "toggle";         }
-    Mod+S repeat=false hotkey-overlay-title="Toggle Settings"                                      { spawn "dms" "ipc" "settings" "toggle";          }
-    Mod+Space repeat=false hotkey-overlay-title="Toggle Application Launcher"                      { spawn "dms" "ipc" "spotlight" "toggle";         }
-    Mod+Ctrl+L repeat=false hotkey-overlay-title="Toggle Lock Screen"                              { spawn "dms" "ipc" "lock" "lock";                }
-    Mod+Shift+M allow-when-locked=true repeat=false hotkey-overlay-title="Toggle Light/Dark Theme" { spawn "dms" "ipc" "call" "theme" "toggle";      }
-    Mod+Shift+N allow-when-locked=true repeat=false hotkey-overlay-title="Toggle Night Mode"       { spawn "dms" "ipc" "night" "toggle";             }
+    Print repeat=false hotkey-overlay-title="Take a Screenshot"                                    { spawn "dms" "screenshot";                               }
+    Mod+Print repeat=false hotkey-overlay-title="Take a Screenshot (Niri)"                         { screenshot;                                             }
+    Mod+Shift+Print repeat=false hotkey-overlay-title="Take a Screenshot of Current Window (Niri)" { screenshot-window;                                      }
+    Mod+M repeat=false hotkey-overlay-title="Toggle Process List"                                  { spawn "dms" "ipc" "processlist" "toggle";               }
+    Mod+N repeat=false hotkey-overlay-title="Toggle Notification Center"                           { spawn "dms" "ipc" "notifications" "toggle";             }
+    Mod+P repeat=false hotkey-overlay-title="Toggle Notepad"                                       { spawn "dms" "ipc" "notepad" "toggle";                   }
+    Mod+V repeat=false hotkey-overlay-title="Toggle Clipboard Manager"                             { spawn "dms" "ipc" "call" "clipboardPlus" "togglePanel"; }
+    Mod+X repeat=false hotkey-overlay-title="Toggle Power Menu"                                    { spawn "dms" "ipc" "powermenu" "toggle";                 }
+    Mod+S repeat=false hotkey-overlay-title="Toggle Settings"                                      { spawn "dms" "ipc" "settings" "toggle";                  }
+    Mod+Space repeat=false hotkey-overlay-title="Toggle Application Launcher"                      { spawn "dms" "ipc" "spotlight" "toggle";                 }
+    Mod+Ctrl+L repeat=false hotkey-overlay-title="Toggle Lock Screen"                              { spawn "dms" "ipc" "lock" "lock";                        }
+    Mod+Shift+M allow-when-locked=true repeat=false hotkey-overlay-title="Toggle Light/Dark Theme" { spawn "dms" "ipc" "call" "theme" "toggle";              }
+    Mod+Shift+N allow-when-locked=true repeat=false hotkey-overlay-title="Toggle Night Mode"       { spawn "dms" "ipc" "night" "toggle";                     }
 
     XF86AudioLowerVolume allow-when-locked=true repeat=false  { spawn "dms" "ipc" "audio" "decrement" "5";         }
     XF86AudioMicMute allow-when-locked=true repeat=false      { spawn "dms" "ipc" "audio" "micmute";               }
@@ -158,6 +160,17 @@ binds {
 }
 
 window-rule {
+    opacity 0.85
+
+    background-effect {
+        blur true
+        xray true
+    }
+}
+
+layer-rule {
+    match namespace="^dms-clipboardPlus-panel"
+
     opacity 0.85
 
     background-effect {

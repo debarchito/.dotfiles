@@ -81,6 +81,10 @@
           rev = "07d7c123a5aee9ac4fd4347bbae36d5957b021f9";
           hash = "sha256-bhV22bL38CJp58Y8tCY8sEBRYxmuk671fEymmdg0Yuk=";
         };
+        clipboardPlus = {
+          rev = "47547af5993d05cca94e64a5f6f0b4c0732f68af";
+          hash = "sha256-P3rgWf+I6HaePaJGb5M9860LBRtxVhQC+HKPqUgnqJY=";
+        };
         commandRunner = {
           rev = "a6252e8f397eeeb80e10b5a92713118221493dae";
           hash = "sha256-utn8o1p2s/lFL8ObrY3DfGXqOZsuKL+oj6UResKxFLI=";
