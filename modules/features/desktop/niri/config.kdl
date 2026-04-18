@@ -178,3 +178,9 @@ layer-rule {
         xray true
     }
 }
+
+layer-rule {
+    match namespace="^dms:"
+
+    opacity 0.85
+}
