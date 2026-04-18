@@ -118,6 +118,11 @@
 
           ripgrep-all.enable = true;
 
+          television = {
+            enable = true;
+            enableFishIntegration = false;
+          };
+
           zellij.enable = true;
 
           zoxide = {
@@ -152,6 +157,7 @@
             ripdrag
             sd
             wl-clipboard
+            jc
             ;
         };
       };
