@@ -6,7 +6,12 @@
   };
 
   flake.modules.homeManager.options-editors =
-    { lib, config, ... }:
+    {
+      lib,
+      config,
+      pkgs,
+      ...
+    }:
     {
       imports = [
         inputs.nix-doom-emacs-unstraightened.homeModule
@@ -26,6 +31,23 @@
         programs.doom-emacs = {
           enable = true;
           doomDir = ./editors/doom-emacs;
+          extraPackages = epkgs: [
+            (epkgs.melpaBuild {
+              pname = "hel";
+              version = "0.10.0";
+              packageRequires = [
+                epkgs.avy
+                epkgs.dash
+                epkgs.pcre2el
+              ];
+              src = pkgs.fetchFromGitHub {
+                owner = "anuvyklack";
+                repo = "hel";
+                rev = "489f48a1bb8b41a8b681821ecbfc4a7cb33fc5c0";
+                sha256 = "sha256-n/aplUWdlAI0kyEhif3oikaAILFQDoRM+ohEqvHKBIs=";
+              };
+            })
+          ];
         };
       };
     };
