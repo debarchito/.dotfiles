@@ -79,7 +79,10 @@ in
       waydroid.enable = true;
     };
 
-    desktop.niri.enable = true;
+    desktop = {
+      niri.enable = true;
+      labwc.enable = true;
+    };
 
     packaging = {
       flatpak.enable = true;
@@ -132,7 +135,7 @@ in
             android-tools
             aseprite
             bibata-cursors
-            blender
+            # blender
             bottles
             duckdb
             ffmpeg
