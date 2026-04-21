@@ -82,12 +82,12 @@
           hash = "sha256-bhV22bL38CJp58Y8tCY8sEBRYxmuk671fEymmdg0Yuk=";
         };
         clipboardPlus = {
-          rev = "47547af5993d05cca94e64a5f6f0b4c0732f68af";
-          hash = "sha256-P3rgWf+I6HaePaJGb5M9860LBRtxVhQC+HKPqUgnqJY=";
+          rev = "9ec2e2a882c35cb1fa50790f028fd24424492475";
+          hash = "sha256-yfM/jMN/sjw9i6tMlKRWYnClUc4CCRww/Mh2g/TpYAo=";
         };
         commandRunner = {
-          rev = "a6252e8f397eeeb80e10b5a92713118221493dae";
-          hash = "sha256-utn8o1p2s/lFL8ObrY3DfGXqOZsuKL+oj6UResKxFLI=";
+          rev = "5e640d23dfdff291ee061b854fa4ee74b1984bf9";
+          hash = "sha256-l1LavTNDwAoQn4I+P6DfAsaz4nd5ngEbCaoHVQ47cWs=";
         };
         displayMirror = {
           rev = "92cd44c4fb67834bf71fdd78f83c29df5e0750b2";
@@ -102,8 +102,8 @@
           hash = "sha256-FKmMTqUCR/Rl/WJT9Q/+q8IsNPIDW+7ZJSX0zmkrs18=";
         };
         emojiLauncher = {
-          rev = "cb5a2ae79084f84890135005ed2e60567307e690";
-          hash = "sha256-5VpvUbFeatfuGdnUlNa5FB78R4dN1Zw9r/uWpUxHHfU=";
+          rev = "1c0a7d337a52b48f9499060076703a35e8dd4f4f";
+          hash = "sha256-NQ14YenDiNK2VqXQ3z7jAkatbSRtYJHhOhvv7AJlUD8=";
         };
         niriWindows = {
           rev = "b866af4cb599e7eeae90779b959f56b1a9905f18";
@@ -122,8 +122,8 @@
       officialDankRepository = pkgs.fetchFromGitHub {
         owner = "debarchito";
         repo = "dms-plugins";
-        rev = "141841fc85e01494df6d217bd5a27c65da87256d";
-        hash = "sha256-/155wFIotV9xiZzX9XRGs3ANjBcLJwS4kNDDNO6WkF0=";
+        rev = "829922a8f11949b1c13ae8bd14d7176f9165b6f5";
+        hash = "sha256-KYx+n1stxLT4R9IDVRx3/Cl7TjCcBZjnQchbrXaBT2o=";
       };
 
       officialDankPlugins = [

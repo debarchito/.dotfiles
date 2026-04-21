@@ -12,14 +12,16 @@
   "dankBitwarden": {
     "enabled": true,
     "noTrigger": false,
-    "trigger": "@"
+    "trigger": "@",
+    "copyToClipboard": true
   },
   "dankKDEConnect": {
     "enabled": true,
     "selectedDeviceId": "e100d420_afce_4f41_bb37_58887ccfc478"
   },
   "dankNotepadModule": {
-    "enabled": true
+    "enabled": true,
+    "style": "github-dark"
   },
   "easyEffects": {
     "enabled": true,
@@ -29,7 +31,8 @@
   "calculator": {
     "enabled": true,
     "trigger": "=",
-    "noTrigger": false
+    "noTrigger": false,
+    "calcEngine": "default"
   },
   "commandRunner": {
     "enabled": true,
@@ -62,7 +65,8 @@
     "enabled": true
   },
   "screenRecorder": {
-    "enabled": true
+    "enabled": true,
+    "recordAudio": false
   },
   "clipboardPlus": {
     "enabled": true,
@@ -73,6 +77,8 @@
     "showPanelSeparator": true,
     "hidePanelBackground": false,
     "panelOpacityPinned": 20,
-    "listenClipboardWhileOpen": true
+    "listenClipboardWhileOpen": true,
+    "panelOpacityClipboard": 100,
+    "maxPinnedImageMb": 5
   }
 }
