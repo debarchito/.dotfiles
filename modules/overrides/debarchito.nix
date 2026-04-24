@@ -27,7 +27,6 @@
         (_: _: {
           inherit (self'.packages)
             blender
-            bottles
             generate
             helium
             obs-studio
