@@ -135,8 +135,7 @@ in
             android-tools
             aseprite
             bibata-cursors
-            # blender
-            bottles
+            blender
             duckdb
             ffmpeg
             generate
