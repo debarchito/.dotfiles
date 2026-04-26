@@ -166,21 +166,31 @@ window-rule {
         blur true
         xray true
     }
+
+    popups {
+        background-effect {
+            blur true
+            xray false
+        }
+    }
+}
+
+layer-rule {
+    match layer="top"
+    match layer="overlay"
+    match namespace="^dms(-clipboardPlus-panel|:)"
+
+    opacity 0.85
+
+    background-effect {
+        xray false
+    }
 }
 
 layer-rule {
     match namespace="^dms-clipboardPlus-panel"
 
-    opacity 0.85
-
     background-effect {
         blur true
-        xray true
     }
-}
-
-layer-rule {
-    match namespace="^dms:"
-
-    opacity 0.85
 }
