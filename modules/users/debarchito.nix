@@ -155,7 +155,10 @@ in
       };
 
       desktop = {
-        niri.dms.enable = true;
+        niri = {
+          enable = true;
+          dms.enable = true;
+        };
         labwc.dms.enable = true;
       };
 
