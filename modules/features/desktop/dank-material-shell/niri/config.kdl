@@ -1,11 +1,13 @@
-include "dms/alttab.kdl";
-include "dms/binds.kdl";
-include "dms/colors.kdl";
-include "dms/cursor.kdl";
-include "dms/layout.kdl";
-include "dms/outputs.kdl";
-include "dms/wpblur.kdl";
-include "dms/windowrules.kdl";
+// THIS CONFIG IS NOT PORTABLE OUTSIDE DANK-MATERIAL-SHELL!
+
+include optional=true "dms/alttab.kdl";
+include optional=true "dms/binds.kdl";
+include optional=true "dms/colors.kdl";
+include optional=true "dms/cursor.kdl";
+include optional=true "dms/layout.kdl";
+include optional=true "dms/outputs.kdl";
+include optional=true "dms/wpblur.kdl";
+include optional=true "dms/windowrules.kdl";
 
 environment {
   QT_QPA_PLATFORM "wayland;xcb"
@@ -41,27 +43,26 @@ input {
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 layout {
-    gaps 16
-    struts {
-        left 0
-        right 0
-        top 0
-        bottom 0
+    border {
+        off;
     }
-    focus-ring { width 2; }
-    border { off; }
-    default-column-width
-    center-focused-column "never"
+
+    focus-ring {
+        width 2;
+    }
+
     always-center-single-column
+    center-focused-column "never"
+
     default-column-display "tabbed"
     tab-indicator {
         hide-when-single-tab
         place-within-column
         position "left"
-        width 8
-        gap 8
+        width 4
+        gap 4
         gaps-between-tabs 4
-        corner-radius 8
+        corner-radius 4
     }
 }
 
@@ -71,7 +72,6 @@ hotkey-overlay {
 }
 
 spawn-at-startup "dms" "run"
-spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
 binds {
     Mod+H repeat=false hotkey-overlay-title="Focus Column Left"     { focus-column-left;    }
