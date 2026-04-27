@@ -159,6 +159,11 @@ binds {
     XF86MonBrightnessUp allow-when-locked=true repeat=false   { spawn "dms" "ipc" "brightness" "increment" "5" ""; }
 }
 
+blur {
+    offset 6.0
+    noise 0.05
+}
+
 window-rule {
     opacity 0.85
 
