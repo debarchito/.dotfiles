@@ -23,12 +23,12 @@
         let
           dankPlugins = {
             calculator = {
-              rev = "07d7c123a5aee9ac4fd4347bbae36d5957b021f9";
-              hash = "sha256-bhV22bL38CJp58Y8tCY8sEBRYxmuk671fEymmdg0Yuk=";
+              rev = "b0c8799ded545615a38e6a6a088cf762aaa7857c";
+              hash = "sha256-62Te69K3bcWNMJHdrg3nTryogo4g80Z7gyE9BZ1CG+Q=";
             };
             clipboardPlus = {
-              rev = "9ec2e2a882c35cb1fa50790f028fd24424492475";
-              hash = "sha256-yfM/jMN/sjw9i6tMlKRWYnClUc4CCRww/Mh2g/TpYAo=";
+              rev = "08f5030aef617116469546a55516209f00aae3bf";
+              hash = "sha256-1st0MfObfJZupWd8k2HIP8f6b7mbTWTI/rgtfgEO77A=";
             };
             commandRunner = {
               rev = "5e640d23dfdff291ee061b854fa4ee74b1984bf9";
@@ -43,8 +43,8 @@
               hash = "sha256-VoJCaygWnKpv0s0pqTOmzZnPM922qPDMHk4EPcgVnaU=";
             };
             dankBitwarden = {
-              rev = "88834a3a2a2b1f853fd6efa989ed2f2aee58cab5";
-              hash = "sha256-FKmMTqUCR/Rl/WJT9Q/+q8IsNPIDW+7ZJSX0zmkrs18=";
+              rev = "3d70eb342750fe64f2baa8f69102992f2a644d98";
+              hash = "sha256-/O2QXF/0zNbSvkq5SwIyHdozcR39FNLc5CuFfeD3XBc=";
             };
             emojiLauncher = {
               rev = "1c0a7d337a52b48f9499060076703a35e8dd4f4f";
@@ -67,8 +67,8 @@
           officialDankRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "dms-plugins";
-            rev = "829922a8f11949b1c13ae8bd14d7176f9165b6f5";
-            hash = "sha256-KYx+n1stxLT4R9IDVRx3/Cl7TjCcBZjnQchbrXaBT2o=";
+            rev = "9e2752586d79a6509b93c00c6fa4be0334ae4755";
+            hash = "sha256-QgeeB6Ix8L5oaqTUCopPvGu6vr0ECsF+jO3mQIxPKIw=";
           };
 
           officialDankPlugins = [
