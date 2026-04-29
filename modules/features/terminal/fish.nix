@@ -112,6 +112,19 @@
                 end
                 nom shell $pkgs --command fish
               '';
+            shellu =
+              # fish
+              ''
+                if test (count $argv) -eq 0
+                  echo "Usage: shellu <package> [<package>...]"
+                  return 1
+                end
+                set pkgs
+                for pkg in $argv
+                  set -a pkgs nixpkgs#$pkg
+                end
+                NIXPKGS_ALLOW_UNFREE=1 nom shell --impure $pkgs --command fish
+              '';
           };
           interactiveShellInit =
             # fish
@@ -171,6 +184,23 @@
             sns = {
               setCursor = "%";
               expansion = "fd % /nix/store | fzf";
+            };
+            nhc = {
+              setCursor = "%";
+              expansion = "nix hash convert --to sri --hash-algo sha256 % | wl-copy";
+            };
+            br = {
+              setCursor = "%";
+              expansion =
+                # fish
+                ''
+                  set i 1
+                  for f in *
+                    set ext (string split -r -m1 . $f)[2]
+                    mv "$f" "%$i.$ext"
+                    set i (math $i + 1)
+                  end
+                '';
             };
             "=" = {
               regex = ''=[^\s]+'';
