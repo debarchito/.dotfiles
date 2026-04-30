@@ -23,8 +23,8 @@
         let
           dankPlugins = {
             calculator = {
-              rev = "b0c8799ded545615a38e6a6a088cf762aaa7857c";
-              hash = "sha256-62Te69K3bcWNMJHdrg3nTryogo4g80Z7gyE9BZ1CG+Q=";
+              rev = "b8797a9a4068c5fee2a67358b60d82f532969792";
+              hash = "sha256-08rpBZpNaYWa8DhdvGFhAD8zI3ezTkxQus6LwoLGuEw=";
             };
             clipboardPlus = {
               rev = "08f5030aef617116469546a55516209f00aae3bf";
@@ -59,8 +59,8 @@
               hash = "sha256-S1A50s7cKE0NuidC+x589wIxqGA6JW8GrCVEkCddMQs=";
             };
             screenRecorder = {
-              rev = "7206b590d69a165d30b5bbb66b033f1a15b49aff";
-              hash = "sha256-ndH8KHH+gzFIXWceqeUmy/w7oGj7ZvCEIacBfV1D+KU=";
+              rev = "40364a8530f4364e2fd6b0eb8802d5fe4f241b8f";
+              hash = "sha256-/SeQSlPeM0jDHg4yFmR82ODtnVs2bOovVG7TCMjH1vk=";
             };
           };
 

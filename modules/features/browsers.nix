@@ -232,8 +232,8 @@
           home.file.".librewolf/default/chrome".source = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "parfait";
-            rev = "d0f6aa1492ecfc1f1caa7589775b2a1cdb574481";
-            hash = "sha256-gn1lpdiLAD5HLXXvKl71Fy5vzIXqwgWmwNe5oOBhccU=";
+            rev = "0a6e2918d29d7eb83131b6b8e64e833e871e7bc3";
+            hash = "sha256-Oteaj5JLaQkQyu5K1CdowKX4TLD77fBm6vNF14zYwbk=";
           };
 
           xdg.configFile."tridactyl/tridactylrc".source =
