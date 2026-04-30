@@ -185,9 +185,21 @@
               setCursor = "%";
               expansion = "fd % /nix/store | fzf";
             };
+            npu = {
+              setCursor = "%";
+              expansion = "nix-prefetch-url % | tr -d '\\n' | wl-copy";
+            };
+            npgr = {
+              setCursor = "%";
+              expansion = "nix-prefetch-github % | jq -r '.rev' | tr -d '\\n' | wl-copy";
+            };
+            npgh = {
+              setCursor = "%";
+              expansion = "nix-prefetch-github % | jq -r '.hash' | tr -d '\\n' | wl-copy";
+            };
             nhc = {
               setCursor = "%";
-              expansion = "nix hash convert --to sri --hash-algo sha256 % | wl-copy";
+              expansion = "nix hash convert --to sri --hash-algo sha256 % | tr -d '\\n' | wl-copy";
             };
             br = {
               setCursor = "%";
