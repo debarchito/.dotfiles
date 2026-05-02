@@ -5,6 +5,7 @@ in
 {
   flake.nixosConfigurations.${name} = inputs.nixpkgs.lib.nixosSystem {
     modules = [
+      inputs.disko.nixosModules.default
       inputs.determinate.nixosModules.default
       self.modules.nixos.options-common
       self.modules.nixos.options-trustedSubstituters

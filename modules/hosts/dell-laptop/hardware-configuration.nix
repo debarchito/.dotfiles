@@ -5,9 +5,10 @@ in
   flake.modules.nixos."hosts-${name}" =
     { pkgs, ... }:
     {
-      # NOTE: Generated files are treated as external dependencies thus are a special case for relative imports.
+      # NOTE: Raw files are treated as external dependencies thus, are a special case for relative imports.
       imports = [
-        ./_generated/hardware-configuration.nix
+        ./_raw/hardware-configuration.nix
+        # ./_raw/disko-configuration.nix
       ];
 
       boot = {
