@@ -42,6 +42,7 @@
             blender
             generate
             helium
+            neuralrack
             obs-studio
             papirus-folders
             qt6ct

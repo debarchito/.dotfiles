@@ -108,8 +108,15 @@
       };
 
       config = lib.mkIf config.media.daw.enable {
-        home.packages = builtins.attrValues {
-          inherit (pkgs) reaper yabridge yabridgectl;
+        home = {
+          packages = builtins.attrValues {
+            inherit (pkgs) reaper yabridge yabridgectl;
+          };
+          file = {
+            ".clap/NeuralRack.clap".source = "${pkgs.neuralrack}/lib/clap";
+            ".clap/Plugdata.clap".source = "${pkgs.plugdata}/lib/clap";
+            ".vst3/Stochas.vst3".source = "${pkgs.stochas}/lib/vst3";
+          };
         };
 
         xdg.configFile = {
@@ -119,7 +126,6 @@
             "${pkgs.reaper-sws-extension}/UserPlugins/reaper_sws-x86_64.so";
         };
 
-        home.file.".vst3/Stochas.vst3".source = "${pkgs.stochas}/lib/vst3/Stochas.vst3";
       };
     };
 }
