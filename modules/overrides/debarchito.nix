@@ -1,5 +1,12 @@
-{ inputs, moduleWithSystem, ... }:
 {
+  lib,
+  inputs,
+  moduleWithSystem,
+  ...
+}:
+{
+  flake-file.inputs.nixpkgs-1.url = lib.mkDefault "github:nixos/nixpkgs/1c3fe55ad329cbcb28471bb30f05c9827f724c76";
+
   perSystem =
     { system, ... }:
     {
@@ -10,11 +17,17 @@
     };
 
   flake.modules.nixos.users-debarchito = moduleWithSystem (
-    { self', ... }:
+    { self', system, ... }:
+    let
+      pkgs-1 = import inputs.nixpkgs-1 {
+        inherit system;
+      };
+    in
     {
       nixpkgs.overlays = [
-        (_: _: {
+        (_: prev: {
           inherit (self'.packages) waydroid-choose-gpu waydroid-script;
+          wireshark = pkgs-1.wireshark;
         })
       ];
     }

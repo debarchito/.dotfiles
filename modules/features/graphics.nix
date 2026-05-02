@@ -50,20 +50,7 @@
               }
 
               (lib.mkIf config.containers'.enable {
-                hardware.nvidia-container-toolkit = {
-                  enable = true;
-                  package = pkgs.nvidia-container-toolkit.overrideAttrs (oldAttrs: rec {
-                    version = "1.19.0";
-                    src = pkgs.fetchFromGitHub {
-                      owner = "NVIDIA";
-                      repo = "nvidia-container-toolkit";
-                      rev = "v${version}";
-                      hash = "sha256-IvjQAYLslNF+tDXnFaoGLISYDq9ieT/W4MVlEWnC8XQ=";
-                    };
-                    patches = [ ];
-                    postPatch = "";
-                  });
-                };
+                hardware.nvidia-container-toolkit.enable = true;
 
                 environment.systemPackages = [
                   config.hardware.nvidia-container-toolkit.package
