@@ -1,9 +1,22 @@
-## 1. Setup
+## 1. Installation (TODO)
+
+Apply the disk layout using [disko](https://github.com/nix-community/disko):
+
+> [!WARNING]\
+> This will erase all existing data on disk!
+
+```fish
+run0 nix --extra-experimental-features 'nix-command flakes' run github:nix-community/disko/latest -- --mode destroy,format,mount ./modules/hosts/<host>/_raw/disko-configuration.nix
+```
+
+> TODO: I need to write more steps...
+
+## 2. Applying configuration
 
 Apply the NixOS configuration using:
 
 ```fish
-sudo nixos-rebuild switch --flake .#<host>
+run0 nixos-rebuild switch --flake .#<host>
 ```
 
 This will enable the [nh](https://github.com/nix-community/nh) utility. Thus,
@@ -29,7 +42,7 @@ Lastly, run the setup script to apply all the impure adjustments:
 nix run .#impure-setup
 ```
 
-## 2. Templates
+## 3. Templates
 
 This repo also contains a templating engine alongside tailored development
 templates. Get started using:
@@ -50,6 +63,6 @@ The run using:
 nix run ./hello-world
 ```
 
-## 3. Licensing
+## 4. Licensing
 
 The repository is licensed under the [zlib](/LICENSE) license.
