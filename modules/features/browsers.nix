@@ -152,6 +152,10 @@
                 force = true;
                 settings = [
                   {
+                    name = "Cobalt Tools";
+                    url = "https://cobalt.tools";
+                  }
+                  {
                     name = "redlib.";
                     url = "https://redlib.tiekoetter.com";
                   }
