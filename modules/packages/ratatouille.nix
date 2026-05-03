@@ -2,14 +2,14 @@
   perSystem =
     { pkgs, ... }:
     {
-      packages.neuralrack = pkgs.stdenv.mkDerivation {
-        pname = "neuralrack";
-        version = "0.3.2-git";
+      packages.ratatouille = pkgs.stdenv.mkDerivation {
+        pname = "ratatouille";
+        version = "0.9.11-git";
 
         src = pkgs.fetchgit {
-          url = "https://github.com/brummer10/NeuralRack.git";
-          rev = "7dfc84ce58e8034fdf7ad0682724075a2ef40cb7";
-          hash = "sha256-MrhIbBJ4LVUQ0Oqp5Z4P7CXI4iHgAaBXmsXqTqLOmZk=";
+          url = "https://github.com/brummer10/Ratatouille.lv2.git";
+          rev = "3dbc4bd96e4fcc770bc24e53c37ed26ce98d7ad3";
+          hash = "sha256-1Y7kA2XCMhRR5HKGkCbt5oi0YsWmwn90ldX3sQ6B/8Y=";
           fetchSubmodules = true;
         };
 
@@ -33,7 +33,7 @@
 
         installPhase = ''
           runHook preInstall
-          install -Dm755 NeuralRack/NeuralRack.clap "$out/lib/clap/NeuralRack.clap"
+          install -Dm755 Ratatouille/Ratatouille.clap "$out/lib/clap/Ratatouille.clap"
           runHook postInstall
         '';
       };

@@ -112,10 +112,17 @@
           packages = builtins.attrValues {
             inherit (pkgs) reaper yabridge yabridgectl;
           };
+
           file = {
             ".clap/NeuralRack.clap".source = "${pkgs.neuralrack}/lib/clap";
+            ".clap/Ratatouille.clap".source = "${pkgs.ratatouille}/lib/clap";
             ".clap/Plugdata.clap".source = "${pkgs.plugdata}/lib/clap";
-            ".vst3/Stochas.vst3".source = "${pkgs.stochas}/lib/vst3";
+            ".clap/Cardinal.clap".source = "${pkgs.cardinal}/lib/clap/Cardinal.clap";
+            ".clap/DragonflyReverb.clap".source = "${pkgs.dragonfly-reverb}/lib/clap";
+            ".clap/LSPPlugins.clap".source = "${pkgs.lsp-plugins}/lib/clap";
+            ".clap/SurgeXT.clap".source = "${pkgs.surge-xt}/lib/clap";
+            ".lv2/x42Plugins.lv2".source = "${pkgs.x42-plugins}/lib/lv2";
+            ".vst3/Stochas.vst3".source = "${pkgs.stochas}/lib/vst3/Stochas.vst3";
           };
         };
 
@@ -125,7 +132,6 @@
           "REAPER/UserPlugins/reaper_sws-x86_64.so".source =
             "${pkgs.reaper-sws-extension}/UserPlugins/reaper_sws-x86_64.so";
         };
-
       };
     };
 }
