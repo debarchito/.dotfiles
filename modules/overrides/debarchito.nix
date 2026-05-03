@@ -46,6 +46,7 @@
             obs-studio
             papirus-folders
             qt6ct
+            ratatouille
             reaper
             sioyek
             starship-jj
