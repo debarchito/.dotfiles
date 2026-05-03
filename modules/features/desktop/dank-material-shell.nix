@@ -23,8 +23,8 @@
         let
           dankPlugins = {
             calculator = {
-              rev = "b8797a9a4068c5fee2a67358b60d82f532969792";
-              hash = "sha256-08rpBZpNaYWa8DhdvGFhAD8zI3ezTkxQus6LwoLGuEw=";
+              rev = "998e52958ae7c319363537584804eb35a9c7859f";
+              hash = "sha256-Ymf3Pxx+Y1SucuWniBjl61wDQjtGfaxi8zW0HA5mvpw=";
             };
             clipboardPlus = {
               rev = "08f5030aef617116469546a55516209f00aae3bf";

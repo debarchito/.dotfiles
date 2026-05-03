@@ -140,9 +140,11 @@ in
             ffmpeg
             generate
             krita
+            libqalculate
             nix-alien
             nix-output-monitor
             nix-prefetch-github
+            numbat
             pear-desktop
             pika-backup
             qbittorrent
