@@ -32,7 +32,7 @@
     "enabled": true,
     "trigger": "=",
     "noTrigger": false,
-    "calcEngine": "default"
+    "calcEngine": "qalc"
   },
   "commandRunner": {
     "enabled": true,
@@ -72,13 +72,16 @@
     "enabled": true,
     "tabOrder": "clipboard,search,category,pinned,todo",
     "tabOrderEnabled": "clipboard,search,category,pinned,todo",
-    "backgroundOpacity": 80,
+    "backgroundOpacity": 20,
     "showBarWidget": false,
     "showPanelSeparator": true,
     "hidePanelBackground": false,
     "panelOpacityPinned": 20,
     "listenClipboardWhileOpen": true,
     "panelOpacityClipboard": 100,
-    "maxPinnedImageMb": 5
+    "maxPinnedImageMb": 5,
+    "maxPinnedTextMb": 1,
+    "showCloseButton": true,
+    "panelMarginTop": 0
   }
 }
