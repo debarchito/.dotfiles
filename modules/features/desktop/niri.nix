@@ -72,9 +72,30 @@
         fonts.fontconfig = {
           enable = true;
           defaultFonts = {
-            serif = [ "Lora" ];
-            sansSerif = [ "Poppins" ];
-            monospace = [ "Maple Mono NF" ];
+            serif = [
+              "Lora"
+              "Noto Serif CJK JP"
+              "Noto Serif CJK SC"
+              "Noto Serif CJK TC"
+              "Noto Serif CJK HK"
+              "Noto Serif CJK KR"
+            ];
+            sansSerif = [
+              "Poppins"
+              "Noto Sans CJK JP"
+              "Noto Sans CJK SC"
+              "Noto Sans CJK TC"
+              "Noto Sans CJK HK"
+              "Noto Sans CJK KR"
+            ];
+            monospace = [
+              "Maple Mono NF"
+              "Noto Sans Mono CJK JP"
+              "Noto Sans Mono CJK SC"
+              "Noto Sans Mono CJK TC"
+              "Noto Sans Mono CJK HK"
+              "Noto Sans Mono CJK KR"
+            ];
           };
         };
 
@@ -100,6 +121,7 @@
             lora
             poppins
             noto-fonts-cjk-sans
+            noto-fonts-cjk-serif
             wlr-which-key
             pywalfox-native
             papirus-folders
