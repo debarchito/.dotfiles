@@ -59,7 +59,14 @@
     "defaultEngine": "duckduckgo",
     "noTrigger": false,
     "trigger": ">",
-    "disabledEngines": []
+    "disabledEngines": [
+      "brave",
+      "bing",
+      "kagi",
+      "ebay",
+      "linkedin",
+      "imdb"
+    ]
   },
   "dankHooks": {
     "enabled": true
@@ -82,6 +89,8 @@
     "maxPinnedImageMb": 5,
     "maxPinnedTextMb": 1,
     "showCloseButton": true,
-    "panelMarginTop": 0
+    "panelMarginTop": 0,
+    "enableAnimations": true,
+    "closeOnOutsideClick": true
   }
 }

@@ -144,12 +144,16 @@ binds {
     Mod+N repeat=false hotkey-overlay-title="Toggle Notification Center"                           { spawn "dms" "ipc" "notifications" "toggle";             }
     Mod+P repeat=false hotkey-overlay-title="Toggle Notepad"                                       { spawn "dms" "ipc" "notepad" "toggle";                   }
     Mod+V repeat=false hotkey-overlay-title="Toggle Clipboard Manager"                             { spawn "dms" "ipc" "call" "clipboardPlus" "togglePanel"; }
+    Mod+Shift+V repeat=false hotkey-overlay-title="Toggle Clipboard Manager"                       { spawn "dms" "ipc" "call" "clipboard" "toggle";          }
     Mod+X repeat=false hotkey-overlay-title="Toggle Power Menu"                                    { spawn "dms" "ipc" "powermenu" "toggle";                 }
     Mod+S repeat=false hotkey-overlay-title="Toggle Settings"                                      { spawn "dms" "ipc" "settings" "toggle";                  }
     Mod+Space repeat=false hotkey-overlay-title="Toggle Application Launcher"                      { spawn "dms" "ipc" "spotlight" "toggle";                 }
     Mod+Ctrl+L repeat=false hotkey-overlay-title="Toggle Lock Screen"                              { spawn "dms" "ipc" "lock" "lock";                        }
     Mod+Shift+M allow-when-locked=true repeat=false hotkey-overlay-title="Toggle Light/Dark Theme" { spawn "dms" "ipc" "call" "theme" "toggle";              }
     Mod+Shift+N allow-when-locked=true repeat=false hotkey-overlay-title="Toggle Night Mode"       { spawn "dms" "ipc" "night" "toggle";                     }
+
+    Mod+W repeat=false hotkey-overlay-title="Next Wallpaper for current Output"           { spawn-sh "dms ipc call wallpaper nextFor $(dms ipc call outputs current | jq -r .[0])"; }
+    Mod+Shift+W repeat=false hotkey-overlay-title="Previous Wallpaper for current Output" { spawn-sh "dms ipc call wallpaper prevFor $(dms ipc call outputs current | jq -r .[0])"; }
 
     XF86AudioLowerVolume allow-when-locked=true repeat=false  { spawn "dms" "ipc" "audio" "decrement" "5";         }
     XF86AudioMicMute allow-when-locked=true repeat=false      { spawn "dms" "ipc" "audio" "micmute";               }
