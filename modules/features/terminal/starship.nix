@@ -101,9 +101,9 @@
           };
         };
 
-        home.packages = [
-          pkgs.starship-jj
-        ];
+        home.packages = builtins.attrValues {
+          inherit (pkgs) starship-jj;
+        };
 
         xdg.configFile."starship-jj/starship-jj.toml".source =
           ./starship/plugins/starship-jj/starship-jj.toml;

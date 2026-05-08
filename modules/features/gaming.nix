@@ -28,9 +28,9 @@
             extest.enable = true;
           };
 
-          environment.systemPackages = [
-            pkgs.protonplus
-          ];
+          environment.systemPackages = builtins.attrValues {
+            inherit (pkgs) protonplus winetricks;
+          };
         })
 
         (lib.mkIf config.gaming.gamescope.enable {
