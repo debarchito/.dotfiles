@@ -32,10 +32,9 @@
           package = pkgs.niri-unstable;
         };
 
-        environment.systemPackages = [
-          pkgs.nautilus
-          pkgs.xwayland-satellite
-        ];
+        environment.systemPackages = builtins.attrValues {
+          inherit (pkgs) nautilus xwayland-satellite;
+        };
       };
     };
 

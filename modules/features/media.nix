@@ -53,9 +53,9 @@
           })
 
           (lib.mkIf config.media.routing.enable {
-            environment.systemPackages = [
-              pkgs.qpwgraph
-            ];
+            environment.systemPackages = builtins.attrValues {
+              inherit (pkgs) qpwgraph;
+            };
           })
 
           (lib.mkIf config.media.optimizations.enable {
@@ -82,9 +82,9 @@
           })
 
           (lib.mkIf config.media.streaming.client.enable {
-            environment.systemPackages = [
-              pkgs.moonlight-qt
-            ];
+            environment.systemPackages = builtins.attrValues {
+              inherit (pkgs) moonlight-qt;
+            };
           })
         ]
       );

@@ -1,6 +1,11 @@
 {
   flake.modules.nixos.options-common =
-    { lib, config, ... }:
+    {
+      lib,
+      config,
+      pkgs,
+      ...
+    }:
     {
       options.common = lib.mkOption {
         type = lib.types.submodule {
@@ -56,11 +61,17 @@
             };
 
             services = {
+              accounts-daemon.enable = true;
+              avahi.enable = true;
               colord.enable = true;
               fwupd.enable = true;
+              power-profiles-daemon.enable = true;
               printing.enable = true;
               upower.enable = true;
-              power-profiles-daemon.enable = true;
+            };
+
+            environment.systemPackages = builtins.attrValues {
+              inherit (pkgs) cups-pk-helper;
             };
           })
         ]
