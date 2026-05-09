@@ -8,6 +8,7 @@ include optional=true "dms/layout.kdl";
 include optional=true "dms/outputs.kdl";
 include optional=true "dms/wpblur.kdl";
 include optional=true "dms/windowrules.kdl";
+include optional=true "matugen/custom.kdl";
 
 environment {
   QT_QPA_PLATFORM "wayland;xcb"
@@ -129,9 +130,11 @@ binds {
     Mod+Shift+8 repeat=false hotkey-overlay-title="Move Column to Workspace 8" { move-column-to-workspace 8; }
     Mod+Shift+9 repeat=false hotkey-overlay-title="Move Column to Workspace 9" { move-column-to-workspace 9; }
 
-    Mod+Ctrl+W repeat=false hotkey-overlay-title="Set Dynamic Cast to Focused Window"  { set-dynamic-cast-window;   };
-    Mod+Ctrl+M repeat=false hotkey-overlay-title="Set Dynamic Cast to Focused Monitor" { set-dynamic-cast-monitor;  };
-    Mod+Ctrl+C repeat=false hotkey-overlay-title="Clear Dynamic Cast"                  { clear-dynamic-cast-target; };
+    Mod+Ctrl+W repeat=false hotkey-overlay-title="Set Dynamic Cast to Focused Window"  { set-dynamic-cast-window;                                                                         }
+    Mod+Ctrl+M repeat=false hotkey-overlay-title="Set Dynamic Cast to Focused Monitor" { set-dynamic-cast-monitor;                                                                        }
+    Mod+Ctrl+C repeat=false hotkey-overlay-title="Pick Window for Dynamic Cast"        { spawn-sh "niri msg action set-dynamic-cast-window --id $(niri msg --json pick-window | jq .id)"; }
+    Mod+Ctrl+P repeat=false hotkey-overlay-title="Pick Window to Mirror"               { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)";                            }
+    Mod+Alt+C repeat=false hotkey-overlay-title="Clear Dynamic Cast"                   { clear-dynamic-cast-target;                                                                       }
 
     Mod+T repeat=false hotkey-overlay-title="Open Terminal" { spawn "ghostty" "--gtk-single-instance=true"; }
     Mod+E repeat=false hotkey-overlay-title="Open Explorer" { spawn "wlr-which-key" "--initial-keys" "e";   }

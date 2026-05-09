@@ -1,0 +1,22 @@
+window-rule {
+    match is-window-cast-target=true
+
+    focus-ring {
+        width 4
+        active-color "{{colors.error.default.hex}}"
+        inactive-color "{{colors.error_container.default.hex}}"
+    }
+
+    border {
+        inactive-color "{{colors.error_container.default.hex}}"
+    }
+
+    shadow {
+        color "{{colors.error.default.hex | set_alpha: 0.4}}"
+    }
+
+    tab-indicator {
+        active-color "{{colors.error.default.hex}}"
+        inactive-color "{{colors.tertiary.default.hex}}"
+    }
+}
