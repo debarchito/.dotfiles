@@ -121,7 +121,20 @@ in
   );
 
   flake.modules.homeManager."users-${username}" =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
+    let
+      wrapKDEMenuPrefix =
+        pkg:
+        pkgs.symlinkJoin {
+          name = "${pkg.name}-wrapped";
+          paths = [ pkg ];
+          nativeBuildInputs = [ pkgs.makeWrapper ];
+          postBuild = ''
+            wrapProgram $out/bin/${pkg.pname} \
+              --set XDG_MENU_PREFIX "plasma-"
+          '';
+        };
+    in
     {
       nixpkgs.overlays = [
         inputs.nix-alien.overlays.default
@@ -130,31 +143,42 @@ in
       home = {
         inherit username;
         homeDirectory = "/home/${username}";
-        packages = builtins.attrValues {
-          inherit (pkgs)
-            android-tools
-            aseprite
-            bibata-cursors
-            blender
-            duckdb
-            ffmpeg
-            generate
-            krita
-            libqalculate
-            nix-alien
-            nix-output-monitor
-            nix-prefetch-github
-            numbat
-            pear-desktop
-            pika-backup
-            qbittorrent
-            trash-cli
-            wl-mirror
-            ;
-          inherit (pkgs.kdePackages) dolphin gwenview okular;
-        };
+        packages =
+          builtins.attrValues {
+            inherit (pkgs)
+              android-tools
+              aseprite
+              bibata-cursors
+              blender
+              duckdb
+              ffmpeg
+              generate
+              krita
+              libqalculate
+              nix-alien
+              nix-output-monitor
+              nix-prefetch-github
+              numbat
+              pear-desktop
+              pika-backup
+              qbittorrent
+              trash-cli
+              wl-mirror
+              ;
+          }
+          ++ (map wrapKDEMenuPrefix (
+            builtins.attrValues {
+              inherit (pkgs.kdePackages) dolphin gwenview okular;
+            }
+          ));
         file.".julia/config/startup.jl".source = ../scripts/julia/startup.jl;
+        activation.plasma-application-menu = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+          XDG_MENU_PREFIX=plasma- ${pkgs.kdePackages.kservice}/bin/kbuildsycoca6 --noincremental
+        '';
       };
+
+      xdg.configFile."menus/plasma-applications.menu".source =
+        "${pkgs.kdePackages.plasma-workspace}/etc/xdg/menus/plasma-applications.menu";
 
       desktop = {
         niri = {

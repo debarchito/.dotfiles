@@ -32,6 +32,11 @@
           package = pkgs.niri-unstable;
         };
 
+        services.gvfs = {
+          enable = true;
+          package = pkgs.gnome.gvfs;
+        };
+
         environment.systemPackages = builtins.attrValues {
           inherit (pkgs) nautilus xwayland-satellite;
         };
