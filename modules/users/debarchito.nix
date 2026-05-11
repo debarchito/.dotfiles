@@ -168,7 +168,12 @@ in
           }
           ++ (map wrapKDEMenuPrefix (
             builtins.attrValues {
-              inherit (pkgs.kdePackages) dolphin gwenview okular;
+              inherit (pkgs.kdePackages)
+                dolphin
+                gwenview
+                okular
+                ark
+                ;
             }
           ));
         file.".julia/config/startup.jl".source = ../scripts/julia/startup.jl;
@@ -263,7 +268,23 @@ in
           };
         };
 
-        mpv.enable = true;
+        mpv = {
+          enable = true;
+          scripts = builtins.attrValues {
+            inherit (pkgs.mpvScripts.builtins)
+              autoload
+              ;
+            inherit (pkgs.mpvScripts)
+              sponsorblock
+              thumbfast
+              uosc
+              ;
+            inherit (pkgs.mpvScripts.eisa01)
+              simplebookmark
+              simplehistory
+              ;
+          };
+        };
 
         nushell.enable = true;
 
