@@ -393,6 +393,7 @@
   "showDock": true,
   "dockAutoHide": true,
   "dockSmartAutoHide": false,
+  "dockHideOnFullscreen": true,
   "dockGroupByApp": true,
   "dockRestoreSpecialWorkspaceOnClick": false,
   "dockOpenOnOverview": true,
@@ -417,7 +418,7 @@
   "dockMaxVisibleApps": 0,
   "dockMaxVisibleRunningApps": 0,
   "dockShowOverflowBadge": true,
-  "dockShowTrash": true,
+  "dockShowTrash": false,
   "dockTrashFileManager": "dolphin",
   "dockTrashCustomCommand": "",
   "notificationOverlayEnabled": false,
@@ -510,7 +511,6 @@
   "displayShowDisconnected": false,
   "displaySnapToEdge": true,
   "connectedFrameBarStyleBackups": {},
-  "connectedFrameModalDarkenBackup": null,
   "barConfigs": [
     {
       "id": "default",

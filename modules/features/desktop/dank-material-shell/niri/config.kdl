@@ -103,7 +103,7 @@ binds {
     Mod+BracketRight repeat=false hotkey-overlay-title="Consume or Expel Window Right" { consume-or-expel-window-right;            }
     Mod+Shift+F repeat=false hotkey-overlay-title="Fullscreen Window"                  { fullscreen-window;                        }
     Mod+Ctrl+F repeat=false hotkey-overlay-title="Toggle Window Floating"              { toggle-window-floating;                   }
-    Mod+Alt+F repeat=false hotkey-overlay-title="Toggle Window Floating"               { switch-focus-between-floating-and-tiling; }
+    Mod+Alt+F repeat=false hotkey-overlay-title="Toggle Floating and Tiling"           { switch-focus-between-floating-and-tiling; }
     Mod+Ctrl+Shift+F repeat=false hotkey-overlay-title="Toggle Windowed Fullscreen"    { toggle-windowed-fullscreen;               }
     Mod+Shift+R repeat=false hotkey-overlay-title="Switch Preset Window Height"        { switch-preset-window-height;              }
     Mod+Ctrl+R repeat=false hotkey-overlay-title="Reset Window Height"                 { reset-window-height;                      }
