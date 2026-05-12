@@ -71,10 +71,6 @@
   "dankHooks": {
     "enabled": true
   },
-  "screenRecorder": {
-    "enabled": true,
-    "recordAudio": false
-  },
   "clipboardPlus": {
     "enabled": true,
     "tabOrder": "clipboard,search,category,pinned,todo",
