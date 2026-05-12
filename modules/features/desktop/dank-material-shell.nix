@@ -58,10 +58,6 @@
               rev = "8ec42a2dff96b94cdd0d40b57c1acd815c15079a";
               hash = "sha256-S1A50s7cKE0NuidC+x589wIxqGA6JW8GrCVEkCddMQs=";
             };
-            screenRecorder = {
-              rev = "40364a8530f4364e2fd6b0eb8802d5fe4f241b8f";
-              hash = "sha256-/SeQSlPeM0jDHg4yFmR82ODtnVs2bOovVG7TCMjH1vk=";
-            };
           };
 
           officialDankRepository = pkgs.fetchFromGitHub {

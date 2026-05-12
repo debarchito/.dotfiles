@@ -310,6 +310,8 @@
   "monoFontFamily": "Maple Mono NF",
   "fontWeight": 400,
   "fontScale": 1,
+  "textRenderType": 1,
+  "textRenderQuality": 0,
   "notepadUseMonospace": true,
   "notepadFontFamily": "",
   "notepadFontSize": 16,
@@ -510,7 +512,14 @@
   "displayProfileAutoSelect": false,
   "displayShowDisconnected": false,
   "displaySnapToEdge": true,
-  "connectedFrameBarStyleBackups": {},
+  "connectedFrameBarStyleBackups": {
+    "default": {
+      "shadowIntensity": 12,
+      "squareCorners": true,
+      "gothCornersEnabled": true,
+      "borderEnabled": false
+    }
+  },
   "barConfigs": [
     {
       "id": "default",
@@ -598,10 +607,6 @@
           "showPrinterIcon": false
         },
         {
-          "id": "screenRecorder",
-          "enabled": true
-        },
-        {
           "id": "powerMenuButton",
           "enabled": true
         }
@@ -611,9 +616,9 @@
       "bottomGap": 0,
       "transparency": 0.85,
       "widgetTransparency": 0,
-      "squareCorners": true,
+      "squareCorners": false,
       "noBackground": false,
-      "gothCornersEnabled": true,
+      "gothCornersEnabled": false,
       "gothCornerRadiusOverride": true,
       "gothCornerRadiusValue": 9,
       "borderEnabled": false,
@@ -636,7 +641,7 @@
       "scrollEnabled": false,
       "scrollXBehavior": "column",
       "scrollYBehavior": "workspace",
-      "shadowIntensity": 12,
+      "shadowIntensity": 0,
       "shadowColorMode": "surface",
       "clickThrough": false,
       "widgetPadding": 8,
@@ -729,16 +734,16 @@
   "frameThickness": 5,
   "frameRounding": 5,
   "frameColor": "",
-  "frameOpacity": 0.85,
+  "frameOpacity": 1,
   "frameScreenPreferences": [
     "all"
   ],
   "frameBarSize": 40,
   "frameShowOnOverview": true,
   "frameBlurEnabled": true,
-  "frameCloseGaps": true,
+  "frameCloseGaps": false,
   "frameLauncherEmergeSide": "bottom",
-  "frameLauncherArcExtender": false,
-  "frameMode": "separate",
+  "frameLauncherArcExtender": true,
+  "frameMode": "connected",
   "configVersion": 11
 }
