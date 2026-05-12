@@ -37,9 +37,10 @@
     { self', ... }:
     {
       nixpkgs.overlays = [
-        (_: _: {
+        (_: prev: {
           inherit (self'.packages)
             blender
+            bottles
             generate
             helium
             neuralrack
