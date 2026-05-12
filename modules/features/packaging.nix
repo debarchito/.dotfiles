@@ -63,7 +63,6 @@
             }
           ];
           packages = [
-            "com.usebottles.bottles"
             "com.github.tchx84.Flatseal"
             "io.github.flattool.Warehouse"
             # NOTE: I generally use flatpak apps for very specific scenarios where the nixpkgs version doesn't cut it.

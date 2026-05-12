@@ -683,6 +683,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-bottles": {
+      "locked": {
+        "lastModified": 1778352464,
+        "narHash": "sha256-95BGdPgsCl/yqc0rnudUs/7gTcZm3H0dU8TZENT+57w=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "31cb51ac29587750441d5a80d7f7a41bf8b20fad",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "31cb51ac29587750441d5a80d7f7a41bf8b20fad",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1777168982,
@@ -868,6 +884,7 @@
         "nix-flatpak": "nix-flatpak",
         "nixpkgs": "nixpkgs_4",
         "nixpkgs-1": "nixpkgs-1",
+        "nixpkgs-bottles": "nixpkgs-bottles",
         "nixpkgs-lib": [
           "nixpkgs"
         ],
