@@ -22,15 +22,6 @@ inhibit_compositor_keyboard_shortcuts: true
 auto_kbd_layout: true
 
 menu:
-  - key: e
-    desc: Explorer
-    submenu:
-      - key: d
-        desc: Dolphin
-        cmd: dolphin
-      - key: n
-        desc: Nautilus
-        cmd: nautilus
   - key: b
     desc: Browser
     submenu:
@@ -40,3 +31,60 @@ menu:
       - key: l
         desc: LibreWolf
         cmd: librewolf
+  - key: c
+    desc: niri Dynamic Cast Target
+    submenu:
+      - key: w
+        desc: Focused Window
+        cmd: niri msg action set-dynamic-cast-window
+      - key: m
+        desc: Focused Monitor
+        cmd: niri msg action set-dynamic-cast-monitor
+      - key: p
+        desc: Pick Window
+        cmd: niri msg action set-dynamic-cast-window --id $(niri msg --json pick-window | jq .id)
+      - key: c
+        desc: Clear Target
+        cmd: niri msg action clear-dynamic-cast-target
+  - key: e
+    desc: Explorer
+    submenu:
+      - key: d
+        desc: Dolphin
+        cmd: dolphin
+      - key: n
+        desc: Nautilus
+        cmd: nautilus
+  - key: s
+    desc: Screenshot
+    submenu:
+      - key: w
+        desc: Focused Window (Niri)
+        cmd: niri msg action screenshot-window
+      - key: m
+        desc: Focused Monitor
+        cmd: dms screenshot full --dir "$HOME/Pictures/Screenshots" --filename "screenshot-$(date +%Y-%m-%d-%H-%M-%S).png"
+      - key: M
+        desc: Focused Monitor (Niri)
+        cmd: niri msg action screenshot-screen
+      - key: r
+        desc: Select a Region
+        cmd: dms screenshot region --dir "$HOME/Pictures/Screenshots" --filename "screenshot-$(date +%Y-%m-%d-%H-%M-%S).png"
+      - key: R
+        desc: Select a Region (Niri)
+        cmd: niri msg action screenshot
+      - key: l
+        desc: Last Selected Region
+        cmd: dms screenshot last --dir "$HOME/Pictures/Screenshots" --filename "screenshot-$(date +%Y-%m-%d-%H-%M-%S).png"
+      - key: a
+        desc: All Outputs Combined
+        cmd: dms screenshot all --dir "$HOME/Pictures/Screenshots" --filename "screenshot-$(date +%Y-%m-%d-%H-%M-%S).png"
+  - key: w
+    desc: Wallpaper
+    submenu:
+      - key: n
+        desc: Next
+        cmd: dms ipc call wallpaper nextFor $(dms ipc call outputs current | jq -r .[0])
+      - key: p
+        desc: Previous
+        cmd: dms ipc call wallpaper prevFor $(dms ipc call outputs current | jq -r .[0])

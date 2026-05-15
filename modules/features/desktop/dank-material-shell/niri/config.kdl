@@ -41,7 +41,7 @@ input {
     }
 }
 
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Pictures/Screenshots/screenshot-%Y-%m-%d-%H-%M-%S.png"
 
 layout {
     border {
@@ -130,19 +130,13 @@ binds {
     Mod+Shift+8 repeat=false hotkey-overlay-title="Move Column to Workspace 8" { move-column-to-workspace 8; }
     Mod+Shift+9 repeat=false hotkey-overlay-title="Move Column to Workspace 9" { move-column-to-workspace 9; }
 
-    Mod+Ctrl+W repeat=false hotkey-overlay-title="Set Dynamic Cast to Focused Window"  { set-dynamic-cast-window;                                                                         }
-    Mod+Ctrl+M repeat=false hotkey-overlay-title="Set Dynamic Cast to Focused Monitor" { set-dynamic-cast-monitor;                                                                        }
-    Mod+Ctrl+C repeat=false hotkey-overlay-title="Pick Window for Dynamic Cast"        { spawn-sh "niri msg action set-dynamic-cast-window --id $(niri msg --json pick-window | jq .id)"; }
-    Mod+Ctrl+P repeat=false hotkey-overlay-title="Pick Window to Mirror"               { spawn-sh "wl-mirror $(niri msg --json focused-output | jq -r .name)";                            }
-    Mod+Alt+C repeat=false hotkey-overlay-title="Clear Dynamic Cast"                   { clear-dynamic-cast-target;                                                                       }
+    Mod+T repeat=false hotkey-overlay-title="Open Terminal"                   { spawn "ghostty" "--gtk-single-instance=true"; }
+    Mod+B repeat=false hotkey-overlay-title="Open Browser"                    { spawn "wlr-which-key" "--initial-keys" "b";   }
+    Mod+C repeat=false hotkey-overlay-title="Manage niri Dynamic Cast Target" { spawn "wlr-which-key" "--initial-keys" "c";   }
+    Mod+E repeat=false hotkey-overlay-title="Open Explorer"                   { spawn "wlr-which-key" "--initial-keys" "e";   }
+    Print repeat=false hotkey-overlay-title="Take Screenshot"                 { spawn "wlr-which-key" "--initial-keys" "s";   }
+    Mod+W repeat=false hotkey-overlay-title="Set Wallpaper"                   { spawn "wlr-which-key" "--initial-keys" "w";   }
 
-    Mod+T repeat=false hotkey-overlay-title="Open Terminal" { spawn "ghostty" "--gtk-single-instance=true"; }
-    Mod+E repeat=false hotkey-overlay-title="Open Explorer" { spawn "wlr-which-key" "--initial-keys" "e";   }
-    Mod+B repeat=false hotkey-overlay-title="Open Browser"  { spawn "wlr-which-key" "--initial-keys" "b";   }
-
-    Print repeat=false hotkey-overlay-title="Take a Screenshot"                                    { spawn "dms" "screenshot";                               }
-    Mod+Print repeat=false hotkey-overlay-title="Take a Screenshot (Niri)"                         { screenshot;                                             }
-    Mod+Shift+Print repeat=false hotkey-overlay-title="Take a Screenshot of Current Window (Niri)" { screenshot-window;                                      }
     Mod+M repeat=false hotkey-overlay-title="Toggle Process List"                                  { spawn "dms" "ipc" "processlist" "toggle";               }
     Mod+N repeat=false hotkey-overlay-title="Toggle Notification Center"                           { spawn "dms" "ipc" "notifications" "toggle";             }
     Mod+P repeat=false hotkey-overlay-title="Toggle Notepad"                                       { spawn "dms" "ipc" "notepad" "toggle";                   }
@@ -154,9 +148,6 @@ binds {
     Mod+Ctrl+L repeat=false hotkey-overlay-title="Toggle Lock Screen"                              { spawn "dms" "ipc" "lock" "lock";                        }
     Mod+Shift+M allow-when-locked=true repeat=false hotkey-overlay-title="Toggle Light/Dark Theme" { spawn "dms" "ipc" "call" "theme" "toggle";              }
     Mod+Shift+N allow-when-locked=true repeat=false hotkey-overlay-title="Toggle Night Mode"       { spawn "dms" "ipc" "night" "toggle";                     }
-
-    Mod+W repeat=false hotkey-overlay-title="Next Wallpaper for current Output"           { spawn-sh "dms ipc call wallpaper nextFor $(dms ipc call outputs current | jq -r .[0])"; }
-    Mod+Shift+W repeat=false hotkey-overlay-title="Previous Wallpaper for current Output" { spawn-sh "dms ipc call wallpaper prevFor $(dms ipc call outputs current | jq -r .[0])"; }
 
     XF86AudioLowerVolume allow-when-locked=true repeat=false  { spawn "dms" "ipc" "audio" "decrement" "5";         }
     XF86AudioMicMute allow-when-locked=true repeat=false      { spawn "dms" "ipc" "audio" "micmute";               }
