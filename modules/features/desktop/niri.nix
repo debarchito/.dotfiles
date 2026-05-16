@@ -122,14 +122,16 @@
 
         home.packages = builtins.attrValues {
           inherit (pkgs)
+            corefonts
             lora
-            poppins
             noto-fonts-cjk-sans
             noto-fonts-cjk-serif
-            wlr-which-key
-            pywalfox-native
             papirus-folders
+            poppins
+            pywalfox-native
             qt6ct
+            vista-fonts
+            wlr-which-key
             ;
           inherit (pkgs.maple-mono) NF;
           inherit (pkgs.kdePackages) breeze;
