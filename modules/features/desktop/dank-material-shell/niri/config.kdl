@@ -135,6 +135,7 @@ binds {
     Mod+C repeat=false hotkey-overlay-title="Manage niri Dynamic Cast Target" { spawn "wlr-which-key" "--initial-keys" "c";   }
     Mod+E repeat=false hotkey-overlay-title="Open Explorer"                   { spawn "wlr-which-key" "--initial-keys" "e";   }
     Print repeat=false hotkey-overlay-title="Take Screenshot"                 { spawn "wlr-which-key" "--initial-keys" "s";   }
+    Shift+Print repeat=false hotkey-overlay-title="Take Screenshot"           { screenshot; /* A backup */                    }
     Mod+W repeat=false hotkey-overlay-title="Set Wallpaper"                   { spawn "wlr-which-key" "--initial-keys" "w";   }
 
     Mod+M repeat=false hotkey-overlay-title="Toggle Process List"                                  { spawn "dms" "ipc" "processlist" "toggle";               }

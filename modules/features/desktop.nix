@@ -1,16 +1,4 @@
-{ lib, ... }:
 {
-  flake-file.inputs = {
-    dms = {
-      url = lib.mkDefault "github:AvengeMedia/DankMaterialShell";
-      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
-    };
-    quickshell = {
-      url = lib.mkDefault "github:quickshell-mirror/quickshell";
-      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
-    };
-  };
-
   flake.modules.nixos.options-desktop =
     { lib, config, ... }:
     {
