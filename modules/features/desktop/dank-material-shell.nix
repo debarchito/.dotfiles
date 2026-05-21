@@ -23,16 +23,16 @@
         let
           dankPlugins = {
             calculator = {
-              rev = "998e52958ae7c319363537584804eb35a9c7859f";
-              hash = "sha256-Ymf3Pxx+Y1SucuWniBjl61wDQjtGfaxi8zW0HA5mvpw=";
+              rev = "73073d051d08254633f28f89d2609344c8289813";
+              hash = "sha256-hiqrO8WkzmWGVlUrzxmffUZBs4t1QM2mMTBUxZqCIyU=";
             };
             clipboardPlus = {
-              rev = "08f5030aef617116469546a55516209f00aae3bf";
-              hash = "sha256-1st0MfObfJZupWd8k2HIP8f6b7mbTWTI/rgtfgEO77A=";
+              rev = "46405816d7e69af59026d10447c93262c645296c";
+              hash = "sha256-7B7zyzOQ4vjWjyZv8dAHy+ViT3SjsbcLMO1Y9NFvHxs=";
             };
             commandRunner = {
-              rev = "5e640d23dfdff291ee061b854fa4ee74b1984bf9";
-              hash = "sha256-l1LavTNDwAoQn4I+P6DfAsaz4nd5ngEbCaoHVQ47cWs=";
+              rev = "35277695de06beadaba701cb94cc8b096b233319";
+              hash = "sha256-o43IyVT901ZzZGDvZKWhlrgMba57thAoqL3+BFaFV74=";
             };
             displayMirror = {
               rev = "92cd44c4fb67834bf71fdd78f83c29df5e0750b2";
