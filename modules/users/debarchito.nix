@@ -154,6 +154,7 @@ in
               generate
               krita
               libqalculate
+              libreoffice-qt-fresh
               nix-alien
               nix-output-monitor
               nix-prefetch-github
@@ -297,8 +298,6 @@ in
             pkgs.obs-studio-plugins.obs-vkcapture
           ];
         };
-
-        onlyoffice.enable = true;
 
         rbw = {
           enable = true;

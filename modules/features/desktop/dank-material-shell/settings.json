@@ -41,9 +41,9 @@
   "enableRippleEffects": true,
   "animationVariant": 0,
   "motionEffect": 0,
-  "m3ElevationEnabled": true,
-  "m3ElevationIntensity": 12,
-  "m3ElevationOpacity": 30,
+  "m3ElevationEnabled": false,
+  "m3ElevationIntensity": 0,
+  "m3ElevationOpacity": 0,
   "m3ElevationColorMode": "default",
   "m3ElevationLightDirection": "top",
   "m3ElevationCustomColor": "#000000",
@@ -262,8 +262,8 @@
   "browserPickerViewMode": "list",
   "browserUsageHistory": {
     "librewolf": {
-      "count": 1,
-      "lastUsed": 1779380113124,
+      "count": 2,
+      "lastUsed": 1779460228204,
       "name": "LibreWolf"
     }
   },
@@ -271,13 +271,13 @@
   "filePickerUsageHistory": {},
   "sortAppsAlphabetically": false,
   "appLauncherGridColumns": 4,
-  "spotlightCloseNiriOverview": true,
+  "spotlightCloseNiriOverview": false,
   "rememberLastQuery": false,
   "spotlightSectionViewModes": {
     "apps": "list"
   },
   "appDrawerSectionViewModes": {},
-  "niriOverviewOverlayEnabled": true,
+  "niriOverviewOverlayEnabled": false,
   "dankLauncherV2Size": "compact",
   "dankLauncherV2BorderEnabled": false,
   "dankLauncherV2BorderThickness": 2,
@@ -736,6 +736,9 @@
   "builtInPluginSettings": {
     "dms_settings_search": {
       "trigger": "?"
+    },
+    "dms_clipboard_search": {
+      "trigger": "cb"
     }
   },
   "clipboardEnterToPaste": false,
