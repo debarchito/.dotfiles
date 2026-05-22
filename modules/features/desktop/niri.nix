@@ -109,6 +109,10 @@
             name = "Poppins";
             size = 10;
           };
+          gtk3.theme = {
+            name = "adw-gtk3";
+            package = pkgs.adw-gtk3;
+          };
           gtk4.theme = config.gtk.theme;
         };
 
