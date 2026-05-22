@@ -1,0 +1,160 @@
+From 299dc2e43428e1ff3bd528f6030b6108ad5e5b8e Mon Sep 17 00:00:00 2001
+From: Volember <volember.dev@gmail.com>
+Date: Wed, 20 May 2026 16:44:12 +0200
+Subject: [PATCH] fix: offline patch
+
+---
+ .gitignore                                    |  3 +++
+ launcher/LaunchController.cpp                 | 13 ++-----------
+ launcher/minecraft/auth/MinecraftAccount.h    |  2 +-
+ .../minecraft/launch/LauncherPartLaunch.cpp   | 19 +++++++++++++++++++
+ launcher/ui/pages/global/AccountListPage.cpp  |  8 --------
+ libraries/javacheck/CMakeLists.txt            |  2 +-
+ libraries/launcher/CMakeLists.txt             |  2 +-
+ 7 files changed, 27 insertions(+), 22 deletions(-)
+
+diff --git a/.gitignore b/.gitignore
+index 00afabbfa..bde62247e 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -62,3 +62,6 @@ flatbuild
+ 
+ # Snap
+ *.snap
++
++# Local build scripts
++build_fedora.sh
+diff --git a/launcher/LaunchController.cpp b/launcher/LaunchController.cpp
+index 8892a5466..f3d61e7fe 100644
+--- a/launcher/LaunchController.cpp
++++ b/launcher/LaunchController.cpp
+@@ -94,8 +94,7 @@ void LaunchController::decideAccount()
+     if (!accounts->anyAccountIsValid()) {
+         // Tell the user they need to log in at least one account in order to play.
+         auto reply = CustomMessageBox::selectable(m_parentWidget, tr("No Accounts"),
+-                                                  tr("In order to play Minecraft, you must have at least one Microsoft "
+-                                                     "account which owns Minecraft logged in. "
++                                                  tr("In order to play Minecraft, you must have at least one account (Microsoft or Offline) added. "
+                                                      "Would you like to open the account manager to add an account now?"),
+                                                   QMessageBox::Information, QMessageBox::Yes | QMessageBox::No)
+                          ->exec();
+@@ -141,20 +140,12 @@ LaunchDecision LaunchController::decideLaunchMode()
+         }
+     }
+ 
+-    const auto* accounts = APPLICATION->accounts();
+     MinecraftAccountPtr accountToCheck = nullptr;
+ 
+     if (m_accountToUse->accountType() != AccountType::Offline) {
+         accountToCheck = m_accountToUse->ownsMinecraft() ? m_accountToUse : nullptr;
+-    } else if (const auto defaultAccount = accounts->defaultAccount(); defaultAccount && defaultAccount->ownsMinecraft()) {
+-        accountToCheck = defaultAccount;
+     } else {
+-        for (int i = 0; i < accounts->count(); i++) {
+-            if (const auto account = accounts->at(i); account->ownsMinecraft()) {
+-                accountToCheck = account;
+-                break;
+-            }
+-        }
++        accountToCheck = m_accountToUse;
+     }
+ 
+     if (!accountToCheck) {
+diff --git a/launcher/minecraft/auth/MinecraftAccount.h b/launcher/minecraft/auth/MinecraftAccount.h
+index 24608701d..9572b945e 100644
+--- a/launcher/minecraft/auth/MinecraftAccount.h
++++ b/launcher/minecraft/auth/MinecraftAccount.h
+@@ -116,7 +116,7 @@ class MinecraftAccount : public QObject, public Usable {
+ 
+     AccountType accountType() const noexcept { return data.type; }
+ 
+-    bool ownsMinecraft() const { return data.type != AccountType::Offline && data.minecraftEntitlement.ownsMinecraft; }
++    bool ownsMinecraft() const { return data.type == AccountType::Offline || data.minecraftEntitlement.ownsMinecraft; }
+ 
+     bool hasProfile() const { return data.profileId().size() != 0; }
+ 
+diff --git a/launcher/minecraft/launch/LauncherPartLaunch.cpp b/launcher/minecraft/launch/LauncherPartLaunch.cpp
+index a2c400e75..71393367d 100644
+--- a/launcher/minecraft/launch/LauncherPartLaunch.cpp
++++ b/launcher/minecraft/launch/LauncherPartLaunch.cpp
+@@ -43,6 +43,7 @@
+ #include "FileSystem.h"
+ #include "launch/LaunchTask.h"
+ #include "minecraft/MinecraftInstance.h"
++#include <QFile>
+ 
+ #ifdef Q_OS_LINUX
+ #include "gamemode_client.h"
+@@ -81,6 +82,24 @@ void LauncherPartLaunch::executeTask()
+ 
+     auto instance = m_parent->instance();
+ 
++    // Disable fullscreen in options.txt if present, to prevent keyboard focus lockup on Wayland
++    QString optionsPath = FS::PathCombine(instance->gameRoot(), "options.txt");
++    if (QFile::exists(optionsPath)) {
++        QFile file(optionsPath);
++        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
++            QString content = QString::fromUtf8(file.readAll());
++            file.close();
++            if (content.contains("fullscreen:true")) {
++                content.replace("fullscreen:true", "fullscreen:false");
++                if (file.open(QIODevice::WriteOnly | QIODevice::Text)) {
++                    file.write(content.toUtf8());
++                    file.close();
++                    emit logLine("Auto-disabled fullscreen in options.txt to avoid Wayland keyboard focus issue.", MessageLevel::Launcher);
++                }
++            }
++        }
++    }
++
+     QString legacyJarPath;
+     if (instance->getLauncher() == "legacy" || instance->shouldApplyOnlineFixes()) {
+         legacyJarPath = APPLICATION->getJarPath("NewLaunchLegacy.jar");
+diff --git a/launcher/ui/pages/global/AccountListPage.cpp b/launcher/ui/pages/global/AccountListPage.cpp
+index 06c40f117..be603c376 100644
+--- a/launcher/ui/pages/global/AccountListPage.cpp
++++ b/launcher/ui/pages/global/AccountListPage.cpp
+@@ -140,14 +140,6 @@ void AccountListPage::on_actionAddMicrosoft_triggered()
+ 
+ void AccountListPage::on_actionAddOffline_triggered()
+ {
+-    if (!m_accounts->anyAccountIsValid()) {
+-        QMessageBox::warning(this, tr("Error"),
+-                             tr("You must add a Microsoft account that owns Minecraft before you can add an offline account."
+-                                "<br><br>"
+-                                "If you have lost your account you can contact Microsoft for support."));
+-        return;
+-    }
+-
+     ChooseOfflineNameDialog dialog(tr("Please enter your desired username to add your offline account."), this);
+     if (dialog.exec() != QDialog::Accepted) {
+         return;
+diff --git a/libraries/javacheck/CMakeLists.txt b/libraries/javacheck/CMakeLists.txt
+index b9bcb121a..a98b503b4 100644
+--- a/libraries/javacheck/CMakeLists.txt
++++ b/libraries/javacheck/CMakeLists.txt
+@@ -4,7 +4,7 @@ find_package(Java 1.7 REQUIRED COMPONENTS Development)
+ 
+ include(UseJava)
+ set(CMAKE_JAVA_JAR_ENTRY_POINT JavaCheck)
+-set(CMAKE_JAVA_COMPILE_FLAGS -target 7 -source 7 -Xlint:deprecation -Xlint:unchecked)
++set(CMAKE_JAVA_COMPILE_FLAGS -target 8 -source 8 -Xlint:deprecation -Xlint:unchecked)
+ 
+ set(SRC
+     JavaCheck.java
+diff --git a/libraries/launcher/CMakeLists.txt b/libraries/launcher/CMakeLists.txt
+index dfc4ebb32..5cb999958 100644
+--- a/libraries/launcher/CMakeLists.txt
++++ b/libraries/launcher/CMakeLists.txt
+@@ -4,7 +4,7 @@ find_package(Java 1.7 REQUIRED COMPONENTS Development)
+ 
+ include(UseJava)
+ set(CMAKE_JAVA_JAR_ENTRY_POINT org.prismlauncher.EntryPoint)
+-set(CMAKE_JAVA_COMPILE_FLAGS -target 7 -source 7)
++set(CMAKE_JAVA_COMPILE_FLAGS -target 8 -source 8)
+ 
+ set(SRC
+     org/prismlauncher/EntryPoint.java
+-- 
+2.53.0
+

@@ -160,6 +160,7 @@ in
               numbat
               pear-desktop
               pika-backup
+              prismlauncher
               qbittorrent
               trash-cli
               wl-mirror

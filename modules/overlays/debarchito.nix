@@ -34,6 +34,7 @@
             obs-studio
             papirus-folders
             pinentry-dms
+            prismlauncher-unwrapped
             qt6ct
             ratatouille
             reaper
