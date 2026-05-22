@@ -88,5 +88,8 @@
     "panelMarginTop": 0,
     "enableAnimations": true,
     "closeOnOutsideClick": true
+  },
+  "dankPinentry": {
+    "enabled": true
   }
 }

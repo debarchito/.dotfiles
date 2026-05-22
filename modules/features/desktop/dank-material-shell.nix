@@ -72,6 +72,17 @@
             "DankKDEConnect"
             "DankNotepadModule"
           ];
+
+          dankPinentryRepository = pkgs.fetchFromGitHub {
+            owner = "debarchito";
+            repo = "dankPinentry";
+            rev = "02df8bceb651bdbc5fdc7a07b5f6f19e60c3906a";
+            hash = "sha256-TmaRMZEHLatEjV5dIZqgEJMdqcK8CtG5mL++vWVlckg=";
+          };
+
+          dankPinentryPlugins = [
+            "plugin"
+          ];
         in
         lib.mkIf (config.desktop.niri.enable && config.desktop.niri.dms.enable) {
           nixpkgs.overlays = [
@@ -92,6 +103,9 @@
               }) dankPlugins)
               // (lib.genAttrs officialDankPlugins (name: {
                 src = "${officialDankRepository}/${name}";
+              }))
+              // (lib.genAttrs dankPinentryPlugins (name: {
+                src = "${dankPinentryRepository}/${name}";
               }));
           };
 

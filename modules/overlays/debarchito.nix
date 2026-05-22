@@ -33,6 +33,7 @@
             neuralrack
             obs-studio
             papirus-folders
+            pinentry-dms
             qt6ct
             ratatouille
             reaper
