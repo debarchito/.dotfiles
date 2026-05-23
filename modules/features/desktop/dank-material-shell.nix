@@ -43,8 +43,8 @@
               hash = "sha256-VoJCaygWnKpv0s0pqTOmzZnPM922qPDMHk4EPcgVnaU=";
             };
             dankBitwarden = {
-              rev = "3d70eb342750fe64f2baa8f69102992f2a644d98";
-              hash = "sha256-/O2QXF/0zNbSvkq5SwIyHdozcR39FNLc5CuFfeD3XBc=";
+              rev = "6fd83d8b6ab54d2d6a996bed7291b70316c99965";
+              hash = "sha256-ukcJy4ecyOiqSm9FO87hsq8BZ37EQVuduhDfoDw0LE4=";
             };
             emojiLauncher = {
               rev = "1c0a7d337a52b48f9499060076703a35e8dd4f4f";
@@ -63,8 +63,8 @@
           officialDankRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "dms-plugins";
-            rev = "9e2752586d79a6509b93c00c6fa4be0334ae4755";
-            hash = "sha256-QgeeB6Ix8L5oaqTUCopPvGu6vr0ECsF+jO3mQIxPKIw=";
+            rev = "547023b3ba65bcb195c93fd4b111d0f1eebe0432";
+            hash = "sha256-3cZOazX90nAhNZ8Z6lTa8OC6Y+ZmpJ2cYOv46oelIm0=";
           };
 
           officialDankPlugins = [

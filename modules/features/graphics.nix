@@ -1,11 +1,6 @@
 {
   flake.modules.nixos.options-graphics =
-    {
-      lib,
-      config,
-      pkgs,
-      ...
-    }:
+    { lib, config, ... }:
     {
       options.graphics = lib.mkOption {
         type = lib.types.submodule {
