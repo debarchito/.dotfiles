@@ -8,8 +8,8 @@
 
         src = pkgs.fetchgit {
           url = "https://github.com/brummer10/Ratatouille.lv2.git";
-          rev = "3dbc4bd96e4fcc770bc24e53c37ed26ce98d7ad3";
-          hash = "sha256-1Y7kA2XCMhRR5HKGkCbt5oi0YsWmwn90ldX3sQ6B/8Y=";
+          rev = "30aa06683fcd5dd5985910b40530a334e662a433";
+          hash = "sha256-H5NB6B9yOE7icZ0njuNCFbFko/T4Pmb3IRbOmMq3PzY=";
           fetchSubmodules = true;
         };
 
