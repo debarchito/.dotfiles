@@ -17,6 +17,7 @@
                 };
               };
             };
+            nvidia-open.enable = lib.mkEnableOption "enable NVK and friends";
           };
         };
         default = { };
@@ -57,6 +58,11 @@
               })
             ]
           ))
+
+          (lib.mkIf config.graphics.nvidia-open.enable {
+            services.xserver.videoDrivers = [ "nouveau" ];
+            boot.kernelParams = [ "acpi_backlight=video" ];
+          })
         ]
       );
     };
