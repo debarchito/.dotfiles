@@ -93,6 +93,10 @@ in
       steam.enable = true;
       gamescope.enable = true;
       gamemode.enable = true;
+      games = {
+        minecraft.enable = true;
+        hoyoverse.enable = true;
+      };
     };
   };
 
@@ -161,7 +165,6 @@ in
               numbat
               pear-desktop
               pika-backup
-              prismlauncher
               qbittorrent
               trash-cli
               wl-mirror

@@ -22,7 +22,11 @@
     {
       nixpkgs.overlays = [
         (_: prev: {
-          inherit (self'.packages) waydroid-choose-gpu waydroid-script;
+          inherit (self'.packages)
+            prismlauncher-unwrapped
+            waydroid-choose-gpu
+            waydroid-script
+            ;
         })
       ];
     }
@@ -42,7 +46,6 @@
             obs-studio
             papirus-folders
             pinentry-dms
-            prismlauncher-unwrapped
             qt6ct
             ratatouille
             reaper

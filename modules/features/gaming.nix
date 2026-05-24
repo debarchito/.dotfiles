@@ -1,4 +1,10 @@
+{ lib, inputs, ... }:
 {
+  flake-file.inputs.aagl = {
+    url = lib.mkDefault "github:ezKEa/aagl-gtk-on-nix";
+    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+  };
+
   flake.modules.nixos.options-gaming =
     {
       lib,
@@ -7,12 +13,20 @@
       ...
     }:
     {
+      imports = [
+        inputs.aagl.nixosModules.default
+      ];
+
       options.gaming = lib.mkOption {
         type = lib.types.submodule {
           options = {
             steam.enable = lib.mkEnableOption "enable steam";
             gamescope.enable = lib.mkEnableOption "enable gamescope";
             gamemode.enable = lib.mkEnableOption "enable gamemode";
+            games = {
+              minecraft.enable = lib.mkEnableOption "enable prismlauncher for Minecraft";
+              hoyoverse.enable = lib.mkEnableOption "enable launchers for the hoyoverse games";
+            };
           };
         };
         default = { };
@@ -42,6 +56,21 @@
 
         (lib.mkIf config.gaming.gamemode.enable {
           programs.gamemode.enable = true;
+        })
+
+        (lib.mkIf config.gaming.games.minecraft.enable {
+          environment.systemPackages = builtins.attrValues {
+            inherit (pkgs)
+              prismlauncher
+              ;
+          };
+        })
+
+        (lib.mkIf config.gaming.games.hoyoverse.enable {
+          programs = {
+            anime-game-launcher.enable = true;
+            honkers-railway-launcher.enable = true;
+          };
         })
       ];
     };
