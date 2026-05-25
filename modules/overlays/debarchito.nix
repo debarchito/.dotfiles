@@ -23,7 +23,6 @@
       nixpkgs.overlays = [
         (_: prev: {
           inherit (self'.packages)
-            prismlauncher-unwrapped
             waydroid-choose-gpu
             waydroid-script
             ;
@@ -40,17 +39,20 @@
           inherit (self'.packages)
             blender
             bottles
+            eden
             generate
             helium
             neuralrack
             obs-studio
             papirus-folders
             pinentry-dms
+            prismlauncher-unwrapped
             qt6ct
             ratatouille
             reaper
             sioyek
             starship-jj
+            wiiudownloader
             ;
         })
       ];

@@ -93,10 +93,6 @@ in
       steam.enable = true;
       gamescope.enable = true;
       gamemode.enable = true;
-      games = {
-        minecraft.enable = true;
-        hoyoverse.enable = true;
-      };
     };
   };
 
@@ -111,6 +107,7 @@ in
         self.modules.homeManager.options-browsers
         self.modules.homeManager.options-editors
         self.modules.homeManager.options-media
+        self.modules.homeManager.options-gaming
         self.modules.homeManager.options-packaging
         self.modules.homeManager."users-${username}"
         {
@@ -319,6 +316,18 @@ in
         easyeffects.enable = true;
 
         kdeconnect.enable = true;
+      };
+
+      gaming = {
+        games = {
+          minecraft.enable = true;
+          genshin-impact.enable = true;
+          honkai-star-rail.enable = true;
+        };
+        emulators = {
+          wiiu.enable = true;
+          switch.enable = true;
+        };
       };
     };
 }
