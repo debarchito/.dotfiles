@@ -25,6 +25,10 @@ output_path = "~/.config/helix/themes/dankcolors.toml"
 input_path = "~/.config/matugen/templates/kdeglobals/dankcolors"
 output_path = "~/.config/kdeglobals"
 
+[templates.kitty]
+input_path = "~/.config/matugen/templates/kitty/dankcolors.conf"
+output_path = "~/.config/kitty/themes/dankcolors.conf"
+
 [templates.niri]
 input_path = "~/.config/matugen/templates/niri/custom.kdl"
 output_path = "~/.config/niri/matugen/custom.kdl"

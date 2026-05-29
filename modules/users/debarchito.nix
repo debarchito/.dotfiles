@@ -191,7 +191,7 @@ in
           enable = true;
           dms.enable = true;
         };
-        labwc.dms.enable = true;
+        # labwc.dms.enable = true;
       };
 
       terminal.common.enable = true;
@@ -236,7 +236,7 @@ in
         };
 
         ghostty = {
-          enable = true;
+          enable = false;
           settings = {
             command = "fish";
             shell-integration = "fish";
@@ -249,6 +249,28 @@ in
             config-file = "./themes/dankcolors";
             app-notifications = "no-clipboard-copy,no-config-reload";
           };
+        };
+
+        kitty = {
+          enable = true;
+          settings = {
+            shell = "fish";
+            shell_integration = "enabled";
+            hide_window_decorations = "yes";
+            window_padding_width = 10;
+            placement_strategy = "center";
+            resize_in_steps = "yes";
+            font_family = "Maple Mono NF";
+            font_size = 14;
+            font_features = "MapleMonoNF-Regular -calt -zero -cv02 +cv01 +cv61";
+            text_composition_strategy = "legacy";
+            notify_on_select = "no";
+          };
+          extraConfig =
+            # conf
+            ''
+              include themes/dankcolors.conf
+            '';
         };
 
         # terminal.common.enable -> helix.enable

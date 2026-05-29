@@ -160,12 +160,12 @@
       "width": 50
     },
     {
-      "id": "plugin_displayMirror",
+      "id": "colorPicker",
       "enabled": true,
       "width": 50
     },
     {
-      "id": "colorPicker",
+      "id": "builtin_cups",
       "enabled": true,
       "width": 50
     }
@@ -262,8 +262,8 @@
   "browserPickerViewMode": "list",
   "browserUsageHistory": {
     "librewolf": {
-      "count": 2,
-      "lastUsed": 1779460228204,
+      "count": 3,
+      "lastUsed": 1780043273742,
       "name": "LibreWolf"
     }
   },
@@ -273,6 +273,7 @@
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": false,
   "rememberLastQuery": false,
+  "rememberLastMode": true,
   "spotlightSectionViewModes": {
     "apps": "list"
   },
@@ -461,6 +462,7 @@
   "notificationTimeoutNormal": 5000,
   "notificationTimeoutCritical": 0,
   "notificationCompactMode": false,
+  "notificationDedupeEnabled": true,
   "notificationPopupPosition": 3,
   "notificationAnimationSpeed": 1,
   "notificationCustomAnimationDuration": 400,
@@ -619,6 +621,10 @@
         },
         {
           "id": "powerMenuButton",
+          "enabled": true
+        },
+        {
+          "id": "niriDS",
           "enabled": true
         }
       ],

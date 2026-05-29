@@ -130,7 +130,7 @@ binds {
     Mod+Shift+8 repeat=false hotkey-overlay-title="Move Column to Workspace 8" { move-column-to-workspace 8; }
     Mod+Shift+9 repeat=false hotkey-overlay-title="Move Column to Workspace 9" { move-column-to-workspace 9; }
 
-    Mod+T repeat=false hotkey-overlay-title="Open Terminal"                   { spawn "ghostty" "--gtk-single-instance=true"; }
+    Mod+T repeat=false hotkey-overlay-title="Open Terminal"                   { spawn "kitty";                                }
     Mod+B repeat=false hotkey-overlay-title="Open Browser"                    { spawn "wlr-which-key" "--initial-keys" "b";   }
     Mod+C repeat=false hotkey-overlay-title="Manage niri Dynamic Cast Target" { spawn "wlr-which-key" "--initial-keys" "c";   }
     Mod+E repeat=false hotkey-overlay-title="Open Explorer"                   { spawn "wlr-which-key" "--initial-keys" "e";   }
@@ -147,8 +147,9 @@ binds {
     Mod+S repeat=false hotkey-overlay-title="Toggle Settings"                                      { spawn "dms" "ipc" "settings" "toggle";                  }
     Mod+Space repeat=false hotkey-overlay-title="Toggle Application Launcher"                      { spawn "dms" "ipc" "spotlight" "toggle";                 }
     Mod+Ctrl+L repeat=false hotkey-overlay-title="Toggle Lock Screen"                              { spawn "dms" "ipc" "lock" "lock";                        }
-    Mod+Shift+M allow-when-locked=true repeat=false hotkey-overlay-title="Toggle Light/Dark Theme" { spawn "dms" "ipc" "call" "theme" "toggle";              }
-    Mod+Shift+N allow-when-locked=true repeat=false hotkey-overlay-title="Toggle Night Mode"       { spawn "dms" "ipc" "night" "toggle";                     }
+    Mod+Shift+M repeat=false hotkey-overlay-title="Toggle Light/Dark Theme"                        { spawn "dms" "ipc" "call" "theme" "toggle";              }
+    Mod+Shift+N repeat=false hotkey-overlay-title="Toggle Night Mode"                              { spawn "dms" "ipc" "night" "toggle";                     }
+    Mod+Ctrl+D repeat=false hotkey-overlay-title="Toggle Display Settings"                          { spawn "dms" "ipc" "call" "niriDS" "toggle";             }
 
     XF86AudioLowerVolume allow-when-locked=true repeat=false  { spawn "dms" "ipc" "audio" "decrement" "5";         }
     XF86AudioMicMute allow-when-locked=true repeat=false      { spawn "dms" "ipc" "audio" "micmute";               }
