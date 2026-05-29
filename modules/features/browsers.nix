@@ -199,6 +199,10 @@
                     name = "Share";
                     url = "https://share.unredacted.org";
                   }
+                  {
+                    name = "Nixpkgs Pull Request Tracker";
+                    url = "https://nixpk.gs/pr-tracker.html";
+                  }
                 ];
               };
               settings = {

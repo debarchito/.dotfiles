@@ -58,6 +58,10 @@
               rev = "8ec42a2dff96b94cdd0d40b57c1acd815c15079a";
               hash = "sha256-S1A50s7cKE0NuidC+x589wIxqGA6JW8GrCVEkCddMQs=";
             };
+            niriDS = {
+              rev = "1cdc92b7cf32cdea6de902e7733d818dabf20e04";
+              hash = "sha256-TRa2RFHx8GhF7xJa7wPhAfH18FMamUWEny7eVrCeeY4=";
+            };
           };
 
           officialDankRepository = pkgs.fetchFromGitHub {

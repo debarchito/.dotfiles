@@ -6,7 +6,7 @@
   "dockerManager": {
     "enabled": true,
     "dockerBinary": "podman",
-    "terminalApp": "ghostty",
+    "terminalApp": "kitty",
     "shellPath": "/home/@USERNAME@/.nix-profile/bin/fish"
   },
   "dankBitwarden": {
@@ -36,9 +36,11 @@
   },
   "commandRunner": {
     "enabled": true,
-    "terminal": "ghostty",
+    "terminal": "kitty",
     "history": [
-      "labwc --startup reaper"
+      "labwc --startup eden",
+      "labwc --startup reaper",
+      "labwc --startup ryujinx"
     ],
     "trigger": "$",
     "noTrigger": false
@@ -90,6 +92,9 @@
     "closeOnOutsideClick": true
   },
   "dankPinentry": {
+    "enabled": true
+  },
+  "niriDS": {
     "enabled": true
   }
 }
