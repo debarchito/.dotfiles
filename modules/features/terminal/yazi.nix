@@ -1,4 +1,10 @@
+{ lib, inputs, ... }:
 {
+  flake-file.inputs.yazi = {
+    url = lib.mkDefault "github:sxyazi/yazi";
+    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs-crates";
+  };
+
   flake.modules.homeManager.options-terminal =
     {
       lib,
@@ -8,6 +14,10 @@
     }:
     {
       config = lib.mkIf config.terminal.common.enable {
+        nixpkgs.overlays = [
+          inputs.yazi.overlays.default
+        ];
+
         programs.yazi = {
           enable = true;
           enableFishIntegration = true;

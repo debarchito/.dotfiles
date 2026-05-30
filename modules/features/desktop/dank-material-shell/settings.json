@@ -110,6 +110,16 @@
       "width": 50
     },
     {
+      "id": "builtin_display_profiles",
+      "enabled": true,
+      "width": 50
+    },
+    {
+      "id": "plugin_displayMirror",
+      "enabled": true,
+      "width": 50
+    },
+    {
       "id": "volumeSlider",
       "enabled": true,
       "width": 50
@@ -262,8 +272,8 @@
   "browserPickerViewMode": "list",
   "browserUsageHistory": {
     "librewolf": {
-      "count": 3,
-      "lastUsed": 1780043273742,
+      "count": 5,
+      "lastUsed": 1780154455021,
       "name": "LibreWolf"
     }
   },
@@ -551,13 +561,15 @@
         {
           "id": "focusedWindow",
           "enabled": true,
+          "focusedWindowSize": 0,
           "focusedWindowCompactMode": true
         }
       ],
       "centerWidgets": [
         {
           "id": "music",
-          "enabled": true
+          "enabled": true,
+          "mediaSize": 0
         },
         {
           "id": "clock",

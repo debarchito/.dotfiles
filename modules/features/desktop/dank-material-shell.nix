@@ -5,6 +5,10 @@
       url = lib.mkDefault "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
+    dsearch = {
+      url = lib.mkDefault "github:AvengeMedia/danksearch";
+      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+    };
     quickshell = {
       url = lib.mkDefault "github:quickshell-mirror/quickshell";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
@@ -17,6 +21,7 @@
       imports = [
         inputs.dms.homeModules.niri
         inputs.dms.homeModules.dank-material-shell
+        inputs.dsearch.homeModules.default
       ];
 
       config =
@@ -64,14 +69,14 @@
             };
           };
 
-          officialDankRepository = pkgs.fetchFromGitHub {
+          officialDMSRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "dms-plugins";
             rev = "547023b3ba65bcb195c93fd4b111d0f1eebe0432";
             hash = "sha256-3cZOazX90nAhNZ8Z6lTa8OC6Y+ZmpJ2cYOv46oelIm0=";
           };
 
-          officialDankPlugins = [
+          officialDMSPlugins = [
             "DankHooks"
             "DankKDEConnect"
             "DankNotepadModule"
@@ -87,30 +92,47 @@
           dankPinentryPlugins = [
             "plugin"
           ];
+
+          dadanDMSPluginsRepository = pkgs.fetchFromGitHub {
+            owner = "debarchito";
+            repo = "dadan-dms-plugins";
+            rev = "cb23b2590038ba47db3f27eca5101a8ac864da7d";
+            hash = "sha256-8knIOnc0+LDsgusCzEz3CJBksvVrn3ytDHMfRAPEUhY=";
+          };
+
+          dadanDMSPlugins = [
+            "ClipboardPlus"
+          ];
         in
         lib.mkIf (config.desktop.niri.enable && config.desktop.niri.dms.enable) {
           nixpkgs.overlays = [
             inputs.quickshell.overlays.default
           ];
 
-          programs.dank-material-shell = {
-            enable = true;
-            quickshell.package = pkgs.quickshell;
-            niri.includes.enable = false;
-            plugins =
-              (lib.mapAttrs (name: value: {
-                src = pkgs.fetchFromGitHub {
-                  owner = "debarchito";
-                  repo = name;
-                  inherit (value) rev hash;
-                };
-              }) dankPlugins)
-              // (lib.genAttrs officialDankPlugins (name: {
-                src = "${officialDankRepository}/${name}";
-              }))
-              // (lib.genAttrs dankPinentryPlugins (name: {
-                src = "${dankPinentryRepository}/${name}";
-              }));
+          programs = {
+            dank-material-shell = {
+              enable = true;
+              quickshell.package = pkgs.quickshell;
+              niri.includes.enable = false;
+              plugins =
+                (lib.mapAttrs (name: value: {
+                  src = pkgs.fetchFromGitHub {
+                    owner = "debarchito";
+                    repo = name;
+                    inherit (value) rev hash;
+                  };
+                }) dankPlugins)
+                // (lib.genAttrs officialDMSPlugins (name: {
+                  src = "${officialDMSRepository}/${name}";
+                }))
+                // (lib.genAttrs dankPinentryPlugins (name: {
+                  src = "${dankPinentryRepository}/${name}";
+                }))
+                // (lib.genAttrs dadanDMSPlugins (name: {
+                  src = "${dadanDMSPluginsRepository}/${name}";
+                }));
+            };
+            dsearch.enable = true;
           };
 
           xdg.configFile =

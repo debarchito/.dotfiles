@@ -1,8 +1,4 @@
 {
-  "displayMirror": {
-    "enabled": true,
-    "autoRefresh": true
-  },
   "dockerManager": {
     "enabled": true,
     "dockerBinary": "podman",
@@ -40,7 +36,8 @@
     "history": [
       "labwc --startup eden",
       "labwc --startup reaper",
-      "labwc --startup ryujinx"
+      "labwc --startup ryujinx",
+      "scrcpy --new-display=1920x1080/240 --window-x 0 --window-y 0"
     ],
     "trigger": "$",
     "noTrigger": false
@@ -95,6 +92,9 @@
     "enabled": true
   },
   "niriDS": {
+    "enabled": true
+  },
+  "displayMirror": {
     "enabled": true
   }
 }

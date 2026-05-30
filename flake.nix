@@ -17,10 +17,18 @@
       url = "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dsearch = {
+      url = "github:AvengeMedia/danksearch";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-file.url = "github:vic/flake-file";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
+    };
+    helix = {
+      url = "github:helix-editor/helix";
+      inputs.nixpkgs.follows = "nixpkgs-crates";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -57,6 +65,7 @@
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
+    nixpkgs-crates.url = "github:nixos/nixpkgs/f830e6112b4dbdb98cb7668cd291ea07ffc288e8";
     nixpkgs-lib.follows = "nixpkgs";
     nur = {
       url = "github:nix-community/NUR";
@@ -82,6 +91,10 @@
     xwayland-satellite = {
       url = "github:Supreeeme/xwayland-satellite";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    yazi = {
+      url = "github:sxyazi/yazi";
+      inputs.nixpkgs.follows = "nixpkgs-crates";
     };
   };
 }
