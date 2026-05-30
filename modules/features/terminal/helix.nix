@@ -1,4 +1,10 @@
+{ lib, inputs, ... }:
 {
+  flake-file.inputs.helix = {
+    url = lib.mkDefault "github:helix-editor/helix";
+    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs-crates";
+  };
+
   flake.modules.homeManager.options-terminal =
     {
       lib,
@@ -8,6 +14,10 @@
     }:
     {
       config = lib.mkIf config.terminal.common.enable {
+        nixpkgs.overlays = [
+          inputs.helix.overlays.default
+        ];
+
         programs.helix = {
           enable = true;
           settings = {

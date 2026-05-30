@@ -163,6 +163,7 @@ in
               pear-desktop
               pika-backup
               qbittorrent
+              scrcpy
               trash-cli
               wl-mirror
               ;

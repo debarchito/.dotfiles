@@ -1,5 +1,12 @@
-{ inputs, moduleWithSystem, ... }:
 {
+  lib,
+  inputs,
+  moduleWithSystem,
+  ...
+}:
+{
+  flake-file.inputs.nixpkgs-crates.url = lib.mkDefault "github:nixos/nixpkgs/f830e6112b4dbdb98cb7668cd291ea07ffc288e8";
+
   perSystem =
     { system, ... }:
     {

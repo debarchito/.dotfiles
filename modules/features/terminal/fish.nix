@@ -137,6 +137,7 @@
           shellAbbrs = {
             cd = "z";
             sudo = "run0";
+            ads = "scrcpy --new-display=1920x1080/240 --window-x 0 --window-y 0";
             cgh = {
               setCursor = "%";
               expansion = "jj git clone gh:%";

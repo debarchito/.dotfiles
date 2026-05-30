@@ -3,9 +3,7 @@
     { pkgs, ... }:
     {
       packages.eden = pkgs.eden.overrideAttrs (oldAttrs: rec {
-        pname = "eden";
         version = "0.2.0";
-
         src = pkgs.fetchFromGitea {
           domain = "git.eden-emu.dev";
           owner = "eden-emu";

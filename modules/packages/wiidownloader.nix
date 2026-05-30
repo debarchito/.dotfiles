@@ -7,11 +7,11 @@
       ...
     }:
     let
-      version = "2.92";
+      version = "2.93";
       sources = {
         "x86_64-linux" = {
           url = "https://github.com/Xpl0itU/WiiUDownloader/releases/download/v${version}/WiiUDownloader-Linux-x86_64.AppImage";
-          hash = "sha256-YZ6Mm++0n2AQbZ418WRpNQhUel1+kzMjDOB5KA3FXwo=";
+          hash = "sha256-9TIaUJnfXa42wJN25U8WM1F9hnSIwYytRQCj8e4L7ZU=";
         };
       };
     in
