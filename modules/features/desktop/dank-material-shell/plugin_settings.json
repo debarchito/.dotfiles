@@ -90,11 +90,5 @@
   },
   "dankPinentry": {
     "enabled": true
-  },
-  "niriDS": {
-    "enabled": true
-  },
-  "displayMirror": {
-    "enabled": true
   }
 }

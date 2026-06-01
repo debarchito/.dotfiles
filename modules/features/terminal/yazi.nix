@@ -2,7 +2,7 @@
 {
   flake-file.inputs.yazi = {
     url = lib.mkDefault "github:sxyazi/yazi";
-    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs-crates";
+    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
   };
 
   flake.modules.homeManager.options-terminal =
@@ -27,7 +27,6 @@
               duckdb
               full-border
               git
-              no-status
               piper
               recycle-bin
               ;

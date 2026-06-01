@@ -14,7 +14,7 @@
           default = "nixos";
           description = "the networking hostName";
         };
-        networking'.allowPortRanges = lib.mkOption {
+        networking'.allowedPortRanges = lib.mkOption {
           type = lib.types.listOf (lib.types.attrsOf lib.types.int);
           default = [ ];
           description = "open specific ports for both TCP and UDP";
@@ -44,8 +44,8 @@
         lib.mkMerge [
           {
             networking.hostName = config.networking'.name;
-            networking.firewall.allowedTCPPortRanges = config.networking'.allowPortRanges;
-            networking.firewall.allowedUDPPortRanges = config.networking'.allowPortRanges;
+            networking.firewall.allowedTCPPortRanges = config.networking'.allowedPortRanges;
+            networking.firewall.allowedUDPPortRanges = config.networking'.allowedPortRanges;
           }
 
           (lib.mkIf config.networking'.manager.enable {

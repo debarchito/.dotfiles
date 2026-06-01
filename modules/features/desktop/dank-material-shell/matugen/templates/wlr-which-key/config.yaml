@@ -32,20 +32,24 @@ menu:
         desc: LibreWolf
         cmd: librewolf
   - key: c
-    desc: niri Dynamic Cast Target
+    desc: niri Dynamic Cast Target + Mirror
     submenu:
       - key: w
-        desc: Focused Window
+        desc: Set cast target to focused window
         cmd: niri msg action set-dynamic-cast-window
       - key: m
-        desc: Focused Monitor
+        desc: Set cast target to focused monitor
         cmd: niri msg action set-dynamic-cast-monitor
       - key: p
-        desc: Pick Window
+        desc: Pick window to set as cast target
         cmd: niri msg action set-dynamic-cast-window --id $(niri msg --json pick-window | jq .id)
       - key: c
-        desc: Clear Target
+        desc: Clear cast target
         cmd: niri msg action clear-dynamic-cast-target
+      - key: M
+        desc: Mirror focused output
+        cmd: wl-mirror $(niri msg --json focused-output | jq -r .name)
+
   - key: e
     desc: Explorer
     submenu:
@@ -59,25 +63,25 @@ menu:
     desc: Screenshot
     submenu:
       - key: w
-        desc: Focused Window (Niri)
+        desc: Capture focused window (Niri)
         cmd: niri msg action screenshot-window
       - key: m
-        desc: Focused Monitor
+        desc: Capture focused monitor
         cmd: dms screenshot full --dir "$HOME/Pictures/Screenshots" --filename "screenshot-$(date +%Y-%m-%d-%H-%M-%S).png"
       - key: M
-        desc: Focused Monitor (Niri)
+        desc: Capture focused monitor (Niri)
         cmd: niri msg action screenshot-screen
       - key: r
-        desc: Select a Region
+        desc: Select a capture region
         cmd: dms screenshot region --dir "$HOME/Pictures/Screenshots" --filename "screenshot-$(date +%Y-%m-%d-%H-%M-%S).png"
       - key: R
-        desc: Select a Region (Niri)
+        desc: Select a capture region (Niri)
         cmd: niri msg action screenshot
       - key: l
-        desc: Last Selected Region
+        desc: Capture last selected region
         cmd: dms screenshot last --dir "$HOME/Pictures/Screenshots" --filename "screenshot-$(date +%Y-%m-%d-%H-%M-%S).png"
       - key: a
-        desc: All Outputs Combined
+        desc: Capture all outputs combined
         cmd: dms screenshot all --dir "$HOME/Pictures/Screenshots" --filename "screenshot-$(date +%Y-%m-%d-%H-%M-%S).png"
   - key: w
     desc: Wallpaper

@@ -28,7 +28,7 @@
     };
     helix = {
       url = "github:helix-editor/helix";
-      inputs.nixpkgs.follows = "nixpkgs-crates";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -65,7 +65,6 @@
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
-    nixpkgs-crates.url = "github:nixos/nixpkgs/f830e6112b4dbdb98cb7668cd291ea07ffc288e8";
     nixpkgs-lib.follows = "nixpkgs";
     nur = {
       url = "github:nix-community/NUR";
@@ -94,7 +93,7 @@
     };
     yazi = {
       url = "github:sxyazi/yazi";
-      inputs.nixpkgs.follows = "nixpkgs-crates";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 }

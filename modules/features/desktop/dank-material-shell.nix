@@ -39,10 +39,6 @@
               rev = "35277695de06beadaba701cb94cc8b096b233319";
               hash = "sha256-o43IyVT901ZzZGDvZKWhlrgMba57thAoqL3+BFaFV74=";
             };
-            displayMirror = {
-              rev = "92cd44c4fb67834bf71fdd78f83c29df5e0750b2";
-              hash = "sha256-JX3pDZ1F5Uu/rOdA4KMhcwH8a6gxsTZjwgcZxNV/Ngc=";
-            };
             dockerManager = {
               rev = "860457bbb043a6651a2cbafe6e77d443123a0b07";
               hash = "sha256-VoJCaygWnKpv0s0pqTOmzZnPM922qPDMHk4EPcgVnaU=";
@@ -63,17 +59,13 @@
               rev = "8ec42a2dff96b94cdd0d40b57c1acd815c15079a";
               hash = "sha256-S1A50s7cKE0NuidC+x589wIxqGA6JW8GrCVEkCddMQs=";
             };
-            niriDS = {
-              rev = "1cdc92b7cf32cdea6de902e7733d818dabf20e04";
-              hash = "sha256-TRa2RFHx8GhF7xJa7wPhAfH18FMamUWEny7eVrCeeY4=";
-            };
           };
 
           officialDMSRepository = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "dms-plugins";
-            rev = "547023b3ba65bcb195c93fd4b111d0f1eebe0432";
-            hash = "sha256-3cZOazX90nAhNZ8Z6lTa8OC6Y+ZmpJ2cYOv46oelIm0=";
+            rev = "f4583449f12920e0a2f16808b00a860c27f0173d";
+            hash = "sha256-QkQPqP7Wmo5DLRyKNSY5NuOau4LSaSfz3DYdHDLxluA=";
           };
 
           officialDMSPlugins = [

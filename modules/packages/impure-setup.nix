@@ -66,7 +66,8 @@
 
             echo -e '\n[-*-] Setting up pywalfox for LibreWolf.'
 
-            "$PYWALFOX_NATIVE" install --browser librewolf
+            "$PYWALFOX_NATIVE" install --manifest-path ~/.librewolf/native-messaging-hosts \
+                                       --profile-path  ~/.librewolf/default
 
             "$MKDIR" -p "$HOME/.cache/wal"
             "$LN" -sf "$HOME/.cache/wal/dank-pywalfox.json" "$HOME/.cache/wal/colors.json"
