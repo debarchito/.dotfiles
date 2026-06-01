@@ -2,7 +2,7 @@
 {
   flake-file.inputs.helix = {
     url = lib.mkDefault "github:helix-editor/helix";
-    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs-crates";
+    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
   };
 
   flake.modules.homeManager.options-terminal =

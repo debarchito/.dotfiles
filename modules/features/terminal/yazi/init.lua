@@ -8,6 +8,4 @@ require("git"):setup()
 
 require("no-header"):setup()
 
-require("no-status"):setup()
-
 require("recycle-bin"):setup()

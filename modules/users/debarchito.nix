@@ -33,7 +33,7 @@ in
     common.flake = "/home/${username}/.dotfiles";
 
     networking' = {
-      allowPortRanges = [
+      allowedPortRanges = [
         {
           from = 1714;
           to = 1764;
