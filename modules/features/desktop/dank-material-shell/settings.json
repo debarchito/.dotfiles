@@ -188,11 +188,11 @@
   "workspaceActiveAppHighlightEnabled": false,
   "workspaceColorMode": "default",
   "workspaceOccupiedColorMode": "none",
-  "workspaceUnfocusedColorMode": "s",
+  "workspaceUnfocusedColorMode": "sch",
   "workspaceUrgentColorMode": "default",
   "workspaceFocusedBorderEnabled": false,
   "workspaceFocusedBorderColor": "secondary",
-  "workspaceFocusedBorderThickness": 3,
+  "workspaceFocusedBorderThickness": 2,
   "workspaceNameIcons": {},
   "waveProgressEnabled": true,
   "scrollTitleEnabled": true,
@@ -410,11 +410,11 @@
   "showDock": true,
   "dockAutoHide": false,
   "dockSmartAutoHide": true,
-  "dockUseOverlayLayer": false,
+  "dockUseOverlayLayer": true,
   "dockGroupByApp": true,
   "dockRestoreSpecialWorkspaceOnClick": false,
   "dockOpenOnOverview": true,
-  "dockPosition": 2,
+  "dockPosition": 3,
   "dockSpacing": 4,
   "dockBottomGap": 0,
   "dockMargin": 4,
@@ -601,7 +601,8 @@
           "id": "memUsage",
           "enabled": true,
           "minimumWidth": true,
-          "showSwap": true
+          "showSwap": true,
+          "showInGb": true
         },
         {
           "id": "battery",
@@ -617,7 +618,7 @@
           "showVpnIcon": true,
           "showBrightnessIcon": false,
           "showBrightnessPercent": false,
-          "showMicIcon": false,
+          "showMicIcon": true,
           "showMicPercent": false,
           "showBatteryIcon": false,
           "showPrinterIcon": false
@@ -666,7 +667,7 @@
       "shadowDirectionMode": "autoBar",
       "maximizeWidgetIcons": false,
       "removeWidgetPadding": false,
-      "iconScale": 0.95
+      "iconScale": 1
     }
   ],
   "desktopClockEnabled": false,

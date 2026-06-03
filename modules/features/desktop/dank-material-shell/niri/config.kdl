@@ -146,14 +146,15 @@ binds {
     Shift+Print repeat=false hotkey-overlay-title="Take Screenshot"           { screenshot; /* A backup */                    }
     Mod+W repeat=false hotkey-overlay-title="Set Wallpaper"                   { spawn "wlr-which-key" "--initial-keys" "w";   }
 
-    Mod+P repeat=false hotkey-overlay-title="Toggle Notepad"                                       { spawn "dms" "ipc" "notepad" "toggle";                   }
-    Mod+V repeat=false hotkey-overlay-title="Toggle Clipboard Manager"                             { spawn "dms" "ipc" "call" "clipboardPlus" "togglePanel"; }
-    Mod+X repeat=false hotkey-overlay-title="Toggle Power Menu"                                    { spawn "dms" "ipc" "powermenu" "toggle";                 }
-    Mod+S repeat=false hotkey-overlay-title="Toggle Settings"                                      { spawn "dms" "ipc" "settings" "toggle";                  }
-    Mod+Space repeat=false hotkey-overlay-title="Toggle Application Launcher"                      { spawn "dms" "ipc" "spotlight" "toggle";                 }
-    Mod+Ctrl+L repeat=false hotkey-overlay-title="Toggle Lock Screen"                              { spawn "dms" "ipc" "lock" "lock";                        }
-    Mod+Shift+M repeat=false hotkey-overlay-title="Toggle Light/Dark Theme"                        { spawn "dms" "ipc" "call" "theme" "toggle";              }
-    Mod+Shift+N repeat=false hotkey-overlay-title="Toggle Night Mode"                              { spawn "dms" "ipc" "night" "toggle";                     }
+    Mod+P repeat=false hotkey-overlay-title="Toggle Notepad"                  { spawn "dms" "ipc" "notepad" "toggle";                   }
+    Mod+V repeat=false hotkey-overlay-title="Toggle ClipboardPlus"            { spawn "dms" "ipc" "call" "clipboardPlus" "togglePanel"; }
+    Mod+Shift+V repeat=false hotkey-overlay-title="Toggle Clipboard Manager"  { spawn "dms" "ipc" "call" "clipboard" "toggle";          }
+    Mod+X repeat=false hotkey-overlay-title="Toggle Power Menu"               { spawn "dms" "ipc" "powermenu" "toggle";                 }
+    Mod+S repeat=false hotkey-overlay-title="Toggle Settings"                 { spawn "dms" "ipc" "settings" "toggle";                  }
+    Mod+Space repeat=false hotkey-overlay-title="Toggle Application Launcher" { spawn "dms" "ipc" "spotlight" "toggle";                 }
+    Mod+Ctrl+L repeat=false hotkey-overlay-title="Toggle Lock Screen"         { spawn "dms" "ipc" "lock" "lock";                        }
+    Mod+Shift+M repeat=false hotkey-overlay-title="Toggle Light/Dark Theme"   { spawn "dms" "ipc" "call" "theme" "toggle";              }
+    Mod+Shift+N repeat=false hotkey-overlay-title="Toggle Night Mode"         { spawn "dms" "ipc" "night" "toggle";                     }
 
     XF86AudioLowerVolume allow-when-locked=true repeat=false  { spawn "dms" "ipc" "audio" "decrement" "5";         }
     XF86AudioMicMute allow-when-locked=true repeat=false      { spawn "dms" "ipc" "audio" "micmute";               }

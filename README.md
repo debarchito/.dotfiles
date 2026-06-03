@@ -54,11 +54,8 @@ home-manager switch --flake .#<user>@<host>
 nh home switch -c <user>@<host>
 ```
 
-Lastly, run the setup script to apply all the impure adjustments:
-
-```fish
-nix run .#impure-setup
-```
+The first activation is going to take a bit of time as it installs the
+[Papirus Icon Theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git).
 
 ## 3. Templates
 

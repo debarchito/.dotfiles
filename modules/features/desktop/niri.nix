@@ -44,7 +44,12 @@
     };
 
   flake.modules.homeManager.options-desktop =
-    { config, pkgs, ... }:
+    {
+      lib,
+      config,
+      pkgs,
+      ...
+    }:
     {
       imports = [
         inputs.niri.homeModules.config
@@ -124,22 +129,55 @@
           };
         };
 
-        home.packages = builtins.attrValues {
-          inherit (pkgs)
-            corefonts
-            lora
-            noto-fonts-cjk-sans
-            noto-fonts-cjk-serif
-            papirus-folders
-            poppins
-            pywalfox-native
-            qt6ct
-            vista-fonts
-            wlr-which-key
-            ;
-          inherit (pkgs.maple-mono) NF;
-          inherit (pkgs.kdePackages) breeze;
-          inherit (pkgs.libsForQt5) qt5ct;
+        home = {
+          packages = builtins.attrValues {
+            inherit (pkgs)
+              corefonts
+              lora
+              noto-fonts-cjk-sans
+              noto-fonts-cjk-serif
+              papirus-folders
+              poppins
+              pywalfox-native
+              qt6ct
+              vista-fonts
+              wlr-which-key
+              ;
+            inherit (pkgs.maple-mono) NF;
+            inherit (pkgs.kdePackages) breeze;
+            inherit (pkgs.libsForQt5) qt5ct;
+          };
+          activation.poppins-install =
+            lib.hm.dag.entryAfter [ "writeBoundary" ]
+              # bash
+              ''
+                ICON_DIR="$HOME/.local/share/icons"
+                REPO_URL='https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git'
+                REPO_REV='b03ccf6ac078ca8242c1d22d00a0f419b26d84e4'
+                GIT='${lib.getExe pkgs.git}'
+
+                if [ -d "$ICON_DIR/Papirus" ]; then
+                  echo "[?] Papirus icon theme already exists at: $ICON_DIR/Papirus. Skipping."
+                else
+                  echo '[-*-] Fetching and installing Papirus icon theme...'
+
+                  mkdir -p "$ICON_DIR"
+
+                  TMP_DIR=$(mktemp -d)
+                  trap 'rm -rf "$TMP_DIR"' EXIT
+
+                  "$GIT" -c advice.detachedHead=false clone \
+                    --revision="$REPO_REV" \
+                    --depth=1 \
+                    --filter=blob:none \
+                    --sparse "$REPO_URL" "$TMP_DIR"
+                  "$GIT" -C "$TMP_DIR" sparse-checkout set Papirus
+
+                  cp -r "$TMP_DIR/Papirus" "$ICON_DIR/Papirus"
+
+                  echo "[+] Successfully installed Papirus icon theme."
+                fi
+              '';
         };
       };
     };
