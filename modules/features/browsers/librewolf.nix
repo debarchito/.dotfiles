@@ -205,11 +205,24 @@
           };
         };
 
-        home.file.".librewolf/default/chrome".source = pkgs.fetchFromGitHub {
-          owner = "debarchito";
-          repo = "parfait";
-          rev = "2b9055cce370f93b508a2d1e6797708ebb7b59f8";
-          hash = "sha256-kXKebHw7UrtP7bXw9uk3IfFZTdjfd2RR5WrXGjJnmig=";
+        home = {
+          file.".librewolf/default/chrome".source = pkgs.fetchFromGitHub {
+            owner = "debarchito";
+            repo = "parfait";
+            rev = "2b9055cce370f93b508a2d1e6797708ebb7b59f8";
+            hash = "sha256-kXKebHw7UrtP7bXw9uk3IfFZTdjfd2RR5WrXGjJnmig=";
+          };
+          activation.pywalfox-native-install-librewolf =
+            lib.hm.dag.entryAfter [ "writeBoundary" ]
+              # bash
+              ''
+                mkdir -p "$HOME/.cache/wal"
+                ln -sf $HOME/.cache/wal/dank-pywalfox.json $HOME/.cache/wal/colors.json
+
+                ${lib.getExe pkgs.pywalfox-native} \
+                  install --manifest-path $HOME/.librewolf/native-messaging-hosts \
+                          --profile-path  $HOME/.librewolf/default
+              '';
         };
 
         xdg.configFile."tridactyl/tridactylrc".source = ./librewolf/extensions/tridactyl/tridactylrc;
