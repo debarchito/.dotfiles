@@ -20,6 +20,7 @@
   "hyprlandLayoutGapsOverride": -1,
   "hyprlandLayoutRadiusOverride": -1,
   "hyprlandLayoutBorderSize": -1,
+  "hyprlandResizeOnBorder": false,
   "mangoLayoutGapsOverride": -1,
   "mangoLayoutRadiusOverride": -1,
   "mangoLayoutBorderSize": -1,
@@ -181,6 +182,7 @@
   "maxWorkspaceIcons": 10,
   "workspaceAppIconSizeOffset": 3,
   "groupWorkspaceApps": true,
+  "groupActiveWorkspaceApps": false,
   "workspaceFollowFocus": false,
   "showOccupiedWorkspacesOnly": true,
   "reverseScrolling": false,
@@ -563,7 +565,7 @@
         {
           "id": "music",
           "enabled": true,
-          "mediaSize": 0
+          "mediaSize": 1
         },
         {
           "id": "clock",
