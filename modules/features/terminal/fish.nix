@@ -138,6 +138,8 @@
             cd = "z";
             sudo = "run0";
             ads = "scrcpy --new-display=1920x1080/240 --window-x 0 --window-y 0";
+            pwsv = "run0 cpupower frequency-set -g powersave";
+            perf = "run0 cpupower frequency-set -g performance";
             cgh = {
               setCursor = "%";
               expansion = "jj git clone gh:%";
