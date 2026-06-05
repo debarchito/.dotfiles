@@ -59,7 +59,12 @@
           })
 
           (lib.mkIf config.media.optimizations.enable {
-            musnix.enable = true;
+            musnix = {
+              enable = true;
+              rtcqs.enable = true;
+              # The kernel is managed in ../hosts/dell-laptop/hardware-configuration.nix
+              kernel.packages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
+            };
 
             services.pipewire.extraConfig.jack = {
               "10-clock-rate" = {
