@@ -1,4 +1,13 @@
-## 1. Installation (TODO)
+## 0. Showcase (dell-laptop)
+
+![showcase (dell-laptop)](/media/one.png)
+
+I didn't know what to add so I present an image of the host `dell-laptop` that I
+daily drive. It's a configuration for [Niri](https://github.com/niri-wm/niri) +
+[DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) adjusted
+to fit my personal layout, color and functionality preferences.
+
+## 1. Preparation (TODO)
 
 Apply the disk layout using [disko](https://github.com/nix-community/disko):
 
@@ -11,22 +20,43 @@ run0 nix --extra-experimental-features 'nix-command flakes' \
   ./modules/hosts/<host>/_raw/disko-configuration.nix
 ```
 
+> NOTE: Disko is not yet integrated with the broader configuration. It's part of
+> a future plan.\
 > TODO: I need to write more steps...
 
-## 2. Applying configuration
+## 2. Applying the configurations
+
+Clone this repository to `~/.dotfiles`. This is the assumption throughout the
+steps.
+
+```
+git clone https://github.com/debarchito/.dotfiles ~/.dotfiles
+```
+
+Fresh installs generate their fresh `/etc/nixos/hardware-configuration.nix`.
+This is the configuration your system should build against. Override the old
+hardware configuration using:
+
+```fish
+cp /etc/nixos/hardware-configuration.nix ~/.dotfiles/modules/hosts/<host>/_raw/hardware-configuration.nix
+# DO NOT REPLACE ~/.dotfiles/modules/hosts/<host>/hardware-configuration.nix by mistake! Notice the "_raw".
+```
 
 When applying the NixOS configuration for the _first time_, pass these options
 temporarily:
 
 ```fish
+cd ~/.dotfiles
 run0 nixos-rebuild switch --flake .#<host> \
+  --option experimental-features \
+    'nix-command flakes' \
   --option extra-substituters \
-    "https://install.determinate.systems https://attic.xuyh0120.win/lantian" \
+    'https://install.determinate.systems https://attic.xuyh0120.win/lantian' \
   --option extra-trusted-public-keys \
-    "cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM= lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+    'cache.flakehub.com-3:hJuILl5sVK4iKm86JzgdXW12Y2Hwd5G07qKtHTOcDCM= lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc='
 ```
 
-This is 'cause it depends on
+This is 'cause the configuration depends on
 [Determinate Nix](https://docs.determinate.systems/determinate-nix) and the
 CachyOS kernel from
 [xddxdd/nix-cachyos-kernel](https://github.com/xddxdd/nix-cachyos-kernel).
@@ -54,8 +84,9 @@ home-manager switch --flake .#<user>@<host>
 nh home switch -c <user>@<host>
 ```
 
-The first activation is going to take a bit of time as it installs the
-[Papirus Icon Theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git).
+The first activation is going to take a bit of time since it installs the
+[Papirus Icon Theme](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git)
+during this stage.
 
 ## 3. Templates
 
