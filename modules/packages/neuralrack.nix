@@ -2,19 +2,23 @@
   perSystem =
     { pkgs, ... }:
     {
-      packages.neuralrack = pkgs.stdenv.mkDerivation {
+      packages.neuralrack = pkgs.stdenv.mkDerivation rec {
         pname = "neuralrack";
-        version = "0.3.2-git";
+        version = "0.3.3";
 
-        src = pkgs.fetchgit {
-          url = "https://github.com/brummer10/NeuralRack.git";
-          rev = "7dfc84ce58e8034fdf7ad0682724075a2ef40cb7";
-          hash = "sha256-MrhIbBJ4LVUQ0Oqp5Z4P7CXI4iHgAaBXmsXqTqLOmZk=";
+        src = pkgs.fetchFromGitHub {
+          owner = "brummer10";
+          repo = "NeuralRack";
+          tag = "v${version}";
+          hash = "sha256-N1U3ekTAZqu+aQE/WIL3RHxDQGSxDecFKak5KScioCY=";
           fetchSubmodules = true;
         };
 
         nativeBuildInputs = builtins.attrValues {
-          inherit (pkgs) pkg-config gnumake;
+          inherit (pkgs)
+            pkg-config
+            gnumake
+            ;
         };
 
         buildInputs = builtins.attrValues {

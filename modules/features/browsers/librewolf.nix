@@ -179,7 +179,9 @@
               "middlemouse.paste" = false;
               "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
               "svg.context-properties.content.enabled" = true;
+              "sidebar.revamp" = true;
               "sidebar.position_start" = true;
+              "sidebar.visibility" = "hide-sidebar";
               "parfait.animations.enabled" = true;
               "parfait.blur.enabled" = false;
               "parfait.bg.accent-color" = false;
@@ -201,6 +203,10 @@
               "parfait.window.borderless" = false;
               "parfait.new-tab.logo" = 1;
               "parfait.new-tab.bg.pattern" = false;
+              "browser.tabs.inTitlebar" = 0;
+              "privacy.resistFingerprinting" = false;
+              "privacy.fingerprintingProtection" = true;
+              "privacy.fingerprintingProtection.overrides" = "+AllTargets,-CSSPrefersColorScheme";
             };
           };
         };
