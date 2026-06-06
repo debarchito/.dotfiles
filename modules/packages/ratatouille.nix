@@ -2,19 +2,23 @@
   perSystem =
     { pkgs, ... }:
     {
-      packages.ratatouille = pkgs.stdenv.mkDerivation {
+      packages.ratatouille = pkgs.stdenv.mkDerivation rec {
         pname = "ratatouille";
-        version = "0.9.11-git";
+        version = "0.9.11";
 
-        src = pkgs.fetchgit {
-          url = "https://github.com/brummer10/Ratatouille.lv2.git";
-          rev = "30aa06683fcd5dd5985910b40530a334e662a433";
-          hash = "sha256-H5NB6B9yOE7icZ0njuNCFbFko/T4Pmb3IRbOmMq3PzY=";
+        src = pkgs.fetchFromGitHub {
+          owner = "brummer10";
+          repo = "Ratatouille.lv2";
+          tag = "v${version}";
+          hash = "sha256-mig3yUGSNz1xuyz6ljKqJUjNqmEcsbXSH1vTxTGdOFk=";
           fetchSubmodules = true;
         };
 
         nativeBuildInputs = builtins.attrValues {
-          inherit (pkgs) pkg-config gnumake;
+          inherit (pkgs)
+            pkg-config
+            gnumake
+            ;
         };
 
         buildInputs = builtins.attrValues {

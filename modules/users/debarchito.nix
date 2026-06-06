@@ -162,6 +162,7 @@ in
               numbat
               pear-desktop
               pika-backup
+              proton-vpn
               qbittorrent
               scrcpy
               trash-cli
