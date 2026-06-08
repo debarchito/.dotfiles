@@ -43,9 +43,13 @@
       config = lib.mkIf config.networking'.enable (
         lib.mkMerge [
           {
-            networking.hostName = config.networking'.name;
-            networking.firewall.allowedTCPPortRanges = config.networking'.allowedPortRanges;
-            networking.firewall.allowedUDPPortRanges = config.networking'.allowedPortRanges;
+            networking = {
+              hostName = config.networking'.name;
+              firewall = {
+                allowedTCPPortRanges = config.networking'.allowedPortRanges;
+                allowedUDPPortRanges = config.networking'.allowedPortRanges;
+              };
+            };
           }
 
           (lib.mkIf config.networking'.manager.enable {
@@ -55,20 +59,26 @@
           })
 
           (lib.mkIf config.networking'.openssh.enable {
-            services.openssh.enable = true;
-            services.openssh.ports = config.networking'.openssh.ports;
-            services.openssh.openFirewall = true;
-            services.openssh.settings = lib.mkMerge [
-              {
-                PasswordAuthentication = lib.mkDefault false;
-                KbdInteractiveAuthentication = lib.mkDefault false;
-                PermitRootLogin = lib.mkDefault "no";
-              }
-              config.networking'.openssh.settings
-            ];
-            services.endlessh.enable = true;
-            services.endlessh.port = config.networking'.openssh.endlessh.port;
-            services.endlessh.openFirewall = true;
+            services = {
+              openssh = {
+                enable = true;
+                ports = config.networking'.openssh.ports;
+                openFirewall = true;
+                settings = lib.mkMerge [
+                  {
+                    PasswordAuthentication = lib.mkDefault false;
+                    KbdInteractiveAuthentication = lib.mkDefault false;
+                    PermitRootLogin = lib.mkDefault "no";
+                  }
+                  config.networking'.openssh.settings
+                ];
+              };
+              endlessh = {
+                enable = true;
+                port = config.networking'.openssh.endlessh.port;
+                openFirewall = true;
+              };
+            };
           })
 
           (lib.mkIf config.networking'.openvpn.enable {
@@ -76,8 +86,10 @@
           })
 
           (lib.mkIf config.networking'.wireshark.enable {
-            programs.wireshark.enable = true;
-            programs.wireshark.package = pkgs.wireshark;
+            programs.wireshark = {
+              enable = true;
+              package = pkgs.wireshark;
+            };
           })
         ]
       );
