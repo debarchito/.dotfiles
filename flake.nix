@@ -35,6 +35,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     import-tree.url = "github:vic/import-tree";
+    mfctl = {
+      url = "github:debarchito/mfctl";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     minework = {
       url = "git+https://codeberg.org/debarchito/minework";
       inputs.nixpkgs.follows = "nixpkgs";
