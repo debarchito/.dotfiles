@@ -153,11 +153,13 @@
 
         home.packages = builtins.attrValues {
           inherit (pkgs)
-            koji
-            ripdrag
-            sd
-            wl-clipboard
             jc
+            koji
+            libqalculate
+            numbat
+            sd
+            ueberzugpp
+            wl-clipboard
             ;
         };
       };
