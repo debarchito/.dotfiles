@@ -157,16 +157,6 @@
                 run = "plugin duckdb +1";
                 desc = "Scroll one column to the right";
               }
-              {
-                on = "<A-d>";
-                run = "shell -- ripdrag --no-click --and-exit --icon-size 64 --target --all \"$@\" | while read filepath; do cp -nR \"$filepath\" .; done";
-                desc = "Drag-n-drop files from and to Yazi";
-              }
-              {
-                on = "<A-D>";
-                run = "shell -- ripdrag --no-click --and-exit --icon-size 64 --target --all \"$@\" | while read filepath; do cp -fR \"$filepath\" .; done";
-                desc = "Drag-n-drop files to and from Yazi";
-              }
             ];
           };
         };
