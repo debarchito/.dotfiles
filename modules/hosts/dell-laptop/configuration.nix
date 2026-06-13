@@ -75,5 +75,10 @@ in
     };
 
     media.enable = true;
+
+    services.guix = {
+      enable = true;
+      gc.enable = true;
+    };
   };
 }
