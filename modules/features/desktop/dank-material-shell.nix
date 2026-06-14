@@ -40,8 +40,8 @@
               hash = "sha256-o43IyVT901ZzZGDvZKWhlrgMba57thAoqL3+BFaFV74=";
             };
             dockerManager = {
-              rev = "860457bbb043a6651a2cbafe6e77d443123a0b07";
-              hash = "sha256-VoJCaygWnKpv0s0pqTOmzZnPM922qPDMHk4EPcgVnaU=";
+              rev = "e25fed8ef704620656981ef2f0709f51ca58823d";
+              hash = "sha256-vkwo4bMdtiCMVHcx1RFRvNxIIzoKuuAzPTcZBMRHKD8=";
             };
             dankBitwarden = {
               rev = "6fd83d8b6ab54d2d6a996bed7291b70316c99965";

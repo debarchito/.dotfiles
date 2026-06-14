@@ -347,6 +347,7 @@ in
           honkai-star-rail.enable = true;
         };
         emulators = {
+          wii.enable = true;
           wiiu.enable = true;
           switch.enable = true;
         };
