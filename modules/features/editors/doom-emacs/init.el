@@ -3,7 +3,7 @@
 
        :ui
        doom
-       doom-dashboard
+       dashboard
        modeline
        nav-flash
        ophints
@@ -24,6 +24,8 @@
        :lang
        emacs-lisp
        (nix +lsp)
+       (rust +lsp)
+       (ocaml +lsp)
 
        :tools
        direnv

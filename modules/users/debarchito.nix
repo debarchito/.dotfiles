@@ -202,8 +202,8 @@ in
       };
 
       editors = {
-        # doom-emacs.enable = true;
-        zed-editor.enable = true;
+        doom-emacs.enable = true;
+        # zed-editor.enable = true;
       };
 
       media.daw.enable = true;
