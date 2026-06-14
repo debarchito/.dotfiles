@@ -103,6 +103,7 @@
               honkai-star-rail.enable = lib.mkEnableOption "enable the-honkers-railway-launcher for Honkai: Star Rail";
             };
             emulators = {
+              wii.enable = lib.mkEnableOption "enable emulator(s) for Wii";
               wiiu.enable = lib.mkEnableOption "enable emulator(s) for Wii U";
               switch.enable = lib.mkEnableOption "enable emulator(s) for Switch";
             };
@@ -142,6 +143,14 @@
         (lib.mkIf config.gaming.games.honkai-star-rail.enable {
           home.packages = builtins.attrValues {
             inherit (pkgs) honkers-railway-launcher;
+          };
+        })
+
+        (lib.mkIf config.gaming.emulators.wii.enable {
+          home.packages = builtins.attrValues {
+            inherit (pkgs)
+              dolphin-emu
+              ;
           };
         })
 

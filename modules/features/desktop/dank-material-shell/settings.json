@@ -203,6 +203,7 @@
   "audioVisualizerEnabled": true,
   "audioScrollMode": "volume",
   "audioWheelScrollAmount": 5,
+  "audioDeviceScrollVolumeEnabled": false,
   "clockCompactMode": false,
   "focusedWindowCompactMode": false,
   "focusedWindowSize": 1,
@@ -269,8 +270,8 @@
   "browserPickerViewMode": "list",
   "browserUsageHistory": {
     "librewolf": {
-      "count": 6,
-      "lastUsed": 1780394200729,
+      "count": 7,
+      "lastUsed": 1781466641222,
       "name": "LibreWolf"
     }
   },
@@ -761,6 +762,11 @@
     }
   },
   "clipboardEnterToPaste": false,
+  "clipboardVisibleEntryActions": [
+    "pin",
+    "edit",
+    "delete"
+  ],
   "launcherPluginVisibility": {},
   "launcherPluginOrder": [],
   "frameEnabled": true,
