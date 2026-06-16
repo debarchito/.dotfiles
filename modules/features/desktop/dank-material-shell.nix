@@ -5,12 +5,16 @@
       url = lib.mkDefault "github:AvengeMedia/DankMaterialShell";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
+    quickshell = {
+      url = lib.mkDefault "github:quickshell-mirror/quickshell";
+      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+    };
     dsearch = {
       url = lib.mkDefault "github:AvengeMedia/danksearch";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
-    quickshell = {
-      url = lib.mkDefault "github:quickshell-mirror/quickshell";
+    dcal = {
+      url = lib.mkDefault "github:AvengeMedia/dankcalendar/f1a9dea0b6158dc91a69156cf2db7e30955f9bf0";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
   };
@@ -22,6 +26,7 @@
         inputs.dms.homeModules.niri
         inputs.dms.homeModules.dank-material-shell
         inputs.dsearch.homeModules.default
+        inputs.dcal.homeModules.default
       ];
 
       config =
@@ -125,6 +130,10 @@
                 }));
             };
             dsearch.enable = true;
+            dank-calendar = {
+              enable = true;
+              quickshell.package = pkgs.quickshell;
+            };
           };
 
           xdg.configFile =

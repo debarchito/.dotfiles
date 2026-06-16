@@ -8,6 +8,10 @@
       url = "github:ezKEa/aagl-gtk-on-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dcal = {
+      url = "github:AvengeMedia/dankcalendar/f1a9dea0b6158dc91a69156cf2db7e30955f9bf0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
     disko = {
       url = "github:nix-community/disko";
