@@ -11,6 +11,9 @@
        tabs
        window-select
 
+       :editor
+       smartparens
+
        :emacs
        undo
 
@@ -32,4 +35,4 @@
        (lsp +eglot)
 
        :config
-       (default +bindings +smartparens))
+       (default +smartparens))

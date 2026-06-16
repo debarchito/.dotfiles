@@ -5,10 +5,11 @@
 (setq display-line-numbers-type 'relative)
 (setq doom-font (font-spec :family "Maple Mono NF" :size 14.0)
       doom-variable-pitch-font (font-spec :family "Maple Mono NF" :size 14.0))
-(add-to-list 'default-frame-alist '(font . "Maple Mono NF-15:cv01=1:cv61=1:calt=0:zero=0:cv02=0"))
+(add-to-list 'default-frame-alist '(font . "Maple Mono NF-14:cv01=1:cv61=1:calt=0:zero=0:cv02=0"))
 
 (setq-default visual-fill-column-width 90
               word-wrap t)
+(add-hook 'text-mode-hook #'visual-fill-column-mode)
 (add-hook 'text-mode-hook #'visual-line-mode)
 (add-hook 'prog-mode-hook #'visual-line-mode)
 (add-hook 'prog-mode-hook #'rainbow-mode)
@@ -101,10 +102,6 @@
 
   (my-meow-setup)
   (meow-global-mode 1))
-
-(after! company
-  (setq company-idle-delay 0.2))
-(map! :i "C-SPC" #'company-complete)
 
 (use-package! indent-bars
   :hook (prog-mode . indent-bars-mode)

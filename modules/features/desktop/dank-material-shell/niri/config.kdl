@@ -147,6 +147,7 @@ binds {
     Mod+W repeat=false hotkey-overlay-title="Set Wallpaper"                   { spawn "wlr-which-key" "--initial-keys" "w";   }
 
     Mod+P repeat=false hotkey-overlay-title="Toggle Notepad"                  { spawn "dms" "ipc" "notepad" "toggle";                   }
+    Mod+N repeat=false hotkey-overlay-title="Toggle Notifications"            { spawn "dms" "ipc" "notifications" "toggle";             }
     Mod+V repeat=false hotkey-overlay-title="Toggle ClipboardPlus"            { spawn "dms" "ipc" "call" "clipboardPlus" "togglePanel"; }
     Mod+Shift+V repeat=false hotkey-overlay-title="Toggle Clipboard Manager"  { spawn "dms" "ipc" "call" "clipboard" "toggle";          }
     Mod+X repeat=false hotkey-overlay-title="Toggle Power Menu"               { spawn "dms" "ipc" "powermenu" "toggle";                 }
