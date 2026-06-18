@@ -19,7 +19,7 @@
         ];
 
         programs.librewolf = {
-          enable = true;
+          enable = false;
           nativeMessagingHosts = builtins.attrValues {
             inherit (pkgs)
               pywalfox-native
@@ -215,8 +215,8 @@
           file.".librewolf/default/chrome".source = pkgs.fetchFromGitHub {
             owner = "debarchito";
             repo = "parfait";
-            rev = "2b9055cce370f93b508a2d1e6797708ebb7b59f8";
-            hash = "sha256-kXKebHw7UrtP7bXw9uk3IfFZTdjfd2RR5WrXGjJnmig=";
+            rev = "b474cfe2ca5b3a64e207da2d1c888999273bf280";
+            hash = "sha256-C2zCAmY1cjDYLJctMu0yOfIhl1ZoO0ONYdy29jPDBSM=";
           };
           activation.pywalfox-native-install-librewolf =
             lib.hm.dag.entryAfter [ "writeBoundary" ]

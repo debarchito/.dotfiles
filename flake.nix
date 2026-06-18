@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dcal = {
-      url = "github:AvengeMedia/dankcalendar/f1a9dea0b6158dc91a69156cf2db7e30955f9bf0";
+      url = "github:AvengeMedia/dankcalendar";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
@@ -74,6 +74,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
     nixpkgs-lib.follows = "nixpkgs";
+    nixpkgs-librewolf.url = "github:nixos/nixpkgs/ce872a603b0a841f465974325046d213a64a3967";
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";

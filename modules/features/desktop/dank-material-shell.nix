@@ -14,7 +14,7 @@
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     dcal = {
-      url = lib.mkDefault "github:AvengeMedia/dankcalendar/f1a9dea0b6158dc91a69156cf2db7e30955f9bf0";
+      url = lib.mkDefault "github:AvengeMedia/dankcalendar";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
   };
