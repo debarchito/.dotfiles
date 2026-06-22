@@ -40,7 +40,7 @@
     };
     import-tree.url = "github:vic/import-tree";
     mfctl = {
-      url = "github:debarchito/mfctl";
+      url = "git+https://git.sr.ht/~debarchito/mfctl";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     minework = {
@@ -74,7 +74,6 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
     nixpkgs-lib.follows = "nixpkgs";
-    nixpkgs-librewolf.url = "github:nixos/nixpkgs/ce872a603b0a841f465974325046d213a64a3967";
     nur = {
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";

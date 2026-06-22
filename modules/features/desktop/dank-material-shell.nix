@@ -33,8 +33,8 @@
         let
           dankPlugins = {
             calculator = {
-              rev = "73073d051d08254633f28f89d2609344c8289813";
-              hash = "sha256-hiqrO8WkzmWGVlUrzxmffUZBs4t1QM2mMTBUxZqCIyU=";
+              rev = "1db5865419a40a33171a475855a59e0b8bf7187f";
+              hash = "sha256-j8C62+sevr6b+akzVSAqUVysIhb6Vbr8jnWcTXeOtE8=";
             };
             clipboardPlus = {
               rev = "46405816d7e69af59026d10447c93262c645296c";
@@ -57,8 +57,8 @@
               hash = "sha256-NQ14YenDiNK2VqXQ3z7jAkatbSRtYJHhOhvv7AJlUD8=";
             };
             niriWindows = {
-              rev = "b866af4cb599e7eeae90779b959f56b1a9905f18";
-              hash = "sha256-KkB+xq4AObTqTDxtBVqfCsnxn0jnNk3iM4vpk9jlEBA=";
+              rev = "f2c0b0fc0325e3299257cc5d1895069a3d49247f";
+              hash = "sha256-uKNiqr/DiX28dePBqsEfBPaCB/kmVDzjayXHdIwGkZQ=";
             };
             webSearch = {
               rev = "8ec42a2dff96b94cdd0d40b57c1acd815c15079a";

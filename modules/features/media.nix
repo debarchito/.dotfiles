@@ -6,7 +6,7 @@
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     mfctl = {
-      url = lib.mkDefault "github:debarchito/mfctl";
+      url = lib.mkDefault "git+https://git.sr.ht/~debarchito/mfctl";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
   };
