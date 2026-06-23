@@ -1,17 +1,31 @@
-{ lib, inputs, ... }:
 {
-  flake-file.inputs.nur = {
-    url = lib.mkDefault "github:nix-community/NUR";
-    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+  lib,
+  inputs,
+  moduleWithSystem,
+  ...
+}:
+{
+  flake-file.inputs = {
+    nixpkgs-small.url = lib.mkDefault "https://channels.nixos.org/nixos-unstable-small/nixexprs.tar.xz";
+    nur = {
+      url = lib.mkDefault "github:nix-community/NUR";
+      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+    };
   };
 
-  flake.modules.homeManager.options-browsers =
+  flake.modules.homeManager.options-browsers = moduleWithSystem (
+    { system, ... }:
     {
       lib,
       config,
       pkgs,
       ...
     }:
+    let
+      pkgs-small = import inputs.nixpkgs-small {
+        inherit system;
+      };
+    in
     {
       config = lib.mkIf config.browsers.librewolf.enable {
         nixpkgs.overlays = [
@@ -19,7 +33,8 @@
         ];
 
         programs.librewolf = {
-          enable = false;
+          enable = true;
+          package = pkgs-small.librewolf;
           nativeMessagingHosts = builtins.attrValues {
             inherit (pkgs)
               pywalfox-native
@@ -237,5 +252,6 @@
 
         xdg.configFile."tridactyl/tridactylrc".source = ./librewolf/extensions/tridactyl/tridactylrc;
       };
-    };
+    }
+  );
 }

@@ -990,6 +990,19 @@
         "type": "github"
       }
     },
+    "nixpkgs-small": {
+      "locked": {
+        "lastModified": 1782187341,
+        "narHash": "sha256-eJKiI/0sVznZrCgsHa844EAZeDyMrsJs6K7NHlS4/Xo=",
+        "rev": "9e09bc1f90dd4980521ff922d10d712ceb8a5a86",
+        "type": "tarball",
+        "url": "https://releases.nixos.org/nixos/unstable-small/nixos-26.11pre1020821.9e09bc1f90dd/nixexprs.tar.xz"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://channels.nixos.org/nixos-unstable-small/nixexprs.tar.xz"
+      }
+    },
     "nixpkgs-stable": {
       "locked": {
         "lastModified": 1781509190,
@@ -1151,6 +1164,7 @@
         "nixpkgs-lib": [
           "nixpkgs"
         ],
+        "nixpkgs-small": "nixpkgs-small",
         "nur": "nur",
         "pinentry-dms": "pinentry-dms",
         "quickshell": "quickshell",
