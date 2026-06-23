@@ -1,4 +1,10 @@
+{ lib, inputs, ... }:
 {
+  flake-file.inputs.hunk = {
+    url = lib.mkDefault "github:modem-dev/hunk";
+    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+  };
+
   flake.modules.homeManager.options-terminal =
     {
       lib,
@@ -7,6 +13,10 @@
       ...
     }:
     {
+      imports = [
+        inputs.hunk.homeManagerModules.default
+      ];
+
       options.terminal = lib.mkOption {
         type = lib.types.submodule {
           options = {
@@ -34,18 +44,6 @@
           bat = {
             enable = true;
             config.theme = "dankcolors";
-          };
-
-          delta = {
-            enable = true;
-            enableGitIntegration = true;
-            enableJujutsuIntegration = true;
-            options = {
-              side-by-side = true;
-              line-numbers = true;
-              true-color = "always";
-              merge.conflictStyle = "zdiff3";
-            };
           };
 
           direnv = {
@@ -91,13 +89,24 @@
 
           gpg.enable = true;
 
+          hunk = {
+            enable = true;
+            enableGitIntegration = true;
+            settings = {
+              mode = "split";
+              transparent_background = true;
+            };
+          };
+
           jujutsu = {
             enable = true;
             settings = {
               ui = {
                 default-command = "log";
                 conflict-marker-style = "snapshot";
+                diff-formatter = ":git";
                 diff-editor = ":builtin";
+                pager = config.programs.git.settings.core.pager;
               };
               git = {
                 colocate = true;
