@@ -221,11 +221,13 @@ in
               email = "debarchiton@proton.me";
             };
             url = {
+              "git@git.sr.ht:".insteadOf = "sh:";
+              "git@codeberg.org:".insteadOf = "cb:";
               "git@github.com:".insteadOf = "gh:";
               "git@gitlab.com:".insteadOf = "gl:";
-              "git@codeberg.org:".insteadOf = "cb:";
-              "git@github.com:debarchito/".insteadOf = "me@gh:";
+              "git@git.sr.ht:~debarchito/".insteadOf = "me@sh:";
               "git@codeberg.org:debarchito/".insteadOf = "me@cb:";
+              "git@github.com:debarchito/".insteadOf = "me@gh:";
             };
           };
           signing = {

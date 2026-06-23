@@ -140,12 +140,16 @@
                   url = "https://status.nixos.org";
                 }
                 {
-                  name = "GitHub";
-                  url = "https://github.com/debarchito";
+                  name = "Sourcehut";
+                  url = "https://sr.ht/~debarchito";
                 }
                 {
                   name = "Codeberg";
                   url = "https://codeberg.org/debarchito";
+                }
+                {
+                  name = "GitHub";
+                  url = "https://github.com/debarchito";
                 }
                 {
                   name = "CryptPad";

@@ -7,7 +7,7 @@
 (cram enable)
 
 (source
- (codeberg debarchito/{{name:k}}))
+ (sourcehut debarchito/{{name:k}}))
 
 (authors "Debarchito Nath <debarchiton@proton.me>")
 

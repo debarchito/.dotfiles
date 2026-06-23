@@ -44,7 +44,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     minework = {
-      url = "git+https://codeberg.org/debarchito/minework";
+      url = "git+https://git.sr.ht/~debarchito/minework";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     musnix = {
