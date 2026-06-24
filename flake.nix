@@ -83,6 +83,10 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    oyui = {
+      url = "github:emilien-jegou/oyui";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     pinentry-dms = {
       url = "github:debarchito/dankpinentry";
       inputs.nixpkgs.follows = "nixpkgs";

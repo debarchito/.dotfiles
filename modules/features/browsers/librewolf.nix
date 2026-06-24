@@ -223,9 +223,6 @@
               "parfait.new-tab.logo" = 1;
               "parfait.new-tab.bg.pattern" = false;
               "browser.tabs.inTitlebar" = 0;
-              "privacy.resistFingerprinting" = false;
-              "privacy.fingerprintingProtection" = true;
-              "privacy.fingerprintingProtection.overrides" = "+AllTargets,-CSSPrefersColorScheme";
             };
           };
         };

@@ -318,7 +318,7 @@
   "spotlightBarShowModeChips": true,
   "keybindsFloatingWindow": false,
   "useAutoLocation": false,
-  "weatherEnabled": true,
+  "weatherEnabled": false,
   "networkPreference": "ethernet",
   "iconThemeDark": "Papirus",
   "iconThemeLight": "System Default",

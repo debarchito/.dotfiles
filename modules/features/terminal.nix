@@ -1,11 +1,23 @@
-{ lib, inputs, ... }:
 {
-  flake-file.inputs.hunk = {
-    url = lib.mkDefault "github:modem-dev/hunk";
-    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+  lib,
+  inputs,
+  moduleWithSystem,
+  ...
+}:
+{
+  flake-file.inputs = {
+    hunk = {
+      url = lib.mkDefault "github:modem-dev/hunk";
+      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+    };
+    oyui = {
+      url = lib.mkDefault "github:emilien-jegou/oyui";
+      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
+    };
   };
 
-  flake.modules.homeManager.options-terminal =
+  flake.modules.homeManager.options-terminal = moduleWithSystem (
+    { system, ... }:
     {
       lib,
       config,
@@ -27,6 +39,12 @@
       };
 
       config = lib.mkIf config.terminal.common.enable {
+        nixpkgs.overlays = [
+          (_: _: {
+            oyui = inputs.oyui.packages.${system}.default;
+          })
+        ];
+
         programs = {
           atuin = {
             enable = true;
@@ -93,8 +111,8 @@
             enable = true;
             enableGitIntegration = true;
             settings = {
-              mode = "split";
-              transparent_background = true;
+              theme = "auto";
+              mode = "stack";
             };
           };
 
@@ -105,7 +123,8 @@
                 default-command = "log";
                 conflict-marker-style = "snapshot";
                 diff-formatter = ":git";
-                diff-editor = ":builtin";
+                diff-editor = "oyui";
+                diff-instructions = false;
                 pager = config.programs.git.settings.core.pager;
               };
               git = {
@@ -116,21 +135,22 @@
                 origin.auto-track-bookmarks = "glob:*";
                 upstream.auto-track-bookmarks = "main";
               };
+              merge-tools.oyui = {
+                program = "oyui";
+                edit-args = [
+                  "diff"
+                  "$left"
+                  "$right"
+                ];
+              };
             };
           };
-
-          jjui.enable = true;
 
           jq.enable = true;
 
           ripgrep.enable = true;
 
           ripgrep-all.enable = true;
-
-          television = {
-            enable = true;
-            enableFishIntegration = false;
-          };
 
           zellij.enable = true;
 
@@ -166,11 +186,13 @@
             koji
             libqalculate
             numbat
+            oyui
             sd
             ueberzugpp
             wl-clipboard
             ;
         };
       };
-    };
+    }
+  );
 }
