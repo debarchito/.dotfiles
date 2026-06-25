@@ -73,13 +73,19 @@
           devShells.default = pkgs.mkShellNoCC {
             name = "{{name:k}}-dev";
 
-            packages = [
-              pkgs.typst
-              pkgs.tinymist
-              sioyek
-              build
-              develop
-            ];
+            packages =
+              builtins.attrValues {
+                inherit (pkgs)
+                  typst
+                  typstyle
+                  tinymist
+                  ;
+              }
+              ++ [
+                sioyek
+                build
+                develop
+              ];
 
             shellHook = ''
               export ROOT=$(${lib.getExe pkgs.git} rev-parse --show-toplevel 2>/dev/null || pwd)
