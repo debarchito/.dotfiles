@@ -44,11 +44,11 @@
     };
     import-tree.url = "github:vic/import-tree";
     mfctl = {
-      url = "git+https://git.sr.ht/~debarchito/mfctl";
+      url = "sourcehut:~debarchito/mfctl";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     minework = {
-      url = "git+https://git.sr.ht/~debarchito/minework";
+      url = "sourcehut:~debarchito/minework";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     musnix = {

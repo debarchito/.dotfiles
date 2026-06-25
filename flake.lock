@@ -766,15 +766,15 @@
       "locked": {
         "lastModified": 1782137954,
         "narHash": "sha256-ku8YxXjHdplh5OFFcL2QX2TMywLp9OdT0cuaKbrq7Pg=",
-        "ref": "refs/heads/main",
+        "owner": "~debarchito",
+        "repo": "mfctl",
         "rev": "5d0b0933bc552afd0413869ac4cdf09dc4f2c3a7",
-        "revCount": 29,
-        "type": "git",
-        "url": "https://git.sr.ht/~debarchito/mfctl"
+        "type": "sourcehut"
       },
       "original": {
-        "type": "git",
-        "url": "https://git.sr.ht/~debarchito/mfctl"
+        "owner": "~debarchito",
+        "repo": "mfctl",
+        "type": "sourcehut"
       }
     },
     "minework": {
@@ -794,15 +794,15 @@
       "locked": {
         "lastModified": 1782189536,
         "narHash": "sha256-ITKjElz/vGNIUSxvcLiEXcPUDzu+2kNqs5qDqZl2Wn8=",
-        "ref": "refs/heads/main",
+        "owner": "~debarchito",
+        "repo": "minework",
         "rev": "4b6d13b8385a119322b56c7fd3b5606509f9ec51",
-        "revCount": 45,
-        "type": "git",
-        "url": "https://git.sr.ht/~debarchito/minework"
+        "type": "sourcehut"
       },
       "original": {
-        "type": "git",
-        "url": "https://git.sr.ht/~debarchito/minework"
+        "owner": "~debarchito",
+        "repo": "minework",
+        "type": "sourcehut"
       }
     },
     "musnix": {

@@ -6,7 +6,7 @@
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
     minework = {
-      url = lib.mkDefault "git+https://git.sr.ht/~debarchito/minework";
+      url = lib.mkDefault "sourcehut:~debarchito/minework";
       inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
     };
   };

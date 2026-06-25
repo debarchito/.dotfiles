@@ -30,7 +30,9 @@ Clone this repository to `~/.dotfiles`. This is the assumption throughout the
 steps.
 
 ```
-git clone https://github.com/debarchito/.dotfiles ~/.dotfiles
+git clone https://git.sr.ht/~debarchito/.dotfiles ~/.dotfiles
+# or
+git clone git@git.sr.ht:~debarchito/.dotfiles ~/.dotfiles
 ```
 
 Fresh installs generate their fresh `/etc/nixos/hardware-configuration.nix`.
@@ -94,13 +96,15 @@ This repo also contains a templating engine alongside tailored development
 templates. Get started using:
 
 ```fish
-nix run github:debarchito/.dotfiles#generate
+nix run sourcehut:~debarchito/.dotfiles#generate
 ```
 
 Initialize a template (e.g Rust) using:
 
 ```fish
-nix run github:debarchito/.dotfiles#generate rust ./hello-world name="hello-world" description="Say hello to the world!"
+nix run sourcehut:~debarchito/.dotfiles#generate \
+    rust ./hello-world \
+    name="hello-world" description="Say hello to the world!"
 ```
 
 Then run using:
