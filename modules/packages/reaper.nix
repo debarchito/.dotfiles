@@ -8,18 +8,18 @@
     }:
     let
       version = rec {
-        value = "7.74";
+        value = "7.75";
         major = "${builtins.head (lib.splitString "." value)}.x";
         slug = lib.replaceString "." "" value;
       };
       sources = {
         "x86_64-linux" = {
           url = "https://www.reaper.fm/files/${version.major}/reaper${version.slug}_linux_x86_64.tar.xz";
-          hash = "sha256-4Mf2q/eJz8djJv5JlrGGAWjivjEriRrkbrfKXd/iS6w=";
+          hash = "sha256-BC8W/e1thX1uEKLuPAZ4ALPaCuGfmRVhKmmDvrHEkl4=";
         };
         "aarch64-linux" = {
           url = "https://www.reaper.fm/files/${version.major}/reaper${version.slug}_linux_aarch64.tar.xz";
-          hash = "sha256-zQ4XmFrACfUD04UWs0fYWW+m4L4B1xxe4Rg18xCUemc=";
+          hash = "sha256-+93eBKvQYXyvdnWtbVx7eL6QtvuXKKpXtFPJxxdkVYk=";
         };
       };
     in
