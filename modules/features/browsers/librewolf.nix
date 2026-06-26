@@ -1,31 +1,17 @@
+{ lib, inputs, ... }:
 {
-  lib,
-  inputs,
-  moduleWithSystem,
-  ...
-}:
-{
-  flake-file.inputs = {
-    nixpkgs-small.url = lib.mkDefault "https://channels.nixos.org/nixos-unstable-small/nixexprs.tar.xz";
-    nur = {
-      url = lib.mkDefault "github:nix-community/NUR";
-      inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
-    };
+  flake-file.inputs.nur = {
+    url = lib.mkDefault "github:nix-community/NUR";
+    inputs.nixpkgs.follows = lib.mkDefault "nixpkgs";
   };
 
-  flake.modules.homeManager.options-browsers = moduleWithSystem (
-    { system, ... }:
+  flake.modules.homeManager.options-browsers =
     {
       lib,
       config,
       pkgs,
       ...
     }:
-    let
-      pkgs-small = import inputs.nixpkgs-small {
-        inherit system;
-      };
-    in
     {
       config = lib.mkIf config.browsers.librewolf.enable {
         nixpkgs.overlays = [
@@ -34,7 +20,6 @@
 
         programs.librewolf = {
           enable = true;
-          package = pkgs-small.librewolf;
           nativeMessagingHosts = builtins.attrValues {
             inherit (pkgs)
               pywalfox-native
@@ -139,16 +124,32 @@
                   url = "https://cobalt.tools";
                 }
                 {
+                  name = "Lemmy";
+                  url = "https://lemmy.ml";
+                }
+                {
+                  name = "Mastodon";
+                  url = "https://hachyderm.io";
+                }
+                {
+                  name = "Bluesky";
+                  url = "https://bsky.app";
+                }
+                {
+                  name = "Matrix";
+                  url = "https://app.cinny.in";
+                }
+                {
                   name = "redlib.";
-                  url = "https://redlib.tiekoetter.com";
+                  url = "https://redlib.catsarch.com";
                 }
                 {
                   name = "Nitter";
-                  url = "https://nitter.tiekoetter.com";
+                  url = "https://xcancel.com";
                 }
                 {
                   name = "Invidious";
-                  url = "https://invidious.tiekoetter.com";
+                  url = "https://inv.nadeko.net";
                 }
                 {
                   name = "Nix Channel Status";
@@ -249,6 +250,5 @@
 
         xdg.configFile."tridactyl/tridactylrc".source = ./librewolf/extensions/tridactyl/tridactylrc;
       };
-    }
-  );
+    };
 }

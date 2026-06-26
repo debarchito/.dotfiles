@@ -37,6 +37,7 @@
                 "nix-command"
                 "flakes"
                 "pipe-operators"
+                "wasm-builtin"
               ];
               auto-optimise-store = true;
             };
