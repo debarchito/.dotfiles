@@ -30,7 +30,7 @@ in
       ];
     };
 
-    common.flake = "/home/${username}/.dotfiles";
+    common.flake = "/home/${username}/.bootstrap";
 
     networking' = {
       allowedPortRanges = [

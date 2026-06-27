@@ -3,7 +3,7 @@ secrets:
   - b46c8b8f-4a58-4915-a134-be13d1e75015
 environment:
   GH_USER: debarchito
-  REPO: .dotfiles
+  REPO: .bootstrap
 tasks:
   - push-to-github: |
       cd ~/"${REPO}"

@@ -1,12 +1,3 @@
-## 0. Showcase (dell-laptop)
-
-![showcase (dell-laptop)](/media/one.png)
-
-I didn't know what to add so I present an image of the host `dell-laptop` that I
-daily drive. It's a configuration for [Niri](https://github.com/niri-wm/niri) +
-[DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell) adjusted
-to fit my personal layout, color and functionality preferences.
-
 ## 1. Preparation (TODO)
 
 Apply the disk layout using [disko](https://github.com/nix-community/disko):
@@ -26,13 +17,13 @@ run0 nix --extra-experimental-features 'nix-command flakes' \
 
 ## 2. Applying the configurations
 
-Clone this repository to `~/.dotfiles`. This is the assumption throughout the
+Clone this repository to `~/.bootstrap`. This is the assumption throughout the
 steps.
 
 ```
-git clone https://git.sr.ht/~debarchito/.dotfiles ~/.dotfiles
+git clone https://git.sr.ht/~debarchito/.bootstrap ~/.bootstrap
 # or
-git clone git@git.sr.ht:~debarchito/.dotfiles ~/.dotfiles
+git clone git@git.sr.ht:~debarchito/.bootstrap ~/.bootstrap
 ```
 
 Fresh installs generate their fresh `/etc/nixos/hardware-configuration.nix`.
@@ -40,15 +31,15 @@ This is the configuration your system should build against. Override the old
 hardware configuration using:
 
 ```fish
-cp /etc/nixos/hardware-configuration.nix ~/.dotfiles/modules/hosts/<host>/_raw/hardware-configuration.nix
-# DO NOT REPLACE ~/.dotfiles/modules/hosts/<host>/hardware-configuration.nix by mistake! Notice the "_raw".
+cp /etc/nixos/hardware-configuration.nix ~/.bootstrap/modules/hosts/<host>/_raw/hardware-configuration.nix
+# DO NOT REPLACE ~/.bootstrap/modules/hosts/<host>/hardware-configuration.nix by mistake! Notice the "_raw".
 ```
 
 When applying the NixOS configuration for the _first time_, pass these options
 temporarily:
 
 ```fish
-cd ~/.dotfiles
+cd ~/.bootstrap
 run0 nixos-rebuild switch --flake .#<host> \
   --option experimental-features \
     'nix-command flakes' \
@@ -72,7 +63,7 @@ run0 nixos-rebuild switch --flake .#<host>
 
 The [nh](https://github.com/nix-community/nh) utility is also available as an
 alternative ([NH_FLAKE](https://github.com/nix-community/nh#nixos) is set to
-`~/.dotfiles`):
+`~/.bootstrap`):
 
 ```fish
 nh os switch -c <host>
@@ -96,13 +87,13 @@ This repo also contains a templating engine alongside tailored development
 templates. Get started using:
 
 ```fish
-nix run sourcehut:~debarchito/.dotfiles#generate
+nix run sourcehut:~debarchito/.bootstrap#generate
 ```
 
 Initialize a template (e.g Rust) using:
 
 ```fish
-nix run sourcehut:~debarchito/.dotfiles#generate \
+nix run sourcehut:~debarchito/.bootstrap#generate \
     rust ./hello-world \
     name="hello-world" description="Say hello to the world!"
 ```
