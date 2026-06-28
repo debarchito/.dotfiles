@@ -1,3 +1,37 @@
+## 0. What is this repo about?
+
+`.bootstrap` implements a bespoke bootstrapping framework (hence the name)
+around
+[flake-parts's flakeModules](https://flake.parts/options/flake-parts-flakemodules)
+using the [Dendritic](https://github.com/mightyiam/dendritic) pattern. It
+implements almost everything as host-agnostic ["features"](/modules/features)
+options making them portable and reusable across any `.bootstrap` project. It
+also implements [packages](/modules/packages) that can be directly built and
+consumed via `nix build` and `nix run` commands e.g.
+`nix run sourcehut:~debarchito/.bootstrap#blender` for CUDA-enabled Blender
+(since upstream nixpkgs doesn't enable CUDA by default). It also standardizes
+global [overlays](/modules/overlays) in one place among many other things.
+
+`.bootstrap` builds a subset of the packages on GitHub Actions and uploads the
+artifacts to my Cachix cache registry @
+[debarchito.cachix.org](https://debarchito.cachix.org). You can take a look at
+what's built every commit [here](/.github/workflows/build.yml). If you want to
+use these packages, add my cachix as a substituter:
+
+```nix
+nix.settings = {
+  substituters = [ "https://debarchito.cachix.org" ];
+  trusted-public-keys = [
+    "debarchito.cachix.org-1:md/bk3JZDoFjVOa6bsIDqaY5hcSec4KPWn8q3PbpCl8="
+  ];
+};
+```
+
+Alternatively, the
+[options-trustedSubstituters](/modules/features/trusted-substituters.nix)
+feature module can be enabled to set this up among others. This module is part
+of the `nixos` class and will not work inside a `homeManager` class.
+
 ## 1. Preparation (TODO)
 
 Apply the disk layout using [disko](https://github.com/nix-community/disko):

@@ -1,6 +1,6 @@
 image: alpine/edge
 secrets:
-  - b46c8b8f-4a58-4915-a134-be13d1e75015
+  - 60c95eb6-5bd1-468e-9716-9b1be500b202
 environment:
   GH_USER: debarchito
   REPO: .bootstrap
