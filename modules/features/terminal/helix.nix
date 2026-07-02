@@ -115,13 +115,31 @@
               };
               completion.command = lib.getExe pkgs.simple-completion-language-server;
               nix.command = lib.getExe pkgs.nixd;
-              html.command = lib.getExe' pkgs.vscode-langservers-extracted "vscode-html-language-server";
-              css.command = lib.getExe' pkgs.vscode-langservers-extracted "vscode-css-language-server";
-              json.command = lib.getExe' pkgs.vscode-langservers-extracted "vscode-json-language-server";
-              yaml.command = lib.getExe pkgs.yaml-language-server;
+              html = {
+                command = lib.getExe' pkgs.vscode-langservers-extracted "vscode-html-language-server";
+                args = [ "--stdio" ];
+              };
+              css = {
+                command = lib.getExe' pkgs.vscode-langservers-extracted "vscode-css-language-server";
+                args = [ "--stdio" ];
+              };
+              json = {
+                command = lib.getExe' pkgs.vscode-langservers-extracted "vscode-json-language-server";
+                args = [ "--stdio" ];
+              };
+              yaml = {
+                command = lib.getExe pkgs.yaml-language-server;
+                args = [ "--stdio" ];
+              };
               markdown.command = lib.getExe pkgs.markdown-oxide;
               fish.command = lib.getExe pkgs.fish-lsp;
-              toml.command = lib.getExe pkgs.taplo;
+              toml = {
+                command = lib.getExe pkgs.taplo;
+                args = [
+                  "lsp"
+                  "stdio"
+                ];
+              };
               typst.command = lib.getExe pkgs.tinymist;
             };
             language =
